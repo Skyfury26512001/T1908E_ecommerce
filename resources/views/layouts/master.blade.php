@@ -10,7 +10,7 @@
     <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
     <meta http-equiv="Content-Security-Policy" content="block-all-mixed-content">
 
-    <title>Allaia </title>
+    <title>@yield('title','Allaia') </title>
 
     <!-- Favicons-->
     <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon">
@@ -29,14 +29,16 @@
     <link href={{ asset('assets/css/style.css') }} rel="stylesheet">
 
 	<!-- SPECIFIC CSS -->
-    <link href={{ asset('assets/css/home_1.css') }} rel="stylesheet">
-
+    @yield('specific_css')
     <!-- YOUR CUSTOM CSS -->
     <link href={{ asset('assets/css/custom.css') }} rel="stylesheet">
 
 </head>
 
 <body>
+
+@include('layouts.menu_bar')
+
 @yield('content', 'Default Content')
 
 <!-- COMMON SCRIPTS -->
@@ -44,6 +46,5 @@
     <script src={{asset('assets/js/main.js')}}></script>
 	
 	<!-- SPECIFIC SCRIPTS -->
-	<script src={{asset('assets/js/carousel-home.min.js')}}></script>
-
+    @yield('specific_js')
 </body>
