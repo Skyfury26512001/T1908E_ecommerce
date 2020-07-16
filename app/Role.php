@@ -12,7 +12,7 @@ class Role extends Model
     public $timestamps = true;
 
     public function accounts() {
-        return $this->belongsToMany(Role::class);
+        return $this->belongsToMany(Role::class)->withTimestamps();
 //        return $this->belongsToMany('App\Account', 'role_account', 'account_id', 'role_id');
     }
 }
