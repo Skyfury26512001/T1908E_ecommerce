@@ -1,10 +1,9 @@
 <?php
 
-use App\Role;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\Schema;
 
-class RoleSeeder extends Seeder
+class CitySeeder extends Seeder
 {
     /**
      * Run the database seeds.
@@ -13,25 +12,25 @@ class RoleSeeder extends Seeder
      */
     public function run()
     {
-        $data_check = Role::all()->first();
+        $data_check = \App\City::all()->first();
         if ($data_check != null) {
             Schema::disableForeignKeyConstraints();
-            \App\Role::query()->truncate();
+            \App\City::query()->truncate();
             Schema::enableForeignKeyConstraints();
         }
 
         $roles = array(
             array(
-                'name' => 'user',
+                'name' => 'HaNoi',
                 'created_at' => \Carbon\Carbon::now(),
                 'updated_at' => \Carbon\Carbon::now(),
                 ),
             array(
-                'name' => 'admin',
+                'name' => 'HoChiMinh',
                 'created_at' => \Carbon\Carbon::now(),
                 'updated_at' => \Carbon\Carbon::now(),
                 ),
         );
-        \App\Role::insert($roles);
+        \App\City::insert($roles);
     }
 }

@@ -2,6 +2,7 @@
 
 use App\Account;
 use Illuminate\Database\Seeder;
+use Illuminate\Support\Facades\Schema;
 
 class AccountSeeder extends Seeder
 {
@@ -12,27 +13,33 @@ class AccountSeeder extends Seeder
      */
     public function run()
     {
-        Account::query()->truncate();
+        $data_check = Account::all()->first();
+        if ($data_check != null) {
+            Schema::disableForeignKeyConstraints();
+            Account::query()->truncate();
+            Schema::enableForeignKeyConstraints();
+        }
+
         $accountTest = new Account();
         $user = Account::create(array(
-                'userName' => 'admin',
                 'passwordHash' => md5("admin"."12345"),
                 'salt' => '12345',
                 'fullName' => 'adminer',
                 'email' => 'admin@admin',
                 'phoneNumber' => '084558392801',
                 'email_verified' => 'verified',
+                'city_id' => 2,
                 'status' => 1,
                 'created_at' => \Carbon\Carbon::now(),
                 'updated_at' => \Carbon\Carbon::now(),
             ));
         $user->roles()->sync([1,2]);
         $user = Account::create(array(
-                'userName' => 'guest',
                 'passwordHash' => md5("guest"."56789"),
                 'salt' => '56789',
                 'fullName' => 'guest',
                 'email' => 'guest@guest',
+                'city_id' => 1,
                 'phoneNumber' => '084558392801',
                 'email_verified' => 'verified',
                 'status' => 1,

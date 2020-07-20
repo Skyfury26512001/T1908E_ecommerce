@@ -238,21 +238,30 @@
 								<div class="dropdown dropdown-access">
 									<a href="account.html" class="access_link"><span>Account</span></a>
 									<div class="dropdown-menu">
-										<a href="account.html" class="btn_1">Sign In or Sign Up</a>
-										<ul>
-											<li>
-												<a href="track-order.html"><i class="ti-truck"></i>Track your Order</a>
-											</li>
-											<li>
-												<a href="account.html"><i class="ti-package"></i>My Orders</a>
-											</li>
-											<li>
-												<a href="account.html"><i class="ti-user"></i>My Profile</a>
-											</li>
-											<li>
-												<a href="help.html"><i class="ti-help-alt"></i>Help and Faq</a>
-											</li>
-										</ul>
+{{--										 {{ Session::get('current_account')}}--}}
+										@if(Session::has('current_account'))
+											{{Session::get('current_account')->fullName}}
+											<ul>
+												<li>
+													<a href="track-order.html"><i class="ti-truck"></i>Track your Order</a>
+												</li>
+												<li>
+													<a href="account.html"><i class="ti-package"></i>My Orders</a>
+												</li>
+												<li>
+													<a href="account.html"><i class="ti-user"></i>My Profile</a>
+												</li>
+												<li>
+													<a href="help.html"><i class="ti-help-alt"></i>Help and Faq</a>
+												</li>
+												<li>
+													<a href="help.html"><i class="ti-share"></i>Quit</a>
+												</li>
+											</ul>
+										@else
+											<a href="{{route('login')}}" class="btn_1">Sign In or Sign Up</a>
+										@endif
+
 									</div>
 								</div>
 								<!-- /dropdown-access-->

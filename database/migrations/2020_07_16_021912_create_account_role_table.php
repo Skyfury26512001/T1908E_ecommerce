@@ -14,10 +14,10 @@ class CreateAccountRoleTable extends Migration
     public function up()
     {
         Schema::create('account_role', function (Blueprint $table) {
-            $table->integer('account_id')->unsigned()->index();
+            $table->bigInteger('account_id')->unsigned()->index();
             $table->foreign('account_id')->references('id')->on('accounts')->onDelete('cascade');
 
-            $table->integer('role_id')->unsigned()->index();
+            $table->bigInteger('role_id')->unsigned()->index();
             $table->foreign('role_id')->references('id')->on('roles')->onDelete('cascade');
             $table->timestamps();
         });

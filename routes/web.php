@@ -13,6 +13,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+// user : route
 Route::get('/', function () {
     return view('index');
 })->name('home');
@@ -20,4 +21,27 @@ Route::get('/', function () {
 Route::get('/product',function ()
 {
     return view('products.product_detail');
+});
+
+Route::get('about_us',function (){
+   return view('about');
+});
+
+// login - register : route
+Route::get('login','AccountController@index')->name('login');
+Route::post('registerProcess','AccountController@registerProgress')->name('registerP');
+Route::post('loginProcess','AccountController@loginProgress')->name('loginP');
+
+
+// admin : route
+
+Route::group(['middleware' => ['admin_check'],'prefix' => 'admin'], function () {
+    Route::get('/', function () {
+        return 'admin view';
+    });
+});
+
+//
+Route::get('checking_page',function (){
+    return view('session_checking');
 });
