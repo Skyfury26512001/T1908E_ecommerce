@@ -35,15 +35,18 @@ class AccountController extends Controller
         $account->email_verified = 'unverified';
         $account->status = 1;
         $account->city_id = $request->city;
+        $account->sex = $request->sex;
+        $account->birthDate = $request->birthDate ;
 
         $account->roles();
 
         $account->save();
         $currentId = $account->id;
         $account->roles()->sync(1);
-        dd($account->roles()->sync(1)->toSql());
+//        dd($account->roles()->sync(1)->toSql());
 //        dd($account);
-        return redirect('/');
+
+        return redirect('/login');
     }
 
     public function loginProgress(Request $request){

@@ -13,7 +13,7 @@ class Account extends Model
 
     public function roles() {
         return $this->belongsToMany(Role::class)->withTimestamps();
-//        return $this->hasMany('App\Role','account_role', 'role_id', 'account_id');
+//        return $this->belongsToMany('App\Role','account_role', 'role_id', 'account_id');
     }
     public function cities(){
 //        return $this->hasOne()

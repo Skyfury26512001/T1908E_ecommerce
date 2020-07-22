@@ -33,6 +33,8 @@ class RegisterRequest extends FormRequest
             'city' => 'required',
             'phone' => 'required|numeric',
             'term' => 'required',
+            'sex' => 'required',
+            'birthDate' => 'required',
         ];
     }
 

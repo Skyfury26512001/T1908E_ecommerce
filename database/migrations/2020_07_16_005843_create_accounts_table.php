@@ -19,6 +19,8 @@ class CreateAccountsTable extends Migration
             $table->string('passwordHash');
             $table->string('salt');
             $table->string('fullName');
+            $table->string('sex');
+            $table->date('birthDate');
             $table->string('phoneNumber');
             $table->string('email_verified');
             $table->integer('status');

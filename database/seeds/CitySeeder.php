@@ -24,11 +24,13 @@ class CitySeeder extends Seeder
                 'name' => 'HaNoi',
                 'created_at' => \Carbon\Carbon::now(),
                 'updated_at' => \Carbon\Carbon::now(),
+                'status' => 1
                 ),
             array(
                 'name' => 'HoChiMinh',
                 'created_at' => \Carbon\Carbon::now(),
                 'updated_at' => \Carbon\Carbon::now(),
+                'status' => 1
                 ),
         );
         \App\City::insert($roles);

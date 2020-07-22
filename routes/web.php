@@ -22,9 +22,14 @@ Route::get('/product',function ()
 {
     return view('products.product_detail');
 });
-
-Route::get('about_us',function (){
+Route::get('/product_list',function (){
+    return view('products.product_list');
+});
+Route::get('/about_us',function (){
    return view('about');
+});
+Route::get('/contact',function (){
+    return view('contact');
 });
 
 // login - register : route

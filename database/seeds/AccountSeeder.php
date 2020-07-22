@@ -20,7 +20,6 @@ class AccountSeeder extends Seeder
             Schema::enableForeignKeyConstraints();
         }
 
-        $accountTest = new Account();
         $user = Account::create(array(
                 'passwordHash' => md5("admin"."12345"),
                 'salt' => '12345',
@@ -28,6 +27,8 @@ class AccountSeeder extends Seeder
                 'email' => 'admin@admin',
                 'phoneNumber' => '084558392801',
                 'email_verified' => 'verified',
+                'sex' => 'Female',
+                'birthDate' => '2002-07-29',
                 'city_id' => 2,
                 'status' => 1,
                 'created_at' => \Carbon\Carbon::now(),
@@ -40,6 +41,8 @@ class AccountSeeder extends Seeder
                 'fullName' => 'guest',
                 'email' => 'guest@guest',
                 'city_id' => 1,
+                'sex' => 'Male',
+                'birthDate' => '1996-05-22',
                 'phoneNumber' => '084558392801',
                 'email_verified' => 'verified',
                 'status' => 1,
