@@ -20,7 +20,7 @@ class ProductSeeder extends Seeder
             Product::query()->truncate();
             Schema::enableForeignKeyConstraints();
         }
-        $product = [
+        $products = [
           [
               'name' => '',
               'brand_id' => '',
@@ -38,5 +38,7 @@ class ProductSeeder extends Seeder
               'updated_at' => Carbon::now(),
           ],
         ];
+
+        Product::insert($products);
     }
 }
