@@ -32,7 +32,7 @@ class RegisterRequest extends FormRequest
             'address' => 'required|min:6',
             'city' => 'required',
             'phone' => 'required|numeric',
-            'term' => 'required',
+//            'term' => 'required',
             'sex' => 'required',
             'birthDate' => 'required',
         ];

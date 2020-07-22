@@ -28,7 +28,6 @@
 {{--				</div>--}}
 {{--			</div>--}}
 {{--		@endif--}}
-@include('layouts.error_pop_up')
 {{--	<ul>--}}
 {{--		@if($errors->any())--}}
 {{--			@foreach($errors->all() as $error)--}}
@@ -36,7 +35,7 @@
 {{--			@endforeach--}}
 {{--		@endif--}}
 {{--	</ul>--}}
-
+@include('layouts.error_pop_up')
 	<main class="bg_gray">
 	<div class="container margin_30">
 		<div class="page_header">
@@ -68,6 +67,11 @@
 							<div class="divider"><span>Or</span></div>
 							<div class="form-group">
 								<input type="email" class="form-control" name="email" id="email" placeholder="Email*">
+							</div>
+							<div>
+							@if ($errors->has('email'))
+								need Email
+							@endif
 							</div>
 							<div class="form-group">
 								<input type="password" class="form-control" name="password" id="password_in" value="" placeholder="Password*">
@@ -192,13 +196,13 @@
 							<!-- /row -->
 						</div>
 						<hr>
-						<div class="form-group">
-							<label class="container_check">Accept <a href="#0">Terms and conditions</a>
-								<input type="checkbox" name="term" required oninvalid="this.setCustomValidity('Please check here')"
-    oninput="this.setCustomValidity('')">
-								<span class="checkmark"></span>
-							</label>
-						</div>
+{{--						<div class="form-group">--}}
+{{--							<label class="container_check">Accept <a href="#0">Terms and conditions</a>--}}
+{{--								<input type="checkbox" name="term" required oninvalid="this.setCustomValidity('Please check here !')"--}}
+{{--    oninput="this.setCustomValidity('')">--}}
+{{--								<span class="checkmark"></span>--}}
+{{--							</label>--}}
+{{--						</div>--}}
 							<div class="text-center"><input type="submit" value="Register" class="btn_1 full-width"></div>
 						</div>
 					</form>
