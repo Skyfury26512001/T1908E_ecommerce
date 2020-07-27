@@ -7,12 +7,12 @@ use Illuminate\Database\Eloquent\Model;
 class Product extends Model
 {
     public function groups(){
-        $this->belongsToMany(Group::class);
+        return $this->belongsToMany(Group::class,'product_group','product_id','group_id');
     }
     public function origin(){
-        $this->belongsTo(Origin::class);
+        return $this->belongsTo(Origin::class);
     }
     public function brand(){
-        $this->belongsTo(Brand::class);
+        return $this->belongsTo(Brand::class);
     }
 }

@@ -261,7 +261,11 @@
 													<a href="help.html"><i class="ti-help-alt"></i>Help and Faq</a>
 												</li>
 												<li>
-													<a href="help.html"><i class="ti-share"></i>Quit</a>
+{{--													<a href="{{route('logout')}}"><i class="ti-share"></i>Quit</a>--}}
+													<a class="log-out-btn" href="#" onclick="event.preventDefault();document.getElementById('logout-form').submit();"> Logout </a>
+													 <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+															  {{ csrf_field() }}
+													  </form>
 												</li>
 											</ul>
 										@else

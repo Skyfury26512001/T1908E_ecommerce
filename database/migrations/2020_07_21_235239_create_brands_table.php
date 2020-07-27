@@ -16,6 +16,7 @@ class CreateBrandsTable extends Migration
         Schema::create('brands', function (Blueprint $table) {
             $table->id();
             $table->string('name');
+            $table->integer('status');
             $table->timestamps();
         });
     }
@@ -27,6 +28,8 @@ class CreateBrandsTable extends Migration
      */
     public function down()
     {
+        Schema::disableForeignKeyConstraints();
         Schema::dropIfExists('brands');
+        Schema::enableForeignKeyConstraints();
     }
 }

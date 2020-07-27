@@ -21,9 +21,11 @@ class AdminMiddleWare
 //        dd("132");
 //        dd($current_account);
 //        dd($current_account->roles);
-        foreach ($current_account->roles as $role){
-            if ($role->name == 'admin'){
-                return $next($request);
+        if (isset($current_account)){
+            foreach ($current_account->roles as $role){
+                if ($role->name == 'admin'){
+                    return $next($request);
+                }
             }
         }
         return redirect('/');
