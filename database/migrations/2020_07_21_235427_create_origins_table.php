@@ -16,6 +16,7 @@ class CreateOriginsTable extends Migration
         Schema::create('origins', function (Blueprint $table) {
             $table->id();
             $table->string('name');
+            $table->integer('status');
             $table->timestamps();
         });
     }
@@ -27,6 +28,8 @@ class CreateOriginsTable extends Migration
      */
     public function down()
     {
+        Schema::disableForeignKeyConstraints();
         Schema::dropIfExists('origins');
+        Schema::enableForeignKeyConstraints();
     }
 }

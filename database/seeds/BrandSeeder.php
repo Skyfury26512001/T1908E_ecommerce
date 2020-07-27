@@ -21,31 +21,34 @@ class BrandSeeder extends Seeder
             Schema::enableForeignKeyConstraints();
         }
 
-        Brand::truncate();
-
         $brands =  array(
             array(
                 'name' => 'Gucci',
+                'status' => 1,
                 'created_at' => Carbon::now(),
                 'updated_at' => Carbon::now(),
             ),
             array(
                 'name' => 'Bvlgari',
+                'status' => 1,
                 'created_at' => Carbon::now(),
                 'updated_at' => Carbon::now(),
             ),
             array(
                 'name' => 'Chanel',
+                'status' => 1,
                 'created_at' => Carbon::now(),
                 'updated_at' => Carbon::now(),
             ),
             array(
                 'name' => 'Dior',
+                'status' => 1,
                 'created_at' => Carbon::now(),
                 'updated_at' => Carbon::now(),
             ),
             array(
                 'name' => 'Burberry',
+                'status' => 1,
                 'created_at' => Carbon::now(),
                 'updated_at' => Carbon::now(),
             ),

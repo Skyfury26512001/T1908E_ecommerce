@@ -6,6 +6,7 @@ use App\Account;
 use App\City;
 use App\Http\Requests\RegisterRequest;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Session;
 
 class AccountController extends Controller
 {
@@ -13,6 +14,8 @@ class AccountController extends Controller
         $cities = City::all();
         return view('login_register',compact('cities'));
     }
+
+
     public function registerProgress(RegisterRequest $request){
 //        dd($request);
 //        $request->validate([
@@ -78,5 +81,12 @@ class AccountController extends Controller
         }else{
             dd("your account't doesn't exist");
         }
+    }
+
+    public function logOut(Request $request){
+
+        Session::forget('current_account');
+
+        return redirect('/');
     }
 }

@@ -21,26 +21,28 @@ class OriginSeeder extends Seeder
             Schema::enableForeignKeyConstraints();
         }
 
-        Origin::truncate();
-
         $origins =  [
             [
               'name' => 'Italian',
+              'status' => 1,
               'created_at' => Carbon::now(),
               'updated_at' => Carbon::now(),
             ],
             [
               'name' => 'French',
+              'status' => 1,
               'created_at' => Carbon::now(),
               'updated_at' => Carbon::now(),
             ],
             [
               'name' => 'Greek',
+              'status' => 1,
               'created_at' => Carbon::now(),
               'updated_at' => Carbon::now(),
             ],
             [
               'name' => 'Britain',
+              'status' => 1,
               'created_at' => Carbon::now(),
               'updated_at' => Carbon::now(),
             ],
