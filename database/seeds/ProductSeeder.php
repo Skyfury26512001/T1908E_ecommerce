@@ -27,10 +27,11 @@ class ProductSeeder extends Seeder
                 'brand_id' => '1', //Christian Dior
                 'concentration' => 'Eau de Toilette',
                 'volume' => '10ml',
-                'origin_id' => '2', //Pháp
+                'origin_id' => '2', //France
                 'recommended_age' => 'Trên 25',
                 'release_year' => '1966',
                 'inventor_name' => 'Edmond Roudnitska',
+//                'incense_group' => 'Hương thơm biển',
                 'incense_level' => 'Lâu - 7 giờ đến 12 giờ',
                 'aroma_level' => 'Gần - Toả hương trong vòng một cánh tay',
                 'recommended_time' => 'Ngày, Đêm, Xuân, Hạ, Thu',
@@ -51,13 +52,14 @@ class ProductSeeder extends Seeder
             [
                 'name' => 'ACQUA DI GIO',
                 'sex' => 'Male',
-                'brand_id' => '2', //Giorgio Armani
+                'brand_id' => '4', //Giorgio Armani
                 'concentration' => 'Eau de Toilette',
                 'volume' => '100ml',
-                'origin_id' => '2', //Pháp
+                'origin_id' => '2', //France
                 'recommended_age' => 'Trên 25',
                 'release_year' => '1996',
                 'inventor_name' => 'Alberto Morillas',
+//                'incense_group' => 'Hương thơm biển',
                 'incense_level' => 'Tạm ổn - 3 giờ đến 6 giờ',
                 'aroma_level' => 'Gần - Toả hương trong vòng một cánh tay',
                 'recommended_time' => 'Ngày, Đêm, Hạ',
@@ -78,13 +80,14 @@ class ProductSeeder extends Seeder
             [
                 'name' => 'TERRE D`HERMES PARFUM',
                 'sex' => 'Male',
-                'brand_id' => '3', //Hermes
+                'brand_id' => '5', //Hermes
                 'concentration' => 'Eau de Parfum',
                 'volume' => '75ml',
-                'origin_id' => '2', //Pháp
+                'origin_id' => '2', //France
                 'recommended_age' => 'Trên 25',
                 'release_year' => '2009',
                 'inventor_name' => 'Jean-Claude Ellena',
+//                'incense_group' => 'Hương gỗ Síp',
                 'incense_level' => 'Lâu - 7 giờ đến 12 giờ',
                 'aroma_level' => 'Gần - Toả hương trong vòng một cánh tay',
                 'recommended_time' => 'Ngày, Đêm, Xuân, Hạ, Thu, Đông',
@@ -101,16 +104,18 @@ class ProductSeeder extends Seeder
                 'created_at' => Carbon::now(),
                 'updated_at' => Carbon::now(),
             ],
+
             [
                 'name' => 'VALENTINO UOMO INTENSE',
                 'sex' => 'Male',
-                'brand_id' => '1', //Valentino
+                'brand_id' => '6', //Valentino
                 'concentration' => 'Eau de Parfum',
                 'volume' => '100ml',
-                'origin_id' => '1', //Tây ban nha
+                'origin_id' => '1', //Italy
                 'recommended_age' => 'Trên 25',
                 'release_year' => '2016',
-                'inventor_name' => 'Unknown',
+                'inventor_name' => '-',
+//                'incense_group' => 'Hương da thuộc',
                 'incense_level' => 'Lâu - 7 giờ đến 12 giờ',
                 'aroma_level' => 'Xa - Toả hương trong vòng bán kính 2 mét',
                 'recommended_time' => 'Ngày, Đêm, Thu, Đông',
@@ -121,7 +126,7 @@ class ProductSeeder extends Seeder
                 Hương giữa: Hoa diên vĩ, Đậu Tonka
                 Hương cuối: Da thuộc, Hương Va ni
 
-                Tổng quan: Nước hoa nam Valentino Uomo Intense phù hợp với người trên 25 tuổi.Đây là dòng nước hoa Valentino này có độ lưu hương lâu - 7 giờ đến 12 giờ. và độ tỏa hương thuộc dạng xa - toả hương trong vòng bán kính 2 mét. Perfumista.vn khuyến cáo Valentino Uomo Intense phù hợp để sử dụng trong cả ngày lẫn đêm vào mùa thu, đông. Đây là dòng nước hoa Valentino thuộc nhóm Leather (Hương da thuộc). Valentino Uomo Intense được cho ra mắt vào năm 2016. Bên cạnh đó, Hoa diên vĩ và Hương Va ni là hai hương bạn có thể dễ dàng cảm nhận được nhất khi sử dụng nước hoa này.',
+                Tổng quan: Nước hoa nam Valentino Uomo Intense phù hợp với người trên 25 tuổi. Đây là dòng nước hoa Valentino này có độ lưu hương lâu - 7 giờ đến 12 giờ. và độ tỏa hương thuộc dạng xa - toả hương trong vòng bán kính 2 mét. Perfumista.vn khuyến cáo Valentino Uomo Intense phù hợp để sử dụng trong cả ngày lẫn đêm vào mùa thu, đông. Đây là dòng nước hoa Valentino thuộc nhóm Leather (Hương da thuộc). Valentino Uomo Intense được cho ra mắt vào năm 2016. Bên cạnh đó, Hoa diên vĩ và Hương Va ni là hai hương bạn có thể dễ dàng cảm nhận được nhất khi sử dụng nước hoa này.',
                 'thumbnail' => 'https://product.hstatic.net/1000340570/product/valentino-uomo-intense_ad53477eef8141fc881e396466a06b87_master.jpg',
                 'status' => '1',
                 'created_at' => Carbon::now(),
@@ -133,10 +138,11 @@ class ProductSeeder extends Seeder
                 'brand_id' => '2', //Chanel
                 'concentration' => 'Eau de Parfume',
                 'volume' => '100ml',
-                'origin_id' => '2', //Pháp
+                'origin_id' => '2', //France
                 'recommended_age' => 'Trên 25',
                 'release_year' => '2012',
                 'inventor_name' => 'Jacques Polge',
+//                'incense_group' => 'Hương gỗ thơm',
                 'incense_level' => 'Lâu - 7 giờ đến 12 giờ',
                 'aroma_level' => 'Xa - Toả hương trong vòng bán kính 2 mét',
                 'recommended_time' => 'Ngày, Đêm, Xuân, Hạ, Thu',
@@ -157,13 +163,14 @@ class ProductSeeder extends Seeder
             [
                 'name' => 'GUCCI BY GUCCI POUR HOMME',
                 'sex' => 'Male',
-                'brand_id' => '3', //Gucci
+                'brand_id' => '7', //Gucci
                 'concentration' => 'Eau de Toillete',
                 'volume' => '90ml',
-                'origin_id' => '2', //Pháp
+                'origin_id' => '2', //France
                 'recommended_age' => 'Trên 25',
                 'release_year' => '2008',
                 'inventor_name' => 'Aurelien Guichard',
+//                'incense_group' => 'Hương gỗ Síp',
                 'incense_level' => 'Tạm ổn - 3 giờ đến 6 giờ',
                 'aroma_level' => 'Gần - Toả hương trong vòng một cánh tay',
                 'recommended_time' => 'Ngày, Đêm, Xuân, Thu, Đông',
@@ -184,13 +191,14 @@ class ProductSeeder extends Seeder
             [
                 'name' => 'AVENTUS',
                 'sex' => 'Male',
-                'brand_id' => '1', //Creed
+                'brand_id' => '3', //Creed
                 'concentration' => 'Eau de Parfum',
                 'volume' => '100ml',
-                'origin_id' => '2', //Pháp
+                'origin_id' => '2', //France
                 'recommended_age' => 'Trên 25',
                 'release_year' => '2010',
                 'inventor_name' => 'Aurelien Guichard',
+//                'incense_group' => 'Hương trái cây Síp',
                 'incense_level' => 'Lâu - 7 giờ đến 12 giờ',
                 'aroma_level' => 'Gần - Toả hương trong vòng một cánh tay',
                 'recommended_time' => 'Ngày, Đêm, Xuân, Hạ, Thu',
@@ -211,13 +219,14 @@ class ProductSeeder extends Seeder
             [
                 'name' => 'SANTAL 33',
                 'sex' => 'Unisex',
-                'brand_id' => '2', //Le Labo
+                'brand_id' => '8', //Le Labo
                 'concentration' => 'Eau de Parfum',
                 'volume' => '100ml',
-                'origin_id' => '3', //Mỹ
+                'origin_id' => '3', //American
                 'recommended_age' => 'Trên 25',
                 'release_year' => '2011',
                 'inventor_name' => 'Frank Voelkl',
+//                'incense_group' => 'Hương gỗ thơm',
                 'incense_level' => 'Rất lâu - Trên 12 giờ',
                 'aroma_level' => 'Xa - Toả hương trong vòng bán kính 2 mét',
                 'recommended_time' => 'Ngày, Đêm, Xuân, Thu',
@@ -239,10 +248,11 @@ class ProductSeeder extends Seeder
                 'brand_id' => '2', //Chanel
                 'concentration' => 'Eau de Parfum',
                 'volume' => '50ml',
-                'origin_id' => '2', //Pháp
+                'origin_id' => '2', //France
                 'recommended_age' => 'Trên 25',
                 'release_year' => '1921',
                 'inventor_name' => 'Ernest Beaux',
+//                'incense_group' => 'Hương hoa cỏ An-Đê-Hít',
                 'incense_level' => 'Lâu - 7 giờ đến 12 giờ',
                 'aroma_level' => 'Gần - Toả hương trong vòng một cánh tay',
                 'recommended_time' => 'Ngày, Đêm, Thu, Đông',
@@ -263,13 +273,14 @@ class ProductSeeder extends Seeder
             [
                 'name' => 'NARCISO RODRIGUEZ FOR HER EAU DE PARFUM',
                 'sex' => 'Female',
-                'brand_id' => '3', //Narciso Rodriguez
+                'brand_id' => '9', //Narciso Rodriguez
                 'concentration' => 'Eau de Parfum',
                 'volume' => '100ml',
-                'origin_id' => '2', //Pháp
+                'origin_id' => '3', //American
                 'recommended_age' => 'Trên 25',
                 'release_year' => '2006',
                 'inventor_name' => 'Francis Kurkdjian',
+//                'incense_group' => 'Hương hoa cỏ Gỗ - Xạ hương',
                 'incense_level' => 'Lâu - 7 giờ đến 12 giờ',
                 'aroma_level' => 'Gần - Toả hương trong vòng một cánh tay',
                 'recommended_time' => 'Ngày, Đêm, Xuân, Thu, Đông',
@@ -287,35 +298,6 @@ class ProductSeeder extends Seeder
                 'updated_at' => Carbon::now(),
             ],
         ];
-        $product_test = [
-            [
-                'name' => 'NARCISO RODRIGUEZ FOR HER EAU DE PARFUM',
-                'sex' => 'Female',
-                'brand_id' => '3', //Narciso Rodriguez
-                'concentration' => 'Eau de Parfum',
-                'volume' => '100ml',
-                'origin_id' => '2', //Pháp
-                'recommended_age' => 'Trên 25',
-                'release_year' => '2006',
-                'inventor_name' => 'Francis Kurkdjian',
-                'incense_level' => 'Lâu - 7 giờ đến 12 giờ',
-                'aroma_level' => 'Gần - Toả hương trong vòng một cánh tay',
-                'recommended_time' => 'Ngày, Đêm, Xuân, Thu, Đông',
-                'style' => 'Gợi cảm , Nữ tính , Tính tế',
-                'price' => '2450000',
-                'description' => '
-                Hương Đầu: Hoa hồng, Quả đào
-                Hương giữa: Xạ hương, Hổ phách
-                Hương cuối: Gỗ đàn hương, Cây hoắc hương
-
-                Tổng quan: Sau phiên bản EDT ra mắt vào năm 2004, phiên bản Narciso Rodriguez for Her Narciso Rodriguez for Her Eau de Parfum được tiếp tục giới thiệu vào năm 2006 với mẫu thiết kế chai màu hồng và vỏ hộp màu đen. Christine Nagel và Francis Kurkdjian là những chuyên gia nước hoa danh tiếng đã sáng tạo ra mùi hương này. Narciso Rodriguez for Her Eau de Parfum mang đến mùi hương đầy quyến rũ và tràn ngập nữ tính khi kết hợp với những cánh hoa hồng rực rỡ, hương thơm đào tươi mát, xen lẫn với chút hổ phách tinh tế và đặc biệt là một mùi xạ hương gợi cảm đầy nổi bật.',
-                'thumbnail' => 'https://product.hstatic.net/1000340570/product/narciso-rodriguez-for-her-eau-de-parfum_e67c5a87c3de4f15a3a3e1fea1f71ffd_master.jpg',
-                'status' => '1',
-                'created_at' => Carbon::now(),
-                'updated_at' => Carbon::now(),
-            ],
-        ];
-//        Schema::insert('');
         Product::insert($products);
     }
 }
