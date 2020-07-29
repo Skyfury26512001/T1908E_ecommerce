@@ -127,7 +127,6 @@ class ProductSeeder extends Seeder
                 'created_at' => Carbon::now(),
                 'updated_at' => Carbon::now(),
             ],
-
             [
                 'name' => 'ALLURE HOMME SPORT EAU EXTREME',
                 'sex' => 'Male',
@@ -316,6 +315,7 @@ class ProductSeeder extends Seeder
                 'updated_at' => Carbon::now(),
             ],
         ];
+//        Schema::insert('');
         Product::insert($products);
     }
 }
