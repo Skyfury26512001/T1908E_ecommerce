@@ -19,4 +19,5 @@ class Account extends Model
 //        return $this->hasOne()
         return $this->belongsTo(City::class);
     }
+
 }

@@ -21,33 +21,44 @@ class OriginSeeder extends Seeder
             Schema::enableForeignKeyConstraints();
         }
 
-        $origins =  [
+        $origins = [
             [
-              'name' => 'Italian',
+              'name' => 'Hy Lạp',
               'status' => 1,
+              'slug' => 'hy_lap',
               'created_at' => Carbon::now(),
               'updated_at' => Carbon::now(),
             ],
             [
-              'name' => 'French',
+              'name' => 'Anh',
               'status' => 1,
+              'slug' => 'anh',
               'created_at' => Carbon::now(),
               'updated_at' => Carbon::now(),
             ],
             [
-              'name' => 'Greek',
-              'status' => 1,
-              'created_at' => Carbon::now(),
-              'updated_at' => Carbon::now(),
+                'name' => 'Ý',
+                'slug' => 'y',
+                'status' => 1,
+                'created_at' => Carbon::now(),
+                'updated_at' => Carbon::now(),
             ],
             [
-              'name' => 'Britain',
-              'status' => 1,
-              'created_at' => Carbon::now(),
-              'updated_at' => Carbon::now(),
+                'name' => 'Pháp',
+                'slug' => 'phap',
+                'status' => 1,
+                'created_at' => Carbon::now(),
+                'updated_at' => Carbon::now(),
             ],
-          ];
+            [
+                'name' => 'Mỹ',
+                'slug' => 'my',
+                'status' => 1,
+                'created_at' => Carbon::now(),
+                'updated_at' => Carbon::now(),
+            ],
+        ];
 
-          Origin::insert($origins);
+        Origin::insert($origins);
     }
 }

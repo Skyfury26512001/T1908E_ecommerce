@@ -1,14 +1,15 @@
-#mm-0{
+#mm-0 {
     z-index: 10;
 }
 
 header.version_1 .main_nav {
-    background-color :#004dda;
+    background-color: #3a87ad;
 }
 
 header.version_1 .main_nav ul.top_tools > li a:hover {
     color: #fff;
 }
+
 header.version_1 .main_nav ul.top_tools > li .dropdown-cart:hover > a, header.version_1 .main_nav ul.top_tools > li .dropdown-access:hover > a {
     color: #fff;
 }
@@ -23,5 +24,5 @@ header.version_1 .menu ul li > span a:hover {
 }
 
 .nice-select {
-    padding-top:0;
+    padding-top: 0;
 }
