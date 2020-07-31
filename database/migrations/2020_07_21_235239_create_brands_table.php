@@ -19,6 +19,7 @@ class CreateBrandsTable extends Migration
             $table->string('brand_thumbnail');
             $table->longText('brand_description');
             $table->integer('status');
+            $table->string('slug');
             $table->timestamps();
         });
     }

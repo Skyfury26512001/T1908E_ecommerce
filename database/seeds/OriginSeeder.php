@@ -23,19 +23,36 @@ class OriginSeeder extends Seeder
 
         $origins = [
             [
+              'name' => 'Hy Lạp',
+              'status' => 1,
+              'slug' => 'hy_lap',
+              'created_at' => Carbon::now(),
+              'updated_at' => Carbon::now(),
+            ],
+            [
+              'name' => 'Anh',
+              'status' => 1,
+              'slug' => 'anh',
+              'created_at' => Carbon::now(),
+              'updated_at' => Carbon::now(),
+            ],
+            [
                 'name' => 'Ý',
+                'slug' => 'y',
                 'status' => 1,
                 'created_at' => Carbon::now(),
                 'updated_at' => Carbon::now(),
             ],
             [
                 'name' => 'Pháp',
+                'slug' => 'phap',
                 'status' => 1,
                 'created_at' => Carbon::now(),
                 'updated_at' => Carbon::now(),
             ],
             [
                 'name' => 'Mỹ',
+                'slug' => 'my',
                 'status' => 1,
                 'created_at' => Carbon::now(),
                 'updated_at' => Carbon::now(),

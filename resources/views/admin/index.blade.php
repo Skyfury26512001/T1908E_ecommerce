@@ -4,19 +4,6 @@
     <script src={{asset('assets/admin/')."/js/pages/dashboard-2.init.js"}}></script>
 @endsection
 @section('content')
-    <body>
-
-        <!-- Begin page -->
-        <div id="wrapper">
-
-
-
-
-            <!-- ============================================================== -->
-            <!-- Start Page Content here -->
-            <!-- ============================================================== -->
-
-            <div class="content-page">
                 <div class="content">
 
                     <!-- Start Content-->
@@ -346,7 +333,5 @@
 
         <!-- Right bar overlay-->
         <div class="rightbar-overlay"></div>
-
-
 
     @endsection

@@ -40,8 +40,11 @@
 
 @include('layouts.menu_bar')
 
+<!--content Start-->
 @yield('content', 'Default Content')
-<footer class="revealed">
+
+<!--content End-->
+<footer>
 		<div class="container">
 			<div class="row">
 				<div class="col-lg-3 col-md-6">

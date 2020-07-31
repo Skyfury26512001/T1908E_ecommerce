@@ -26,7 +26,7 @@
             $("#delete_all").on('click', function (e) {
                 console.log('123');
                 var allVals = [];
-                $(".checkbox_list_brand:checked").each(function () {
+                $(".checkbox_list_origin:checked").each(function () {
                     allVals.push($(this).val());
                     console.log(allVals);
                 });
@@ -37,7 +37,7 @@
                     if (check == true) {
                         var join_selected_values = allVals.join(",");
                         $.ajax({
-                            url: '{{route('admin_brand_delete_multi')}}',
+                            url: '{{route('admin_origin_delete_multi')}}',
                             type: 'PUT',
                             headers: {'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')},
                             data: 'ids=' + join_selected_values,
@@ -46,8 +46,8 @@
                                     $(".sub_chk:checked").each(function () {
                                         $(this).parents("tr").remove();
                                     });
-                                    alert("Brands Deleted Success");
-                                    window.location = '{{route('admin_brand')}}';
+                                    alert("Origins Deleted Success");
+                                    window.location = '{{route('admin_origin')}}';
                                 } else if (data['error']) {
                                     console.log(data['error']);
                                 } else {
@@ -89,17 +89,17 @@
         <!-- end page title -->
 
         <div class="row">
-            <div class="col-lg-12">
+            <div class="col-lg-8">
                 <div class="card-box">
                     <div class="row">
                         <div>
-                            <h4 class="header-title">Brands</h4>
+                            <h4 class="header-title">Origins</h4>
                             <p class="sub-header">
-                                <code>All brands</code>
+                                <code>All origin</code>
                             </p>
                         </div>
                         <div class="offset-8 col-3">
-                            <form class="app-search" action="{{route('admin_brand')}}">
+                            <form class="app-search" action="{{route('admin_origin')}}">
                                 <div class="app-search-box">
                                     <div class="input-group">
                                         <input type="text" class="form-control" name="keyword" placeholder="Search...">
@@ -120,32 +120,27 @@
                             <tr>
                                 <th></th>
                                 <th class="sorting" tabindex="0" aria-controls="datatable" rowspan="1" colspan="1" style="width: 24.8px;" aria-label="ID: activate to sort column ascending">
-                                                Brand Name
+                                    Origin Name
                                 </th>
-                                <th>Brand Thumbnail</th>
-                                <th>Products description</th>
                                 <th colspan="2" style="text-align: center">Action</th>
                             </tr>
                             </thead>
                             <tbody>
                             @csrf
-                            @foreach($brands as $brand)
+                            @foreach($origins as $origin)
                                 <tr>
                                     <td>
                                         <div class="checkbox checkbox-primary">
-                                            <input class="checkbox_list_brand" id="{{$brand->name}}" type="checkbox"
-                                                   name="brands[]" value="{{$brand->id}}">
-                                            <label for="{{$brand->name}}"></label>
+                                            <input class="checkbox_list_origin" id="{{$origin->name}}" type="checkbox"
+                                                   name="origins[]" value="{{$origin->id}}">
+                                            <label for="{{$origin->name}}"></label>
                                         </div>
                                     </td>
-                                    <td>{{$brand->brand_name}}</td>
-                                    <td><img src="{{$brand->imagesize600x600}}"style="width: 100%"></td>
-                                    <td>{{$brand->brand_description}}</td>
-{{--                                    <td>{{count($brand->products)}}</td>--}}
-                                    <td><a href="{{route('admin_brand_edit',$brand->slug)}}" class="btn btn-primary"
+                                    <td>{{$origin->name}}</td>
+                                    <td><a href="{{route('admin_origin_edit',$origin->slug)}}" class="btn btn-primary"
                                            style="float:right">Edit</a></td>
                                     <td>
-                                        <form action="{{route('admin_brand_delete',$brand->id)}}" method="POST">
+                                        <form action="{{route('admin_origin_delete',$origin->id)}}" method="POST">
                                             @csrf @method('PUT')
                                             <button class="btn btn-primary"> Delete</button>
                                         </form>
@@ -161,7 +156,7 @@
                     </div>
                     <div style="margin-top: 1%">
                         <div class="row">
-                            <div class="col-5"> {{ $brands->links() }}</div>
+                            <div class="col-5"> {{ $origins->links() }}</div>
                             <div class="col-6">
                                 <button class="btn btn-primary" style="float: right" id="delete_all"> Delete All
                                 </button>
