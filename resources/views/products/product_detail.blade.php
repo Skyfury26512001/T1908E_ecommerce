@@ -74,8 +74,9 @@
                             <div class="productID">Code:</div>
                             <div class="prod_options">
                                 <div class="row">
-                                    <label class="col-xl-5 col-lg-5 col-md-6 col-6"><strong>Dung tích</strong> <a
-                                            href="#0"
+                                    <label class="col-xl-5 col-lg-5 col-md-6 col-6">
+                                        <strong>Dung tích</strong>
+                                        <a href="#0"
                                             data-toggle="modal"
                                             data-target="#size-modal"><i
                                                 class="ti-help-alt"></i></a></label>
@@ -526,115 +527,7 @@
         </main>
         <!-- /main -->
 
-        <footer class="revealed">
-            <div class="container">
-                <div class="row">
-                    <div class="col-lg-3 col-md-6">
-                        <h3 data-target="#collapse_1">Về Wanderlust</h3>
-                        <div class="collapse dont-collapse-sm links" id="collapse_1">
-                            <ul>
-                                <li><a href="about.html">Giới thiệu về Wanderlust</a></li>
-                                <li><a href="">Diễn đàn chuyên gia nước hoa</a></li>
-                                <li><a href="account.html">Tài khoản cá nhân</a></li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="col-lg-3 col-md-6">
-                        <h3 data-target="#collapse_2">Dịch vụ</h3>
-                        <div class="collapse dont-collapse-sm links" id="collapse_2">
-                            <ul>
-                                <li><a href="help.html">Các câu hỏi thường gặp</a></li>
-                                {{-- Frequently Asked Questions - FAQ --}}
-                                <li><a href="">Hướng dẫn đặt hàng</a></li>
-                                <li><a href="">Phương thức vận chuyển</a></li>
-                                <li><a href="">Phương thức thanh toán</a></li>
-                                <li><a href="">Chính sách giá cả</a></li>
-                                <li><a href="">Chính sách đổi trả</a></li>
-                                <li><a href="">Chính sách bảo mật</a></li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="col-lg-3 col-md-6">
-                        <h3 data-target="#collapse_3">Liên hệ</h3>
-                        <div class="collapse dont-collapse-sm contacts" id="collapse_3">
-                            <ul>
-                                <li><i class="ti-home"></i>Số 8 Tôn Thất Thuyết<br>Hà Nội - Việt Nam</li>
-                                <li><i class="ti-headphone-alt"></i>+84 123-456-789</li>
-                                <li><i class="ti-email"></i><a href="#0">t1908e@fpt.edu.vn</a></li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="col-lg-3 col-md-6">
-                        <h3 data-target="#collapse_4">Có gì mới</h3>
-                        <h5 class="keep-contact">Đăng kí để nhận thông tin khuyến mãi mới nhất!!</h5>
-                        <div class="collapse dont-collapse-sm" id="collapse_4">
-                            <div id="newsletter">
-                                <div class="form-group">
-                                    <input type="email" name="email_newsletter" id="email_newsletter"
-                                           class="form-control" placeholder="Your email">
-                                    <button type="submit" id="submit-newsletter"><i class="ti-angle-double-right"></i>
-                                    </button>
-                                </div>
-                            </div>
-                            <div class="follow_us">
-                                <h5>Theo dõi ủng hộ Wanderlust</h5>
-                                <ul>
-                                    <li><a href="#0"><img
-                                                src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw=="
-                                                data-src="assets/img/twitter_icon.svg" alt="" class="lazy"></a></li>
-                                    <li><a href="#0"><img
-                                                src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw=="
-                                                data-src="assets/img/facebook_icon.svg" alt="" class="lazy"></a></li>
-                                    <li><a href="#0"><img
-                                                src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw=="
-                                                data-src="assets/img/instagram_icon.svg" alt="" class="lazy"></a></li>
-                                    <li><a href="#0"><img
-                                                src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw=="
-                                                data-src="assets/img/youtube_icon.svg" alt="" class="lazy"></a></li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <!-- /row-->
-                <hr>
-                <div class="row add_bottom_25">
-                    <div class="col-lg-6">
-                        <ul class="footer-selector clearfix">
-                            <li>
-                                <div class="styled-select lang-selector">
-                                    <select>
-                                        <option value="Vietnamese" selected>Vietnamese</option>
-                                        <option value="French">French</option>
-                                        <option value="English">English</option>
-                                        <option value="Russian">Russian</option>
-                                    </select>
-                                </div>
-                            </li>
-                            <li>
-                                <div class="styled-select currency-selector">
-                                    <select>
-                                        <option value="VND" selected>VND</option>
-                                        <option value="Euro">Euro</option>
-                                    </select>
-                                </div>
-                            </li>
-                            <li><img
-                                    src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw=="
-                                    data-src="assets/img/cards_all.svg" alt="" width="198" height="30" class="lazy">
-                            </li>
-                        </ul>
-                    </div>
-                    <div class="col-lg-6">
-                        <ul class="additional_links">
-                            <li><a href="#0">Terms and conditions</a></li>
-                            <li><a href="#0">Privacy</a></li>
-                            <li><span>© 2020 Wanderlust</span></li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </footer>
+
         <!--/footer-->
     </div>
     <!-- page -->
@@ -720,7 +613,6 @@
     </div>
     <!-- /add_cart_panel -->
 
-    <!-- Size modal -->
     <!-- Size modal -->
     <div class="modal fade" tabindex="-1" role="dialog" aria-labelledby="size-modal" id="size-modal" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered modal-lg">

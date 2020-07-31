@@ -137,7 +137,7 @@
                                         </div>
                                     </td>
                                     <td>{{$origin->name}}</td>
-                                    <td><a href="#{{route('admin_origin_edit',$origin->slug)}}" class="btn btn-primary"
+                                    <td><a href="{{route('admin_origin_edit',$origin->slug)}}" class="btn btn-primary"
                                            style="float:right">Edit</a></td>
                                     <td>
                                         <form action="{{route('admin_origin_delete',$origin->id)}}" method="POST">

@@ -35,7 +35,7 @@
                     </ul>
                 </li>
                 <li>
-                    <a href="javascript: void(0);">
+                    <a href="#">
                         <i class="fe-sidebar"></i>
                         <span>  Quản lý nguồn gốc</span>
                         <span class="menu-arrow"></span>
