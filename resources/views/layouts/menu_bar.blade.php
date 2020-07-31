@@ -119,7 +119,7 @@
 {{--				<!-- /row -->--}}
 {{--			</div>--}}
 {{--		</div>--}}
-		<!-- /main_header -->
+<!-- /main_header -->
 
 		<div class="main_nav Sticky">
 			<div class="container">
