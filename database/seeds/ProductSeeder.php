@@ -124,7 +124,6 @@ Hương cuối: Da thuộc, Hương Va ni<br>
                 'created_at' => Carbon::now(),
                 'updated_at' => Carbon::now(),
             ],
-
             [
                 'name' => 'ALLURE HOMME SPORT EAU EXTREME',
                 'sex' => 'Nam',
@@ -279,7 +278,6 @@ Hương cuối: Gỗ đàn hương, Cây hoắc hương<br>
                 'updated_at' => Carbon::now(),
             ],
         ];
-
         Product::insert($products);
     }
 }
