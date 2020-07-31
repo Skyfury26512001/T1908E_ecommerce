@@ -1,0 +1,7 @@
+.content{
+    margin-top:70px;
+}
+
+.table td:not(:first-child), .table th{
+    vertical-align: middle;
+}
