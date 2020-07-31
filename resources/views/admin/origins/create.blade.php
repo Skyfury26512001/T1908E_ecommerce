@@ -30,11 +30,8 @@
             var imgName = splittedImg[splittedImg.length - 1];
 
             imgName = imgName.split('.');
-
-            $(this).parent().remove();
+            console.log(imgName[0]);
             $('input[data-cloudinary-public-id="' + imgName[0] + '"]').remove();
-
-            console.log("Remove image : " + imgName[0] + " successful");
         });
     </script>
 
@@ -76,37 +73,12 @@
                     <form action="{{route('admin_brand_store')}}" id="product_form" method="POST" class="parsley-examples" novalidate="">
                         @csrf
                         <div class="form-group">
-                            <label for="userName">Brand Name<span class="text-danger">*</span></label>
+                            <label for="userName">Origin Name<span class="text-danger">*</span></label>
                             <input type="text" name="name" parsley-trigger="change" required=""
-                                   value="{{$brand->brand_name}}" class="form-control" id="userName">
+                                   value="" class="form-control" id="userName">
+
                             @if ($errors->has('name'))
                                 <label class="alert-warning">{{$errors->first('name')}}</label>
-                            @endif
-                        </div>
-
-                        <div class="form-group">
-                            <label for="userName">Brand Thumbnail<span class="text-danger">*</span></label>
-                            <button type="button" id="upload_widget" class="btn btn-primary">Upload
-                                files
-                            </button>
-                            <div class="thumbnail">
-                                <ul class="cloudinary-thumbnails">
-                                    <li class="cloudinary-thumbnail active" data-cloudinary="">
-                                        <img src="{{$brand->imagesize600x600}}" style="width: 300px;height: 300px">
-                                        <a href="#" class="cloudinary-delete">x</a>
-                                    </li>
-                                </ul>
-                            </div>
-                            @if ($errors->has('thumbnail'))
-                                <label class="alert-warning">{{$errors->first('thumbnail')}}</label>
-                            @endif
-                        </div>
-
-                        <div class="form-group">
-                            <label for="userName">Brand description<span class="text-danger">*</span></label>
-                            <textarea id="editor" name="detail" class="form-control" value="{{$brand->brand_description}}">{{$brand->brand_description}}</textarea>
-                            @if ($errors->has('detail'))
-                                <label class="alert-warning">{{$errors->first('detail')}}</label>
                             @endif
                         </div>
 
@@ -118,7 +90,6 @@
                                 Cancel
                             </button>
                         </div>
-                        <input type="hidden" name="thumbnail" data-cloudinary-public-id="{{$brand->brand_thumbnail}}" value="{{$brand->brand_thumbnail}}">
                     </form>
                 </div> <!-- end card-box -->
             </div>

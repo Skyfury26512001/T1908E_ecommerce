@@ -25,24 +25,28 @@ class OriginSeeder extends Seeder
             [
               'name' => 'Italian',
               'status' => 1,
+              'slug' => 'italian',
               'created_at' => Carbon::now(),
               'updated_at' => Carbon::now(),
             ],
             [
               'name' => 'French',
               'status' => 1,
+              'slug' => 'french',
               'created_at' => Carbon::now(),
               'updated_at' => Carbon::now(),
             ],
             [
               'name' => 'Greek',
               'status' => 1,
+              'slug' => 'greek',
               'created_at' => Carbon::now(),
               'updated_at' => Carbon::now(),
             ],
             [
               'name' => 'Britain',
               'status' => 1,
+              'slug' => 'britain',
               'created_at' => Carbon::now(),
               'updated_at' => Carbon::now(),
             ],

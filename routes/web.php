@@ -43,7 +43,7 @@ Route::post('/logoutaccount','AccountController@logOut')->name('logout');
 Route::group(['middleware' => ['admin_check'],'prefix' => 'admin'], function () {
     Route::get('/', function () {
         return view('admin.index');
-    });
+    })->name('admin');
     Route::group(['prefix' => '/brands'], function () {
         Route::get('/', 'BrandController@index')->name('admin_brand');
         Route::get('/create', 'BrandController@create')->name('admin_brand_create');

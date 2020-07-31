@@ -9,4 +9,7 @@ class Brand extends Model
     public function products(){
         return $this->hasMany(Product::class);
     }
+    public function getImageSize600x600Attribute(){
+        return 'https://res.cloudinary.com/dwarrion/image/upload/c_scale,h_600,w_600/'.$this->brand_thumbnail;
+    }
 }
