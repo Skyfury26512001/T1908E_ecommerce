@@ -22,7 +22,7 @@ class CreateProductsTable extends Migration
             $table->string('volume');
             $table->unsignedBigInteger('origin_id');
             $table->string('recommended_age');
-            $table->string('release_year');
+            $table->string('released_year');
             $table->string('inventor_name');
 //            $table->string('incense_group');
             $table->string('incense_level');

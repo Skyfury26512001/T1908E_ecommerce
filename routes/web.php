@@ -18,29 +18,32 @@ Route::get('/', function () {
     return view('index');
 })->name('home');
 
-Route::get('/product',function ()
-{
-    return view('products.product_detail');
-});
-Route::get('/product_list',function (){
+//Route::get('/product', function () {
+//    return view('products.product_detail');
+//});
+
+Route::get('/product_list', function () {
     return view('products.product_list');
 });
-Route::get('/about_us',function (){
-   return view('about');
+
+Route::get('/about_us', function () {
+    return view('about');
 });
-Route::get('/contact',function (){
+
+Route::get('/contact', function () {
     return view('contact');
 });
 
+Route::get('/productsInfo', 'ProductController@index');
+
 // login - register : route
-Route::get('login','AccountController@index')->name('login');
-Route::post('registerProcess','AccountController@registerProgress')->name('registerP');
-Route::post('loginProcess','AccountController@loginProgress')->name('loginP');
-Route::post('/logoutaccount','AccountController@logOut')->name('logout');
+Route::get('login', 'AccountController@index')->name('login');
+Route::post('registerProcess', 'AccountController@registerProgress')->name('registerP');
+Route::post('loginProcess', 'AccountController@loginProgress')->name('loginP');
+Route::post('/logoutaccount', 'AccountController@logOut')->name('logout');
 
 // admin : route
-
-Route::group(['middleware' => ['admin_check'],'prefix' => 'admin'], function () {
+Route::group(['middleware' => ['admin_check'], 'prefix' => 'admin'], function () {
     Route::get('/', function () {
         return view('admin.index');
     });
@@ -51,17 +54,19 @@ Route::group(['middleware' => ['admin_check'],'prefix' => 'admin'], function () 
 });
 
 // test : route
-Route::get('checking_page',function (){
+Route::get('checking_page', function () {
     return view('session_checking');
 });
 
 Route::get('/multi_delete', function () {
-    $products = \App\Product::all()->where('status','=','1');
-    return view('test_multi_delete',compact('products'));
+    $products = \App\Product::all()->where('status', '=', '1');
+    return view('test_multi_delete', compact('products'));
 });
-Route::post('/multi_delete_action',function (Illuminate\Http\Request $request){
+Route::post('/multi_delete_action', function (Illuminate\Http\Request $request) {
     $products_array = $request->products_id;
 //    dd($products_array);
     //check product con ton` tai hay khong
     dd(\App\Product::whereIn('id', $request['products_id'])->update(['status' => 0]));
 })->name('multi_delete_action');
+
+
