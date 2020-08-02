@@ -35,7 +35,7 @@ class OriginController extends Controller
     }
     public function edit($slug){
         $brand = Origin::where('slug','=',$slug)->where('status','=','1')->first();
-        return view('admin.brands.edit',compact('brand'));
+        return view('admin.origins.edit',compact('brand'));
     }
     public function update(Request $request, $id){
         $request->validate([
@@ -54,18 +54,14 @@ class OriginController extends Controller
         return redirect(route('admin_brand'));
     }
     public function create(){
-        return view('admin.brands.create');
+        return view('admin.origins.create');
     }
     public function store(Request $request){
 
         $request->validate([
             'name' => 'required',
-            'detail' => 'required',
-            'thumbnail' => 'required',
         ],[
             'name.required' => 'Tên hãng là cần thiết',
-            'detail.required' => 'Cần thêm mô tả hãng',
-            'thumbnail.required' => 'Bắt buộc phải có ảnh đại diện',
         ]);
 
         $brand = new Origin();

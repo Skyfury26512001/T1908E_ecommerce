@@ -67,12 +67,12 @@
         <!-- end page title -->
 
         <div class="row">
-            <div class="col-lg-6">
+            <div class="col-lg-12">
                 <div class="card-box">
                     <h4 class="header-title">Create Brand : </h4>
                     <form action="{{route('admin_brand_store')}}" id="product_form" method="POST" class="parsley-examples" novalidate="">
                         @csrf
-                        <div class="form-group">
+                        <div class="form-group" style="width: 30%">
                             <label for="userName">Brand Name<span class="text-danger">*</span></label>
                             <input type="text" name="name" parsley-trigger="change" required=""
                                    value="" class="form-control" id="userName">
@@ -93,7 +93,7 @@
                             @endif
                         </div>
 
-                        <div class="form-group">
+                        <div class="form-group" style="width: 50%">
                             <label for="userName">Brand description<span class="text-danger">*</span></label>
                             <textarea id="editor" name="detail" class="form-control"
                                                       placeholder=""></textarea>
@@ -102,7 +102,7 @@
                             @endif
                         </div>
 
-                         <div class="form-group text-right mb-0">
+                         <div class="form-group text-left mb-0">
                             <button class="btn btn-primary waves-effect waves-light mr-1" type="submit">
                                 Submit
                             </button>
