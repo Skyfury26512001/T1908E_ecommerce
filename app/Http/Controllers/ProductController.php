@@ -64,14 +64,14 @@ class ProductController extends Controller
         return view('admin.products.create')->with(compact('brands','origins'));;
     }
     public function store(Request $request){
-//        dd($request->brand_id);
+//        dd($request);
         $request->validate([
             'name' => 'required',
             'brand_id' => 'required|integer',
             'origin_id' => 'required|integer',
             'sex' => 'required',
             'concentration' => 'required',
-            'volume' => 'required|integer',
+            'volume' => 'required',
             'inventor_name' => 'required',
             'recommended_age' => 'required',
             'released_year' => 'required',
@@ -103,19 +103,19 @@ class ProductController extends Controller
 
         $product = new Product();
         $product->name = $request->name;
-        $product->brand_id = $request->brand;
-        $product->origin_id = $request->origin;
+        $product->brand_id = $request->brand_id;
+        $product->origin_id = $request->origin_id;
         $product->sex = $request->sex;
         $product->concentration = $request->concentration;
         $product->volume = $request->volume ;
         $product->inventor_name = $request->inventor_name;
         $product->recommended_age = $request->recommended_age ;
-        $product->released_year = $request->release_year ;
+        $product->released_year = $request->released_year ;
         $product->incense_level = $request->incense_level ;
         $product->aroma_level = $request->aroma_level ;
         $product->price = $request->price ;
         $product->style = $request->style;
-        foreach ($request->recommend_time as $time){
+        foreach ($request->recommended_time as $time){
             $product->recommended_time .= $time.",";
         }
 
@@ -129,6 +129,12 @@ class ProductController extends Controller
 //        dd($product);
         $product->save();
         return redirect(route('admin_product_list'));
+    }
 
+    public function edit(Request $request,$id){
+        $brands = Brand::where('status','=','1')->orderBy('id','ASC')->get();
+        $origins = Origin::where('status','=','1')->orderBy('id','ASC')->get();
+        $product = Product::where('status','=','1')->where('id','=',$id)->first();
+        return view('admin.products.edit',compact('product','brands','origins'));
     }
 }
