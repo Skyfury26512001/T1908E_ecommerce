@@ -26,6 +26,10 @@ Route::get('/product_list', function () {
     return view('products.product_list');
 });
 
+Route::get('/service', function () {
+    return view('service');
+});
+
 Route::get('/about_us', function () {
     return view('about');
 });
@@ -34,7 +38,11 @@ Route::get('/contact', function () {
     return view('contact');
 });
 
-Route::get('/productsInfo', 'ProductController@index');
+Route::get('/account', function () {
+    return view('account');
+});
+
+Route::get('/product', 'ProductController@index');
 
 // login - register : route
 Route::get('login', 'AccountController@index')->name('login');
@@ -50,7 +58,7 @@ Route::group(['middleware' => ['admin_check'], 'prefix' => 'admin'], function ()
     Route::group(['prefix' => '/brands'], function () {
         Route::get('/', 'BrandController@index')->name('admin_brand');
         Route::get('/create', 'BrandController@create')->name('admin_brand_create');
-        Route::post('/store','BrandController@store')->name('admin_brand_store');
+        Route::post('/store', 'BrandController@store')->name('admin_brand_store');
         Route::get('/edit/{slug}', 'BrandController@edit')->name('admin_brand_edit');
         Route::put('/update/{id}', 'BrandController@update')->name('admin_brand_update');
         Route::put('/delete/{id}', 'BrandController@delete')->name('admin_brand_delete');
@@ -59,7 +67,7 @@ Route::group(['middleware' => ['admin_check'], 'prefix' => 'admin'], function ()
     Route::group(['prefix' => '/origins'], function () {
         Route::get('/', 'OriginController@index')->name('admin_origin');
         Route::get('/create', 'OriginController@create')->name('admin_origin_create');
-        Route::post('/store','OriginController@store')->name('admin_origin_store');
+        Route::post('/store', 'OriginController@store')->name('admin_origin_store');
         Route::get('/edit/{slug}', 'OriginController@edit')->name('admin_origin_edit');
         Route::put('/update/{id}', 'OriginController@update')->name('admin_origin_update');
         Route::put('/delete/{id}', 'OriginController@delete')->name('admin_origin_delete');

@@ -21,11 +21,19 @@ class Product extends Model
         return $this->belongsTo(Brand::class);
     }
 
-    public function getValueNameAttribute()
+    public function getFormatPriceAttribute()
     {
 //        $formatPrice = Money::VND($this->price)->format();
 //        return $formatPrice;
         $formatPrice = number_format($this->price, '0', '3', '.') . ' ₫';
         return $formatPrice;
+    }
+
+    public function getThumbnailsAttribute()
+    {
+        $thumbnail[] = explode(',', $this->thumbnail);
+        foreach ($thumbnail as $thumbnailValue) {
+            return $thumbnailValue;
+        }
     }
 }

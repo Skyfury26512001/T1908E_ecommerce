@@ -8,7 +8,7 @@ class ProductController extends Controller
 {
     public function index()
     {
-        $productsInfo = Product::first();
-        return view('products.product_detail')->with('productsInfo', $productsInfo);
+        $product = Product::first();
+        return view('products.product_detail')->with('product', $product);
     }
 }
