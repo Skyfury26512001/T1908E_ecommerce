@@ -99,6 +99,10 @@ Route::get('/multi_delete', function () {
     $products = \App\Product::all()->where('status', '=', '1');
     return view('test_multi_delete', compact('products'));
 });
+Route::get('/multi_delete2', function () {
+    $products = \App\Product::all()->where('status', '=', '1');
+    return view('test_multi_delete', compact('products'));
+});
 Route::post('/multi_delete_action', function (Illuminate\Http\Request $request) {
     $products_array = $request->products_id;
 //    dd($products_array);
