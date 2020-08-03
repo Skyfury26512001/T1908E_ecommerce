@@ -73,40 +73,15 @@
             <div class="col-lg-6">
                 <div class="card-box">
                     <h4 class="header-title">Chỉnh sửa xuất xứ : </h4>
-                    <form action="{{route('admin_origin_store')}}" id="product_form" method="POST" class="parsley-examples" novalidate="">
+                    <form action="{{route('admin_origin_update',$origin->id)}}" id="product_form" method="POST" class="parsley-examples" novalidate="">
                         @csrf
+                        @method('PUT')
                         <div class="form-group">
                             <label for="userName">Origin Name<span class="text-danger">*</span></label>
                             <input type="text" name="name" parsley-trigger="change" required=""
-                                   value="{{$brand->brand_name}}" class="form-control" id="userName">
+                                   value="{{$origin->name}}" class="form-control" id="userName">
                             @if ($errors->has('name'))
                                 <label class="alert-warning">{{$errors->first('name')}}</label>
-                            @endif
-                        </div>
-
-                        <div class="form-group">
-                            <label for="userName">Origin Thumbnail<span class="text-danger">*</span></label>
-                            <button type="button" id="upload_widget" class="btn btn-primary">Upload
-                                files
-                            </button>
-                            <div class="thumbnail">
-                                <ul class="cloudinary-thumbnails">
-                                    <li class="cloudinary-thumbnail active" data-cloudinary="">
-                                        <img src="{{$brand->imagesize600x600}}" style="width: 300px;height: 300px">
-                                        <a href="#" class="cloudinary-delete">x</a>
-                                    </li>
-                                </ul>
-                            </div>
-                            @if ($errors->has('thumbnail'))
-                                <label class="alert-warning">{{$errors->first('thumbnail')}}</label>
-                            @endif
-                        </div>
-
-                        <div class="form-group">
-                            <label for="userName">Origin description<span class="text-danger">*</span></label>
-                            <textarea id="editor" name="detail" class="form-control" value="{{$brand->brand_description}}">{{$brand->brand_description}}</textarea>
-                            @if ($errors->has('detail'))
-                                <label class="alert-warning">{{$errors->first('detail')}}</label>
                             @endif
                         </div>
 
@@ -118,7 +93,6 @@
                                 Cancel
                             </button>
                         </div>
-                        <input type="hidden" name="thumbnail" data-cloudinary-public-id="{{$brand->brand_thumbnail}}" value="{{$brand->brand_thumbnail}}">
                     </form>
                 </div> <!-- end card-box -->
             </div>
