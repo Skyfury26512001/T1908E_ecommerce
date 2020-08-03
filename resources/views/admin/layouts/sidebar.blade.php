@@ -18,10 +18,15 @@
                     </a>
                 </li>
                 <li>
-                    <a href="#">
+                    <a href="javascript: void(0);">
                         <i class="fe-sidebar"></i>
                         <span>  Quản lý sản phẩm</span>
+                        <span class="menu-arrow"></span>
                     </a>
+                    <ul class="nav-second-level" aria-expanded="false">
+                        <li><a href="{{route('admin_product_list')}}">Danh sách sản phẩm</a></li>
+                        <li><a href="{{route('admin_product_create')}}">Thêm mới sản phẩm</a></li>
+                    </ul>
                 </li>
                 <li>
                     <a href="javascript: void(0);">
@@ -41,8 +46,8 @@
                         <span class="menu-arrow"></span>
                     </a>
                     <ul class="nav-second-level" aria-expanded="false">
-                        <li><a href="{{route('admin_brand')}}">Danh sách</a></li>
-                        <li><a href="{{route('admin_brand_create')}}">Thêm nguồn gốc</a></li>
+                        <li><a href="{{route('admin_origin')}}">Danh sách</a></li>
+                        <li><a href="{{route('admin_origin_create')}}">Thêm nguồn gốc</a></li>
                     </ul>
                 </li>
                 {{--                                <li>--}}

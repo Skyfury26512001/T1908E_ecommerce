@@ -48,7 +48,6 @@ class AccountController extends Controller
         $account->roles()->sync(1);
 //        dd($account->roles()->sync(1)->toSql());
 //        dd($account);
-
         return redirect('/login');
     }
 
