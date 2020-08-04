@@ -22,7 +22,7 @@ class Product extends Model
         return $this->belongsTo(Brand::class);
     }
 
-    public function getValueNameAttribute()
+    public function getFormatPriceAttribute()
     {
 //        $formatPrice = Money::VND($this->price)->format();
 //        return $formatPrice;
@@ -30,6 +30,12 @@ class Product extends Model
         return $formatPrice;
     }
 
+    public function getThumbnailsAttribute()
+    {
+        $thumbnail[] = explode(',', $this->thumbnail);
+        foreach ($thumbnail as $thumbnailValue) {
+            return $thumbnailValue;
+        }
     public function getThumbnailArrayAttribute(){
 
 
