@@ -18,32 +18,21 @@
                         <div class="all">
                             <div class="slider">
                                 <div class="owl-carousel owl-theme main" style="background-color: #f4f4f4;">
-                                    <div class="item-box"><img src="{{$product->Thumbnails[0]}}" alt="Sauvage">
-                                    </div>
-                                    <div class="item-box"><img src="{{$product->Thumbnails[1]}}" alt="Sauvage">
-                                    </div>
-                                    <div class="item-box"><img src="{{$product->Thumbnails[2]}}" alt="Sauvage">
-                                    </div>
-                                    <div class="item-box"><img src="{{$product->Thumbnails[3]}}" alt="Sauvage">
-                                    </div>
-                                    <div class="item-box"><img src="{{$product->Thumbnails[4]}}" alt="Sauvage">
-                                    </div>
-                                    <div class="item-box"><img src="{{$product->Thumbnails[5]}}" alt="Sauvage">
-                                    </div>
+                                    @foreach($product->ThumbnailArray as $thumbnail)
+                                        <div class="item-box"><img src="{{$thumbnail}}" alt="Sauvage">
+                                        </div>
+                                    @endforeach
                                 </div>
                                 <div class="left nonl"><i class="ti-angle-left"></i></div>
                                 <div class="right"><i class="ti-angle-right"></i></div>
                             </div>
                             <div class="slider-two">
                                 <div class="owl-carousel owl-theme thumbs">
-                                    <div class="item active"><img
-                                            src="{{$product->Thumbnails[0]}}" alt="Sauvage">
-                                    </div>
-                                    <div class="item"><img src="{{$product->Thumbnails[1]}}" alt="Sauvage"></div>
-                                    <div class="item"><img src="{{$product->Thumbnails[2]}}" alt="Sauvage"></div>
-                                    <div class="item"><img src="{{$product->Thumbnails[3]}}" alt="Sauvage"></div>
-                                    <div class="item"><img src="{{$product->Thumbnails[4]}}" alt="Sauvage"></div>
-                                    <div class="item"><img src="{{$product->Thumbnails[5]}}" alt="Sauvage"></div>
+                                    @foreach($product->ThumbnailArray as $thumbnail)
+                                        <div class="item active"><img
+                                                src="{{$thumbnail}}" alt="Sauvage">
+                                        </div>
+                                    @endforeach
                                 </div>
                                 <div class="left-t nonl-t"></div>
                                 <div class="right-t"></div>

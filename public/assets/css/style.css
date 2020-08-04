@@ -1774,8 +1774,8 @@ strong {
 }
 
 label {
-    font-weight: 500;
     margin-bottom: 3px;
+    padding-left: 3px;
 }
 
 hr {
@@ -6461,7 +6461,6 @@ a.social_bt.google:before {
 .divider span {
     position: relative;
     top: -20px;
-    background-color: #fff;
     display: inline-block;
     padding: 10px;
     font-style: italic;

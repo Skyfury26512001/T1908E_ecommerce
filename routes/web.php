@@ -38,8 +38,12 @@ Route::get('/contact', function () {
     return view('contact');
 });
 
-Route::get('/account', function () {
+Route::get('/user/account/profile', function () {
     return view('account');
+});
+
+Route::get('/user/purchase', function () {
+    return view('purchase');
 });
 
 Route::get('/product', 'ProductController@index');
