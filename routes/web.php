@@ -42,7 +42,7 @@ Route::get('/account', function () {
     return view('account');
 });
 
-Route::get('/product', 'ProductController@index');
+Route::get('/product/{id}', 'ProductController@index');
 
 // login - register : route
 Route::get('login', 'AccountController@index')->name('login');

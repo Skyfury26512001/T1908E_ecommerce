@@ -1,5 +1,5 @@
 <header class="version_1">
-    <div class="layer"></div><!-- Mobile menu overlay mask -->
+{{--    <div class="layer"></div><!-- Mobile menu overlay mask -->--}}
 {{--		<div class="main_header">--}}
 {{--			<div class="container">--}}
 {{--				<div class="row small-gutters">--}}

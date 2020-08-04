@@ -8,6 +8,7 @@
 @endsection
 @section('content')
     <div id="page">
+        <div class="layer" style="z-index: 4"></div>
         <main>
             <div class="container margin_30">
                 {{--                <div class="countdown_inner">-20% This offer ends in--}}

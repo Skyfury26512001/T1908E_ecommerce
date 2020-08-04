@@ -52,6 +52,7 @@ class BrandController extends Controller
         $brand->brand_name = $request->name;
         $brand->brand_description = $request->detail;
 //        dd(sanitize($request->brand_name));
+//        dd($request->thumbnail);
         $brand->brand_thumbnail = $request->thumbnail;
         $brand->slug = sanitize($brand->brand_name);
         if (count(Brand::where('brand_name','=',$request->brand_name)->get())){

@@ -9,9 +9,9 @@ use PhpParser\Node\Expr\Array_;
 
 class ProductController extends Controller
 {
-    public function index()
+    public function index($id)
     {
-        $product = Product::first();
+        $product = Product::find($id);
         return view('products.product_detail')->with('product', $product);
     }
 
