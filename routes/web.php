@@ -73,6 +73,15 @@ Route::group(['middleware' => ['admin_check'], 'prefix' => 'admin'], function ()
         Route::put('/delete/{id}', 'OriginController@delete')->name('admin_origin_delete');
         Route::put('/deleteAll', 'OriginController@delete_multi')->name('admin_origin_delete_multi');
     });
+    Route::group(['prefix' => '/products'], function () {
+        Route::get('/', 'ProductController@admin_index')->name('admin_product_list');
+        Route::get('/create', 'ProductController@create')->name('admin_product_create');
+        Route::post('/store','ProductController@store')->name('admin_product_store');
+        Route::get('/edit/{slug}', 'ProductController@edit')->name('admin_product_edit');
+        Route::put('/update/{id}', 'ProductController@update')->name('admin_product_update');
+        Route::put('/delete/{id}', 'ProductController@delete')->name('admin_product_delete');
+        Route::put('/deleteAll', 'ProductController@delete_multi')->name('admin_product_delete_multi');
+    });
     Route::get('/demo_table', function () {
         return view('admin.tables_datatable');
     });

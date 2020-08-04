@@ -49,7 +49,15 @@ class BrandController extends Controller
         ]);
 
         $brand = Brand::find($id);
-        $brand->name = $request->name;
+        $brand->brand_name = $request->name;
+        $brand->brand_description = $request->detail;
+//        dd(sanitize($request->brand_name));
+        $brand->brand_thumbnail = $request->thumbnail;
+        $brand->slug = sanitize($brand->brand_name);
+        if (count(Brand::where('brand_name','=',$request->brand_name)->get())){
+            return back()->withErrors('The brand have already existed !','duplicated');
+        }
+        $brand->status = 1;
         $brand->save();
         return redirect(route('admin_brand'));
     }

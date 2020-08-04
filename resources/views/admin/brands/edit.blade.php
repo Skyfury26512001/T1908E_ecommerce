@@ -73,8 +73,9 @@
             <div class="col-lg-6">
                 <div class="card-box">
                     <h4 class="header-title">Create Brand : </h4>
-                    <form action="{{route('admin_brand_store')}}" id="product_form" method="POST" class="parsley-examples" novalidate="">
+                    <form action="{{route('admin_brand_update',$brand->id)}}" id="product_form" method="POST" class="parsley-examples" novalidate="">
                         @csrf
+                        @method('PUT')
                         <div class="form-group">
                             <label for="userName">Brand Name<span class="text-danger">*</span></label>
                             <input type="text" name="name" parsley-trigger="change" required=""
