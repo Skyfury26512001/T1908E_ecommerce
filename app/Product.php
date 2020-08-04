@@ -36,9 +36,8 @@ class Product extends Model
         foreach ($thumbnail as $thumbnailValue) {
             return $thumbnailValue;
         }
+    }
     public function getThumbnailArrayAttribute(){
-
-
         if ($this->thumbnail == null || strlen($this->thumbnail) == 0) {
             return array('https://thanhtra.com.vn/image/images/noimages.png');
         }

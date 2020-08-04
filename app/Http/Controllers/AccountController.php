@@ -14,7 +14,11 @@ class AccountController extends Controller
         $cities = City::all();
         return view('login_register',compact('cities'));
     }
-
+    public function admin_index(){
+        dd('123');
+        $cities = City::all();
+        return view('login_register',compact('cities'));
+    }
 
     public function registerProgress(RegisterRequest $request){
 //        dd($request);
