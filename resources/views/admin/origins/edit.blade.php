@@ -58,12 +58,12 @@
                 <div class="page-title-box">
                     <div class="page-title-right">
                         <ol class="breadcrumb m-0">
-                            <li class="breadcrumb-item"><a href="javascript: void(0);">Adminox</a></li>
-                            <li class="breadcrumb-item"><a href="javascript: void(0);">Forms</a></li>
-                            <li class="breadcrumb-item active">Form Validation</li>
+                            <li class="breadcrumb-item"><a href="javascript: void(0);">Admin</a></li>
+                            <li class="breadcrumb-item"><a href="javascript: void(0);">Xuất xứ</a></li>
+                            <li class="breadcrumb-item active">Chỉnh sửa</li>
                         </ol>
                     </div>
-                    <h4 class="page-title">Form Validation</h4>
+                    <h4 class="page-title">Chỉnh sửa</h4>
                 </div>
             </div>
         </div>
@@ -72,41 +72,16 @@
         <div class="row">
             <div class="col-lg-6">
                 <div class="card-box">
-                    <h4 class="header-title">Create Brand : </h4>
-                    <form action="{{route('admin_brand_store')}}" id="product_form" method="POST" class="parsley-examples" novalidate="">
+                    <h4 class="header-title">Chỉnh sửa xuất xứ : </h4>
+                    <form action="{{route('admin_origin_update',$origin->id)}}" id="product_form" method="POST" class="parsley-examples" novalidate="">
                         @csrf
+                        @method('PUT')
                         <div class="form-group">
-                            <label for="userName">Brand Name<span class="text-danger">*</span></label>
+                            <label for="userName">Origin Name<span class="text-danger">*</span></label>
                             <input type="text" name="name" parsley-trigger="change" required=""
-                                   value="{{$brand->brand_name}}" class="form-control" id="userName">
+                                   value="{{$origin->name}}" class="form-control" id="userName">
                             @if ($errors->has('name'))
                                 <label class="alert-warning">{{$errors->first('name')}}</label>
-                            @endif
-                        </div>
-
-                        <div class="form-group">
-                            <label for="userName">Brand Thumbnail<span class="text-danger">*</span></label>
-                            <button type="button" id="upload_widget" class="btn btn-primary">Upload
-                                files
-                            </button>
-                            <div class="thumbnail">
-                                <ul class="cloudinary-thumbnails">
-                                    <li class="cloudinary-thumbnail active" data-cloudinary="">
-                                        <img src="{{$brand->imagesize600x600}}" style="width: 300px;height: 300px">
-                                        <a href="#" class="cloudinary-delete">x</a>
-                                    </li>
-                                </ul>
-                            </div>
-                            @if ($errors->has('thumbnail'))
-                                <label class="alert-warning">{{$errors->first('thumbnail')}}</label>
-                            @endif
-                        </div>
-
-                        <div class="form-group">
-                            <label for="userName">Brand description<span class="text-danger">*</span></label>
-                            <textarea id="editor" name="detail" class="form-control" value="{{$brand->brand_description}}">{{$brand->brand_description}}</textarea>
-                            @if ($errors->has('detail'))
-                                <label class="alert-warning">{{$errors->first('detail')}}</label>
                             @endif
                         </div>
 
@@ -118,7 +93,6 @@
                                 Cancel
                             </button>
                         </div>
-                        <input type="hidden" name="thumbnail" data-cloudinary-public-id="{{$brand->brand_thumbnail}}" value="{{$brand->brand_thumbnail}}">
                     </form>
                 </div> <!-- end card-box -->
             </div>

@@ -131,16 +131,16 @@
                             @csrf
                             @foreach($brands as $brand)
                                 <tr>
-                                    <td>
+
+                                    <td colspan="1" style="vertical-align: middle;">
                                         <div class="checkbox checkbox-primary">
-                                            <input class="checkbox_list_brand" id="{{$brand->name}}" type="checkbox"
-                                                   name="brands[]" value="{{$brand->id}}">
-                                            <label for="{{$brand->name}}"></label>
+                                            <input class="checkbox_list_origin" id="{{$brand->id}}" type="checkbox" style="opacity: 1" name="origins[]" value="3">
                                         </div>
                                     </td>
                                     <td>{{$brand->brand_name}}</td>
-                                    <td><img src="{{$brand->imagesize600x600}}"style="width: 100%"></td>
-                                    <td>{{$brand->brand_description}}</td>
+                                    <td width="10%"><img src="{{$brand->imagesize600x600}}"style="width: 100%">
+                                    </td>
+                                    <td><div> {{$brand->brand_description}}</div></td>
 {{--                                    <td>{{count($brand->products)}}</td>--}}
                                     <td><a href="{{route('admin_brand_edit',$brand->slug)}}" class="btn btn-primary"
                                            style="float:right">Edit</a></td>

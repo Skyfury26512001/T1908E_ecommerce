@@ -55,15 +55,15 @@
                         <form action="{{route('loginP')}}" method="POST">
                             @csrf
                             <div class="form_container">
-                                <div class="row no-gutters">
-                                    <div class="col-lg-6 pr-lg-1">
-                                        <a href="#0" class="social_bt facebook">Đăng nhập bằng Facebook</a>
-                                    </div>
-                                    <div class="col-lg-6 pl-lg-1">
-                                        <a href="#0" class="social_bt google">Đăng nhập bằng Google</a>
-                                    </div>
-                                </div>
-                                <div class="divider"><span>Hoặc</span></div>
+{{--                                <div class="row no-gutters">--}}
+{{--                                    <div class="col-lg-6 pr-lg-1">--}}
+{{--                                        <a href="#0" class="social_bt facebook">Đăng nhập bằng Facebook</a>--}}
+{{--                                    </div>--}}
+{{--                                    <div class="col-lg-6 pl-lg-1">--}}
+{{--                                        <a href="#0" class="social_bt google">Đăng nhập bằng Google</a>--}}
+{{--                                    </div>--}}
+{{--                                </div>--}}
+{{--                                <div class="divider"><span>Hoặc</span></div>--}}
                                 <div class="form-group">
                                     <input type="email" class="form-control" name="email" id="email"
                                            placeholder="Email *">
