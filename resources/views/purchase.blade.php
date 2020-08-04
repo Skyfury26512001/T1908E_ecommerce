@@ -1,18 +1,9 @@
 @extends('layouts.master')
 @section('specific_css')
     <link href="{{asset('assets/css/account.css')}}" rel="stylesheet">
-    <link href="https://unpkg.com/gijgo@1.9.13/css/gijgo.min.css" rel="stylesheet" type="text/css"/>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
-          integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 @endsection
 @section('specific_js')
-    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
-    <script src="https://unpkg.com/gijgo@1.9.13/js/gijgo.min.js" type="text/javascript"></script>
-    <script>
-        $('#datepicker').datepicker({
-            uiLibrary: 'bootstrap4'
-        });
-    </script>
+    <script src="{{asset('assets/js/custome_select.js')}}"></script>
 @endsection
 @section('content')
     <div class="container margin_30">
@@ -130,115 +121,7 @@
                 </div>
             </div>
             <div class="col-md-10">
-                <div class="my-account-section">
-                    <div class="my-account-section__header">
-                        <div class="my-account-section__header-left">
-                            <div class="my-account-section__header-title">Hồ sơ của tôi</div>
-                            <div class="my-account-section__header-subtitle">Quản lý thông tin hồ sơ để
-                                bảo mật tài khoản
-                            </div>
-                        </div>
-                    </div>
-                    <div class="my-account-profile">
-                        <div class="my-account-profile__left">
-                            <div class="input-with-label">
-                                <div class="input-with-label__wrapper">
-                                    <div class="input-with-label__label"><label>Tên đăng nhập</label>
-                                    </div>
-                                    <div class="input-with-label__content">
-                                        <div class="my-account__inline-container">
-                                            <div class="my-account__input-text">tlhoang1211</div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="input-with-label">
-                                <div class="input-with-label__wrapper">
-                                    <div class="input-with-label__label"><label>Tên</label></div>
-                                    <div class="input-with-label__content">
-                                        <div class="input-with-validator-wrapper">
-                                            <div class="input-with-validator"><input type="text"
-                                                                                     placeholder=""
-                                                                                     value="Hoàng Trần">
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="input-with-label">
-                                <div class="input-with-label__wrapper">
-                                    <div class="input-with-label__label"><label>Email</label></div>
-                                    <div class="input-with-label__content">
-                                        <div class="my-account__inline-container">
-                                            <div class="my-account__input-text">tl****@gmail.com</div>
-                                            <a
-                                                href=""
-                                                class="my-account__no-background-button my-account-profile__change-button">
-                                                Thay đổi
-                                            </a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="input-with-label">
-                                <div class="input-with-label__wrapper">
-                                    <div class="input-with-label__label"><label>Số điện thoại</label>
-                                    </div>
-                                    <div class="input-with-label__content">
-                                        <div class="my-account__inline-container">
-                                            <div class="my-account__input-text">*********99</div>
-                                            <a
-                                                class="my-account__no-background-button my-account-profile__change-button"
-                                                href="">
-                                                Thay đổi
-                                            </a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="input-with-label">
-                                <div class="input-with-label__wrapper">
-                                    <div class="input-with-label__label"><label>Giới tính</label></div>
-                                    <div class="input-with-label__content">
-                                        <div class="my-account-profile__gender">
-                                            <div class="stardust-radio-group">
-                                                <div class="form-check form-check-inline">
-                                                    <input class="form-check-input" type="radio"
-                                                           name="inlineRadioOptions" id="inlineRadio1" value="option1"
-                                                           checked>
-                                                    <label class="form-check-label" for="inlineRadio1">Nam</label>
-                                                </div>
-                                                <div class="form-check form-check-inline">
-                                                    <input class="form-check-input" type="radio"
-                                                           name="inlineRadioOptions" id="inlineRadio2" value="option2">
-                                                    <label class="form-check-label" for="inlineRadio2">Nữ</label>
-                                                </div>
-                                                <div class="form-check form-check-inline">
-                                                    <input class="form-check-input" type="radio"
-                                                           name="inlineRadioOptions" id="inlineRadio3" value="option3">
-                                                    <label class="form-check-label" for="inlineRadio3">Khác</label>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="input-with-label">
-                                    <div class="input-with-label__wrapper birthday-choose">
-                                        <div class="input-with-label__label"><label>Ngày sinh</label></div>
-                                        <div class="input-with-label__content">
-                                            <input id="datepicker" width="276" value="12/11/1999"/>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="my-account-page__submit">
-                                    <button type="button" class="btn btn-solid-primary btn--m btn--inline"
-                                            aria-disabled="false">Lưu
-                                    </button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+
             </div>
         </div>
     </div>

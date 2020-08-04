@@ -30,6 +30,21 @@ class Product extends Model
         return $formatPrice;
     }
 
+    public function getThumbnailArrayAttribute()
+    {
+        if ($this->thumbnail == null || strlen($this->thumbnail) == 0) {
+            return array('https://res.cloudinary.com/vernom/image/upload/v1596461891/perfume_project/noimages_aaqvrt.png');
+        }
+        $list_photos = array();
+        $single_thumb = explode(',', $this->thumbnail);
+        foreach ($single_thumb as $single) {
+            if (strlen($single) > 0) {
+                array_push($list_photos, self::$cloudinary_link . $single);
+            }
+        }
+        return $list_photos;
+    }
+
     public function getThumbnailsAttribute()
     {
         $thumbnail[] = explode(',', $this->thumbnail);
@@ -38,21 +53,6 @@ class Product extends Model
         }
     }
 
-    public function getThumbnailArrayAttribute(){
-
-
-        if ($this->thumbnail == null || strlen($this->thumbnail) == 0) {
-            return array('https://thanhtra.com.vn/image/images/noimages.png');
-        }
-        $list_photos = array();
-        $single_thumb = explode(',',$this->thumbnail);
-        foreach ($single_thumb as $single) {
-            if (strlen($single) > 0) {
-                array_push($list_photos, self::$cloudinary_link . $single);
-            }
-        }
-        return $list_photos;
-    }
 
     public function getPhotoIdsAttribute()
     {
@@ -71,4 +71,13 @@ class Product extends Model
     public function getImageSize600x600Attribute(){
         return 'https://res.cloudinary.com/dwarrion/image/upload/c_scale,h_600,w_600/'.$this->brand_thumbnail;
     }
+
+
+
+    //https://res.cloudinary.com/vernom/image/upload/v1596216873/perfume_project/perfume/allure_homme_sport_eau_extreme_EDP_1_zrfwsf.jpg
+    //https://res.cloudinary.com/vernom/image/upload/v1596216873/perfume_project/perfume/allure_homme_sport_eau_extreme_EDP_2_rpp195.jpg
+    //https://res.cloudinary.com/vernom/image/upload/v1596216879/perfume_project/perfume/allure_homme_sport_eau_extreme_EDP_3_es3rd0.jpg
+
+
+
 }

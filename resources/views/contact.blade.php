@@ -27,7 +27,7 @@
                     <div class="box_contacts">
                         <i class="ti-map-alt"></i>
                         <h2>Wanderlust Showroom</h2>
-                        <div>6th Forrest Ray, London - 10001 UK</div>
+                        <div>Số 8 Tôn Thất Thuyết, Hà Nội - Việt Nam</div>
                         <small>T2->T6: 9am-6pm | T7-CN: 9am-2pm</small>
                     </div>
                 </div>
