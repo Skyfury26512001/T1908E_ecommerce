@@ -6,10 +6,11 @@
     <script type="text/javascript">
         var myWidget = cloudinary.createUploadWidget(
             {
-                cloudName: 'dwarrion',
-                uploadPreset: 'ins6mnhp',
+                cloudName: 'vernom',
+                uploadPreset: 'fn5rpymu',
                 multiple: false,
                 form: '#product_form',
+                folder: 'perfume_project/brand',
                 fieldName: 'thumbnail',
                 thumbnails: '.thumbnail'
             }, function (error, result) {
@@ -31,7 +32,7 @@
 
             imgName = imgName.split('.');
             console.log(imgName[0]);
-            $('input[data-cloudinary-public-id="' + imgName[0] + '"]').remove();
+            $('input[data-cloudinary-public-id="' + splittedImg[splittedImg.length - 3] +'/'+ splittedImg[splittedImg.length - 2] +'/'+ splittedImg[splittedImg.length - 1] + '"]').remove();
         });
     </script>
 
@@ -67,12 +68,12 @@
         <!-- end page title -->
 
         <div class="row">
-            <div class="col-lg-6">
+            <div class="col-lg-12">
                 <div class="card-box">
                     <h4 class="header-title">Create Brand : </h4>
                     <form action="{{route('admin_brand_store')}}" id="product_form" method="POST" class="parsley-examples" novalidate="">
                         @csrf
-                        <div class="form-group">
+                        <div class="form-group" style="width: 30%">
                             <label for="userName">Brand Name<span class="text-danger">*</span></label>
                             <input type="text" name="name" parsley-trigger="change" required=""
                                    value="" class="form-control" id="userName">
@@ -93,7 +94,7 @@
                             @endif
                         </div>
 
-                        <div class="form-group">
+                        <div class="form-group" style="width: 50%">
                             <label for="userName">Brand description<span class="text-danger">*</span></label>
                             <textarea id="editor" name="detail" class="form-control"
                                                       placeholder=""></textarea>
@@ -102,7 +103,7 @@
                             @endif
                         </div>
 
-                         <div class="form-group text-right mb-0">
+                         <div class="form-group text-left mb-0">
                             <button class="btn btn-primary waves-effect waves-light mr-1" type="submit">
                                 Submit
                             </button>
