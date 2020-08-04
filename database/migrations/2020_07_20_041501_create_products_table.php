@@ -32,6 +32,7 @@ class CreateProductsTable extends Migration
             $table->string('recommended_time');
             $table->text('description');
             $table->text('thumbnail');
+//            $table->string('slug');
             $table->integer('status');
             $table->timestamps();
         });
