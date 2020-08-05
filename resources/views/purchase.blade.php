@@ -1,6 +1,7 @@
 @extends('layouts.master')
 @section('specific_css')
     <link href="{{asset('assets/css/account.css')}}" rel="stylesheet">
+    <link href="{{asset('assets/css/user_page.css')}}" rel="stylesheet">
 @endsection
 @section('specific_js')
     <script src="{{asset('assets/js/custome_select.js')}}"></script>
@@ -40,6 +41,12 @@
                                             </g>
                                         </svg>
                                     </div>
+<<<<<<< HEAD
+                                    <div class="userpage-sidebar-menu-entry_text">Tài
+                                        khoản của tôi
+                                    </div>
+                                </a></div>
+=======
                                     <div class="userpage-sidebar-menu-entry__text">Tài khoản của tôi</div>
                                 </a></div>
                             <div class="stardust-dropdown__item-body stardust-dropdown__item-body--open">
@@ -62,6 +69,7 @@
                                     </a>
                                 </div>
                             </div>
+>>>>>>> hung8/5/2020
                         </div>
                         <a class="userpage-sidebar-menu-entry" href="/user/purchase/">
                             <div class="userpage-sidebar-menu-entry__icon" style="background-color: #3a87ad;">
@@ -82,6 +90,10 @@
                                     </g>
                                 </svg>
                             </div>
+<<<<<<< HEAD
+                            <div class="userpage-sidebar-menu-entry_text" style="color: #3a87ad">Đơn Mua</div>
+                        </a>
+=======
                             <div class="userpage-sidebar-menu-entry__text">Đơn Mua</div>
                         </a>
                         <div class="stardust-dropdown">
@@ -117,11 +129,56 @@
                                 </div>
                             </div>
                         </div>
+>>>>>>> hung8/5/2020
                     </div>
                 </div>
             </div>
             <div class="col-md-10">
+<<<<<<< HEAD
+                <div class="purchase-list-page__wrapper">
+                    <div class="purchase-list-page__tabs-container">
+                        <div class="purchase-list-page__tab purchase-list-page__tab--selected"><span
+                                class="purchase-list-page__tab-label">Tất cả</span></div>
+                        <div class="purchase-list-page__tab"><span
+                                class="purchase-list-page__tab-label">Chờ xác nhận</span>
+                        </div>
+                        <div class="purchase-list-page__tab"><span
+                                class="purchase-list-page__tab-label">Chờ lấy hàng</span>
+                        </div>
+                        <div class="purchase-list-page__tab"><span
+                                class="purchase-list-page__tab-label">Đang giao</span>
+                        </div>
+                        <div class="purchase-list-page__tab"><span class="purchase-list-page__tab-label">Đã giao</span>
+                        </div>
+                        <div class="purchase-list-page__tab"><span class="purchase-list-page__tab-label">Đã Hủy</span>
+                        </div>
+                    </div>
+                    <div class="purchase-list-page__search-bar">
+                        <svg width="19px" height="19px" viewBox="0 0 19 19">
+                            <g id="Search-New" stroke-width="1" fill="none" fill-rule="evenodd">
+                                <g id="my-purchase-copy-27" transform="translate(-399.000000, -221.000000)"
+                                   stroke-width="2">
+                                    <g id="Group-32" transform="translate(400.000000, 222.000000)">
+                                        <circle id="Oval-27" cx="7" cy="7" r="7"></circle>
+                                        <path d="M12,12 L16.9799555,16.919354" id="Path-184" stroke-linecap="round"
+                                              stroke-linejoin="round"></path>
+                                    </g>
+                                </g>
+                            </g>
+                        </svg>
+                        <input autocomplete="off" placeholder="Tìm kiếm ID đơn hàng hoặc Tên Sản phẩm"
+                               value="">
+                    </div>
+                    <div class="purchase-list-page__empty-page-wrapper">
+                        <div class="purchase-empty-order__container">
+                            <div class="purchase-empty-order__icon"></div>
+                            <div class="purchase-empty-order__text"> Chưa có đơn hàng</div>
+                        </div>
+                    </div>
+                </div>
+=======
 
+>>>>>>> hung8/5/2020
             </div>
         </div>
     </div>

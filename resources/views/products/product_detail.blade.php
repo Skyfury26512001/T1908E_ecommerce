@@ -71,7 +71,11 @@
                                 <div class="owl-carousel owl-theme thumbs">
                                     @foreach($product->ThumbnailArray as $thumbnail)
                                         <div class="item active"><img
+<<<<<<< HEAD
+                                                src="{{$thumbnail}}" alt="Sauvage">
+=======
                                                     src="{{$thumbnail}}" alt="Sauvage">
+>>>>>>> hung8/5/2020
                                         </div>
                                     @endforeach
                                 </div>

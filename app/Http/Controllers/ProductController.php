@@ -11,6 +11,7 @@ class ProductController extends Controller
 {
     public function index($id)
     {
+
         $product = Product::find($id);
 
         $product_style = $product->style;

@@ -1,16 +1,14 @@
 @extends('layouts.master')
 @section('specific_css')
-    <link href="{{asset('assets/css/account.css')}}" rel="stylesheet">
+    <link href="{{asset('assets/css/user_page.css')}}" rel="stylesheet">
     <link href="https://unpkg.com/gijgo@1.9.13/css/gijgo.min.css" rel="stylesheet" type="text/css"/>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
-          integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 @endsection
 @section('specific_js')
     <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
     <script src="https://unpkg.com/gijgo@1.9.13/js/gijgo.min.js" type="text/javascript"></script>
     <script>
         $('#datepicker').datepicker({
-            uiLibrary: 'bootstrap4'
+            uiLibrary: 'bootstrap4',
         });
     </script>
 @endsection
@@ -23,13 +21,22 @@
                 <div class="all">
                     <div class="user-page-brief">
                         <div class="user-page-brief__right">
+<<<<<<< HEAD
+                            <div class="user-page-brief__username">tlhoang1211</div>
+=======
                             <div class="user-page-brief__username">{{$account->fullName}}</div>
+>>>>>>> hung8/5/2020
                             <div><a class="user-page-brief__edit" href="/user/account/profile">
                                     <svg width="12" height="12" viewBox="0 0 12 12" xmlns="http://www.w3.org/2000/svg"
                                          style="margin-right: 4px;">
                                         <path
+<<<<<<< HEAD
+                                            d="M8.54 0L6.987 1.56l3.46 3.48L12 3.48M0 8.52l.073 3.428L3.46 12l6.21-6.18-3.46-3.48"
+                                            fill="#9B9B9B" fill-rule="evenodd"></path>
+=======
                                                 d="M8.54 0L6.987 1.56l3.46 3.48L12 3.48M0 8.52l.073 3.428L3.46 12l6.21-6.18-3.46-3.48"
                                                 fill="#9B9B9B" fill-rule="evenodd"></path>
+>>>>>>> hung8/5/2020
                                     </svg>
                                     Sửa hồ sơ</a></div>
                         </div>
@@ -51,6 +58,32 @@
                                             </g>
                                         </svg>
                                     </div>
+<<<<<<< HEAD
+                                    <div class="userpage-sidebar-menu-entry_text" style="color: rgb(255, 193, 7);">Tài
+                                        khoản của tôi
+                                    </div>
+                                </a></div>
+                            {{--                            <div class="stardust-dropdown__item-body stardust-dropdown__item-body--open">--}}
+                            {{--                                <div class="userpage-sidebar-menu__subsection">--}}
+                            {{--                                    <a class="_17BcjA _1EUbVp"--}}
+                            {{--                                       href="account/profile"><span--}}
+                            {{--                                            class="_2ilxaJ">Hồ sơ</span>--}}
+                            {{--                                    </a>--}}
+                            {{--                                    <a class="_17BcjA"--}}
+                            {{--                                       href="account/payment"><span--}}
+                            {{--                                            class="_2ilxaJ">Ngân hàng</span>--}}
+                            {{--                                    </a>--}}
+                            {{--                                    <a class="_17BcjA"--}}
+                            {{--                                       href="account/address"><span--}}
+                            {{--                                            class="_2ilxaJ">Địa chỉ</span>--}}
+                            {{--                                    </a>--}}
+                            {{--                                    <a class="_17BcjA"--}}
+                            {{--                                       href="/account/password"><span--}}
+                            {{--                                            class="_2ilxaJ">Đổi mật khẩu</span>--}}
+                            {{--                                    </a>--}}
+                            {{--                                </div>--}}
+                            {{--                            </div>--}}
+=======
                                     <div class="userpage-sidebar-menu-entry__text">Tài khoản của tôi</div>
                                 </a></div>
                             <div class="stardust-dropdown__item-body stardust-dropdown__item-body--open">
@@ -73,6 +106,7 @@
                                     </a>
                                 </div>
                             </div>
+>>>>>>> hung8/5/2020
                         </div>
                         <a class="userpage-sidebar-menu-entry" href="/user/purchase/">
                             <div class="userpage-sidebar-menu-entry__icon" style="background-color: #3a87ad;">
@@ -93,6 +127,10 @@
                                     </g>
                                 </svg>
                             </div>
+<<<<<<< HEAD
+                            <div class="userpage-sidebar-menu-entry_text">Đơn Mua</div>
+                        </a>
+=======
                             <div class="userpage-sidebar-menu-entry__text">Đơn Mua</div>
                         </a>
                         <div class="stardust-dropdown">
@@ -128,6 +166,7 @@
                                 </div>
                             </div>
                         </div>
+>>>>>>> hung8/5/2020
                     </div>
                 </div>
             </div>
@@ -222,7 +261,7 @@
                                         <div class="input-with-label__wrapper birthday-choose">
                                             <div class="input-with-label__label"><label>Ngày sinh</label></div>
                                             <div class="input-with-label__content">
-                                                <input id="datepicker" width="276"
+                                                <input id="datepicker" width="90%"
                                                        value="{{date("m-d-Y", strtotime($account->birthDate))}}"/>
                                             </div>
                                         </div>

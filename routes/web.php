@@ -57,7 +57,6 @@ Route::get('/user/purchase', function () {
 
 //Route::get('/product', 'ProductController@index');
 
-
 // login - register : route
 Route::get('login', 'AccountController@index')->name('login');
 Route::post('registerProcess', 'AccountController@registerProgress')->name('registerP');
