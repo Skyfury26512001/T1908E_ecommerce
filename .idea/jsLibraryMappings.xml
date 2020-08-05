@@ -1,6 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="JavaScriptLibraryMappings">
+<<<<<<< HEAD
     <file url="PROJECT" libraries="{gijgo, jquery-3.3.1}" />
+=======
+    <file url="PROJECT" libraries="{jquery-3.3.1}" />
+>>>>>>> hung8/5/2020
   </component>
 </project>

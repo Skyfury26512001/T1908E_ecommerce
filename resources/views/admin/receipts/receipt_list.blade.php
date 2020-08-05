@@ -26,7 +26,7 @@
             $("#delete_all").on('click', function (e) {
                 console.log('123');
                 var allVals = [];
-                $(".checkbox_list_origin:checked").each(function () {
+                $(".checkbox_list_receipt:checked").each(function () {
                     allVals.push($(this).val());
                     console.log(allVals);
                 });
@@ -37,7 +37,7 @@
                     if (check == true) {
                         var join_selected_values = allVals.join(",");
                         $.ajax({
-                            url: '{{route('admin_origin_delete_multi')}}',
+                            url: '{{route('admin_receipt_delete_multi')}}',
                             type: 'PUT',
                             headers: {'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')},
                             data: 'ids=' + join_selected_values,
@@ -47,7 +47,7 @@
                                         $(this).parents("tr").remove();
                                     });
                                     alert("Origins Deleted Success");
-                                    window.location = '{{route('admin_origin')}}';
+                                    window.location = '{{route('admin_receipt')}}';
                                 } else if (data['error']) {
                                     console.log(data['error']);
                                 } else {
@@ -65,11 +65,6 @@
                 }
             })
         });
-    </script>
-    <script>
-        $('#checkAll').click(function () {
-            $('.checkbox_list_origin').prop('checked',$(this).prop('checked'));
-        })
     </script>
 @endsection
 @section('content')
@@ -104,7 +99,7 @@
                             </p>
                         </div>
                         <div class="offset-8 col-3">
-                            <form class="app-search" action="{{route('admin_origin')}}">
+                            <form class="app-search" action="{{route('admin_receipt')}}">
                                 <div class="app-search-box">
                                     <div class="input-group">
                                         <input type="text" class="form-control" name="keyword" placeholder="Search...">
@@ -123,7 +118,7 @@
                         <table class="table table-hover mb-0">
                             <thead>
                             <tr>
-                                <th colspan="1"><input type="checkbox" id="checkAll"></th>
+                                <th colspan="1"></th>
                                 <th colspan="2" class="sorting" tabindex="0" aria-controls="datatable" rowspan="1" colspan="1" style="width: 24.8px;" aria-label="ID: activate to sort column ascending">
                                     Tên xuất xứ
                                 </th>
@@ -132,20 +127,21 @@
                             </thead>
                             <tbody>
                             @csrf
-                            @foreach($origins as $origin)
+{{--                            {{dd($receipts)}}--}}
+                            @foreach($receipts as $receipt)
                                 <tr>
                                     <td colspan="1">
                                         <div class="checkbox checkbox-primary">
-                                            <input class="checkbox_list_origin" id="{{$origin->name}}" type="checkbox"
-                                                   name="origins[]" value="{{$origin->id}}">
-                                            <label for="{{$origin->name}}"></label>
+                                            <input class="checkbox_list_receipt" id="{{$receipt->id}}" type="checkbox"
+                                                   name="receipts[]" value="{{$receipt->id}}">
+                                            <label for="{{$receipt->name}}"></label>
                                         </div>
                                     </td>
-                                    <td colspan="2">{{$origin->name}}</td>
-                                    <td><a href="{{route('admin_origin_edit',$origin->slug)}}" class="btn btn-primary"
+                                    <td colspan="2">{{$receipt->codeName}}</td>
+                                    <td><a href="{{route('admin_receipt_edit',$receipt->codeName)}}" class="btn btn-primary"
                                            style="float:right">Edit</a></td>
                                     <td>
-                                        <form action="{{route('admin_origin_delete',$origin->id)}}" method="POST">
+                                        <form action="{{route('admin_receipt_delete',$receipt->id)}}" method="POST">
                                             @csrf @method('PUT')
                                             <button class="btn btn-primary"> Delete</button>
                                         </form>
@@ -161,7 +157,7 @@
                     </div>
                     <div style="margin-top: 1%">
                         <div class="row">
-                            <div class="col-5"> {{ $origins->links() }}</div>
+                            <div class="col-5"> {{ $receipts->links() }}</div>
                             <div class="col-6">
                                 <button class="btn btn-primary" style="float: right" id="delete_all"> Delete All
                                 </button>

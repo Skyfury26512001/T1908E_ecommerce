@@ -39,14 +39,23 @@ Route::get('/contact', function () {
 });
 
 Route::get('/user/account/profile', function () {
-    return view('account');
-});
+    $account = session()->get("current_account");
+    return view('account',compact('account'));
+})->name('profile');
+Route::put('/user/account/profile_update/{id}',function (\Illuminate\Http\Request $request , $id){
+    dd($request);
+})->name('account_update');
 
+Route::get('/product/{id}', 'ProductController@index')->name('product_detail');
+Route::post('product/add_cart/item', 'ProductController@add_to_cart')->name('add_to_cart');
+Route::get('product/add_cart/1',function (){
+    dd(123);
+});
 Route::get('/user/purchase', function () {
     return view('purchase');
 });
 
-Route::get('/product', 'ProductController@index');
+//Route::get('/product', 'ProductController@index');
 
 // login - register : route
 Route::get('login', 'AccountController@index')->name('login');
@@ -77,6 +86,33 @@ Route::group(['middleware' => ['admin_check'], 'prefix' => 'admin'], function ()
         Route::put('/delete/{id}', 'OriginController@delete')->name('admin_origin_delete');
         Route::put('/deleteAll', 'OriginController@delete_multi')->name('admin_origin_delete_multi');
     });
+    Route::group(['prefix' => '/products'], function () {
+        Route::get('/', 'ProductController@admin_index')->name('admin_product_list');
+        Route::get('/create', 'ProductController@create')->name('admin_product_create');
+        Route::post('/store','ProductController@store')->name('admin_product_store');
+        Route::get('/edit/{slug}', 'ProductController@edit')->name('admin_product_edit');
+        Route::put('/update/{id}', 'ProductController@update')->name('admin_product_update');
+        Route::put('/delete/{id}', 'ProductController@delete')->name('admin_product_delete');
+        Route::put('/deleteAll', 'ProductController@delete_multi')->name('admin_product_delete_multi');
+    });
+    Route::group(['prefix' => '/accounts'], function () {
+        Route::get('/', 'AccountController@admin_index')->name('admin_account_list');
+        Route::get('/create', 'AccountController@create')->name('admin_account_create');
+        Route::post('/store','AccountController@store')->name('admin_account_store');
+        Route::get('/edit/{slug}', 'AccountController@edit')->name('admin_account_edit');
+        Route::put('/update/{id}', 'AccountController@update')->name('admin_account_update');
+        Route::put('/delete/{id}', 'AccountController@delete')->name('admin_account_delete');
+        Route::put('/deleteAll', 'AccountController@delete_multi')->name('admin_account_delete_multi');
+    });
+    Route::group(['prefix' => '/receipts'], function () {
+        Route::get('/', 'ReceiptController@admin_index')->name('admin_receipt');
+        Route::get('/create', 'ReceiptController@create')->name('admin_receipt_create');
+        Route::post('/store','ReceiptController@store')->name('admin_receipt_store');
+        Route::get('/edit/{slug}', 'ReceiptController@edit')->name('admin_receipt_edit');
+        Route::put('/update/{id}', 'ReceiptController@update')->name('admin_receipt_update');
+        Route::put('/delete/{id}', 'ReceiptController@delete')->name('admin_receipt_delete');
+        Route::put('/deleteAll', 'ReceiptController@delete_multi')->name('admin_receipt_delete_multi');
+    });
     Route::get('/demo_table', function () {
         return view('admin.tables_datatable');
     });
@@ -90,6 +126,10 @@ Route::get('/test/{haha}', function () {
     return 'haha';
 });
 Route::get('/multi_delete', function () {
+    $products = \App\Product::all()->where('status', '=', '1');
+    return view('test_multi_delete', compact('products'));
+});
+Route::get('/multi_delete2', function () {
     $products = \App\Product::all()->where('status', '=', '1');
     return view('test_multi_delete', compact('products'));
 });

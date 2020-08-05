@@ -5,9 +5,50 @@
 @section('specific_js')
     <script src="{{asset('assets/js/carousel_with_thumbs.js')}}"></script>
     <script src="{{asset('assets/js/read_more_read_less.js')}}"></script>
+    <script>
+        $(document).ready(function () {
+            $(".add_to_cart").on('click', function (e) {
+                console.log('123');
+                var allVals = [];
+                $(".checkbox_list_receipt:checked").each(function () {
+                    allVals.push($(this).val());
+                    console.log(allVals);
+                });
+                var check = confirm("Are you sure you want to add this item to cart?");
+                if (check == true) {
+                    var join_selected_values = this.getAttribute('data');
+                    var quatity = $('#quantity_1').val();
+                    console.log(quatity)
+                    // console.log(join_selected_values);
+                    $.ajax({
+                        url: '{{route('add_to_cart')}}',
+                        type: 'POST',
+                        headers: {'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')},
+                        data: 'id=' + join_selected_values,
+                        success: function (data) {
+                            if (data['success']) {
+                                alert("Products added to cart successfully.");
+                            } else if (data['error']) {
+                                console.log(data['error']);
+                            } else {
+                                alert('Whoops Something went wrong!!');
+                            }
+                        },
+                        error: function (data) {
+                            alert(data.responseText);
+                        }
+                    });
+                    $.each(allVals, function (index, value) {
+                        $('table tr').filter("[data-row-id='" + value + "']").remove();
+                    });
+                }
+            })
+        });
+    </script>
 @endsection
 @section('content')
     <div id="page">
+        <div class="layer" style="z-index: 4"></div>
         <main>
             <div class="container margin_30">
                 {{--                <div class="countdown_inner">-20% This offer ends in--}}
@@ -30,7 +71,11 @@
                                 <div class="owl-carousel owl-theme thumbs">
                                     @foreach($product->ThumbnailArray as $thumbnail)
                                         <div class="item active"><img
+<<<<<<< HEAD
                                                 src="{{$thumbnail}}" alt="Sauvage">
+=======
+                                                    src="{{$thumbnail}}" alt="Sauvage">
+>>>>>>> hung8/5/2020
                                         </div>
                                     @endforeach
                                 </div>
@@ -51,7 +96,8 @@
                         <div class="prod_info">
                             <h1>{{$product->name}}</h1>
                             <span class="rating"><i class="icon-star voted"></i><i class="icon-star voted"></i><i
-                                    class="icon-star voted"></i><i class="icon-star voted"></i><i class="icon-star"></i><em>4 reviews</em></span>
+                                        class="icon-star voted"></i><i class="icon-star voted"></i><i
+                                        class="icon-star"></i><em>4 reviews</em></span>
                             <h6>{{$product->concentration}}
                                 <span>{{$product->sex}}</span>
                                 <p>Thương hiệu: <a href="#">{{$product->brand->brand_name}}</a></p>
@@ -64,7 +110,7 @@
                                         <a href="#"
                                            data-toggle="modal"
                                            data-target="#size-modal"><i
-                                                class="ti-help-alt"></i></a></label>
+                                                    class="ti-help-alt"></i></a></label>
                                     <div class="col-xl-4 col-lg-5 col-md-6 col-6">
                                         <div class="custom-select-form">
                                             <select class="wide">
@@ -88,12 +134,17 @@
                             <div class="row">
                                 <div class="col-lg-5 col-md-6">
                                     <div class="price_main"><span
-                                            class="new_price">{{$product->FormatPrice}}</span>
+                                                class="new_price">{{$product->FormatPrice}}</span>
                                         {{--                                        <span class= "percentage">-20%</span> <span class="old_price">$160.00</span>--}} {{-- Giã cũ và % giảm giá --}}
                                     </div>
                                 </div>
                                 <div class="col-lg-4 col-md-6">
-                                    <div class="btn_add_to_cart"><a href="#" class="btn_1">Thêm vào giỏ</a></div>
+                                    <div class="btn_add_to_cart">
+                                        <a href="#" class="add_to_cart product_add btn_1"
+                                           data-url="{{route('add_to_cart',$product->id)}}" data="{{$product->id}}">
+                                            Thêm vào giỏ
+                                        </a>
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -114,8 +165,8 @@
                             <div class="product-policy__item">
                                 <div class="product-policy__item__img">
                                     <img
-                                        src="https://res.cloudinary.com/vernom/image/upload/v1596377508/perfume_project/icon/shield_check_xlvnlh.png"
-                                        width="30px" height="30px">
+                                            src="https://res.cloudinary.com/vernom/image/upload/v1596377508/perfume_project/icon/shield_check_xlvnlh.png"
+                                            width="30px" height="30px">
                                 </div>
                                 <div class="product-policy__item__text">
                                     <div><b>Cam kết hàng chính hãng 100%</b></div>
@@ -125,8 +176,8 @@
                             <div class="product-policy__item">
                                 <div class="product-policy__item__img">
                                     <img
-                                        src="https://res.cloudinary.com/vernom/image/upload/v1596377507/perfume_project/icon/lock_mbzdux.jpg"
-                                        width="35px" height="30px">
+                                            src="https://res.cloudinary.com/vernom/image/upload/v1596377507/perfume_project/icon/lock_mbzdux.jpg"
+                                            width="35px" height="30px">
                                 </div>
                                 <div class="product-policy__item__text">
                                     <div><b>Giao dịch An Toàn - Uy Tín</b></div>
@@ -136,8 +187,8 @@
                             <div class="product-policy__item">
                                 <div class="product-policy__item__img">
                                     <img
-                                        src="https://res.cloudinary.com/vernom/image/upload/v1596377509/perfume_project/icon/shop_ru9crz.png"
-                                        width="30px" height="30px">
+                                            src="https://res.cloudinary.com/vernom/image/upload/v1596377509/perfume_project/icon/shop_ru9crz.png"
+                                            width="30px" height="30px">
                                 </div>
                                 <div class="product-policy__item__text">
                                     <div><b>Hơn 100.000 mặt hàng có sẵn</b></div>
@@ -147,13 +198,13 @@
                             <div class="product-policy__item">
                                 <div class="product-policy__item__img">
                                     <img
-                                        src="https://res.cloudinary.com/vernom/image/upload/v1596378892/perfume_project/icon/shipping_dx0t3e.png"
-                                        width="35px" height="30px">
+                                            src="https://res.cloudinary.com/vernom/image/upload/v1596378892/perfume_project/icon/shipping_dx0t3e.png"
+                                            width="35px" height="30px">
                                 </div>
                                 <div class="product-policy__item__text">
                                     <div><b>Giao hàng toàn quốc</b></div>
                                     <div>Giao trong 3h nội thành HN <a href="/pages/phuong-thuc-van-chuyen"><i
-                                                style="color: #3a87ad;">(Xem
+                                                    style="color: #3a87ad;">(Xem
                                                 chi
                                                 tiết)</i></a></div>
                                 </div>
@@ -161,20 +212,20 @@
                             <div class="product-policy__item">
                                 <div class="product-policy__item__img">
                                     <img
-                                        src="https://res.cloudinary.com/vernom/image/upload/v1596377507/perfume_project/icon/refund_a5gobr.png"
-                                        width="30px" height="30px">
+                                            src="https://res.cloudinary.com/vernom/image/upload/v1596377507/perfume_project/icon/refund_a5gobr.png"
+                                            width="30px" height="30px">
                                 </div>
                                 <div class="product-policy__item__text">
                                     <div><b>Đổi trả miễn phí</b></div>
                                     <div>Trong vòng <b>10 ngày</b> <a href="/pages/chinh-sach-doi-tra"><i
-                                                style="color: #3a87ad;">(Xem chi
+                                                    style="color: #3a87ad;">(Xem chi
                                                 tiết)</i></a></div>
                                 </div>
                             </div>
                             <div class="shopping-hotline">
                                 Gọi đặt mua <img
-                                    src="https://res.cloudinary.com/vernom/image/upload/v1596377811/perfume_project/icon/telephone_yjju1b.jpg"
-                                    width="30px" height="30px"> <a href="tel:19000129"><b class="phone_number">+84
+                                        src="https://res.cloudinary.com/vernom/image/upload/v1596377811/perfume_project/icon/telephone_yjju1b.jpg"
+                                        width="30px" height="30px"> <a href="tel:19000129"><b class="phone_number">+84
                                         123-456-789</b></a>
                                 (9:00-21:00)
                             </div>
@@ -481,9 +532,9 @@
                                             <div class="review_content">
                                                 <div class="clearfix add_bottom_10">
                                                     <span class="rating"><i class="icon-star"></i><i
-                                                            class="icon-star"></i><i class="icon-star"></i><i
-                                                            class="icon-star"></i><i
-                                                            class="icon-star"></i><em>5.0/5.0</em></span>
+                                                                class="icon-star"></i><i class="icon-star"></i><i
+                                                                class="icon-star"></i><i
+                                                                class="icon-star"></i><em>5.0/5.0</em></span>
                                                     <em>Published 54 minutes ago</em>
                                                 </div>
                                                 <h4>"Commpletely satisfied"</h4>
@@ -497,9 +548,9 @@
                                             <div class="review_content">
                                                 <div class="clearfix add_bottom_10">
                                                     <span class="rating"><i class="icon-star"></i><i
-                                                            class="icon-star"></i><i class="icon-star"></i><i
-                                                            class="icon-star empty"></i><i
-                                                            class="icon-star empty"></i><em>4.0/5.0</em></span>
+                                                                class="icon-star"></i><i class="icon-star"></i><i
+                                                                class="icon-star empty"></i><i
+                                                                class="icon-star empty"></i><em>4.0/5.0</em></span>
                                                     <em>Published 1 day ago</em>
                                                 </div>
                                                 <h4>"Always the best"</h4>
@@ -515,8 +566,9 @@
                                             <div class="review_content">
                                                 <div class="clearfix add_bottom_10">
                                                     <span class="rating"><i class="icon-star"></i><i
-                                                            class="icon-star"></i><i class="icon-star"></i><i
-                                                            class="icon-star"></i><i class="icon-star empty"></i><em>4.5/5.0</em></span>
+                                                                class="icon-star"></i><i class="icon-star"></i><i
+                                                                class="icon-star"></i><i
+                                                                class="icon-star empty"></i><em>4.5/5.0</em></span>
                                                     <em>Published 3 days ago</em>
                                                 </div>
                                                 <h4>"Outstanding"</h4>
@@ -530,9 +582,9 @@
                                             <div class="review_content">
                                                 <div class="clearfix add_bottom_10">
                                                     <span class="rating"><i class="icon-star"></i><i
-                                                            class="icon-star"></i><i class="icon-star"></i><i
-                                                            class="icon-star"></i><i
-                                                            class="icon-star"></i><em>5.0/5.0</em></span>
+                                                                class="icon-star"></i><i class="icon-star"></i><i
+                                                                class="icon-star"></i><i
+                                                                class="icon-star"></i><em>5.0/5.0</em></span>
                                                     <em>Published 4 days ago</em>
                                                 </div>
                                                 <h4>"Excellent"</h4>
@@ -575,7 +627,8 @@
                                 </a>
                             </figure>
                             <div class="rating"><i class="icon-star voted"></i><i class="icon-star voted"></i><i
-                                    class="icon-star voted"></i><i class="icon-star voted"></i><i class="icon-star"></i>
+                                        class="icon-star voted"></i><i class="icon-star voted"></i><i
+                                        class="icon-star"></i>
                             </div>
                             <a href="product-detail-1.html">
                                 <h3>A Perfumt</h3>
@@ -586,13 +639,13 @@
                             <ul>
                                 <li><a href="#0" class="tooltip-1" data-toggle="tooltip" data-placement="left"
                                        title="Thêm vào danh sách yêu thích"><i
-                                            class="ti-heart"></i><span>Thêm vào danh sách yêu thích</span></a></li>
+                                                class="ti-heart"></i><span>Thêm vào danh sách yêu thích</span></a></li>
                                 <li><a href="#0" class="tooltip-1" data-toggle="tooltip" data-placement="left"
                                        title="So sánh"><i
-                                            class="ti-control-shuffle"></i><span>So sánh</span></a></li>
+                                                class="ti-control-shuffle"></i><span>So sánh</span></a></li>
                                 <li><a href="#0" class="tooltip-1" data-toggle="tooltip" data-placement="left"
                                        title="Thêm vào giỏ"><i
-                                            class="ti-shopping-cart"></i><span>Thêm vào giỏ hàng</span></a>
+                                                class="ti-shopping-cart"></i><span>Thêm vào giỏ hàng</span></a>
                                 </li>
                             </ul>
                         </div>
@@ -610,7 +663,8 @@
                                 </a>
                             </figure>
                             <div class="rating"><i class="icon-star voted"></i><i class="icon-star voted"></i><i
-                                    class="icon-star voted"></i><i class="icon-star voted"></i><i class="icon-star"></i>
+                                        class="icon-star voted"></i><i class="icon-star voted"></i><i
+                                        class="icon-star"></i>
                             </div>
                             <a href="product-detail-1.html">
                                 <h3>B Perfume</h3>
@@ -621,13 +675,13 @@
                             <ul>
                                 <li><a href="#0" class="tooltip-1" data-toggle="tooltip" data-placement="left"
                                        title="Thêm vào danh sách yêu thích"><i
-                                            class="ti-heart"></i><span>Thêm vào danh sách yêu thích</span></a></li>
+                                                class="ti-heart"></i><span>Thêm vào danh sách yêu thích</span></a></li>
                                 <li><a href="#0" class="tooltip-1" data-toggle="tooltip" data-placement="left"
                                        title="So sánh"><i
-                                            class="ti-control-shuffle"></i><span>So sánh</span></a></li>
+                                                class="ti-control-shuffle"></i><span>So sánh</span></a></li>
                                 <li><a href="#0" class="tooltip-1" data-toggle="tooltip" data-placement="left"
                                        title="Thêm vào giỏ hàng"><i
-                                            class="ti-shopping-cart"></i><span>Thêm vào giỏ hàng</span></a>
+                                                class="ti-shopping-cart"></i><span>Thêm vào giỏ hàng</span></a>
                                 </li>
                             </ul>
                         </div>
@@ -645,7 +699,8 @@
                                 </a>
                             </figure>
                             <div class="rating"><i class="icon-star voted"></i><i class="icon-star voted"></i><i
-                                    class="icon-star voted"></i><i class="icon-star voted"></i><i class="icon-star"></i>
+                                        class="icon-star voted"></i><i class="icon-star voted"></i><i
+                                        class="icon-star"></i>
                             </div>
                             <a href="product-detail-1.html">
                                 <h3>C Perfume</h3>
@@ -656,13 +711,13 @@
                             <ul>
                                 <li><a href="#0" class="tooltip-1" data-toggle="tooltip" data-placement="left"
                                        title="Thêm vào danh sách yêu thích"><i
-                                            class="ti-heart"></i><span>Thêm vào danh sách yêu thích</span></a></li>
+                                                class="ti-heart"></i><span>Thêm vào danh sách yêu thích</span></a></li>
                                 <li><a href="#0" class="tooltip-1" data-toggle="tooltip" data-placement="left"
                                        title="So sánh"><i
-                                            class="ti-control-shuffle"></i><span>So sánh</span></a></li>
+                                                class="ti-control-shuffle"></i><span>So sánh</span></a></li>
                                 <li><a href="#0" class="tooltip-1" data-toggle="tooltip" data-placement="left"
                                        title="Thêm vào giỏ hàng"><i
-                                            class="ti-shopping-cart"></i><span>Thêm vào giỏ hàng</span></a>
+                                                class="ti-shopping-cart"></i><span>Thêm vào giỏ hàng</span></a>
                                 </li>
                             </ul>
                         </div>
@@ -680,7 +735,8 @@
                                 </a>
                             </figure>
                             <div class="rating"><i class="icon-star voted"></i><i class="icon-star voted"></i><i
-                                    class="icon-star voted"></i><i class="icon-star voted"></i><i class="icon-star"></i>
+                                        class="icon-star voted"></i><i class="icon-star voted"></i><i
+                                        class="icon-star"></i>
                             </div>
                             <a href="product-detail-1.html">
                                 <h3>D Perfume</h3>
@@ -692,13 +748,13 @@
                             <ul>
                                 <li><a href="#0" class="tooltip-1" data-toggle="tooltip" data-placement="left"
                                        title="Thêm vào danh sách yêu thích"><i
-                                            class="ti-heart"></i><span>Thêm vào danh sách yêu thích</span></a></li>
+                                                class="ti-heart"></i><span>Thêm vào danh sách yêu thích</span></a></li>
                                 <li><a href="#0" class="tooltip-1" data-toggle="tooltip" data-placement="left"
                                        title="So sánh"><i
-                                            class="ti-control-shuffle"></i><span>So sánh</span></a></li>
+                                                class="ti-control-shuffle"></i><span>So sánh</span></a></li>
                                 <li><a href="#0" class="tooltip-1" data-toggle="tooltip" data-placement="left"
                                        title="Thêm vào giỏ hàng"><i
-                                            class="ti-shopping-cart"></i><span>Thêm vào giỏ hàng</span></a>
+                                                class="ti-shopping-cart"></i><span>Thêm vào giỏ hàng</span></a>
                                 </li>
                             </ul>
                         </div>
@@ -716,7 +772,8 @@
                                 </a>
                             </figure>
                             <div class="rating"><i class="icon-star voted"></i><i class="icon-star voted"></i><i
-                                    class="icon-star voted"></i><i class="icon-star voted"></i><i class="icon-star"></i>
+                                        class="icon-star voted"></i><i class="icon-star voted"></i><i
+                                        class="icon-star"></i>
                             </div>
                             <a href="product-detail-1.html">
                                 <h3>E Perfume</h3>
@@ -728,13 +785,13 @@
                             <ul>
                                 <li><a href="#0" class="tooltip-1" data-toggle="tooltip" data-placement="left"
                                        title="Thêm vào danh sách yêu thích"><i
-                                            class="ti-heart"></i><span>Thêm vào danh sách yêu thích</span></a></li>
+                                                class="ti-heart"></i><span>Thêm vào danh sách yêu thích</span></a></li>
                                 <li><a href="#0" class="tooltip-1" data-toggle="tooltip" data-placement="left"
                                        title="So sánh"><i
-                                            class="ti-control-shuffle"></i><span>So sánh</span></a></li>
+                                                class="ti-control-shuffle"></i><span>So sánh</span></a></li>
                                 <li><a href="#0" class="tooltip-1" data-toggle="tooltip" data-placement="left"
                                        title="Thêm vào giỏ hàng"><i
-                                            class="ti-shopping-cart"></i><span>Thêm vào giỏ hàng</span></a>
+                                                class="ti-shopping-cart"></i><span>Thêm vào giỏ hàng</span></a>
                                 </li>
                             </ul>
                         </div>
@@ -760,7 +817,8 @@
                                 </a>
                             </figure>
                             <div class="rating"><i class="icon-star voted"></i><i class="icon-star voted"></i><i
-                                    class="icon-star voted"></i><i class="icon-star voted"></i><i class="icon-star"></i>
+                                        class="icon-star voted"></i><i class="icon-star voted"></i><i
+                                        class="icon-star"></i>
                             </div>
                             <a href="product-detail-1.html">
                                 <h3>A Perfumt</h3>
@@ -771,13 +829,13 @@
                             <ul>
                                 <li><a href="#0" class="tooltip-1" data-toggle="tooltip" data-placement="left"
                                        title="Thêm vào danh sách yêu thích"><i
-                                            class="ti-heart"></i><span>Thêm vào danh sách yêu thích</span></a></li>
+                                                class="ti-heart"></i><span>Thêm vào danh sách yêu thích</span></a></li>
                                 <li><a href="#0" class="tooltip-1" data-toggle="tooltip" data-placement="left"
                                        title="So sánh"><i
-                                            class="ti-control-shuffle"></i><span>So sánh</span></a></li>
+                                                class="ti-control-shuffle"></i><span>So sánh</span></a></li>
                                 <li><a href="#0" class="tooltip-1" data-toggle="tooltip" data-placement="left"
                                        title="Thêm vào giỏ"><i
-                                            class="ti-shopping-cart"></i><span>Thêm vào giỏ hàng</span></a>
+                                                class="ti-shopping-cart"></i><span>Thêm vào giỏ hàng</span></a>
                                 </li>
                             </ul>
                         </div>
@@ -795,7 +853,8 @@
                                 </a>
                             </figure>
                             <div class="rating"><i class="icon-star voted"></i><i class="icon-star voted"></i><i
-                                    class="icon-star voted"></i><i class="icon-star voted"></i><i class="icon-star"></i>
+                                        class="icon-star voted"></i><i class="icon-star voted"></i><i
+                                        class="icon-star"></i>
                             </div>
                             <a href="product-detail-1.html">
                                 <h3>B Perfume</h3>
@@ -806,13 +865,13 @@
                             <ul>
                                 <li><a href="#0" class="tooltip-1" data-toggle="tooltip" data-placement="left"
                                        title="Thêm vào danh sách yêu thích"><i
-                                            class="ti-heart"></i><span>Thêm vào danh sách yêu thích</span></a></li>
+                                                class="ti-heart"></i><span>Thêm vào danh sách yêu thích</span></a></li>
                                 <li><a href="#0" class="tooltip-1" data-toggle="tooltip" data-placement="left"
                                        title="So sánh"><i
-                                            class="ti-control-shuffle"></i><span>So sánh</span></a></li>
+                                                class="ti-control-shuffle"></i><span>So sánh</span></a></li>
                                 <li><a href="#0" class="tooltip-1" data-toggle="tooltip" data-placement="left"
                                        title="Thêm vào giỏ hàng"><i
-                                            class="ti-shopping-cart"></i><span>Thêm vào giỏ hàng</span></a>
+                                                class="ti-shopping-cart"></i><span>Thêm vào giỏ hàng</span></a>
                                 </li>
                             </ul>
                         </div>
@@ -830,7 +889,8 @@
                                 </a>
                             </figure>
                             <div class="rating"><i class="icon-star voted"></i><i class="icon-star voted"></i><i
-                                    class="icon-star voted"></i><i class="icon-star voted"></i><i class="icon-star"></i>
+                                        class="icon-star voted"></i><i class="icon-star voted"></i><i
+                                        class="icon-star"></i>
                             </div>
                             <a href="product-detail-1.html">
                                 <h3>C Perfume</h3>
@@ -841,13 +901,13 @@
                             <ul>
                                 <li><a href="#0" class="tooltip-1" data-toggle="tooltip" data-placement="left"
                                        title="Thêm vào danh sách yêu thích"><i
-                                            class="ti-heart"></i><span>Thêm vào danh sách yêu thích</span></a></li>
+                                                class="ti-heart"></i><span>Thêm vào danh sách yêu thích</span></a></li>
                                 <li><a href="#0" class="tooltip-1" data-toggle="tooltip" data-placement="left"
                                        title="So sánh"><i
-                                            class="ti-control-shuffle"></i><span>So sánh</span></a></li>
+                                                class="ti-control-shuffle"></i><span>So sánh</span></a></li>
                                 <li><a href="#0" class="tooltip-1" data-toggle="tooltip" data-placement="left"
                                        title="Thêm vào giỏ hàng"><i
-                                            class="ti-shopping-cart"></i><span>Thêm vào giỏ hàng</span></a>
+                                                class="ti-shopping-cart"></i><span>Thêm vào giỏ hàng</span></a>
                                 </li>
                             </ul>
                         </div>
@@ -865,7 +925,8 @@
                                 </a>
                             </figure>
                             <div class="rating"><i class="icon-star voted"></i><i class="icon-star voted"></i><i
-                                    class="icon-star voted"></i><i class="icon-star voted"></i><i class="icon-star"></i>
+                                        class="icon-star voted"></i><i class="icon-star voted"></i><i
+                                        class="icon-star"></i>
                             </div>
                             <a href="product-detail-1.html">
                                 <h3>D Perfume</h3>
@@ -877,13 +938,13 @@
                             <ul>
                                 <li><a href="#0" class="tooltip-1" data-toggle="tooltip" data-placement="left"
                                        title="Thêm vào danh sách yêu thích"><i
-                                            class="ti-heart"></i><span>Thêm vào danh sách yêu thích</span></a></li>
+                                                class="ti-heart"></i><span>Thêm vào danh sách yêu thích</span></a></li>
                                 <li><a href="#0" class="tooltip-1" data-toggle="tooltip" data-placement="left"
                                        title="So sánh"><i
-                                            class="ti-control-shuffle"></i><span>So sánh</span></a></li>
+                                                class="ti-control-shuffle"></i><span>So sánh</span></a></li>
                                 <li><a href="#0" class="tooltip-1" data-toggle="tooltip" data-placement="left"
                                        title="Thêm vào giỏ hàng"><i
-                                            class="ti-shopping-cart"></i><span>Thêm vào giỏ hàng</span></a>
+                                                class="ti-shopping-cart"></i><span>Thêm vào giỏ hàng</span></a>
                                 </li>
                             </ul>
                         </div>
@@ -901,7 +962,8 @@
                                 </a>
                             </figure>
                             <div class="rating"><i class="icon-star voted"></i><i class="icon-star voted"></i><i
-                                    class="icon-star voted"></i><i class="icon-star voted"></i><i class="icon-star"></i>
+                                        class="icon-star voted"></i><i class="icon-star voted"></i><i
+                                        class="icon-star"></i>
                             </div>
                             <a href="product-detail-1.html">
                                 <h3>E Perfume</h3>
@@ -913,13 +975,13 @@
                             <ul>
                                 <li><a href="#0" class="tooltip-1" data-toggle="tooltip" data-placement="left"
                                        title="Thêm vào danh sách yêu thích"><i
-                                            class="ti-heart"></i><span>Thêm vào danh sách yêu thích</span></a></li>
+                                                class="ti-heart"></i><span>Thêm vào danh sách yêu thích</span></a></li>
                                 <li><a href="#0" class="tooltip-1" data-toggle="tooltip" data-placement="left"
                                        title="So sánh"><i
-                                            class="ti-control-shuffle"></i><span>So sánh</span></a></li>
+                                                class="ti-control-shuffle"></i><span>So sánh</span></a></li>
                                 <li><a href="#0" class="tooltip-1" data-toggle="tooltip" data-placement="left"
                                        title="Thêm vào giỏ hàng"><i
-                                            class="ti-shopping-cart"></i><span>Thêm vào giỏ hàng</span></a>
+                                                class="ti-shopping-cart"></i><span>Thêm vào giỏ hàng</span></a>
                                 </li>
                             </ul>
                         </div>
@@ -988,12 +1050,13 @@
                     <div class="col-md-7">
                         <div class="item_panel">
                             <figure>
-                                <img src="{{asset('assets/img/products/product_placeholder_square_small.jpg')}}"
-                                     data-src="assets/img/products/shoes/1.jpg" class="lazy" alt="">
+                                <img src="{{$product->firstThumbnail}}"
+                                     data-src="{{$product->firstThumbnail}}" class="lazy" alt="">
                             </figure>
-                            <h4>1x Armor Air X Fear</h4>
-                            <div class="price_panel"><span class="new_price">$148.00</span><span
-                                    class="percentage">-20%</span> <span class="old_price">$160.00</span></div>
+                            <h4>{{$product->name}}</h4>
+                            <div class="price_panel"><span class="new_price">{{$product->formatPrice}}</span>
+                                {{--                                <span class="percentage">-20%</span> <span class="old_price">$160.00</span>--}}
+                            </div>
                         </div>
                     </div>
                     <div class="col-md-5 btn_panel">
@@ -1006,49 +1069,22 @@
         <div class="container related">
             <h4>Who bought this product also bought</h4>
             <div class="row">
-                <div class="col-md-4">
-                    <div class="item_panel">
-                        <a href="#0">
-                            <figure>
-                                <img src="{{asset('assets/img/products/product_placeholder_square_small.jpg')}}"
-                                     data-src="assets/img/products/shoes/2.jpg" alt="" class="lazy">
-                            </figure>
-                        </a>
-                        <a href="#0">
-                            <h5>Armor D Perfume</h5>
-                        </a>
-                        <div class="price_panel"><span class="new_price">$90.00</span></div>
+                @foreach($eloquent_product as $product_e)
+                    <div class="col-md-4">
+                        <div class="item_panel">
+                            <a href="{{route('product_detail',$product_e->id)}}">
+                                <figure>
+                                    <img src="{{$product_e->firstThumbnail}}"
+                                         data-src="{{$product_e->firstThumbnail}}" alt="" class="lazy">
+                                </figure>
+                            </a>
+                            <a href="#0">
+                                <h5>{{$product_e->name}}</h5>
+                            </a>
+                            <div class="price_panel"><span class="new_price">{{$product_e->formatPrice}}</span></div>
+                        </div>
                     </div>
-                </div>
-                <div class="col-md-4">
-                    <div class="item_panel">
-                        <a href="#0">
-                            <figure>
-                                <img src="{{asset('assets/img/products/product_placeholder_square_small.jpg')}}"
-                                     data-src="assets/img/products/shoes/3.jpg" alt="" class="lazy">
-                            </figure>
-                        </a>
-                        <a href="#0">
-                            <h5>Armor E Perfume</h5>
-                        </a>
-                        <div class="price_panel"><span class="new_price">$75.00</span><span
-                                class="percentage">-20%</span> <span class="old_price">$155.00</span></div>
-                    </div>
-                </div>
-                <div class="col-md-4">
-                    <div class="item_panel">
-                        <a href="#0">
-                            <figure>
-                                <img src="{{asset('assets/img/products/product_placeholder_square_small.jpg')}}"
-                                     data-src="assets/img/products/shoes/4.jpg" alt="" class="lazy">
-                            </figure>
-                        </a>
-                        <a href="#0">
-                            <h5>Armor A Perfumt</h5>
-                        </a>
-                        <div class="price_panel"><span class="new_price">$110.00</span></div>
-                    </div>
-                </div>
+                @endforeach
             </div>
         </div>
         <!-- /related -->
