@@ -1,13 +1,10 @@
 @extends('layouts.master')
 @section('specific_css')
+    <link href="{{asset('assets/css/account.css')}}" rel="stylesheet">
     <link href="{{asset('assets/css/user_page.css')}}" rel="stylesheet">
 @endsection
 @section('specific_js')
-    <script>
-        $(".purchase-list-page__tab").click(function () {
-
-        });
-    </script>
+    <script src="{{asset('assets/js/custome_select.js')}}"></script>
 @endsection
 @section('content')
     <div class="container margin_30">
@@ -44,10 +41,35 @@
                                             </g>
                                         </svg>
                                     </div>
+<<<<<<< HEAD
                                     <div class="userpage-sidebar-menu-entry_text">Tài
                                         khoản của tôi
                                     </div>
                                 </a></div>
+=======
+                                    <div class="userpage-sidebar-menu-entry__text">Tài khoản của tôi</div>
+                                </a></div>
+                            <div class="stardust-dropdown__item-body stardust-dropdown__item-body--open">
+                                <div class="userpage-sidebar-menu__subsection">
+                                    <a class="_17BcjA _1EUbVp"
+                                       href="account/profile"><span
+                                            class="_2ilxaJ">Hồ sơ</span>
+                                    </a>
+                                    <a class="_17BcjA"
+                                       href="account/payment"><span
+                                            class="_2ilxaJ">Ngân hàng</span>
+                                    </a>
+                                    <a class="_17BcjA"
+                                       href="account/address"><span
+                                            class="_2ilxaJ">Địa chỉ</span>
+                                    </a>
+                                    <a class="_17BcjA"
+                                       href="/account/password"><span
+                                            class="_2ilxaJ">Đổi mật khẩu</span>
+                                    </a>
+                                </div>
+                            </div>
+>>>>>>> hung8/5/2020
                         </div>
                         <a class="userpage-sidebar-menu-entry" href="/user/purchase/">
                             <div class="userpage-sidebar-menu-entry__icon" style="background-color: #3a87ad;">
@@ -68,12 +90,51 @@
                                     </g>
                                 </svg>
                             </div>
+<<<<<<< HEAD
                             <div class="userpage-sidebar-menu-entry_text" style="color: #3a87ad">Đơn Mua</div>
                         </a>
+=======
+                            <div class="userpage-sidebar-menu-entry__text">Đơn Mua</div>
+                        </a>
+                        <div class="stardust-dropdown">
+                            <div class="stardust-dropdown__item-header"><a class="userpage-sidebar-menu-entry"
+                                                                           href="/user/notifications/">
+                                    <div class="userpage-sidebar-menu-entry__icon"
+                                         style="background-color: rgb(238, 77, 45);">
+                                        <svg class="wanderlust-svg-icon user-page-sidebar-icon "
+                                             enable-background="new 0 0 15 15" viewBox="0 0 15 15" x="0" y="0">
+                                            <g>
+                                                <path d="m12 10.2 1.5 2h-12l1.5-2v-7.4c0-.5.5-1 1-1h7c .6 0 1 .5 1 1z"
+                                                      fill="none" stroke-linecap="round" stroke-linejoin="round"
+                                                      stroke-miterlimit="10"></path>
+                                                <path d="m6 2c0-.8.7-1.5 1.5-1.5s1.5.7 1.5 1.5" fill="none"
+                                                      stroke-miterlimit="10"></path>
+                                                <path d="m5.8 13.5c.4.6 1 1 1.8 1s1.4-.4 1.8-1z"></path>
+                                            </g>
+                                        </svg>
+                                    </div>
+                                    <div class="userpage-sidebar-menu-entry__text">Thông báo</div>
+                                </a></div>
+                            <div class="stardust-dropdown__item-body">
+                                <div class="userpage-sidebar-menu__subsection">
+                                    <a class="_17BcjA"
+                                       href="/user/notifications/order"><span
+                                            class="_2ilxaJ">Cập nhật đơn hàng</span></a>
+                                    <a class="_17BcjA"
+                                       href="/user/notifications/promotion"><span
+                                            class="_2ilxaJ">Khuyến mãi</span></a>
+                                    <a class="_17BcjA"
+                                       href="/user/notifications/flashsale"><span
+                                            class="_2ilxaJ">Flash Sale của Shop</span></a>
+                                </div>
+                            </div>
+                        </div>
+>>>>>>> hung8/5/2020
                     </div>
                 </div>
             </div>
             <div class="col-md-10">
+<<<<<<< HEAD
                 <div class="purchase-list-page__wrapper">
                     <div class="purchase-list-page__tabs-container">
                         <div class="purchase-list-page__tab purchase-list-page__tab--selected"><span
@@ -115,6 +176,9 @@
                         </div>
                     </div>
                 </div>
+=======
+
+>>>>>>> hung8/5/2020
             </div>
         </div>
     </div>

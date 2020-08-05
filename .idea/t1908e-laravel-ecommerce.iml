@@ -111,6 +111,9 @@
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="library" name="jquery-3.3.1" level="application" />
+<<<<<<< HEAD
     <orderEntry type="library" name="gijgo" level="application" />
+=======
+>>>>>>> hung8/5/2020
   </component>
 </module>

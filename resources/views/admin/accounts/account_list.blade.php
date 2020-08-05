@@ -26,7 +26,7 @@
             $("#delete_all").on('click', function (e) {
                 console.log('123');
                 var allVals = [];
-                $(".checkbox_list_origin:checked").each(function () {
+                $(".checkbox_list_account:checked").each(function () {
                     allVals.push($(this).val());
                     console.log(allVals);
                 });
@@ -37,7 +37,7 @@
                     if (check == true) {
                         var join_selected_values = allVals.join(",");
                         $.ajax({
-                            url: '{{route('admin_origin_delete_multi')}}',
+                            url: '{{route('admin_account_delete_multi')}}',
                             type: 'PUT',
                             headers: {'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')},
                             data: 'ids=' + join_selected_values,
@@ -46,8 +46,8 @@
                                     $(".sub_chk:checked").each(function () {
                                         $(this).parents("tr").remove();
                                     });
-                                    alert("Origins Deleted Success");
-                                    window.location = '{{route('admin_origin')}}';
+                                    alert("Brands Deleted Success");
+                                    window.location = '{{route('admin_account_list')}}';
                                 } else if (data['error']) {
                                     console.log(data['error']);
                                 } else {
@@ -66,11 +66,6 @@
             })
         });
     </script>
-    <script>
-        $('#checkAll').click(function () {
-            $('.checkbox_list_origin').prop('checked',$(this).prop('checked'));
-        })
-    </script>
 @endsection
 @section('content')
     <!-- Start Content-->
@@ -82,29 +77,29 @@
                 <div class="page-title-box">
                     <div class="page-title-right">
                         <ol class="breadcrumb m-0">
-                            <li class="breadcrumb-item"><a href="javascript: void(0);">Admin</a></li>
-                            <li class="breadcrumb-item"><a href="javascript: void(0);">Xuất xứ</a></li>
-                            <li class="breadcrumb-item active">Danh sách</li>
+                            <li class="breadcrumb-item"><a href="javascript: void(0);">Adminox</a></li>
+                            <li class="breadcrumb-item"><a href="javascript: void(0);">Tables</a></li>
+                            <li class="breadcrumb-item active">Basic Tables</li>
                         </ol>
                     </div>
-                    <h4 class="page-title">Danh sách xuất xứ</h4>
+                    <h4 class="page-title">Basic Tables</h4>
                 </div>
             </div>
         </div>
         <!-- end page title -->
 
         <div class="row">
-            <div class="col-lg-8">
+            <div class="col-lg-12">
                 <div class="card-box">
                     <div class="row">
                         <div>
-                            <h4 class="header-title">Xuất xứ</h4>
+                            <h4 class="header-title">Brands</h4>
                             <p class="sub-header">
-                                <code>Toàn bộ xuất xứ</code>
+                                <code>All accounts</code>
                             </p>
                         </div>
                         <div class="offset-8 col-3">
-                            <form class="app-search" action="{{route('admin_origin')}}">
+                            <form class="app-search" action="{{route('admin_account_list')}}">
                                 <div class="app-search-box">
                                     <div class="input-group">
                                         <input type="text" class="form-control" name="keyword" placeholder="Search...">
@@ -123,29 +118,36 @@
                         <table class="table table-hover mb-0">
                             <thead>
                             <tr>
-                                <th colspan="1"><input type="checkbox" id="checkAll"></th>
-                                <th colspan="2" class="sorting" tabindex="0" aria-controls="datatable" rowspan="1" colspan="1" style="width: 24.8px;" aria-label="ID: activate to sort column ascending">
-                                    Tên xuất xứ
+                                <th></th>
+                                <th class="sorting" tabindex="0" aria-controls="datatable" rowspan="1" colspan="1" style="width: 24.8px;" aria-label="ID: activate to sort column ascending">
+                                    Account Name
                                 </th>
-                                <th colspan="2" style="text-align: center">Hành động</th>
+                                <th>Brand Thumbnail</th>
+                                <th>Products description</th>
+                                <th colspan="2" style="text-align: center">Action</th>
                             </tr>
                             </thead>
                             <tbody>
                             @csrf
-                            @foreach($origins as $origin)
+{{--                            {{dd($accounts)}}--}}
+                            @foreach($accounts as $account)
+{{--                                {{dd($account)}}--}}
                                 <tr>
-                                    <td colspan="1">
+
+                                    <td colspan="1" style="vertical-align: middle;">
                                         <div class="checkbox checkbox-primary">
-                                            <input class="checkbox_list_origin" id="{{$origin->name}}" type="checkbox"
-                                                   name="origins[]" value="{{$origin->id}}">
-                                            <label for="{{$origin->name}}"></label>
+                                            <input class="checkbox_list_origin" id="" type="checkbox" style="opacity: 1" name="origins[]" value="3">
                                         </div>
                                     </td>
-                                    <td colspan="2">{{$origin->name}}</td>
-                                    <td><a href="{{route('admin_origin_edit',$origin->slug)}}" class="btn btn-primary"
+                                    <td>{{$account->fullName}}</td>
+                                    <td width="10%"><img src="{{$account->imagesize600x600}}"style="width: 100%">
+                                    </td>
+                                    <td><div> {{$account->account_description}}</div></td>
+{{--                                    <td>{{count($account->products)}}</td>--}}
+                                    <td><a href="{{route('admin_account_edit',$account->id)}}" class="btn btn-primary"
                                            style="float:right">Edit</a></td>
                                     <td>
-                                        <form action="{{route('admin_origin_delete',$origin->id)}}" method="POST">
+                                        <form action="{{route('admin_account_delete',$account->id)}}" method="POST">
                                             @csrf @method('PUT')
                                             <button class="btn btn-primary"> Delete</button>
                                         </form>
@@ -161,7 +163,7 @@
                     </div>
                     <div style="margin-top: 1%">
                         <div class="row">
-                            <div class="col-5"> {{ $origins->links() }}</div>
+                            <div class="col-5"> {{ $accounts->links() }}</div>
                             <div class="col-6">
                                 <button class="btn btn-primary" style="float: right" id="delete_all"> Delete All
                                 </button>

@@ -34,60 +34,45 @@ class OriginController extends Controller
         dd($request);
     }
     public function edit($slug){
-        $brand = Origin::where('slug','=',$slug)->where('status','=','1')->first();
-        return view('admin.brands.edit',compact('brand'));
+        $origin = Origin::where('slug','=',$slug)->where('status','=','1')->first();
+        return view('admin.origins.edit',compact('origin'));
     }
     public function update(Request $request, $id){
         $request->validate([
             'name' => 'required',
-            'detail' => 'required',
-            'thumbnail' => 'required',
         ],[
             'name.required' => 'Tên hãng là cần thiết',
-            'detail.required' => 'Cần thêm mô tả hãng',
-            'thumbnail.required' => 'Bắt buộc phải có ảnh đại diện',
         ]);
 
         $brand = Origin::find($id);
         $brand->name = $request->name;
         $brand->save();
-        return redirect(route('admin_brand'));
+        return redirect(route('admin_origin'));
     }
     public function create(){
-        return view('admin.brands.create');
+        return view('admin.origins.create');
     }
     public function store(Request $request){
 
         $request->validate([
             'name' => 'required',
-            'detail' => 'required',
-            'thumbnail' => 'required',
         ],[
             'name.required' => 'Tên hãng là cần thiết',
-            'detail.required' => 'Cần thêm mô tả hãng',
-            'thumbnail.required' => 'Bắt buộc phải có ảnh đại diện',
         ]);
 
-        $brand = new Origin();
-
-        $brand->brand_name = $request->name;
-        $brand->brand_description = $request->detail;
-//        dd(sanitize($request->brand_name));
-        $brand->brand_thumbnail = $request->thumbnail;
-        $brand->slug = sanitize($brand->brand_name);
-        if (count(Origin::where('brand_name','=',$request->brand_name)->get())){
-            return back()->withErrors('The brand have already existed !','duplicated');
-        }
-        $brand->status = 1;
-//        dd($brand);
-        $brand->save();
-        return redirect(route('admin_brand'));
+        $origin = new Origin();
+//        dd($request);
+        $origin->name = $request->name;
+        $origin->status = 1;
+        $origin->slug = sanitize($request->name);
+        $origin->save();
+        return redirect(route('admin_origin'));
     }
     public function delete($id){
         $brand = Origin::find($id);
         $brand->status = 0;
         $brand->save();
-        return redirect(route('admin_brand'));
+        return redirect(route('admin_origin'));
     }
     public function delete_multi(Request $request){
         $ids_array = new Array_();

@@ -9,6 +9,7 @@
     <meta name="author" content="Ansonika">
     <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
     <meta http-equiv="Content-Security-Policy" content="block-all-mixed-content">
+    <meta name="csrf-token" content="{{ csrf_token() }}">
 
     <title>@yield('title','Wanderlust') </title>
 

@@ -6,10 +6,11 @@
     <script type="text/javascript">
         var myWidget = cloudinary.createUploadWidget(
             {
-                cloudName: 'dwarrion',
-                uploadPreset: 'ins6mnhp',
+                cloudName: 'vernom',
+                uploadPreset: 'fn5rpymu',
                 multiple: false,
                 form: '#product_form',
+                folder: 'perfume_project/brand',
                 fieldName: 'thumbnail',
                 thumbnails: '.thumbnail'
             }, function (error, result) {
@@ -26,13 +27,14 @@
         })
         // xử lý js trên dynamic content.
         $('body').on('click', '.cloudinary-delete', function () {
+
             var splittedImg = $(this).parent().find('img').attr('src').split('/');
             var imgName = splittedImg[splittedImg.length - 1];
-
+            console.log(splittedImg);
             imgName = imgName.split('.');
 
             $(this).parent().remove();
-            $('input[data-cloudinary-public-id="' + imgName[0] + '"]').remove();
+            $('input[data-cloudinary-public-id="' + splittedImg[splittedImg.length - 3] +'/'+ splittedImg[splittedImg.length - 2] +'/'+ splittedImg[splittedImg.length - 1] + '"]').remove();
 
             console.log("Remove image : " + imgName[0] + " successful");
         });
@@ -73,8 +75,9 @@
             <div class="col-lg-6">
                 <div class="card-box">
                     <h4 class="header-title">Create Brand : </h4>
-                    <form action="{{route('admin_brand_store')}}" id="product_form" method="POST" class="parsley-examples" novalidate="">
+                    <form action="{{route('admin_brand_update',$brand->id)}}" id="product_form" method="POST" class="parsley-examples" novalidate="">
                         @csrf
+                        @method('PUT')
                         <div class="form-group">
                             <label for="userName">Brand Name<span class="text-danger">*</span></label>
                             <input type="text" name="name" parsley-trigger="change" required=""
