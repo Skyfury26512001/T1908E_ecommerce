@@ -87,7 +87,7 @@
     -moz-box-align: start;
     -ms-flex-align: start;
     align-items: flex-start;
-    padding-top: 25px;
+    padding-top: 15px;
 }
 
 .my-account-section__header-title {
@@ -150,10 +150,6 @@
     -moz-box-align: center;
     -ms-flex-align: center;
     align-items: center;
-}
-
-.birthday-choose {
-    padding-top: 25px;
 }
 
 .input-with-label__label {
@@ -694,7 +690,7 @@ div {
     display: -ms-flexbox;
     display: flex;
     margin-top: 5px;
-    padding: 13px 0;
+    padding: 15px 0;
     border-bottom: 1px solid #efefef;
 }
 
@@ -817,6 +813,10 @@ div {
     font-size: 14px;
 }
 
+.userpage-sidebar-menu-entry__text {
+    font-weight: 500;
+}
+
 /*DatePicker*/
 .input-group > .custom-select:not(:last-child), .input-group > .form-control:not(:last-child) {
     border-top-right-radius: 0;
@@ -882,10 +882,6 @@ div {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
-}
-
-:not(svg) {
-    transform-origin: 0px 0px;
 }
 
 /* purchase page */
