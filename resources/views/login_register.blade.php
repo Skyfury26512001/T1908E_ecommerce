@@ -1,6 +1,6 @@
 @extends('layouts.master')
 @section('specific_css')
-    <link href="{{asset('assets/css/account.css')}}" rel="stylesheet">
+    <link href="{{asset('assets/css/user_page.css')}}" rel="stylesheet">
     <link href="{{asset('assets/css/custom-hung.css')}}" rel="stylesheet">
 @endsection
 @section('specific_js')

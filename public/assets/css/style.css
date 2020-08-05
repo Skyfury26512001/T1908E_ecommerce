@@ -4300,6 +4300,7 @@ li.mm-vertical.mm-opened > .mm-panel {
 }
 
 .mm-slideout {
+    background-color: #f5f5f5;
     -webkit-transition: -webkit-transform .4s ease;
     transition: -webkit-transform .4s ease;
     transition: transform .4s ease;
