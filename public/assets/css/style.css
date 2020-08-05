@@ -4703,6 +4703,7 @@ body.modal-open .mm-slideout {
 .slide-text {
     font-size: 21px;
     font-size: 1.3125rem;
+    margin-bottom: 300px;
 }
 
 .slide-text h2, .slide-text h3 {

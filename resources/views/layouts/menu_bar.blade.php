@@ -140,37 +140,37 @@
                                 <div id="menu">
                                     <ul>
                                         <li><span><a href="#0">CÁC BỘ SƯU TẬP</a></span>
-                                            <ul>
-                                                <li><a href="listing-grid-1-full.html">A</a></li>
-                                                <li><a href="listing-grid-2-full.html">B</a></li>
-                                                <li><a href="listing-grid-3.html">C</a></li>
-                                                <li><a href="listing-grid-5-sidebar-right.html">XEM TOÀN BỘ BST</a>
-                                                </li>
-                                            </ul>
+{{--                                            <ul>--}}
+                                            {{--                                                <li><a href="listing-grid-1-full.html">A</a></li>--}}
+                                            {{--                                                <li><a href="listing-grid-2-full.html">B</a></li>--}}
+                                            {{--                                                <li><a href="listing-grid-3.html">C</a></li>--}}
+                                            {{--                                                <li><a href="listing-grid-5-sidebar-right.html">XEM TOÀN BỘ BST</a>--}}
+                                            {{--                                                </li>--}}
+                                            {{--                                            </ul>--}}
                                         </li>
                                         <li><span><a href="#">NAM</a></span>
-                                            <ul>
-                                                <li><a href="listing-grid-6-sidebar-left.html">A</a></li>
-                                                <li><a href="listing-grid-7-sidebar-right.html">B</a></li>
-                                                <li><a href="listing-row-1-sidebar-left.html">C</a></li>
-                                                <li><a href="listing-row-3-sidebar-left.html">D</a></li>
-                                            </ul>
+{{--                                            <ul>--}}
+                                            {{--                                                <li><a href="listing-grid-6-sidebar-left.html">A</a></li>--}}
+                                            {{--                                                <li><a href="listing-grid-7-sidebar-right.html">B</a></li>--}}
+                                            {{--                                                <li><a href="listing-row-1-sidebar-left.html">C</a></li>--}}
+                                            {{--                                                <li><a href="listing-row-3-sidebar-left.html">D</a></li>--}}
+                                            {{--                                            </ul>--}}
                                         </li>
                                         <li><span><a href="#">NỮ</a></span>
-                                            <ul>
-                                                <li><a href="listing-grid-1-full.html">A</a></li>
-                                                <li><a href="listing-grid-2-full.html">B</a></li>
-                                                <li><a href="listing-grid-3.html">C</a></li>
-                                                <li><a href="listing-grid-4-sidebar-left.html">D</a></li>
-                                            </ul>
+{{--                                            <ul>--}}
+{{--                                                <li><a href="listing-grid-1-full.html">A</a></li>--}}
+{{--                                                <li><a href="listing-grid-2-full.html">B</a></li>--}}
+{{--                                                <li><a href="listing-grid-3.html">C</a></li>--}}
+{{--                                                <li><a href="listing-grid-4-sidebar-left.html">D</a></li>--}}
+{{--                                            </ul>--}}
                                         </li>
                                         <li><span><a href="#">THƯƠNG HIỆU</a></span>
-                                            <ul>
-                                                <li><a href="listing-row-1-sidebar-left.html">A</a></li>
-                                                <li><a href="listing-row-2-sidebar-right.html">B</a></li>
-                                                <li><a href="listing-row-4-sidebar-extended.html">C</a></li>
-                                                <li><a href="listing-grid-1-full.html">D</a></li>
-                                            </ul>
+{{--                                            <ul>--}}
+{{--                                                <li><a href="listing-row-1-sidebar-left.html">A</a></li>--}}
+{{--                                                <li><a href="listing-row-2-sidebar-right.html">B</a></li>--}}
+{{--                                                <li><a href="listing-row-4-sidebar-extended.html">C</a></li>--}}
+{{--                                                <li><a href="listing-grid-1-full.html">D</a></li>--}}
+{{--                                            </ul>--}}
                                         </li>
                                     </ul>
                                 </div>
@@ -200,7 +200,7 @@
                                         <li>
                                             <a href="product-detail-1.html">
                                                 <figure><img
-                                                        src={{asset('assets/img/products/product_placeholder_square_small.jpg')}} data-src="assets/img/products/shoes/thumb/1.jpg"
+                                                        src="{{asset('assets/img/products/product_placeholder_square_small.jpg')}}" data-src="assets/img/products/shoes/thumb/1.jpg"
                                                         alt="" width="50" height="50" class="lazy"></figure>
                                                 <strong><span>Santal 33</span>$90.00</strong>
                                             </a>

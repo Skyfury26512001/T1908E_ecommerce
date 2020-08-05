@@ -9,6 +9,7 @@
     <script>
         $('#datepicker').datepicker({
             uiLibrary: 'bootstrap4',
+            format: 'dd-mm-yyyy'
         });
     </script>
 @endsection
@@ -193,7 +194,7 @@
                                     <div class="input-with-label__wrapper birthday-choose">
                                         <div class="input-with-label__label"><label>Ngày sinh</label></div>
                                         <div class="input-with-label__content">
-                                            <input id="datepicker" width="90%" value="11/12/1999"/>
+                                            <input id="datepicker" width="90%" value="12/11/1999"/>
                                         </div>
                                     </div>
                                 </div>
