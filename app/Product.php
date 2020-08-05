@@ -45,11 +45,11 @@ class Product extends Model
         return $list_photos;
     }
 
-    public function getThumbnailsAttribute()
+    public function getfirstThumbnailAttribute()
     {
         $thumbnail[] = explode(',', $this->thumbnail);
         foreach ($thumbnail as $thumbnailValue) {
-            return $thumbnailValue;
+            return self::$cloudinary_link.$thumbnailValue[0];
         }
     }
 

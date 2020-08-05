@@ -15,19 +15,21 @@
     </script>
 @endsection
 @section('content')
+    {{--    {{dd(session()->all())}}--}}
+    {{--    {{dd($account)}}--}}
     <div class="container margin_30">
         <div class="row">
             <div class="col-md-2">
                 <div class="all">
                     <div class="user-page-brief">
                         <div class="user-page-brief__right">
-                            <div class="user-page-brief__username">tlhoang1211</div>
+                            <div class="user-page-brief__username">{{$account->fullName}}</div>
                             <div><a class="user-page-brief__edit" href="/user/account/profile">
                                     <svg width="12" height="12" viewBox="0 0 12 12" xmlns="http://www.w3.org/2000/svg"
                                          style="margin-right: 4px;">
                                         <path
-                                            d="M8.54 0L6.987 1.56l3.46 3.48L12 3.48M0 8.52l.073 3.428L3.46 12l6.21-6.18-3.46-3.48"
-                                            fill="#9B9B9B" fill-rule="evenodd"></path>
+                                                d="M8.54 0L6.987 1.56l3.46 3.48L12 3.48M0 8.52l.073 3.428L3.46 12l6.21-6.18-3.46-3.48"
+                                                fill="#9B9B9B" fill-rule="evenodd"></path>
                                     </svg>
                                     Sửa hồ sơ</a></div>
                         </div>
@@ -55,19 +57,19 @@
                                 <div class="userpage-sidebar-menu__subsection">
                                     <a class="_17BcjA _1EUbVp"
                                        href="account/profile"><span
-                                            class="_2ilxaJ">Hồ sơ</span>
+                                                class="_2ilxaJ">Hồ sơ</span>
                                     </a>
                                     <a class="_17BcjA"
                                        href="account/payment"><span
-                                            class="_2ilxaJ">Ngân hàng</span>
+                                                class="_2ilxaJ">Ngân hàng</span>
                                     </a>
                                     <a class="_17BcjA"
                                        href="account/address"><span
-                                            class="_2ilxaJ">Địa chỉ</span>
+                                                class="_2ilxaJ">Địa chỉ</span>
                                     </a>
                                     <a class="_17BcjA"
                                        href="/account/password"><span
-                                            class="_2ilxaJ">Đổi mật khẩu</span>
+                                                class="_2ilxaJ">Đổi mật khẩu</span>
                                     </a>
                                 </div>
                             </div>
@@ -116,13 +118,13 @@
                                 <div class="userpage-sidebar-menu__subsection">
                                     <a class="_17BcjA"
                                        href="/user/notifications/order"><span
-                                            class="_2ilxaJ">Cập nhật đơn hàng</span></a>
+                                                class="_2ilxaJ">Cập nhật đơn hàng</span></a>
                                     <a class="_17BcjA"
                                        href="/user/notifications/promotion"><span
-                                            class="_2ilxaJ">Khuyến mãi</span></a>
+                                                class="_2ilxaJ">Khuyến mãi</span></a>
                                     <a class="_17BcjA"
                                        href="/user/notifications/flashsale"><span
-                                            class="_2ilxaJ">Flash Sale của Shop</span></a>
+                                                class="_2ilxaJ">Flash Sale của Shop</span></a>
                                 </div>
                             </div>
                         </div>
@@ -140,103 +142,99 @@
                         </div>
                     </div>
                     <div class="my-account-profile">
-                        <div class="my-account-profile__left">
-                            <div class="input-with-label">
-                                <div class="input-with-label__wrapper">
-                                    <div class="input-with-label__label"><label>Tên đăng nhập</label>
-                                    </div>
-                                    <div class="input-with-label__content">
-                                        <div class="my-account__inline-container">
-                                            <div class="my-account__input-text">tlhoang1211</div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="input-with-label">
-                                <div class="input-with-label__wrapper">
-                                    <div class="input-with-label__label"><label>Tên</label></div>
-                                    <div class="input-with-label__content">
-                                        <div class="input-with-validator-wrapper">
-                                            <div class="input-with-validator"><input type="text"
-                                                                                     placeholder=""
-                                                                                     value="Hoàng Trần">
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="input-with-label">
-                                <div class="input-with-label__wrapper">
-                                    <div class="input-with-label__label"><label>Email</label></div>
-                                    <div class="input-with-label__content">
-                                        <div class="my-account__inline-container">
-                                            <div class="my-account__input-text">tl****@gmail.com</div>
-                                            <a
-                                                href=""
-                                                class="my-account__no-background-button my-account-profile__change-button">
-                                                Thay đổi
-                                            </a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="input-with-label">
-                                <div class="input-with-label__wrapper">
-                                    <div class="input-with-label__label"><label>Số điện thoại</label>
-                                    </div>
-                                    <div class="input-with-label__content">
-                                        <div class="my-account__inline-container">
-                                            <div class="my-account__input-text">*********99</div>
-                                            <a
-                                                class="my-account__no-background-button my-account-profile__change-button"
-                                                href="">
-                                                Thay đổi
-                                            </a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="input-with-label">
-                                <div class="input-with-label__wrapper">
-                                    <div class="input-with-label__label"><label>Giới tính</label></div>
-                                    <div class="input-with-label__content">
-                                        <div class="my-account-profile__gender">
-                                            <div class="stardust-radio-group">
-                                                <div class="form-check form-check-inline">
-                                                    <input class="form-check-input" type="radio"
-                                                           name="inlineRadioOptions" id="inlineRadio1" value="option1"
-                                                           checked>
-                                                    <label class="form-check-label" for="inlineRadio1">Nam</label>
-                                                </div>
-                                                <div class="form-check form-check-inline">
-                                                    <input class="form-check-input" type="radio"
-                                                           name="inlineRadioOptions" id="inlineRadio2" value="option2">
-                                                    <label class="form-check-label" for="inlineRadio2">Nữ</label>
-                                                </div>
-                                                <div class="form-check form-check-inline">
-                                                    <input class="form-check-input" type="radio"
-                                                           name="inlineRadioOptions" id="inlineRadio3" value="option3">
-                                                    <label class="form-check-label" for="inlineRadio3">Khác</label>
+                        <form action="{{route('account_update',$account->id)}}" method="POST">
+                            @csrf
+                            @method('PUT')
+                            <div class="my-account-profile__left">
+                                <div class="input-with-label">
+                                    <div class="input-with-label__wrapper">
+                                        <div class="input-with-label__label"><label>Tên</label></div>
+                                        <div class="input-with-label__content">
+                                            <div class="input-with-validator-wrapper">
+                                                <div class="input-with-validator"><input type="text"
+                                                                                         placeholder=""
+                                                                                         value="{{$account->fullName}}">
                                                 </div>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
                                 <div class="input-with-label">
-                                    <div class="input-with-label__wrapper birthday-choose">
-                                        <div class="input-with-label__label"><label>Ngày sinh</label></div>
+                                    <div class="input-with-label__wrapper">
+                                        <div class="input-with-label__label"><label>Email</label></div>
                                         <div class="input-with-label__content">
-                                            <input id="datepicker" width="276" value="12/11/1999"/>
+                                            <div class="my-account__inline-container">
+                                                <div class="my-account__input-text">{{$account->email}}</div>
+                                                <a
+                                                        href=""
+                                                        class="my-account__no-background-button my-account-profile__change-button">
+                                                    Thay đổi
+                                                </a>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
-                                <div class="my-account-page__submit">
-                                    <button type="button" class="btn btn-solid-primary btn--m btn--inline"
-                                            aria-disabled="false">Lưu
-                                    </button>
+                                <div class="input-with-label">
+                                    <div class="input-with-label__wrapper">
+                                        <div class="input-with-label__label"><label>Số điện thoại</label>
+                                        </div>
+                                        <div class="input-with-label__content">
+                                            <div class="my-account__inline-container">
+                                                <div class="my-account__input-text">{{$account->phoneNumber}}</div>
+                                                <a
+                                                        class="my-account__no-background-button my-account-profile__change-button"
+                                                        href="">
+                                                    Thay đổi
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="input-with-label">
+                                    <div class="input-with-label__wrapper">
+                                        <div class="input-with-label__label"><label>Giới tính</label></div>
+                                        <div class="input-with-label__content">
+                                            <div class="my-account-profile__gender">
+                                                <div class="stardust-radio-group">
+                                                    <div class="form-check form-check-inline">
+                                                        <input class="form-check-input" type="radio"
+                                                               name="inlineRadioOptions" id="inlineRadio1"
+                                                               value="option1"
+                                                               @if ($account->sex == "Male")
+                                                               checked
+                                                                @endif>
+                                                        <label class="form-check-label" for="inlineRadio1">Nam</label>
+                                                    </div>
+                                                    <div class="form-check form-check-inline">
+                                                        <input class="form-check-input" type="radio"
+                                                               name="inlineRadioOptions" id="inlineRadio2"
+                                                               value="option2"
+                                                               @if ($account->sex == "Female")
+                                                               checked
+                                                                @endif>
+                                                        <label class="form-check-label" for="inlineRadio2">Nữ</label>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="input-with-label">
+                                        <div class="input-with-label__wrapper birthday-choose">
+                                            <div class="input-with-label__label"><label>Ngày sinh</label></div>
+                                            <div class="input-with-label__content">
+                                                <input id="datepicker" width="276"
+                                                       value="{{date("m-d-Y", strtotime($account->birthDate))}}"/>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="my-account-page__submit">
+                                        <button type="submit" class="btn btn-solid-primary btn--m btn--inline"
+                                                aria-disabled="false">Lưu
+                                        </button>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
+                        </form>
                     </div>
                 </div>
             </div>

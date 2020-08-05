@@ -12,7 +12,17 @@ class ProductController extends Controller
     public function index($id)
     {
         $product = Product::find($id);
-        return view('products.product_detail')->with('product', $product);
+
+        $product_style = $product->style;
+        $style_arr = explode(',', $product_style);
+//        dd($style_arr);
+        $item_query = Product::where('status','1')->where('id','!=',$product->id);
+        foreach ($style_arr as $style){
+            $item_query->orWhere('style','=','%'.$style.'%');
+        }
+        $eloquent_product = $item_query->take(3)->get();
+
+        return view('products.product_detail')->with('product', $product)->with('eloquent_product',$eloquent_product);
     }
 
     public function admin_index(Request $request){
@@ -136,5 +146,32 @@ class ProductController extends Controller
         $origins = Origin::where('status','=','1')->orderBy('id','ASC')->get();
         $product = Product::where('status','=','1')->where('id','=',$id)->first();
         return view('admin.products.edit',compact('product','brands','origins'));
+    }
+
+    public function add_to_cart(Request $request){
+
+        $id = $request->id;
+        $quanity = $request->quaity;
+
+        $product = Product::where('status', '=' , '1')->where('id','=',$id)->get();
+        if ($product == null){
+            return view('404');
+        }
+
+        $cart_session = $request->session();
+        if (session()->has('current_item')){
+            $shopping_cart = session()->get('current_item');
+            $shopping_cart[$id]['product'] = $product;
+            $shopping_cart[$id]['quanity'] = $quanity;
+            $cart_session->push('current_item',$shopping_cart);
+        }else{
+            $shopping_cart = array();
+            $shopping_cart[$id]['product'] = $product;
+            $shopping_cart[$id]['quanity'] = $quanity;
+            $cart_session->put('current_item',$shopping_cart);
+        }
+        $request->session()->save();
+
+        return response()->json(['success'=>"Products added to cart successfully."]);
     }
 }

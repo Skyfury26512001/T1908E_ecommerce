@@ -61,6 +61,17 @@
                         <li><a href="{{route('admin_account_create')}}">Thêm nguồn gốc</a></li>
                     </ul>
                 </li>
+                <li>
+                    <a href="#">
+                        <i class="fe-sidebar"></i>
+                        <span>  Quản lý hóa đơn</span>
+                        <span class="menu-arrow"></span>
+                    </a>
+                    <ul class="nav-second-level" aria-expanded="false">
+                        <li><a href="{{route('admin_receipt')}}">Danh sách</a></li>
+                        <li><a href="{{route('admin_receipt_create')}}">Thêm nguồn gốc</a></li>
+                    </ul>
+                </li>
 
 {{--                <li>--}}
 {{--                    <a href="javascript: void(0);">--}}

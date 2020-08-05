@@ -244,7 +244,7 @@
                                                 <a href="account.html"><i class="ti-package"></i>My Orders</a>
                                             </li>
                                             <li>
-                                                <a href="account.html"><i class="ti-user"></i>My Profile</a>
+                                                <a href="{{route('profile')}}"><i class="ti-user"></i>My Profile</a>
                                             </li>
                                             <li>
                                                 <a href="help.html"><i class="ti-help-alt"></i>Help and Faq</a>
