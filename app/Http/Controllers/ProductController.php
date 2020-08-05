@@ -10,5 +10,5 @@ class ProductController extends Controller
     {
         $product = Product::first();
         return view('products.product_detail')->with('product', $product);
-    }
+    }git
 }
