@@ -5,6 +5,7 @@ use App\Brand;
 use App\Origin;
 use Illuminate\Http\Request;
 use App\Product;
+use Illuminate\Support\Facades\Session;
 use PhpParser\Node\Expr\Array_;
 
 class ProductController extends Controller
@@ -152,27 +153,101 @@ class ProductController extends Controller
     public function add_to_cart(Request $request){
 
         $id = $request->id;
-        $quanity = $request->quaity;
-
+        $quantity = $request->quantity;
+        // kiểm tra sản phẩm theo id truyền lên.
         $product = Product::where('status', '=' , '1')->where('id','=',$id)->get();
         if ($product == null){
             return view('404');
         }
+        // lấy thông tin giỏ hàng từ trong session.
+        $shopping_cart = Session::get('shoppingCart');
 
-        $cart_session = $request->session();
-        if (session()->has('current_item')){
-            $shopping_cart = session()->get('current_item');
-            $shopping_cart[$id]['product'] = $product;
-            $shopping_cart[$id]['quanity'] = $quanity;
-            $cart_session->push('current_item',$shopping_cart);
-        }else{
-            $shopping_cart = array();
-            $shopping_cart[$id]['product'] = $product;
-            $shopping_cart[$id]['quanity'] = $quanity;
-            $cart_session->put('current_item',$shopping_cart);
+        if ($shopping_cart == null) {
+            // thì tạo mới giỏ hàng là một mảng các key và value
+            $shoppingCart = array(); // key và value
         }
+        $cartItem = null;
+
+        if (array_key_exists($id, $shopping_cart)) {
+            $cartItem = $shopping_cart[$id];
+        }
+        if ($cartItem == null) {
+            // nếu không, tạo mới một cart item.
+            $cartItem = array(
+                'product' => $product,
+                'quantity' => $quantity
+            );
+        } else {
+            // nếu có, cộng số lượng sản phẩm thêm 1.
+            $cartItem['quantity'] += $quantity;
+        }
+
+        $shopping_cart[$id] = $cartItem;
+        
+
+        if($cartItem['quantity'] <= 0){
+            unset($shopping_cart[$product->id]);
+        }
+        Session::put('shoppingCart', $shopping_cart);
+        $request->session()->save();
+
+//        if (session()->has('current_item')){
+//            $shopping_cart = session()->get('current_item');
+//            $shopping_cart[$id]['product'] = $product;
+//            $shopping_cart[$id]['quanity'] = $quanity;
+//            $cart_session->push('current_item',$shopping_cart);
+//        }else{
+//            $shopping_cart = array();
+//            $shopping_cart[$id]['product'] = $product;
+//            $shopping_cart[$id]['quanity'] = $quanity;
+//            $cart_session->put('current_item',$shopping_cart);
+//        }
         $request->session()->save();
 
         return response()->json(['success'=>"Products added to cart successfully."]);
+    }
+
+    public function add(Request $request)
+    {
+        $id = $request->get('productId');
+        $quantity = $request->get('quantity');
+        // kiểm tra sản phẩm theo id truyền lên.
+        $product = Product::find($id);
+        if ($product == null) {
+            // nếu không tồn tại sản phẩm đưa về trang lỗi ko tìm thấy.
+            return view('404');
+        }
+
+        // lấy thông tin giỏ hàng từ trong session.
+        $shoppingCart = Session::get('shoppingCart');
+        // nếu session ko có thông tin giỏ hàng
+        if ($shoppingCart == null) {
+            // thì tạo mới giỏ hàng là một mảng các key và value
+            $shoppingCart = array(); // key và value
+        }
+        // kiểm xem sản phẩm có trong giỏ hàng hay không.
+        $cartItem = null;
+        if (array_key_exists($id, $shoppingCart)) {
+            $cartItem = $shoppingCart[$id];
+        }
+        if ($cartItem == null) {
+            // nếu không, tạo mới một cart item.
+            $cartItem = array(
+                'productId' => $product->id,
+                'productName' => $product->name,
+                'productPrice' => $product->price,
+                'quantity' => $quantity
+            );
+        } else {
+            // nếu có, cộng số lượng sản phẩm thêm 1.
+            $cartItem['quantity'] += $quantity;
+        }
+        // đưa sản phẩm vào giỏ hàng với key chính là id của sản phẩm.
+        $shoppingCart[$product->id] = $cartItem;
+//        if($cartItem['quantity'] <= 0){
+//            unset($shoppingCart[$product->id]);
+//        }
+        Session::put('shoppingCart', $shoppingCart);
+//        return redirect('/shopping-cart/show');
     }
 }

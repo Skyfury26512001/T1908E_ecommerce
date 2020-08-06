@@ -16,15 +16,19 @@
                 });
                 var check = confirm("Are you sure you want to add this item to cart?");
                 if (check == true) {
-                    var join_selected_values = this.getAttribute('data');
-                    var quatity = $('#quantity_1').val();
-                    console.log(quatity)
+                    var id = this.getAttribute('data');
+                    var quantity = $('#quantity_1').val();
+                    console.log(quantity)
                     // console.log(join_selected_values);
                     $.ajax({
                         url: '{{route('add_to_cart')}}',
                         type: 'POST',
                         headers: {'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')},
-                        data: 'id=' + join_selected_values,
+                        data:  {
+                            "_token": $('meta[name="csrf-token"]').attr('content'),
+                            'quantity': quantity,
+                            'id' : id,
+                        },
                         success: function (data) {
                             if (data['success']) {
                                 alert("Products added to cart successfully.");
