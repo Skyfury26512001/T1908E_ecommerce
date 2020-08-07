@@ -59,7 +59,7 @@
                     <ul>
                         <li><a href="/about_us">Giới thiệu về Wanderlust</a></li>
                         <li><a href="/blog">Diễn đàn chuyên gia nước hoa</a></li>
-                        <li><a href="account.html">Tài khoản cá nhân</a></li>
+                        <li><a href="/user/account">Tài khoản cá nhân</a></li>
                     </ul>
                 </div>
             </div>
@@ -67,14 +67,21 @@
                 <h3 data-target="#collapse_2">Dịch vụ</h3>
                 <div class="collapse dont-collapse-sm links" id="collapse_2">
                     <ul>
-                        <li><a href="/faq">Các câu hỏi thường gặp</a></li>
+                        <li><a href="/service">Các câu hỏi thường gặp</a></li>
                         {{-- Frequently Asked Questions - FAQ --}}
                         <li><a href="">Hướng dẫn đặt hàng</a></li>
                         <li><a href="">Phương thức vận chuyển</a></li>
                         <li><a href="">Phương thức thanh toán</a></li>
-                        <li><a href="">Chính sách giá cả</a></li>
-                        <li><a href="">Chính sách đổi trả</a></li>
-                        <li><a href="">Chính sách bảo mật</a></li>
+                        <li><a href="">Chính sách</a></li>
+                        {{--                        <li><a href="">Chính sách giá cả</a></li>--}}
+                        {{--                        <li><a href="">Chính sách đổi trả</a></li>--}}
+                        {{--                        <li><a href="">Chính sách bảo mật</a></li>--}}
+
+                        <div class="collapse dont-collapse-sm links" id="collapse_2">
+                            <ul>
+                                <li><a href="/service">Trang dịch vụ</a></li>
+                            </ul>
+                        </div>
                     </ul>
                 </div>
             </div>
