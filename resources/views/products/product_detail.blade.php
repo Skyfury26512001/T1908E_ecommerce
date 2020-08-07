@@ -6,6 +6,14 @@
     <script src="{{asset('assets/js/carousel_with_thumbs.js')}}"></script>
     <script src="{{asset('assets/js/read_more_read_less.js')}}"></script>
     <script>
+        // $(document).sex(function () {
+        //     var sex = $(this).closest("h6").find('.sex').text();
+        //     if (sex === "Nữ") {
+        //         $("span.sex").css("background-color", "palevioletred !important");
+        //     } else if (sex === "Phi giới tính") {
+        //         $("span.sex").css("background-color", "gold !important");
+        //     }
+        // });
         $(document).ready(function () {
             $(".add_to_cart").on('click', function (e) {
                 console.log('123');
@@ -14,7 +22,7 @@
                     allVals.push($(this).val());
                     console.log(allVals);
                 });
-                var check = confirm("Are you sure you want to add this item to cart?");
+                var check = confirm("Thêm sản phẩm vào giỏ hàng?");
                 if (check == true) {
                     var id = this.getAttribute('data');
                     var quantity = $('#quantity_1').val();
@@ -34,11 +42,11 @@
                         },
                         success: function (data) {
                             if (data['success']) {
-                                alert("Products added to cart successfully.");
+                                alert("Thành công.");
                             } else if (data['error']) {
                                 console.log(data['error']);
                             } else {
-                                alert('Whoops Something went wrong!!');
+                                alert('Lỗi!!');
                             }
                         },
                         error: function (data) {
@@ -102,7 +110,7 @@
                                         class="icon-star voted"></i><i class="icon-star voted"></i><i
                                         class="icon-star"></i><em>4 reviews</em></span>
                             <h6>{{$product->concentration}}
-                                <span>{{$product->sex}}</span>
+                                <span class="sex">{{$product->sex}}</span>
                                 <p>Thương hiệu: <a href="#">{{$product->brand->brand_name}}</a></p>
                             </h6>
                             <div class="productID">Code:</div>
