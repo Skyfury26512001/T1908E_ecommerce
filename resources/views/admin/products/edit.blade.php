@@ -6,17 +6,20 @@
     <script type="text/javascript">
         var myWidget = cloudinary.createUploadWidget(
             {
-                cloudName: 'dwarrion',
-                uploadPreset: 'ins6mnhp',
+                cloudName: 'vernom',
+                uploadPreset: 'fn5rpymu',
                 multiple: true,
                 form: '#product_form',
+                folder: 'perfume_project/perfume',
                 fieldName: 'thumbnails[]',
-                thumbnails: '.thumbnail'
+                thumbnails: '.thumbnails'
             }, function (error, result) {
                 if (!error && result && result.event === "success") {
                     console.log('Done! Here is the image info: ', result.info.url);
-                    var thumbnailInput = document.querySelector('input[name="thumbnail"]');
-                    thumbnailInput.value = thumbnailInput.getAttribute('data-cloudinary-public-id');
+                    var arrayThumnailInputs = document.querySelectorAll('input[name="thumbnails[]"]');
+                    for (let i = 0; i < arrayThumnailInputs.length; i++) {
+                        arrayThumnailInputs[i].value = arrayThumnailInputs[i].getAttribute('data-cloudinary-public-id');
+                    }
                     console.log(thumbnailInput)
                 }
             }
@@ -28,10 +31,10 @@
         $('body').on('click', '.cloudinary-delete', function () {
             var splittedImg = $(this).parent().find('img').attr('src').split('/');
             var imgName = splittedImg[splittedImg.length - 1];
-
+            console.log(splittedImg)
             imgName = imgName.split('.');
             console.log(imgName[0]);
-            $('input[data-cloudinary-public-id="' + imgName[0] + '"]').remove();
+            $('input[data-cloudinary-public-id="'+ splittedImg[splittedImg.length - 3] + splittedImg[splittedImg.length - 2] + imgName[0] + splittedImg[splittedImg.length - 2] + '"]').remove();
         });
     </script>
 
@@ -117,7 +120,7 @@
                                     <div class="form-group" style="width: 50%">
                                         <label>Hãng</label>
                                         <select class="form-control" name="brand_id">
-                                            <option value="{{$product->brand->id}}" disabled selected>{{$product->brand->brand_name}}</option>
+                                            <option value="{{$product->brand->id}}"  selected>{{$product->brand->brand_name}}</option>
                                             @foreach($brands as $brand)
                                                 <option value="{{$brand->id}}">{{$brand->brand_name}}</option>
                                             @endforeach
@@ -131,7 +134,7 @@
                                     <div class="form-group" style="width: 60%">
                                         <label>Xuất xứ</label>
                                         <select class="form-control" name="origin_id">
-                                            <option value="{{$product->origin->id}}" disabled selected>{{$product->origin->name}}</option>
+                                            <option value="{{$product->origin->id}}"  selected>{{$product->origin->name}}</option>
                                             @foreach($origins as $origin)
                                                 <option value="{{$origin->id}}">{{$origin->name}}</option>
                                             @endforeach
@@ -145,7 +148,7 @@
                                     <div class="form-group" style="width: 40%">
                                         <label>Dung lượng</label>
                                         <select class="form-control" name="volume">
-                                            <option value="{{$product->volume}}" disabled selected>{{$product->volume}}</option>
+                                            <option value="{{$product->volume}}"  selected>{{$product->volume}}</option>
                                             <option value="100ml">100ml</option>
                                             <option value="90ml">90ml</option>
                                             <option value="50ml">50ml</option>
@@ -160,9 +163,10 @@
                                     <div class="form-group" style="width: 40%">
                                         <label>Giới tính</label>
                                         <select class="form-control" name="sex">
-                                            <option value="{{$product->sex}}" disabled selected>{{$product->sex}}</option>
+                                            <option value="{{$product->sex}}"  selected>{{$product->sex}}</option>
                                             <option value="Nam">Nam</option>
                                             <option value="Nữ">Nữ</option>
+                                            <option value="Phi giới tính">Phi giới tính</option>
                                         </select>
                                         @if ($errors->has('sex'))
                                             <label class="alert-warning">{{$errors->first('sex')}}</label>
@@ -199,7 +203,7 @@
                                         <div class="form-group" style="width: 75%">
                                             <label>Độ lưu hương</label>
                                             <select class="form-control" name="incense_level">
-                                                <option value="{{$product->incense_level}}" disabled selected>{{$product->incense_level}}</option>
+                                                <option value="{{$product->incense_level}}"  selected>{{$product->incense_level}}</option>
                                                 <option value="Lâu - 7 giờ đến 12 giờ">Lâu - 7 giờ đến 12 giờ</option>
                                                 <option value="Tạm ổn - 3 giờ đến 6 giờ">Tạm ổn - 3 giờ đến 6 giờ
                                                 </option>
@@ -211,7 +215,7 @@
                                         <div class="form-group" style="width: 75%">
                                             <label>Phạm vi hương thơm</label>
                                             <select class="form-control" name="aroma_level">
-                                                <option value="{{$product->aroma_level}}" disabled selected>{{$product->aroma_level}}
+                                                <option value="{{$product->aroma_level}}"  selected>{{$product->aroma_level}}
                                                 </option>
                                                 <option value="Xa - Toả hương trong vòng bán kính 2 mét">Xa - Toả hương trong vòng bán kính 2 mét
                                                 </option>
@@ -224,7 +228,7 @@
                                         <div class="form-group" style="width: 75%">
                                             <label>Mức nồng độ</label>
                                             <select class="form-control" name="concentration">
-                                                <option value="{{$product->concentration}}" disabled selected>{{$product->concentration}}
+                                                <option value="{{$product->concentration}}"  selected>{{$product->concentration}}
                                                 </option>
                                                 <option value="Eau de Parfum">Eau de Parfum
                                                 </option>
@@ -252,7 +256,7 @@
                                                         class="text-danger">*</span></label>
                                             <input type="number" name="recommended_age" parsley-trigger="change"
                                                    required=""
-                                                   value="{{$product->age}}" class="form-control" id="userName">
+                                                   value="{{$product->recommended_age}}" class="form-control" id="userName">
                                             @if ($errors->has('recommended_age'))
                                                 <label class="alert-warning">{{$errors->first('recommended_age')}}</label>
                                             @endif
