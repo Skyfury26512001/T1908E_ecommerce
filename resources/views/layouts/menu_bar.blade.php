@@ -185,7 +185,7 @@
                     </div>
                 </div>
                 <div class="col-xl-5 col-lg-6 col-md-5 d-none d-md-block">
-                    <form action="{{route('product_search')}}" method="POST">
+                    <form action="{{route('product_search')}}" method="GET">
                         @csrf
                         <div class="custom-search-input">
                             <input type="text" name="keyword" placeholder="Tìm kiếm hơn 10.000 sản phẩm">
@@ -210,8 +210,10 @@
                         <li>
 
                             <div class="dropdown dropdown-cart">
-                                <a href="cart.html" class="cart_bt"><strong>{{count($products_in_cart)}}</strong></a>
-                                @if ($products_in_cart != null)
+
+                                    <a href="cart.html"
+                                       class="cart_bt">@if ($products_in_cart != null)<strong> {{count($products_in_cart)}}</strong>@endif</a>
+                                 @if ($products_in_cart != null)
                                     <div class="dropdown-menu">
                                         <ul>
                                             @foreach($products_in_cart as $product_item)
@@ -223,7 +225,7 @@
                                                         <strong><span>{{$product_item['product']->first()->name}}</span>{{$product_item['product']->first()->FormatPrice}}
                                                         </strong>
                                                     </a>
-{{--                                                    <a href="0" class="action"><i class="ti-trash"></i></a>--}}
+                                                    {{--                                                    <a href="0" class="action"><i class="ti-trash"></i></a>--}}
                                                 </li>
                                             @endforeach
                                         </ul>
@@ -294,7 +296,7 @@
             <!-- /row -->
         </div>
         <div class="search_mob_wp">
-            <form action="{{route('product_search')}}" method="POST">
+            <form action="{{route('product_search')}}" method="GET">
                 <input type="text" class="form-control" placeholder="Tìm kiếm hơn 10.000 sản phẩm" name="keyword">
                 <input type="submit" class="btn_1 full-width" value="Search">
             </form>

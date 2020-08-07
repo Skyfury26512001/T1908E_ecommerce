@@ -29,7 +29,7 @@
                                                 A powerfully fresh trail, wild and noble all at once.
                                             </p>
                                             <div class="owl-slide-animated owl-slide-cta"><a class="btn_1"
-                                                                                             href="/product/2"
+                                                                                             href="/product/sauvage_p"
                                                                                              role="button">Mua ngay</a>
                                             </div>
                                         </div>
@@ -52,7 +52,7 @@
                                                 Powerful & juicy freshness with a woody amber trail
                                             </p>
                                             <div class="owl-slide-animated owl-slide-cta"><a class="btn_1"
-                                                                                             href="/product/1"
+                                                                                             href="/product/sauvage_edt"
                                                                                              role="button">Mua ngay</a>
                                             </div>
                                         </div>
@@ -76,7 +76,7 @@
                                                 spicy freshness with a woody trail envelopped in vanilla absolute
                                             </p>
                                             <div class="owl-slide-animated owl-slide-cta"><a class="btn_1"
-                                                                                             href="/product/3"
+                                                                                             href="/product/sauvage_edp"
                                                                                              role="button">Mua ngay</a>
                                             </div>
                                         </div>
@@ -458,7 +458,7 @@
                                         <span class="new_price">6.000.000₫</span>
                                         <span class="old_price">6.500.000₫</span>
                                     </div>
-                                    <a class="btn_1" href="/product/13" role="button">Mua ngay</a>
+                                    <a class="btn_1" href="/product/another_13_edp" role="button">Mua ngay</a>
                                 </div>
                             </div>
                         </div>
@@ -700,17 +700,16 @@
                         <a class="box_news" href="blog.html">
                             <figure>
                                 <img
-                                    src={{asset('assets/img/blog-thumb-placeholder.jpg')}} data-src="assets/img/blog-thumb-1.jpg"
+                                    src='https://res.cloudinary.com/vernom/image/upload/c_scale,h_266,w_400/v1596800928/perfume_project/article/1_byoh6y.jpg'
                                     alt="" width="400" height="266" class="lazy">
-                                <figcaption><strong>28</strong>Dec</figcaption>
+                                <figcaption><strong>07</strong>Aug</figcaption>
                             </figure>
                             <ul>
-                                <li>by Mark Twain</li>
-                                <li>20.11.2017</li>
+                                <li>Hoàng Trần</li>
+                                <li>07.08.2020</li>
                             </ul>
-                            <h4>Pri oportere scribentur eu</h4>
-                            <p>Cu eum alia elit, usu in eius appareat, deleniti sapientem honestatis eos ex. In ius esse
-                                ullum vidisse....</p>
+                            <h4>Fucking Fabulous – khi tình yêu trở nên mù quáng</h4>
+                            <p>Thật đáng buồn cười khi con người ta liên tục cảm thấy hối hận vì....</p>
                         </a>
                     </div>
                     <!-- /box_news -->
@@ -718,17 +717,16 @@
                         <a class="box_news" href="blog.html">
                             <figure>
                                 <img
-                                    src={{asset('assets/img/blog-thumb-placeholder.jpg')}} data-src="assets/img/blog-thumb-2.jpg"
+                                    src='https://res.cloudinary.com/vernom/image/upload/c_scale,h_266,w_400/c_scale,h_266,w_400/v1596800928/perfume_project/article/2_us9yma.jpg'
                                     alt="" width="400" height="266" class="lazy">
-                                <figcaption><strong>28</strong>Dec</figcaption>
+                                <figcaption><strong>07</strong>Aug</figcaption>
                             </figure>
                             <ul>
-                                <li>By Jhon Doe</li>
-                                <li>20.11.2017</li>
+                                <li>Khánh Nam</li>
+                                <li>07.08.2020</li>
                             </ul>
-                            <h4>Duo eius postea suscipit ad</h4>
-                            <p>Cu eum alia elit, usu in eius appareat, deleniti sapientem honestatis eos ex. In ius esse
-                                ullum vidisse....</p>
+                            <h4>Nước hoa và thủ thuật giao tiếp</h4>
+                            <p>Ẩn sau những nốt hương nhè nhẹ, vấn vương là cả một thế giới tràn đầy bí ẩn....</p>
                         </a>
                     </div>
                     <!-- /box_news -->
@@ -736,17 +734,17 @@
                         <a class="box_news" href="blog.html">
                             <figure>
                                 <img
-                                    src={{asset('assets/img/blog-thumb-placeholder.jpg')}} data-src="assets/img/blog-thumb-3.jpg"
+                                    src='https://res.cloudinary.com/vernom/image/upload/c_scale,h_266,w_400/v1596800930/perfume_project/article/3_ffvjlv.jpg'
                                     alt="" width="400" height="266" class="lazy">
-                                <figcaption><strong>28</strong>Dec</figcaption>
+                                <figcaption><strong>07</strong>Aug</figcaption>
                             </figure>
                             <ul>
-                                <li>By Luca Robinson</li>
-                                <li>20.11.2017</li>
+                                <li>Đỗ Thái</li>
+                                <li>07.08.2020</li>
                             </ul>
-                            <h4>Elitr mandamus cu has</h4>
-                            <p>Cu eum alia elit, usu in eius appareat, deleniti sapientem honestatis eos ex. In ius esse
-                                ullum vidisse....</p>
+                            <h4>Bộ sưu tập Gucci Bloom, khi vẻ đẹp của hoa Huệ được tôn vinh</h4>
+                            <p>Tháng 8 năm 2017, Giám đốc sáng tạo Alessandro Michele với nét mặt rạng rỡ, hạnh
+                                phúc....</p>
                         </a>
                     </div>
                     <!-- /box_news -->
@@ -754,17 +752,16 @@
                         <a class="box_news" href="blog.html">
                             <figure>
                                 <img
-                                    src={{asset('assets/img/blog-thumb-placeholder.jpg')}} data-src="assets/img/blog-thumb-4.jpg"
+                                    src='https://res.cloudinary.com/vernom/image/upload/c_scale,h_266,w_400/v1596800929/perfume_project/article/4_yxxipn.jpg'
                                     alt="" width="400" height="266" class="lazy">
-                                <figcaption><strong>28</strong>Dec</figcaption>
+                                <figcaption><strong>06</strong>Aug</figcaption>
                             </figure>
                             <ul>
-                                <li>By Paula Rodrigez</li>
-                                <li>20.11.2017</li>
+                                <li>Bá Lâm</li>
+                                <li>06.08.2020</li>
                             </ul>
-                            <h4>Id est adhuc ignota delenit</h4>
-                            <p>Cu eum alia elit, usu in eius appareat, deleniti sapientem honestatis eos ex. In ius esse
-                                ullum vidisse....</p>
+                            <h4>Alaia – Mùi hương của ký ức, tình yêu và nỗi nhớ</h4>
+                            <p>Thật dễ để yêu ai đó khi họ đã trở thành một phần của ký ức, nhưng thật khó....</p>
                         </a>
                     </div>
                     <!-- /box_news -->

@@ -40,7 +40,6 @@
 <!-- YOUR CUSTOM CSS -->
     {{--    <link href={{ asset('assets/css/custom.css') }} rel="stylesheet">--}}
     <link href={{ asset('assets/css/custom-hung.css') }} rel="stylesheet">
-
 </head>
 
 <body>
@@ -89,7 +88,7 @@
 
                         <div class="collapse dont-collapse-sm links" id="collapse_2">
                             <ul>
-                                <li><a href="">Trang liên hệ</a></li>
+                                <li><a href="/contact">Trang liên hệ</a></li>
                             </ul>
                         </div>
                     </ul>

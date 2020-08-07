@@ -1,30 +1,28 @@
 <?php
 
 namespace App\Http\Controllers;
+
 use App\Brand;
 use App\Origin;
-use Illuminate\Http\Request;
 use App\Product;
 use Illuminate\Support\Facades\Session;
+use Illuminate\Http\Request;
 use PhpParser\Node\Expr\Array_;
 
 class ProductController extends Controller
 {
-    public function index($id)
+    public function index($slug)
     {
-
-        $product = Product::find($id);
-
+        $product = Product::where('slug', '=', $slug)->first();
         $product_style = $product->style;
         $style_arr = explode(',', $product_style);
 //        dd($style_arr);
-        $item_query = Product::where('status','1')->where('id','!=',$product->id);
-        foreach ($style_arr as $style){
-            $item_query->orWhere('style','=','%'.$style.'%');
+        $item_query = Product::where('status', '1')->where('slug', '!=', $product->slug);
+        foreach ($style_arr as $style) {
+            $item_query->orWhere('style', '=', '%' . $style . '%');
         }
         $eloquent_product = $item_query->take(3)->get();
         $eloquent_product_5 = $item_query->take(5)->get();
-
         $item_brand_query = Product::where('status','1')->where('id','!=',$product->id);
         $item_brand_query->where('brand_id','=',$product->brand->id);
         $eloquent_product_brand = $item_brand_query->get();
@@ -33,30 +31,29 @@ class ProductController extends Controller
         return view('products.product_detail',compact('eloquent_product_5','eloquent_product_brand'))->with('product', $product)->with('eloquent_product',$eloquent_product);
     }
 
-    public function admin_index(Request $request){
+    public function admin_index(Request $request)
+    {
 
         $numberItem = 5;
         $orderBy = "ASC";
-        $query = Product::where('status','=','1');
+        $query = Product::where('status', '=', '1');
         $datas = new Array_();
 
 
-
-
-        if ($request->has('origin') && $request->origin != "0"){
+        if ($request->has('origin') && $request->origin != "0") {
             $query->where('origin_id', $request->origin);
             $datas->origin = $request->origin;
         }
-        if ($request->has('brand') && $request->brand != "0"){
+        if ($request->has('brand') && $request->brand != "0") {
             $query->where('brand_id', $request->brand);
             $datas->brand = $request->brand;
         }
-        if ($request->has('inventor') && $request->inventor != null && strlen($request->inventor) > 0){
-            $query->where('inventor_name', 'like','%'.$request->inventor.'%');
+        if ($request->has('inventor') && $request->inventor != null && strlen($request->inventor) > 0) {
+            $query->where('inventor_name', 'like', '%' . $request->inventor . '%');
             $datas->inventor = $request->inventor;
         }
-        if ($request->has('product_name') && $request->product_name != null && strlen($request->product_name) > 0){
-            $query->where('name', 'like','%'.$request->product_name.'%');
+        if ($request->has('product_name') && $request->product_name != null && strlen($request->product_name) > 0) {
+            $query->where('name', 'like', '%' . $request->product_name . '%');
             $datas->product_name = $request->product_name;
         }
         $products = $query->orderBy('id', 'desc')->paginate(5);
@@ -70,18 +67,21 @@ class ProductController extends Controller
 ////        dd($products);
 
 
-        $brands = Brand::where('status','=','1')->orderBy('id',$orderBy)->get();
-        $origins = Origin::where('status','=','1')->orderBy('id',$orderBy)->get();
-        return view('admin.products.product_list')->with(compact('products','brands','origins','datas'));
+        $brands = Brand::where('status', '=', '1')->orderBy('id', $orderBy)->get();
+        $origins = Origin::where('status', '=', '1')->orderBy('id', $orderBy)->get();
+        return view('admin.products.product_list')->with(compact('products', 'brands', 'origins', 'datas'));
 
     }
 
-    public function create(){
-        $brands = Brand::where('status','=','1')->orderBy('id','ASC')->get();
-        $origins = Origin::where('status','=','1')->orderBy('id','ASC')->get();
-        return view('admin.products.create')->with(compact('brands','origins'));;
+    public function create()
+    {
+        $brands = Brand::where('status', '=', '1')->orderBy('id', 'ASC')->get();
+        $origins = Origin::where('status', '=', '1')->orderBy('id', 'ASC')->get();
+        return view('admin.products.create')->with(compact('brands', 'origins'));;
     }
-    public function store(Request $request){
+
+    public function store(Request $request)
+    {
 //        dd($request);
         $request->validate([
             'name' => 'required',
@@ -100,7 +100,7 @@ class ProductController extends Controller
             'recommended_time' => 'required',
             'thumbnails' => 'required',
             'description' => 'required',
-        ],[
+        ], [
             'name.required' => 'Tên hãng là cần thiết',
             'brand_id.required' => 'Bắt buộc phải có hãng sản phẩm',
             'origin_id.required' => 'Bắt buộc phải có xuất xứ',
@@ -121,25 +121,26 @@ class ProductController extends Controller
 
         $product = new Product();
         $product->name = $request->name;
+        $product->slug = sanitize($product->name);
         $product->brand_id = $request->brand_id;
         $product->origin_id = $request->origin_id;
         $product->sex = $request->sex;
         $product->concentration = $request->concentration;
-        $product->volume = $request->volume ;
+        $product->volume = $request->volume;
         $product->inventor_name = $request->inventor_name;
-        $product->recommended_age = $request->recommended_age ;
-        $product->released_year = $request->released_year ;
-        $product->incense_level = $request->incense_level ;
-        $product->aroma_level = $request->aroma_level ;
-        $product->price = $request->price ;
+        $product->recommended_age = $request->recommended_age;
+        $product->released_year = $request->released_year;
+        $product->incense_level = $request->incense_level;
+        $product->aroma_level = $request->aroma_level;
+        $product->price = $request->price;
         $product->style = $request->style;
-        foreach ($request->recommended_time as $time){
-            $product->recommended_time .= $time.",";
+        foreach ($request->recommended_time as $time) {
+            $product->recommended_time .= $time . ",";
         }
 
-        $product->description = $request->description ;
-        foreach ($request->thumbnails as $thumb){
-            $product->thumbnail .= $thumb.",";
+        $product->description = $request->description;
+        foreach ($request->thumbnails as $thumb) {
+            $product->thumbnail .= $thumb . ",";
         }
 //        $product->thumbnail = ;
         $product->status = 1;
@@ -149,14 +150,16 @@ class ProductController extends Controller
         return redirect(route('admin_product_list'));
     }
 
-    public function edit(Request $request,$id){
-        $brands = Brand::where('status','=','1')->orderBy('id','ASC')->get();
-        $origins = Origin::where('status','=','1')->orderBy('id','ASC')->get();
-        $product = Product::where('status','=','1')->where('id','=',$id)->first();
-        return view('admin.products.edit',compact('product','brands','origins'));
+    public function edit(Request $request, $id)
+    {
+        $brands = Brand::where('status', '=', '1')->orderBy('id', 'ASC')->get();
+        $origins = Origin::where('status', '=', '1')->orderBy('id', 'ASC')->get();
+        $product = Product::where('status', '=', '1')->where('id', '=', $id)->first();
+        return view('admin.products.edit', compact('product', 'brands', 'origins'));
     }
 
-    public function add_to_cart(Request $request){
+    public function add_to_cart(Request $request)
+    {
 
         $id = $request->id;
         $quantity = $request->quantity;
@@ -203,19 +206,7 @@ class ProductController extends Controller
         Session::put('shoppingCart', $shopping_cart);
         $request->session()->save();
 
-//        if (session()->has('current_item')){
-//            $shopping_cart = session()->get('current_item');
-//            $shopping_cart[$id]['product'] = $product;
-//            $shopping_cart[$id]['quanity'] = $quanity;
-//            $cart_session->push('current_item',$shopping_cart);
-//        }else{
-//            $shopping_cart = array();
-//            $shopping_cart[$id]['product'] = $product;
-//            $shopping_cart[$id]['quanity'] = $quanity;
-//            $cart_session->put('current_item',$shopping_cart);
-//        }
-
-        return response()->json(['success'=>"Products added to cart successfully."]);
+        return response()->json(['success' => "Products added to cart successfully."]);
     }
 
     public function add(Request $request)
@@ -265,7 +256,83 @@ class ProductController extends Controller
     public function search(Request $request){
         $keyword = $request->keyword;
 
-        $product_search = Product::where('status','=','1')->where('slug');
-        dd($request->keyword);
+        $brands = Brand::where('status','=','1')->get();
+        $origins = Origin::where('status','=','1')->get();
+//        dd($brands);
+        $product_search = Product::where('status','=','1')->where('slug','LIKE','%'.$keyword.'%')->paginate(9);
+        return view('products.product_list',compact('brands','origins'))->with('products',$product_search);
+    }
+    public function productList(Request $request){
+        dd($request->product);
+    }
+    public function update(Request $request,$id)
+    {
+//        dd($request);
+        $request->validate([
+            'name' => 'required',
+            'brand_id' => 'required|integer',
+            'origin_id' => 'required|integer',
+            'sex' => 'required',
+            'concentration' => 'required',
+            'volume' => 'required',
+            'inventor_name' => 'required',
+            'recommended_age' => 'required',
+            'released_year' => 'required',
+            'incense_level' => 'required',
+            'aroma_level' => 'required',
+            'price' => 'required',
+            'style' => 'required',
+            'recommended_time' => 'required',
+            'thumbnails' => 'required',
+            'description' => 'required',
+        ], [
+            'name.required' => 'Tên hãng là cần thiết',
+            'brand_id.required' => 'Bắt buộc phải có hãng sản phẩm',
+            'origin_id.required' => 'Bắt buộc phải có xuất xứ',
+            'sex.required' => 'Bắt buộc phải có giới tính ',
+            'concentration.required' => 'Bắt buộc phải có nồng độ',
+            'volume.required' => 'Bắt buộc phải có  dung lượng',
+            'inventor_name.required' => 'Bắt buộc phải có tên nhà phát minh',
+            'recommended_age.required' => 'Bắt buộc phải có tuổi đề nghị',
+            'released_year.required' => 'Bắt buộc phải có năm ra mắt',
+            'incense_level.required' => 'Bắt buộc phải có độ lưu hương',
+            'aroma_level.required' => 'Bắt buộc phải có ảnh đại diện',
+            'price.required' => 'Bắt buộc phải có giá tiền',
+            'style.required' => 'Bắt buộc phải có ảnh đại diện',
+            'recommended_time.required' => 'Bắt buộc phải có thời gian khuyến nghị',
+            'thumbnails.required' => 'Bắt buộc phải có ảnh sản phẩm',
+            'description.required' => 'Cần thêm mô tả hãng',
+        ]);
+
+        $product = Product::find($id);
+        $product->name = $request->name;
+        $product->slug = sanitize($product->name);
+        $product->brand_id = $request->brand_id;
+        $product->origin_id = $request->origin_id;
+        $product->sex = $request->sex;
+        $product->concentration = $request->concentration;
+        $product->volume = $request->volume;
+        $product->inventor_name = $request->inventor_name;
+        $product->recommended_age = $request->recommended_age;
+        $product->released_year = $request->released_year;
+        $product->incense_level = $request->incense_level;
+        $product->aroma_level = $request->aroma_level;
+        $product->price = $request->price;
+        $product->style = $request->style;
+        foreach ($request->recommended_time as $time) {
+            $product->recommended_time .= $time . ",";
+        }
+
+        $product->description = $request->description;
+        foreach ($request->thumbnails as $thumb) {
+            $product->thumbnail .= $thumb . ",";
+        }
+//        $product->thumbnail = ;
+        $product->status = 1;
+
+//        dd($product);
+        $product->update();
+//        dd($product);
+        return redirect(route('admin_product_list'));
     }
 }

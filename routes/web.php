@@ -22,9 +22,7 @@ Route::get('/', function () {
 //    return view('products.product_detail');
 //});
 
-Route::get('/product_list', function () {
-    return view('products.product_list');
-});
+Route::get('/product_list', 'ProductController@productList')->name('product_list');
 
 Route::get('/service', function () {
     return view('service');
@@ -47,11 +45,11 @@ Route::put('/user/account/profile_update/{id}', function (\Illuminate\Http\Reque
     dd($request);
 })->name('account_update');
 
-Route::get('/product/{id}', 'ProductController@index')->name('product_detail');
+Route::get('/product/{slug}', 'ProductController@index')->name('product_detail');
 
 Route::post('product/add_cart/item', 'ProductController@add_to_cart')->name('add_to_cart');
 
-Route::post('/product/search/','ProductController@search')->name('product_search');
+Route::get('/product_find/','ProductController@search')->name('product_search');
 
 Route::get('/user/purchase', function () {
     return view('purchase');

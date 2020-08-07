@@ -162,6 +162,7 @@
                                         <select class="form-control" name="sex">
                                             <option value="Nam">Nam</option>
                                             <option value="Nữ">Nữ</option>
+                                            <option value="Phi giới tính">Phi giới tính</option>
                                         </select>
                                         @if ($errors->has('sex'))
                                             <label class="alert-warning">{{$errors->first('sex')}}</label>
