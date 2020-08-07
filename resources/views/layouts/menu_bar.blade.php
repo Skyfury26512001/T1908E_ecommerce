@@ -212,7 +212,7 @@
                             <div class="dropdown dropdown-cart">
 
                                     <a href="cart.html"
-                                       class="cart_bt">@if ($products_in_cart != null)<strong> {{count($products_in_cart)}}</strong>@endif</a>
+                                       class="cart_bt">@if ($products_in_cart != null)<strong> {{count($product_cart)}}</strong>@endif</a>
                                  @if ($products_in_cart != null)
                                     <div class="dropdown-menu">
                                         <ul>

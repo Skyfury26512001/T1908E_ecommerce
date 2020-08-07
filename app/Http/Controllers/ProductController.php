@@ -198,8 +198,6 @@ class ProductController extends Controller
         }
 
         $shopping_cart[$id] = $cartItem;
-        
-
 //        if($cartItem['volume']['quantity'] <= 0){
 //            unset($shopping_cart[$product->id]);
 //        }
