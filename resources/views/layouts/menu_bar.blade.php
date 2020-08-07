@@ -185,10 +185,13 @@
                     </div>
                 </div>
                 <div class="col-xl-5 col-lg-6 col-md-5 d-none d-md-block">
-                    <div class="custom-search-input">
-                        <input type="text" placeholder="Tìm kiếm hơn 10.000 sản phẩm">
-                        <button type="submit"><i class="header-icon_search_custom"></i></button>
-                    </div>
+                    <form action="{{route('product_search')}}" method="POST">
+                        @csrf
+                        <div class="custom-search-input">
+                            <input type="text" name="keyword" placeholder="Tìm kiếm hơn 10.000 sản phẩm">
+                            <button type="submit"><i class="header-icon_search_custom"></i></button>
+                        </div>
+                    </form>
                 </div>
 
                 @php
@@ -220,7 +223,7 @@
                                                         <strong><span>{{$product_item['product']->first()->name}}</span>{{$product_item['product']->first()->FormatPrice}}
                                                         </strong>
                                                     </a>
-                                                    <a href="0" class="action"><i class="ti-trash"></i></a>
+{{--                                                    <a href="0" class="action"><i class="ti-trash"></i></a>--}}
                                                 </li>
                                             @endforeach
                                         </ul>
@@ -291,8 +294,10 @@
             <!-- /row -->
         </div>
         <div class="search_mob_wp">
-            <input type="text" class="form-control" placeholder="Tìm kiếm hơn 10.000 sản phẩm">
-            <input type="submit" class="btn_1 full-width" value="Search">
+            <form action="{{route('product_search')}}" method="POST">
+                <input type="text" class="form-control" placeholder="Tìm kiếm hơn 10.000 sản phẩm" name="keyword">
+                <input type="submit" class="btn_1 full-width" value="Search">
+            </form>
         </div>
         <!-- /search_mobile -->
     </div>

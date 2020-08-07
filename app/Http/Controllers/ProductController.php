@@ -28,7 +28,8 @@ class ProductController extends Controller
         $item_brand_query = Product::where('status','1')->where('id','!=',$product->id);
         $item_brand_query->where('brand_id','=',$product->brand->id);
         $eloquent_product_brand = $item_brand_query->get();
-        dd($product->brand->id);
+//        dd($eloquent_product_brand);
+//        dd($product->brand->id);
         return view('products.product_detail',compact('eloquent_product_5','eloquent_product_brand'))->with('product', $product)->with('eloquent_product',$eloquent_product);
     }
 
@@ -259,5 +260,12 @@ class ProductController extends Controller
 //        }
         Session::put('shoppingCart', $shoppingCart);
 //        return redirect('/shopping-cart/show');
+    }
+
+    public function search(Request $request){
+        $keyword = $request->keyword;
+
+        $product_search = Product::where('status','=','1')->where('slug');
+        dd($request->keyword);
     }
 }

@@ -674,188 +674,43 @@
                 </div>
 {{--                {{dd($eloquent_product_brand)}}--}}
                 <div class="owl-carousel owl-theme products_carousel">
-                    <div class="item">
-                        <div class="grid_item">
-                            <span class="ribbon new">New</span>
-                            <figure>
+                    @foreach($eloquent_product_brand as $elproduct)
+                        <div class="item">
+                            <div class="grid_item">
+                                <figure>
+                                    <a href="product-detail-1.html">
+                                        <img class="owl-lazy"
+                                             src="{{$elproduct->firstThumbnail}}"
+                                             data-src="{{$elproduct->firstThumbnail}}" alt="" height="290px">
+                                    </a>
+                                </figure>
+                                <div class="rating"><i class="icon-star voted"></i><i class="icon-star voted"></i><i
+                                            class="icon-star voted"></i><i class="icon-star voted"></i><i
+                                            class="icon-star"></i>
+                                </div>
                                 <a href="product-detail-1.html">
-                                    <img class="owl-lazy"
-                                         src="{{asset('assets/img/products/product_placeholder_square_medium.jpg')}}"
-                                         data-src="assets/img/products/shoes/4.jpg" alt="">
+                                    <h3>{{$elproduct->name}}</h3>
                                 </a>
-                            </figure>
-                            <div class="rating"><i class="icon-star voted"></i><i class="icon-star voted"></i><i
-                                        class="icon-star voted"></i><i class="icon-star voted"></i><i
-                                        class="icon-star"></i>
+                                <div class="price_box">
+                                    <span class="new_price">{{$elproduct->formatPrice}}</span>
+                                </div>
+                                <ul>
+                                    <li><a href="#0" class="tooltip-1" data-toggle="tooltip" data-placement="left"
+                                           title="Thêm vào danh sách yêu thích"><i
+                                                    class="ti-heart"></i><span>Thêm vào danh sách yêu thích</span></a>
+                                    </li>
+                                    <li><a href="#0" class="tooltip-1" data-toggle="tooltip" data-placement="left"
+                                           title="So sánh"><i
+                                                    class="ti-control-shuffle"></i><span>So sánh</span></a></li>
+                                    <li><a href="#0" class="tooltip-1" data-toggle="tooltip" data-placement="left"
+                                           title="Thêm vào giỏ"><i
+                                                    class="ti-shopping-cart"></i><span>Thêm vào giỏ hàng</span></a>
+                                    </li>
+                                </ul>
                             </div>
-                            <a href="product-detail-1.html">
-                                <h3>A Perfumt</h3>
-                            </a>
-                            <div class="price_box">
-                                <span class="new_price">$110.00</span>
-                            </div>
-                            <ul>
-                                <li><a href="#0" class="tooltip-1" data-toggle="tooltip" data-placement="left"
-                                       title="Thêm vào danh sách yêu thích"><i
-                                                class="ti-heart"></i><span>Thêm vào danh sách yêu thích</span></a></li>
-                                <li><a href="#0" class="tooltip-1" data-toggle="tooltip" data-placement="left"
-                                       title="So sánh"><i
-                                                class="ti-control-shuffle"></i><span>So sánh</span></a></li>
-                                <li><a href="#0" class="tooltip-1" data-toggle="tooltip" data-placement="left"
-                                       title="Thêm vào giỏ"><i
-                                                class="ti-shopping-cart"></i><span>Thêm vào giỏ hàng</span></a>
-                                </li>
-                            </ul>
+                            <!-- /grid_item -->
                         </div>
-                        <!-- /grid_item -->
-                    </div>
-                    <!-- /item -->
-                    <div class="item">
-                        <div class="grid_item">
-                            <span class="ribbon new">New</span>
-                            <figure>
-                                <a href="product-detail-1.html">
-                                    <img class="owl-lazy"
-                                         src="{{asset('assets/img/products/product_placeholder_square_medium.jpg')}}"
-                                         data-src="assets/img/products/shoes/5.jpg" alt="">
-                                </a>
-                            </figure>
-                            <div class="rating"><i class="icon-star voted"></i><i class="icon-star voted"></i><i
-                                        class="icon-star voted"></i><i class="icon-star voted"></i><i
-                                        class="icon-star"></i>
-                            </div>
-                            <a href="product-detail-1.html">
-                                <h3>B Perfume</h3>
-                            </a>
-                            <div class="price_box">
-                                <span class="new_price">$140.00</span>
-                            </div>
-                            <ul>
-                                <li><a href="#0" class="tooltip-1" data-toggle="tooltip" data-placement="left"
-                                       title="Thêm vào danh sách yêu thích"><i
-                                                class="ti-heart"></i><span>Thêm vào danh sách yêu thích</span></a></li>
-                                <li><a href="#0" class="tooltip-1" data-toggle="tooltip" data-placement="left"
-                                       title="So sánh"><i
-                                                class="ti-control-shuffle"></i><span>So sánh</span></a></li>
-                                <li><a href="#0" class="tooltip-1" data-toggle="tooltip" data-placement="left"
-                                       title="Thêm vào giỏ hàng"><i
-                                                class="ti-shopping-cart"></i><span>Thêm vào giỏ hàng</span></a>
-                                </li>
-                            </ul>
-                        </div>
-                        <!-- /grid_item -->
-                    </div>
-                    <!-- /item -->
-                    <div class="item">
-                        <div class="grid_item">
-                            <span class="ribbon hot">Hot</span>
-                            <figure>
-                                <a href="product-detail-1.html">
-                                    <img class="owl-lazy"
-                                         src="{{asset('assets/img/products/product_placeholder_square_medium.jpg')}}"
-                                         data-src="assets/img/products/shoes/8.jpg" alt="">
-                                </a>
-                            </figure>
-                            <div class="rating"><i class="icon-star voted"></i><i class="icon-star voted"></i><i
-                                        class="icon-star voted"></i><i class="icon-star voted"></i><i
-                                        class="icon-star"></i>
-                            </div>
-                            <a href="product-detail-1.html">
-                                <h3>C Perfume</h3>
-                            </a>
-                            <div class="price_box">
-                                <span class="new_price">$120.00</span>
-                            </div>
-                            <ul>
-                                <li><a href="#0" class="tooltip-1" data-toggle="tooltip" data-placement="left"
-                                       title="Thêm vào danh sách yêu thích"><i
-                                                class="ti-heart"></i><span>Thêm vào danh sách yêu thích</span></a></li>
-                                <li><a href="#0" class="tooltip-1" data-toggle="tooltip" data-placement="left"
-                                       title="So sánh"><i
-                                                class="ti-control-shuffle"></i><span>So sánh</span></a></li>
-                                <li><a href="#0" class="tooltip-1" data-toggle="tooltip" data-placement="left"
-                                       title="Thêm vào giỏ hàng"><i
-                                                class="ti-shopping-cart"></i><span>Thêm vào giỏ hàng</span></a>
-                                </li>
-                            </ul>
-                        </div>
-                        <!-- /grid_item -->
-                    </div>
-                    <!-- /item -->
-                    <div class="item">
-                        <div class="grid_item">
-                            <span class="ribbon off">-30%</span>
-                            <figure>
-                                <a href="product-detail-1.html">
-                                    <img class="owl-lazy"
-                                         src="{{asset('assets/img/products/product_placeholder_square_medium.jpg')}}"
-                                         data-src="assets/img/products/shoes/2.jpg" alt="">
-                                </a>
-                            </figure>
-                            <div class="rating"><i class="icon-star voted"></i><i class="icon-star voted"></i><i
-                                        class="icon-star voted"></i><i class="icon-star voted"></i><i
-                                        class="icon-star"></i>
-                            </div>
-                            <a href="product-detail-1.html">
-                                <h3>D Perfume</h3>
-                            </a>
-                            <div class="price_box">
-                                <span class="new_price">$90.00</span>
-                                <span class="old_price">$170.00</span>
-                            </div>
-                            <ul>
-                                <li><a href="#0" class="tooltip-1" data-toggle="tooltip" data-placement="left"
-                                       title="Thêm vào danh sách yêu thích"><i
-                                                class="ti-heart"></i><span>Thêm vào danh sách yêu thích</span></a></li>
-                                <li><a href="#0" class="tooltip-1" data-toggle="tooltip" data-placement="left"
-                                       title="So sánh"><i
-                                                class="ti-control-shuffle"></i><span>So sánh</span></a></li>
-                                <li><a href="#0" class="tooltip-1" data-toggle="tooltip" data-placement="left"
-                                       title="Thêm vào giỏ hàng"><i
-                                                class="ti-shopping-cart"></i><span>Thêm vào giỏ hàng</span></a>
-                                </li>
-                            </ul>
-                        </div>
-                        <!-- /grid_item -->
-                    </div>
-                    <!-- /item -->
-                    <div class="item">
-                        <div class="grid_item">
-                            <span class="ribbon off">-50%</span>
-                            <figure>
-                                <a href="product-detail-1.html">
-                                    <img class="owl-lazy"
-                                         src="{{asset('assets/img/products/product_placeholder_square_medium.jpg')}}"
-                                         data-src="assets/img/products/shoes/3.jpg" alt="">
-                                </a>
-                            </figure>
-                            <div class="rating"><i class="icon-star voted"></i><i class="icon-star voted"></i><i
-                                        class="icon-star voted"></i><i class="icon-star voted"></i><i
-                                        class="icon-star"></i>
-                            </div>
-                            <a href="product-detail-1.html">
-                                <h3>E Perfume</h3>
-                            </a>
-                            <div class="price_box">
-                                <span class="new_price">$75.00</span>
-                                <span class="old_price">$155.00</span>
-                            </div>
-                            <ul>
-                                <li><a href="#0" class="tooltip-1" data-toggle="tooltip" data-placement="left"
-                                       title="Thêm vào danh sách yêu thích"><i
-                                                class="ti-heart"></i><span>Thêm vào danh sách yêu thích</span></a></li>
-                                <li><a href="#0" class="tooltip-1" data-toggle="tooltip" data-placement="left"
-                                       title="So sánh"><i
-                                                class="ti-control-shuffle"></i><span>So sánh</span></a></li>
-                                <li><a href="#0" class="tooltip-1" data-toggle="tooltip" data-placement="left"
-                                       title="Thêm vào giỏ hàng"><i
-                                                class="ti-shopping-cart"></i><span>Thêm vào giỏ hàng</span></a>
-                                </li>
-                            </ul>
-                        </div>
-                        <!-- /grid_item -->
-                    </div>
-                    <!-- /item -->
+                    @endforeach
                 </div>
                 <!-- /products_carousel -->
             </div>

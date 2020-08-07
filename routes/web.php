@@ -51,9 +51,7 @@ Route::get('/product/{id}', 'ProductController@index')->name('product_detail');
 
 Route::post('product/add_cart/item', 'ProductController@add_to_cart')->name('add_to_cart');
 
-Route::get('product/add_cart/1', function () {
-    dd(123);
-});
+Route::post('/product/search/','ProductController@search')->name('product_search');
 
 Route::get('/user/purchase', function () {
     return view('purchase');
