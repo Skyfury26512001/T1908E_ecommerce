@@ -1,6 +1,6 @@
 @extends('layouts.master')
 @section('title')
-    Allaia
+    Wanderlust
 @endsection
 @section('specific_css')
     <link href={{ asset('assets/css/home_1.css') }} rel="stylesheet">
@@ -26,10 +26,10 @@
                                             <h2 class="owl-slide-animated owl-slide-title">Sauvage<br>the new parfume
                                             </h2>
                                             <p class="owl-slide-animated owl-slide-subtitle">
-                                                Số lượng có hạn
+                                                A powerfully fresh trail, wild and noble all at once.
                                             </p>
                                             <div class="owl-slide-animated owl-slide-cta"><a class="btn_1"
-                                                                                             href="listing-grid-1-full.html"
+                                                                                             href="/product/2"
                                                                                              role="button">Mua ngay</a>
                                             </div>
                                         </div>
@@ -46,12 +46,13 @@
                                 <div class="row justify-content-center justify-content-md-start">
                                     <div class="col-lg-6 static">
                                         <div class="slide-text white">
-                                            <h2 class="owl-slide-animated owl-slide-title">Sauvage<br>eau de toilette</h2>
+                                            <h2 class="owl-slide-animated owl-slide-title">Sauvage<br>eau de toilette
+                                            </h2>
                                             <p class="owl-slide-animated owl-slide-subtitle">
-                                                Số lượng có hạn
+                                                Powerful & juicy freshness with a woody amber trail
                                             </p>
                                             <div class="owl-slide-animated owl-slide-cta"><a class="btn_1"
-                                                                                             href="listing-grid-1-full.html"
+                                                                                             href="/product/1"
                                                                                              role="button">Mua ngay</a>
                                             </div>
                                         </div>
@@ -72,10 +73,10 @@
                                             <h2 class="owl-slide-animated owl-slide-title">Sauvage<br>eau de parfum
                                             </h2>
                                             <p class="owl-slide-animated owl-slide-subtitle">
-                                                Lightweight cushioning and durable support with a Phylon midsole
+                                                spicy freshness with a woody trail envelopped in vanilla absolute
                                             </p>
                                             <div class="owl-slide-animated owl-slide-cta"><a class="btn_1"
-                                                                                             href="listing-grid-1-full.html"
+                                                                                             href="/product/3"
                                                                                              role="button">Mua ngay</a>
                                             </div>
                                         </div>
@@ -93,31 +94,37 @@
             <ul id="banners_grid" class="clearfix">
                 <li>
                     <a href="#0" class="img_container">
-                        <img src={{asset('assets/img/banners_cat_placeholder.jpg')}} data-src="assets/img/banner_1.jpg"
-                             alt="" class="lazy">
+                        <img
+                            src='https://res.cloudinary.com/vernom/image/upload/c_scale,w_700/v1596722168/perfume_project/female_ueuy87.png'
+                            data-src="https://res.cloudinary.com/vernom/image/upload/c_scale,w_700/v1596722168/perfume_project/female_ueuy87.png"
+                            alt="" class="lazy">
                         <div class="short_info opacity-mask" data-opacity-mask="rgba(0, 0, 0, 0.5)">
-                            <h3>Men's Collection</h3>
-                            <div><span class="btn_1">Mua ngay</span></div>
+                            <h3>BST Nữ</h3>
+                            <div><span class="btn_1">Xem ngay</span></div>
                         </div>
                     </a>
                 </li>
                 <li>
                     <a href="#0" class="img_container">
-                        <img src={{asset('assets/img/banners_cat_placeholder.jpg')}} data-src="assets/img/banner_2.jpg"
-                             alt="" class="lazy">
+                        <img
+                            src='https://res.cloudinary.com/vernom/image/upload/v1596722166/perfume_project/male_hy7gxe.jpg'
+                            data-src="https://res.cloudinary.com/vernom/image/upload/v1596722166/perfume_project/male_hy7gxe.jpg"
+                            alt="" class="lazy">
                         <div class="short_info opacity-mask" data-opacity-mask="rgba(0, 0, 0, 0.5)">
-                            <h3>Womens's Collection</h3>
-                            <div><span class="btn_1">Mua ngay</span></div>
+                            <h3>BST Nam</h3>
+                            <div><span class="btn_1">Xem ngay</span></div>
                         </div>
                     </a>
                 </li>
                 <li>
                     <a href="#0" class="img_container">
-                        <img src={{asset('assets/img/banners_cat_placeholder.jpg')}} data-src="assets/img/banner_3.jpg"
-                             alt="" class="lazy">
+                        <img
+                            src='https://res.cloudinary.com/vernom/image/upload/v1596722169/perfume_project/unisex_phbqbj.jpg'
+                            data-src="https://res.cloudinary.com/vernom/image/upload/v1596722169/perfume_project/unisex_phbqbj.jpg"
+                            alt="" class="lazy">
                         <div class="short_info opacity-mask" data-opacity-mask="rgba(0, 0, 0, 0.5)">
-                            <h3>Kids's Collection</h3>
-                            <div><span class="btn_1">Mua ngay</span></div>
+                            <h3>BST đa giới</h3>
+                            <div><span class="btn_1">Xem ngay</span></div>
                         </div>
                     </a>
                 </li>
@@ -126,9 +133,9 @@
 
             <div class="container margin_60_35">
                 <div class="main_title">
-                    <h2>Top Selling</h2>
-                    <span>Products</span>
-                    <p>Cum doctus civibus efficiantur in imperdiet deterruisset</p>
+                    <h2>Bán chạy nhất</h2>
+                    <span>Các sản phẩm</span>
+                    <p>Các thương hiệu nước hoa được feedback nhiều nhất tại Việt Nam</p>
                 </div>
                 <div class="row small-gutters">
                     <div class="col-6 col-md-4 col-xl-3">
@@ -438,19 +445,20 @@
             </div>
             <!-- /container -->
 
-            <div class="featured lazy" data-bg="url(assets/img/featured_home.jpg)">
+            <div class="featured lazy"
+                 data-bg="url(https://res.cloudinary.com/vernom/image/upload/v1596722751/perfume_project/another_13_uxtbu1.jpg)">
                 <div class="opacity-mask d-flex align-items-center" data-opacity-mask="rgba(0, 0, 0, 0.5)">
                     <div class="container margin_60">
                         <div class="row justify-content-center justify-content-md-start">
                             <div class="col-lg-6 wow" data-wow-offset="150">
-                                <h3>Armor<br>Air Color 720</h3>
-                                <p>Lightweight cushioning and durable support with a Phylon midsole</p>
+                                <h3>Le Labo<br>Another 13</h3>
+                                <p>Đàn ông là không sợ nắng</p>
                                 <div class="feat_text_block">
                                     <div class="price_box">
-                                        <span class="new_price">$90.00</span>
-                                        <span class="old_price">$170.00</span>
+                                        <span class="new_price">6.000.000₫</span>
+                                        <span class="old_price">6.500.000₫</span>
                                     </div>
-                                    <a class="btn_1" href="listing-grid-1-full.html" role="button">Mua ngay</a>
+                                    <a class="btn_1" href="/product/13" role="button">Mua ngay</a>
                                 </div>
                             </div>
                         </div>
@@ -461,9 +469,9 @@
 
             <div class="container margin_60_35">
                 <div class="main_title">
-                    <h2>Featured</h2>
-                    <span>Products</span>
-                    <p>Cum doctus civibus efficiantur in imperdiet deterruisset</p>
+                    <h2>Đặc sắc</h2>
+                    <span>Các sản phẩm</span>
+                    <p>Các thương hiệu nước hoa được feedback nhiều nhất tại Việt Nam</p>
                 </div>
                 <div class="owl-carousel owl-theme products_carousel">
                     <div class="item">
@@ -683,9 +691,9 @@
 
             <div class="container margin_60_35">
                 <div class="main_title">
-                    <h2>Latest News</h2>
+                    <h2>Tin mới nhất</h2>
                     <span>Blog</span>
-                    <p>Cum doctus civibus efficiantur in imperdiet deterruisset</p>
+                    <p>Các bài blog về chủ đề nước hoa</p>
                 </div>
                 <div class="row">
                     <div class="col-lg-6">
