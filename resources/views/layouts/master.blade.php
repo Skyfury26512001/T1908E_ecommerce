@@ -87,7 +87,7 @@
 
                         <div class="collapse dont-collapse-sm links" id="collapse_2">
                             <ul>
-                                <li><a href="">Trang liên hệ</a></li>
+                                <li><a href="/contact">Trang liên hệ</a></li>
                             </ul>
                         </div>
                     </ul>

@@ -6,14 +6,6 @@
     <script src="{{asset('assets/js/carousel_with_thumbs.js')}}"></script>
     <script src="{{asset('assets/js/read_more_read_less.js')}}"></script>
     <script>
-        // $(document).sex(function () {
-        //     var sex = $(this).closest("h6").find('.sex').text();
-        //     if (sex === "Nữ") {
-        //         $("span.sex").css("background-color", "palevioletred !important");
-        //     } else if (sex === "Phi giới tính") {
-        //         $("span.sex").css("background-color", "gold !important");
-        //     }
-        // });
         $(document).ready(function () {
             $(".add_to_cart").on('click', function (e) {
                 console.log('123');
@@ -103,7 +95,8 @@
                                     class="icon-star voted"></i><i class="icon-star voted"></i><i
                                     class="icon-star"></i><em>4 reviews</em></span>
                             <h6>{{$product->concentration}}
-                                <span class="sex">{{$product->sex}}</span>
+                                <span
+                                    class="@if($product->sex == 'Nữ')female @elseif($product->sex == 'Phi giới tính')unisex @else sex @endif">{{$product->sex}}</span>
                                 <p>Thương hiệu: <a href="#">{{$product->brand->brand_name}}</a></p>
                             </h6>
                             <div class="productID">Code:</div>

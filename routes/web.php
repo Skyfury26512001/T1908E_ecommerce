@@ -47,7 +47,7 @@ Route::put('/user/account/profile_update/{id}', function (\Illuminate\Http\Reque
     dd($request);
 })->name('account_update');
 
-Route::get('/product/{id}', 'ProductController@index')->name('product_detail');
+Route::get('/product/{slug}', 'ProductController@index')->name('product_detail');
 
 Route::post('product/add_cart/item', 'ProductController@add_to_cart')->name('add_to_cart');
 
