@@ -66,6 +66,11 @@
             })
         });
     </script>
+    <script>
+        $('#checkAll').click(function () {
+            $('.checkbox_list_origin').prop('checked',$(this).prop('checked'));
+        })
+    </script>
 @endsection
 @section('content')
     <!-- Start Content-->
@@ -77,12 +82,12 @@
                 <div class="page-title-box">
                     <div class="page-title-right">
                         <ol class="breadcrumb m-0">
-                            <li class="breadcrumb-item"><a href="javascript: void(0);">Adminox</a></li>
-                            <li class="breadcrumb-item"><a href="javascript: void(0);">Tables</a></li>
-                            <li class="breadcrumb-item active">Basic Tables</li>
+                            <li class="breadcrumb-item"><a href="javascript: void(0);">Admin</a></li>
+                            <li class="breadcrumb-item"><a href="javascript: void(0);">Xuất xứ</a></li>
+                            <li class="breadcrumb-item active">Danh sách</li>
                         </ol>
                     </div>
-                    <h4 class="page-title">Basic Tables</h4>
+                    <h4 class="page-title">Danh sách xuất xứ</h4>
                 </div>
             </div>
         </div>
@@ -93,9 +98,9 @@
                 <div class="card-box">
                     <div class="row">
                         <div>
-                            <h4 class="header-title">Origins</h4>
+                            <h4 class="header-title">Xuất xứ</h4>
                             <p class="sub-header">
-                                <code>All origin</code>
+                                <code>Toàn bộ xuất xứ</code>
                             </p>
                         </div>
                         <div class="offset-8 col-3">
@@ -118,25 +123,25 @@
                         <table class="table table-hover mb-0">
                             <thead>
                             <tr>
-                                <th></th>
-                                <th class="sorting" tabindex="0" aria-controls="datatable" rowspan="1" colspan="1" style="width: 24.8px;" aria-label="ID: activate to sort column ascending">
-                                    Origin Name
+                                <th colspan="1"><input type="checkbox" id="checkAll"></th>
+                                <th colspan="2" class="sorting" tabindex="0" aria-controls="datatable" rowspan="1" colspan="1" style="width: 24.8px;" aria-label="ID: activate to sort column ascending">
+                                    Tên xuất xứ
                                 </th>
-                                <th colspan="2" style="text-align: center">Action</th>
+                                <th colspan="2" style="text-align: center">Hành động</th>
                             </tr>
                             </thead>
                             <tbody>
                             @csrf
                             @foreach($origins as $origin)
                                 <tr>
-                                    <td>
+                                    <td colspan="1">
                                         <div class="checkbox checkbox-primary">
                                             <input class="checkbox_list_origin" id="{{$origin->name}}" type="checkbox"
                                                    name="origins[]" value="{{$origin->id}}">
                                             <label for="{{$origin->name}}"></label>
                                         </div>
                                     </td>
-                                    <td>{{$origin->name}}</td>
+                                    <td colspan="2">{{$origin->name}}</td>
                                     <td><a href="{{route('admin_origin_edit',$origin->slug)}}" class="btn btn-primary"
                                            style="float:right">Edit</a></td>
                                     <td>

@@ -16,6 +16,7 @@ class CreateProductsTable extends Migration
         Schema::create('products', function (Blueprint $table) {
             $table->id();
             $table->string('name');
+            $table->string('slug');
             $table->unsignedBigInteger('brand_id');
             $table->string('sex');
             $table->string('concentration');
@@ -32,6 +33,7 @@ class CreateProductsTable extends Migration
             $table->string('recommended_time');
             $table->text('description');
             $table->text('thumbnail');
+//            $table->string('slug');
             $table->integer('status');
             $table->timestamps();
         });
