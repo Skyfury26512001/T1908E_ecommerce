@@ -23,8 +23,13 @@ class ProductController extends Controller
             $item_query->orWhere('style','=','%'.$style.'%');
         }
         $eloquent_product = $item_query->take(3)->get();
+        $eloquent_product_5 = $item_query->take(5)->get();
 
-        return view('products.product_detail')->with('product', $product)->with('eloquent_product',$eloquent_product);
+        $item_brand_query = Product::where('status','1')->where('id','!=',$product->id);
+        $item_brand_query->where('brand_id','=',$product->brand->id);
+        $eloquent_product_brand = $item_brand_query->get();
+        dd($product->brand->id);
+        return view('products.product_detail',compact('eloquent_product_5','eloquent_product_brand'))->with('product', $product)->with('eloquent_product',$eloquent_product);
     }
 
     public function admin_index(Request $request){
@@ -154,6 +159,7 @@ class ProductController extends Controller
 
         $id = $request->id;
         $quantity = $request->quantity;
+        $volume = $request->volume;
         // kiểm tra sản phẩm theo id truyền lên.
         $product = Product::where('status', '=' , '1')->where('id','=',$id)->get();
         if ($product == null){
@@ -164,30 +170,35 @@ class ProductController extends Controller
 
         if ($shopping_cart == null) {
             // thì tạo mới giỏ hàng là một mảng các key và value
-            $shoppingCart = array(); // key và value
+            $shopping_cart = array(); // key và value
         }
         $cartItem = null;
 
         if (array_key_exists($id, $shopping_cart)) {
             $cartItem = $shopping_cart[$id];
         }
+
         if ($cartItem == null) {
             // nếu không, tạo mới một cart item.
-            $cartItem = array(
+            $cartItem = [
                 'product' => $product,
-                'quantity' => $quantity
-            );
+            ];
+            $cartItem['type'][$volume] = $quantity;
         } else {
-            // nếu có, cộng số lượng sản phẩm thêm 1.
-            $cartItem['quantity'] += $quantity;
+            // nếu có, cộng số lượng sản phẩm thêm.
+            if (array_key_exists($volume, $shopping_cart[$id]['type'])) {
+                $cartItem['type'][$volume] += $quantity;
+            }else{
+                $cartItem['type'][$volume] = $quantity;
+            }
         }
 
         $shopping_cart[$id] = $cartItem;
         
 
-        if($cartItem['quantity'] <= 0){
-            unset($shopping_cart[$product->id]);
-        }
+//        if($cartItem['volume']['quantity'] <= 0){
+//            unset($shopping_cart[$product->id]);
+//        }
         Session::put('shoppingCart', $shopping_cart);
         $request->session()->save();
 
@@ -202,7 +213,6 @@ class ProductController extends Controller
 //            $shopping_cart[$id]['quanity'] = $quanity;
 //            $cart_session->put('current_item',$shopping_cart);
 //        }
-        $request->session()->save();
 
         return response()->json(['success'=>"Products added to cart successfully."]);
     }

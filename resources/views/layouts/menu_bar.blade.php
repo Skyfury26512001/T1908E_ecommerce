@@ -140,7 +140,7 @@
                                 <div id="menu">
                                     <ul>
                                         <li><span><a href="#0">CÁC BỘ SƯU TẬP</a></span>
-{{--                                            <ul>--}}
+                                            {{--                                            <ul>--}}
                                             {{--                                                <li><a href="listing-grid-1-full.html">A</a></li>--}}
                                             {{--                                                <li><a href="listing-grid-2-full.html">B</a></li>--}}
                                             {{--                                                <li><a href="listing-grid-3.html">C</a></li>--}}
@@ -149,7 +149,7 @@
                                             {{--                                            </ul>--}}
                                         </li>
                                         <li><span><a href="#">NAM</a></span>
-{{--                                            <ul>--}}
+                                            {{--                                            <ul>--}}
                                             {{--                                                <li><a href="listing-grid-6-sidebar-left.html">A</a></li>--}}
                                             {{--                                                <li><a href="listing-grid-7-sidebar-right.html">B</a></li>--}}
                                             {{--                                                <li><a href="listing-row-1-sidebar-left.html">C</a></li>--}}
@@ -157,20 +157,20 @@
                                             {{--                                            </ul>--}}
                                         </li>
                                         <li><span><a href="#">NỮ</a></span>
-{{--                                            <ul>--}}
-{{--                                                <li><a href="listing-grid-1-full.html">A</a></li>--}}
-{{--                                                <li><a href="listing-grid-2-full.html">B</a></li>--}}
-{{--                                                <li><a href="listing-grid-3.html">C</a></li>--}}
-{{--                                                <li><a href="listing-grid-4-sidebar-left.html">D</a></li>--}}
-{{--                                            </ul>--}}
+                                            {{--                                            <ul>--}}
+                                            {{--                                                <li><a href="listing-grid-1-full.html">A</a></li>--}}
+                                            {{--                                                <li><a href="listing-grid-2-full.html">B</a></li>--}}
+                                            {{--                                                <li><a href="listing-grid-3.html">C</a></li>--}}
+                                            {{--                                                <li><a href="listing-grid-4-sidebar-left.html">D</a></li>--}}
+                                            {{--                                            </ul>--}}
                                         </li>
                                         <li><span><a href="#">THƯƠNG HIỆU</a></span>
-{{--                                            <ul>--}}
-{{--                                                <li><a href="listing-row-1-sidebar-left.html">A</a></li>--}}
-{{--                                                <li><a href="listing-row-2-sidebar-right.html">B</a></li>--}}
-{{--                                                <li><a href="listing-row-4-sidebar-extended.html">C</a></li>--}}
-{{--                                                <li><a href="listing-grid-1-full.html">D</a></li>--}}
-{{--                                            </ul>--}}
+                                            {{--                                            <ul>--}}
+                                            {{--                                                <li><a href="listing-row-1-sidebar-left.html">A</a></li>--}}
+                                            {{--                                                <li><a href="listing-row-2-sidebar-right.html">B</a></li>--}}
+                                            {{--                                                <li><a href="listing-row-4-sidebar-extended.html">C</a></li>--}}
+                                            {{--                                                <li><a href="listing-grid-1-full.html">D</a></li>--}}
+                                            {{--                                            </ul>--}}
                                         </li>
                                     </ul>
                                 </div>
@@ -190,40 +190,44 @@
                         <button type="submit"><i class="header-icon_search_custom"></i></button>
                     </div>
                 </div>
+
+                @php
+                    #$product_cart = session()->get('shoppingCart');
+                    $products_in_cart  = null;
+
+                    $product_cart = Session::get('shoppingCart');
+
+                    if($product_cart != null && $product_cart > 0){
+                        $products_in_cart = array_reverse(array_slice($product_cart, -3));
+                    }
+                @endphp
+
                 <div class="col-xl-3 col-lg-2 col-md-3">
                     <ul class="top_tools">
                         <li>
+
                             <div class="dropdown dropdown-cart">
-                                <a href="cart.html" class="cart_bt"><strong>2</strong></a>
-                                <div class="dropdown-menu">
-                                    <ul>
-                                        <li>
-                                            <a href="product-detail-1.html">
-                                                <figure><img
-                                                        src="{{asset('assets/img/products/product_placeholder_square_small.jpg')}}" data-src="assets/img/products/shoes/thumb/1.jpg"
-                                                        alt="" width="50" height="50" class="lazy"></figure>
-                                                <strong><span>Santal 33</span>$90.00</strong>
-                                            </a>
-                                            <a href="#0" class="action"><i class="ti-trash"></i></a>
-                                        </li>
-                                        <li>
-                                            <a href="product-detail-1.html">
-                                                <figure><img
-                                                        src={{asset('assets/img/products/product_placeholder_square_small.jpg')}} data-src="assets/img/products/shoes/thumb/2.jpg"
-                                                        alt="" width="50" height="50" class="lazy"></figure>
-                                                <strong><span>Sauvage</span>$110.00</strong>
-                                            </a>
-                                            <a href="0" class="action"><i class="ti-trash"></i></a>
-                                        </li>
-                                    </ul>
-                                    <div class="total_drop">
-                                        <div class="clearfix"><strong>Tổng</strong><span>$200.00</span></div>
-                                        <a href="cart.html" class="btn_1 outline">View Cart</a><a href="checkout.html"
-                                                                                                  class="btn_1">Thanh
-                                            toán</a>
+                                <a href="cart.html" class="cart_bt"><strong>{{count($products_in_cart)}}</strong></a>
+                                @if ($products_in_cart != null)
+                                    <div class="dropdown-menu">
+                                        <ul>
+                                            @foreach($products_in_cart as $product_item)
+                                                <li>
+                                                    <a href="{{route('product_detail',$product_item['product']->first()->id)}}">
+                                                        <figure><img
+                                                                    src={{$product_item['product']->first()->firstThumbnail}} data-src="{{$product_item['product']->first()->firstThumbnail}}"
+                                                                    alt="" width="50" height="50" class="lazy"></figure>
+                                                        <strong><span>{{$product_item['product']->first()->name}}</span>{{$product_item['product']->first()->FormatPrice}}
+                                                        </strong>
+                                                    </a>
+                                                    <a href="0" class="action"><i class="ti-trash"></i></a>
+                                                </li>
+                                            @endforeach
+                                        </ul>
                                     </div>
-                                </div>
+                                @endif
                             </div>
+
                             <!-- /dropdown-cart-->
                         </li>
                         <li>

@@ -119,7 +119,7 @@ Route::group(['middleware' => ['admin_check'], 'prefix' => 'admin'], function ()
 });
 
 // test : route
-Route::get('checking_page', function () {
+    Route::get('checking_page', function () {
     return view('session_checking');
 });
 Route::get('/test/{haha}', function () {
