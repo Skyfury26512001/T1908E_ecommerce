@@ -31,7 +31,7 @@ Route::get('/service', function () {
 });
 
 Route::get('/about_us', function () {
-    return view('about');
+    return view('about_us');
 });
 
 Route::get('/contact', function () {
