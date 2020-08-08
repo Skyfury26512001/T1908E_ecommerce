@@ -1,4 +1,12 @@
-
+@extends('layouts.master')
+@section('specific_css')
+    <link href="{{asset('assets/css/account.css')}}" rel="stylesheet">
+    <link href="{{asset('assets/css/user_page.css')}}" rel="stylesheet">
+@endsection
+@section('specific_js')
+    <script src="{{asset('assets/js/custome_select.js')}}"></script>
+@endsection
+@section('content')
 	<div id="page">
 		
 	<header class="version_1">
@@ -432,3 +440,4 @@
 		
 	</main>
 	<!--/main-->
+@endsection

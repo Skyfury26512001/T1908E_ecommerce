@@ -252,14 +252,39 @@ class ProductController extends Controller
     }
 
     public function search(Request $request){
+//        dd($request);
         $keyword = $request->keyword;
+
+        $product_search = Product::where('status','=','1')->where('slug','LIKE','%'.$keyword.'%');
+
+        if ($request->has('sex')){
+            $product_search->where('sex','=',$request->sex);
+        }
+        if ($request->has('origins')){
+            foreach ($request->origins as $origin){
+                $product_search->orWhere('sex','=',$origin);
+            }
+        }
+        if ($request->has('brands')){
+            foreach ($request->brands as $brand){
+                $product_search->orWhere('sex','=',$brand);
+            }
+        }
+
+        $product_search = $product_search->paginate(9)->appends(request()->query());
 
         $brands = Brand::where('status','=','1')->get();
         $origins = Origin::where('status','=','1')->get();
 //        dd($brands);
-        $product_search = Product::where('status','=','1')->where('slug','LIKE','%'.$keyword.'%')->paginate(9);
-        return view('products.product_list',compact('brands','origins'))->with('products',$product_search);
+        $male_product_amount = count(Product::where('status','=','1')->where('sex','=','Nam')->get());
+        $female_product_amount = count(Product::where('status','=','1')->where('sex','=','Nữ')->get());
+        $unisex_product_amount = count(Product::where('status','=','1')->where('sex','=','Phi giới tính')->get());
+
+        return view('products.product_list',compact('brands','origins','male_product_amount','female_product_amount','unisex_product_amount'))
+            ->with('products',$product_search)
+            ->with('keyword',$keyword);
     }
+
     public function productList(Request $request){
         dd($request->product);
     }
@@ -322,6 +347,7 @@ class ProductController extends Controller
         }
 
         $product->description = $request->description;
+        $product->thumbnail = "";
         foreach ($request->thumbnails as $thumb) {
             $product->thumbnail .= $thumb . ",";
         }

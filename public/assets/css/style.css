@@ -75,6 +75,9 @@ Author URI: http://themeforest.net/user/Ansonika/
     content: '\0045';
 }
 
+.log-out-btn i {
+    
+}
 /*-------- Hamburgers --------*/
 /*!
  * Hamburgers
@@ -7733,7 +7736,3 @@ img.mfp-img {
 .bg-text h2 {
     color: #ffffff;
 }
-
-/*.about_hr {*/
-/*    border-color: black*/
-/*}*/

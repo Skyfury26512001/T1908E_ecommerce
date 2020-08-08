@@ -536,31 +536,28 @@
                                             <div class="review_content">
                                                 <div class="clearfix add_bottom_10">
                                                     <span class="rating"><i class="icon-star"></i><i
-                                                                class="icon-star"></i><i class="icon-star"></i><i
-                                                                class="icon-star"></i><i
-                                                                class="icon-star"></i><em>5.0/5.0</em></span>
-                                                    <em>Published 54 minutes ago</em>
+                                                            class="icon-star"></i><i class="icon-star"></i><i
+                                                            class="icon-star"></i><i
+                                                            class="icon-star"></i><em>5.0/5.0</em></span>
+                                                    <em>54 phút trước</em>
                                                 </div>
                                                 <h4>"Commpletely satisfied"</h4>
-                                                <p>Eos tollit ancillae ea, lorem consulatu qui ne, eu eros eirmod
-                                                    scaevola sea. Et nec tantas accusamus salutatus, sit commodo veritus
-                                                    te, erat legere fabulas has ut. Rebum laudem cum ea, ius essent
-                                                    fuisset ut. Viderer petentium cu his.</p>
+                                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+                                                    eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
                                             </div>
                                         </div>
                                         <div class="col-lg-6">
                                             <div class="review_content">
                                                 <div class="clearfix add_bottom_10">
                                                     <span class="rating"><i class="icon-star"></i><i
-                                                                class="icon-star"></i><i class="icon-star"></i><i
-                                                                class="icon-star empty"></i><i
-                                                                class="icon-star empty"></i><em>4.0/5.0</em></span>
-                                                    <em>Published 1 day ago</em>
+                                                            class="icon-star"></i><i class="icon-star"></i><i
+                                                            class="icon-star empty"></i><i
+                                                            class="icon-star empty"></i><em>4.0/5.0</em></span>
+                                                    <em>1 ngày trước</em>
                                                 </div>
                                                 <h4>"Always the best"</h4>
-                                                <p>Et nec tantas accusamus salutatus, sit commodo veritus te, erat
-                                                    legere fabulas has ut. Rebum laudem cum ea, ius essent fuisset ut.
-                                                    Viderer petentium cu his.</p>
+                                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+                                                    eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
                                             </div>
                                         </div>
                                     </div>
@@ -570,35 +567,35 @@
                                             <div class="review_content">
                                                 <div class="clearfix add_bottom_10">
                                                     <span class="rating"><i class="icon-star"></i><i
-                                                                class="icon-star"></i><i class="icon-star"></i><i
-                                                                class="icon-star"></i><i
-                                                                class="icon-star empty"></i><em>4.5/5.0</em></span>
-                                                    <em>Published 3 days ago</em>
+                                                            class="icon-star"></i><i class="icon-star"></i><i
+                                                            class="icon-star"></i><i
+                                                            class="icon-star empty"></i><em>4.5/5.0</em></span>
+                                                    <em>3 ngày trước</em>
                                                 </div>
                                                 <h4>"Outstanding"</h4>
-                                                <p>Eos tollit ancillae ea, lorem consulatu qui ne, eu eros eirmod
-                                                    scaevola sea. Et nec tantas accusamus salutatus, sit commodo veritus
-                                                    te, erat legere fabulas has ut. Rebum laudem cum ea, ius essent
-                                                    fuisset ut. Viderer petentium cu his.</p>
+                                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+                                                    eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
                                             </div>
                                         </div>
                                         <div class="col-lg-6">
                                             <div class="review_content">
                                                 <div class="clearfix add_bottom_10">
                                                     <span class="rating"><i class="icon-star"></i><i
-                                                                class="icon-star"></i><i class="icon-star"></i><i
-                                                                class="icon-star"></i><i
-                                                                class="icon-star"></i><em>5.0/5.0</em></span>
-                                                    <em>Published 4 days ago</em>
+                                                            class="icon-star"></i><i class="icon-star"></i><i
+                                                            class="icon-star"></i><i
+                                                            class="icon-star"></i><em>5.0/5.0</em></span>
+                                                    <em>4 ngày trước</em>
                                                 </div>
                                                 <h4>"Excellent"</h4>
-                                                <p>Sit commodo veritus te, erat legere fabulas has ut. Rebum laudem cum
-                                                    ea, ius essent fuisset ut. Viderer petentium cu his.</p>
+                                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+                                                    eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
                                             </div>
                                         </div>
                                     </div>
                                     <!-- /row -->
-                                    <p class="text-right"><a href="leave-review.html" class="btn_1">Để lại đánh giá</a>
+                                    <p class="text-right"><a href="/leave_review" class="btn_1">Để
+                                            lại
+                                            đánh giá</a>
                                     </p>
                                 </div>
                                 <!-- /card-body -->
@@ -663,7 +660,7 @@
                 <br>
                 <br>
                 <div class="main_title">
-                    <p>Các sản phẩm cùng thương hiệu</p>
+                    <p>Các sản phẩm vừa xem</p>
                 </div>
 {{--                {{dd($eloquent_product_brand)}}--}}
                 <div class="owl-carousel owl-theme products_carousel">
