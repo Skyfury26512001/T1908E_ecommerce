@@ -29,12 +29,15 @@
         })
         // xử lý js trên dynamic content.
         $('body').on('click', '.cloudinary-delete', function () {
+            event.preventDefault();
             var splittedImg = $(this).parent().find('img').attr('src').split('/');
             var imgName = splittedImg[splittedImg.length - 1];
-            console.log(splittedImg)
+            $(this).parent().parent().remove()
+            console.log()
             imgName = imgName.split('.');
-            console.log(imgName[0]);
-            $('input[data-cloudinary-public-id="'+ splittedImg[splittedImg.length - 3] + splittedImg[splittedImg.length - 2] + imgName[0] + splittedImg[splittedImg.length - 2] + '"]').remove();
+            var name = 'input[data-cloudinary-public-id="'+ splittedImg[splittedImg.length - 3] +'/'+ splittedImg[splittedImg.length - 2] +'/'+ imgName[0] + '"]';
+            console.log(name);
+            $(name).remove();
         });
     </script>
 

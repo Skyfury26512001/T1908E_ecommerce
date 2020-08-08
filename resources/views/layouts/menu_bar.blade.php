@@ -67,7 +67,7 @@
                     <form action="{{route('product_search')}}" method="GET">
                         @csrf
                         <div class="custom-search-input">
-                            <input type="text" name="keyword" placeholder="Tìm kiếm hơn 10.000 sản phẩm">
+                            <input type="text" name="keyword" placeholder="Tìm kiếm hơn 10.000 sản phẩm" value="@if (isset($keyword)){{$keyword}}@endif">
                             <button type="submit"><i class="header-icon_search_custom"></i></button>
                         </div>
                     </form>

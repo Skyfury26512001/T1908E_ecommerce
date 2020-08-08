@@ -49,6 +49,8 @@ Route::get('/product/{slug}', 'ProductController@index')->name('product_detail')
 
 Route::post('product/add_cart/item', 'ProductController@add_to_cart')->name('add_to_cart');
 
+Route::get('/cart/page','ProductController@cart')->name('cart');
+
 Route::get('/product_find/','ProductController@search')->name('product_search');
 
 Route::get('/user/purchase', function () {
