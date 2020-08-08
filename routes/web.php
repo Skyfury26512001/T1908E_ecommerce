@@ -22,9 +22,7 @@ Route::get('/', function () {
 //    return view('products.product_detail');
 //});
 
-Route::get('/product_list', function () {
-    return view('products.product_list');
-});
+Route::get('/product_list', 'ProductController@productList')->name('product_list');
 
 Route::get('/service', function () {
     return view('service');
@@ -51,9 +49,9 @@ Route::get('/product/{slug}', 'ProductController@index')->name('product_detail')
 
 Route::post('product/add_cart/item', 'ProductController@add_to_cart')->name('add_to_cart');
 
-Route::get('product/add_cart/1', function () {
-    dd(123);
-});
+Route::get('/cart/page','ProductController@cart')->name('cart');
+
+Route::get('/product_find/','ProductController@search')->name('product_search');
 
 Route::get('/user/purchase', function () {
     return view('purchase');
@@ -135,7 +133,7 @@ Route::group(['middleware' => ['admin_check'], 'prefix' => 'admin'], function ()
 });
 
 // test : route
-Route::get('checking_page', function () {
+    Route::get('checking_page', function () {
     return view('session_checking');
 });
 Route::get('/test/{haha}', function () {
