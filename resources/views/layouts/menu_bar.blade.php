@@ -18,7 +18,7 @@
                                 <div id="menu">
                                     <ul>
                                         <li><span><a href="/product_list">SẢN PHẨM</a></span></li>
-                                        <li><span><a href="/collection">CÁC BỘ SƯU TẬP</a></span>
+{{--                                        <li><span><a href="/collection">CÁC BỘ SƯU TẬP</a></span>--}}
                                             {{--                                            <ul>--}}
                                             {{--                                                <li><a href="listing-grid-1-full.html">A</a></li>--}}
                                             {{--                                                <li><a href="listing-grid-2-full.html">B</a></li>--}}
@@ -27,7 +27,7 @@
                                             {{--                                                </li>--}}
                                             {{--                                            </ul>--}}
                                         </li>
-                                        <li><span><a href="/male_product_list">NAM</a></span>
+                                        <li><span><a href="{{route('male_product')}}">NAM</a></span>
                                             {{--                                            <ul>--}}
                                             {{--                                                <li><a href="listing-grid-6-sidebar-left.html">A</a></li>--}}
                                             {{--                                                <li><a href="listing-grid-7-sidebar-right.html">B</a></li>--}}
@@ -35,7 +35,8 @@
                                             {{--                                                <li><a href="listing-row-3-sidebar-left.html">D</a></li>--}}
                                             {{--                                            </ul>--}}
                                         </li>
-                                        <li><span><a href="/female_product_list">NỮ</a></span>
+                                        <li><span><a href="{{route('female_product')}}">NỮ</a></span>
+                                        <li><span><a href="{{route('unisex_product')}}">Phi giới tính</a></span>
                                             {{--                                            <ul>--}}
                                             {{--                                                <li><a href="listing-grid-1-full.html">A</a></li>--}}
                                             {{--                                                <li><a href="listing-grid-2-full.html">B</a></li>--}}
