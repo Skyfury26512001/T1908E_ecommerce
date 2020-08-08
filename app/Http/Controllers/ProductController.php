@@ -260,19 +260,15 @@ class ProductController extends Controller
         if ($request->has('sex')){
             $product_search->where('sex','=',$request->sex);
         }
-        if ($request->has('origins')){
-            foreach ($request->origins as $origin){
-                $product_search->orWhere('sex','=',$origin);
-            }
+        if ($request->has('origin')){
+            $product_search->where('origin_id','=',$request->origin);
         }
-        if ($request->has('brands')){
-            foreach ($request->brands as $brand){
-                $product_search->orWhere('sex','=',$brand);
-            }
+        if ($request->has('brand')){
+            $product_search->orWhere('brand_id','=',$request->brand);
         }
 
         $product_search = $product_search->paginate(9)->appends(request()->query());
-
+//        dd($product_search);
         $brands = Brand::where('status','=','1')->get();
         $origins = Origin::where('status','=','1')->get();
 //        dd($brands);
@@ -288,6 +284,7 @@ class ProductController extends Controller
     public function productList(Request $request){
         dd($request->product);
     }
+
     public function update(Request $request,$id)
     {
 //        dd($request);
@@ -358,5 +355,36 @@ class ProductController extends Controller
         $product->update();
 //        dd($product);
         return redirect(route('admin_product_list'));
+    }
+
+    public function male_list(Request $request){
+        $keyword = $request->keyword;
+
+        $product = Product::where('status','=','1')->where('sex','=','Nam');
+
+        if ($request->has('sex')){
+            $product->where('sex','=',$request->sex);
+        }
+        if ($request->has('origins')){
+            foreach ($request->origins as $origin){
+                $product->orWhere('origin','=',$origin);
+            }
+        }
+        if ($request->has('brands')){
+            foreach ($request->brands as $brand){
+                $product->orWhere('brand','=',$brand);
+            }
+        }
+
+        $product = $product->paginate(9)->appends(request()->query());
+
+        $brands = Brand::where('status','=','1')->get();
+        $origins = Origin::where('status','=','1')->get();
+//        dd($brands);
+        $male_product_amount = count(Product::where('status','=','1')->where('sex','=','Nam')->get());
+
+        return view('products.product_list',compact('brands','origins','male_product_amount','female_product_amount','unisex_product_amount'))
+            ->with('products',$product)
+            ->with('keyword',$keyword);
     }
 }
