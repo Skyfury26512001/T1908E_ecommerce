@@ -254,7 +254,9 @@ class ProductController extends Controller
     public function search(Request $request){
 //        dd($request);
         $keyword = $request->keyword;
+
         $product_search = Product::where('status','=','1')->where('slug','LIKE','%'.$keyword.'%');
+
         if ($request->has('sex')){
             $product_search->where('sex','=',$request->sex);
         }
@@ -282,6 +284,7 @@ class ProductController extends Controller
             ->with('products',$product_search)
             ->with('keyword',$keyword);
     }
+
     public function productList(Request $request){
         dd($request->product);
     }

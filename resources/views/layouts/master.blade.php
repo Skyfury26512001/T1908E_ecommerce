@@ -15,8 +15,8 @@
 
     <title>@yield('title','Wanderlust') </title>
 
-    <!-- Favicons-->
-    <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon">
+    <!-- FAVICONS -->
+    <link rel="shortcut icon" href="{{asset('assets/img/favicon.ico')}}" type="image/x-icon">
     <link rel="apple-touch-icon" type="image/x-icon"
           href={{ asset('assets/img/apple-touch-icon-57x57-precomposed.png') }}>
     <link rel="apple-touch-icon" type="image/x-icon" sizes="72x72"
@@ -26,17 +26,20 @@
     <link rel="apple-touch-icon" type="image/x-icon" sizes="144x144"
           href={{ asset('assets/img/apple-touch-icon-144x144-precomposed.png') }}>
 
+    <!-- FONT AWESOME -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
+          integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
     <!-- GOOGLE WEB FONT -->
     <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700,900&display=swap" rel="stylesheet">
 
     <!-- BASE CSS -->
     <link href={{ asset('assets/css/bootstrap.custom.min.css') }} rel="stylesheet">
-
     {{--	<link href={{ URL::asset('assets/css/bootstrap.custom.min.css') }} rel="stylesheet">--}}
     <link href={{ asset('assets/css/style.css') }} rel="stylesheet">
 
     <!-- SPECIFIC CSS -->
     @yield('specific_css')
+
 <!-- YOUR CUSTOM CSS -->
     {{--    <link href={{ asset('assets/css/custom.css') }} rel="stylesheet">--}}
     <link href={{ asset('assets/css/custom-hung.css') }} rel="stylesheet">

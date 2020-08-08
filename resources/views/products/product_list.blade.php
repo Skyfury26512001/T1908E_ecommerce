@@ -92,22 +92,22 @@
                     <div class="top_banner">
                         <div class="opacity-mask d-flex align-items-center" data-opacity-mask="rgba(0, 0, 0, 0.3)">
                             <div class="container pl-lg-5">
-                                {{--	                            <div class="breadcrumbs">--}}
-                                {{--	                                <ul>--}}
-                                {{--	                                    <li><a href="#">Home</a></li>--}}
-                                {{--	                                    <li><a href="#">Category</a></li>--}}
-                                {{--	                                    <li>Page active</li>--}}
-                                {{--	                                </ul>--}}
-                                {{--	                            </div>--}}
-                                <h1>Shoes - Grid listing</h1>
+                                <div class="breadcrumbs">
+                                    <ul>
+                                        <li><a href="/">Trang chủ</a></li>
+                                        <li><a href="/product_list">Danh sách sản phẩm</a></li>
+                                    </ul>
+                                </div>
+                                <h1>Nước hoa</h1>
                             </div>
                         </div>
-                        <img src="img/bg_cat_shoes.jpg" class="img-fluid" alt="">
+                        <img
+                            src="https://res.cloudinary.com/vernom/image/upload/c_scale,h_450,w_1200/v1596895362/perfume_project/product_list/top_banner_nqdcfl.jpg"
+                            class="img-fluid" alt="">
                     </div>
                     <!-- /top_banner -->
                     <div id="stick_here"></div>
                     <div class="toolbox elemento_stick add_bottom_30">
-
                     </div>
                     <!-- /toolbox -->
                     <div class="row small-gutters">
@@ -145,4 +145,6 @@
         <!-- /container -->
     </main>
     <!-- /main -->
+
 @endsection
+

@@ -57,6 +57,13 @@ Route::get('/user/purchase', function () {
     return view('purchase');
 });
 
+Route::get('/leave_review', function () {
+    return view('leave_review');
+});
+
+Route::get('/confirm_review', function () {
+    return view('confirm_review');
+});
 //mail
 Route::get('/contact', 'SendEmailController@index');
 
