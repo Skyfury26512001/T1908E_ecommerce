@@ -146,12 +146,12 @@
 													<span class="hamburger-inner"></span>
 												</span>
 											</span>
-                                            Nước hoa
 										</a>
 									</span>
                                 <div id="menu">
                                     <ul>
-                                        <li><span><a href="#0">CÁC BỘ SƯU TẬP</a></span>
+                                        <li><span><a href="/product_list">SẢN PHẨM</a></span></li>
+                                        <li><span><a href="/collection">CÁC BỘ SƯU TẬP</a></span>
                                             {{--                                            <ul>--}}
                                             {{--                                                <li><a href="listing-grid-1-full.html">A</a></li>--}}
                                             {{--                                                <li><a href="listing-grid-2-full.html">B</a></li>--}}
@@ -160,7 +160,7 @@
                                             {{--                                                </li>--}}
                                             {{--                                            </ul>--}}
                                         </li>
-                                        <li><span><a href="#">NAM</a></span>
+                                        <li><span><a href="/male_product_list">NAM</a></span>
                                             {{--                                            <ul>--}}
                                             {{--                                                <li><a href="listing-grid-6-sidebar-left.html">A</a></li>--}}
                                             {{--                                                <li><a href="listing-grid-7-sidebar-right.html">B</a></li>--}}
@@ -168,7 +168,7 @@
                                             {{--                                                <li><a href="listing-row-3-sidebar-left.html">D</a></li>--}}
                                             {{--                                            </ul>--}}
                                         </li>
-                                        <li><span><a href="#">NỮ</a></span>
+                                        <li><span><a href="/female_product_list">NỮ</a></span>
                                             {{--                                            <ul>--}}
                                             {{--                                                <li><a href="listing-grid-1-full.html">A</a></li>--}}
                                             {{--                                                <li><a href="listing-grid-2-full.html">B</a></li>--}}
@@ -176,7 +176,7 @@
                                             {{--                                                <li><a href="listing-grid-4-sidebar-left.html">D</a></li>--}}
                                             {{--                                            </ul>--}}
                                         </li>
-                                        <li><span><a href="#">THƯƠNG HIỆU</a></span>
+                                        <li><span><a href="/brand">THƯƠNG HIỆU</a></span>
                                             {{--                                            <ul>--}}
                                             {{--                                                <li><a href="listing-row-1-sidebar-left.html">A</a></li>--}}
                                             {{--                                                <li><a href="listing-row-2-sidebar-right.html">B</a></li>--}}
@@ -248,25 +248,27 @@
                                 <div class="dropdown-menu">
                                     {{--										 {{ Session::get('current_account')}}--}}
                                     @if(Session::has('current_account'))
-                                        {{Session::get('current_account')->fullName}}
+                                        <strong
+                                            style="font-size: 20px">{{Session::get('current_account')->fullName}}</strong>
                                         <ul>
                                             <li>
-                                                <a href="track-order.html"><i class="ti-truck"></i>Track your Order</a>
+                                                <a href="track-order.html"><i class="ti-truck"></i>Theo dõi đơn hàng</a>
                                             </li>
                                             <li>
-                                                <a href="account.html"><i class="ti-package"></i>My Orders</a>
+                                                <a href="account.html"><i class="ti-package"></i>Đơn hàng của tôi</a>
                                             </li>
                                             <li>
-                                                <a href="{{route('profile')}}"><i class="ti-user"></i>My Profile</a>
+                                                <a href="{{route('profile')}}"><i class="ti-user"></i>Hồ sơ của tôi</a>
                                             </li>
                                             <li>
-                                                <a href="help.html"><i class="ti-help-alt"></i>Help and Faq</a>
+                                                <a href="help.html"><i class="ti-help-alt"></i>Trợ giúp</a>
                                             </li>
                                             <li>
                                                 {{--													<a href="{{route('logout')}}"><i class="ti-share"></i>Quit</a>--}}
                                                 <a class="log-out-btn" href="#"
-                                                   onclick="event.preventDefault();document.getElementById('logout-form').submit();">
-                                                    Logout </a>
+                                                   onclick="event.preventDefault();document.getElementById('logout-form').submit();"><i
+                                                        class="fa fa-sign-out" aria-hidden="true"
+                                                        style="color: #3a87ad"></i>Đăng xuất </a>
                                                 <form id="logout-form" action="{{ route('logout') }}" method="POST"
                                                       style="display: none;">
                                                     {{ csrf_field() }}
