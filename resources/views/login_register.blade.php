@@ -35,7 +35,7 @@
     {{--			@endforeach--}}
     {{--		@endif--}}
     {{--	</ul>--}}
-    @include('layouts.error_pop_up')
+{{--    @include('layouts.error_pop_up')--}}
     <main class="bg_gray">
         <div class="container margin_30">
             <div class="page_header">
@@ -68,15 +68,16 @@
                                     <input type="email" class="form-control" name="email" id="email"
                                            placeholder="Email *" style="margin-top: 32px">
                                 </div>
-                                <div>
-                                    @if ($errors->has('email'))
-                                        need Email
-                                    @endif
-                                </div>
+                                @if ($errors->has('email'))
+                                    <label class="alert-warning">{{$errors->first('email')}}</label>
+                                @endif
                                 <div class="form-group">
                                     <input type="password" class="form-control" name="password" id="password_in"
                                            value="" placeholder="Mật khẩu *">
                                 </div>
+                                @if ($errors->has('password'))
+                                    <label class="alert-warning">{{$errors->first('password')}}</label>
+                                @endif
                                 <div class="clearfix add_bottom_15">
                                     <div class="checkboxes float-left">
                                         <label class="container_check">Nhớ tài khoản
@@ -131,10 +132,16 @@
                                     <input type="email" class="form-control" name="email" id="email_2"
                                            placeholder="Email *">
                                 </div>
+                                @if ($errors->has('email'))
+                                    <label class="alert-warning">{{$errors->first('password')}}</label>
+                                @endif
                                 <div class="form-group">
                                     <input type="password" class="form-control" name="password" id="password_in_2"
                                            value="" placeholder="Mật khẩu *">
                                 </div>
+                                @if ($errors->has('password'))
+                                    <label class="alert-warning">{{$errors->first('password')}}</label>
+                                @endif
                                 <hr>
                                 {{--						<div class="form-group">--}}
                                 {{--							<label class="container_radio" style="display: inline-block; margin-right: 15px;">Private--}}
@@ -153,18 +160,27 @@
                                                 <input type="text" class="form-control" name="firstName"
                                                        placeholder="Tên *">
                                             </div>
+                                            @if ($errors->has('firstName'))
+                                                <label class="alert-warning">{{$errors->first('firstName')}}</label>
+                                            @endif
                                         </div>
                                         <div class="col-6 pl-1">
                                             <div class="form-group">
                                                 <input type="text" class="form-control" name="lastName"
                                                        placeholder="Họ *">
                                             </div>
+                                            @if ($errors->has('lastName'))
+                                                <label class="alert-warning">{{$errors->first('lastName')}}</label>
+                                            @endif
                                         </div>
                                         <div class="col-12">
                                             <div class="form-group">
                                                 <input type="text" class="form-control" name="address"
                                                        placeholder="Địa chỉ cụ thể *">
                                             </div>
+                                            @if ($errors->has('address'))
+                                                <label class="alert-warning">{{$errors->first('address')}}</label>
+                                            @endif
                                         </div>
                                     </div>
                                     <div class="row no-gutters">
@@ -197,6 +213,9 @@
                                                         @endforeach
                                                     </select>
                                                 </div>
+                                                @if ($errors->has('city'))
+                                                    <label class="alert-warning">{{$errors->first('city')}}</label>
+                                                @endif
                                             </div>
                                         </div>
                                         <div class="col-6 pl-1">
@@ -204,6 +223,9 @@
                                                 <input type="text" class="form-control" name="phone"
                                                        placeholder="Điện thoại *">
                                             </div>
+                                            @if ($errors->has('phone'))
+                                                <label class="alert-warning">{{$errors->first('phone')}}</label>
+                                            @endif
                                         </div>
                                     </div>
                                     <!-- /row -->
@@ -216,7 +238,7 @@
                                 {{--								<span class="checkmark"></span>--}}
                                 {{--							</label>--}}
                                 {{--						</div>--}}
-                                <div class="text-center"><input type="submit" value="Register" class="btn_1 full-width">
+                                <div class="text-center"><input type="submit" value="Đăng Ký" class="btn_1 full-width">
                                 </div>
                             </div>
                         </form>
