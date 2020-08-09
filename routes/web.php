@@ -25,15 +25,15 @@ Route::get('/', function () {
 Route::get('/product_list', 'ProductController@productList')->name('product_list');
 
 Route::get('/service', function () {
-    return view('service');
+    return view('service.service');
 });
 
 Route::get('/about_us', function () {
-    return view('about_us');
+    return view('service.about_us');
 });
 
 Route::get('/contact', function () {
-    return view('contact');
+    return view('service.contact');
 });
 
 Route::get('/user/account/profile', function () {
@@ -49,9 +49,9 @@ Route::get('/product/{slug}', 'ProductController@index')->name('product_detail')
 
 Route::post('product/add_cart/item', 'ProductController@add_to_cart')->name('add_to_cart');
 
-Route::get('/cart/page','ProductController@cart')->name('cart');
+Route::get('/cart/page', 'ProductController@cart')->name('cart');
 
-Route::get('/product_find/','ProductController@search')->name('product_search');
+Route::get('/product_find/', 'ProductController@search')->name('product_search');
 
 Route::get('/user/purchase', function () {
     return view('purchase');
@@ -64,6 +64,35 @@ Route::get('/leave_review', function () {
 Route::get('/confirm_review', function () {
     return view('confirm_review');
 });
+
+Route::get('/blog', function () {
+    return view('blog');
+});
+
+Route::get('/faq', function () {
+    return view('service.faq');
+});
+
+Route::get('/faq_2', function () {
+    return view('service.faq_2');
+});
+
+Route::get('/ordering_guide', function () {
+    return view('service.ordering_guide');
+});
+
+Route::get('/mode_of_transportation', function () {
+    return view('service.mode_of_transportation');
+});
+
+Route::get('/payment_methods', function () {
+    return view('service.payment_methods');
+});
+
+Route::get('/policy', function () {
+    return view('service.policy');
+});
+
 //mail
 Route::get('/contact', 'SendEmailController@index');
 
@@ -133,7 +162,7 @@ Route::group(['middleware' => ['admin_check'], 'prefix' => 'admin'], function ()
 });
 
 // test : route
-    Route::get('checking_page', function () {
+Route::get('checking_page', function () {
     return view('session_checking');
 });
 Route::get('/test/{haha}', function () {

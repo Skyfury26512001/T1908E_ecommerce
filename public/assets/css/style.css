@@ -76,8 +76,9 @@ Author URI: http://themeforest.net/user/Ansonika/
 }
 
 .log-out-btn i {
-    
+
 }
+
 /*-------- Hamburgers --------*/
 /*!
  * Hamburgers
@@ -257,6 +258,7 @@ Author URI: http://themeforest.net/user/Ansonika/
 
 .ti-shopping-cart-full:before {
     content: "\e60e";
+    color: #3a87ad;
 }
 
 .ti-settings:before {
@@ -1005,6 +1007,7 @@ Author URI: http://themeforest.net/user/Ansonika/
 
 .ti-agenda:before {
     content: "\e6c7";
+    color: #3a87ad;
 }
 
 .ti-write:before {

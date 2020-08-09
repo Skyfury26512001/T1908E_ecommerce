@@ -30,7 +30,7 @@ class SendEmailController extends Controller
      */
     public function index()
     {
-        return view('contact');
+        return view('service.contact');
     }
 
     /**
