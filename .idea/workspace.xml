@@ -2,48 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="943ce679-ae9f-4984-8781-430340fe2a45" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Http/Controllers/SendEmailController.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Mail/SendMail.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/about_us.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/blog.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/cart.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/confirm_review.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/dynamic_email_template.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/gmail/welcome.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/leave_review.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/products/male_product_list.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/jsLibraryMappings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/jsLibraryMappings.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/t1908e-laravel-ecommerce.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/t1908e-laravel-ecommerce.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/ProductController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/ProductController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Origin.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Origin.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Product.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Product.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2020_07_20_041501_create_products_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2020_07_20_041501_create_products_table.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2020_08_03_094228_create_receipts_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2020_08_05_155500_create_receipts_table.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/seeds/DatabaseSeeder.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/seeds/DatabaseSeeder.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/seeds/ProductSeeder.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/seeds/ProductSeeder.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/seeds/ReceiptSeeder.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/seeds/ReceiptSeeder.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/css/about.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/css/about.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/css/home_1.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/css/home_1.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/css/leave_review.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/css/leave_review.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/css/product_page.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/css/product_page.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/css/style.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/about.blade.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/admin/layouts/master.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/layouts/master.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/admin/products/create.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/products/create.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/admin/products/edit.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/products/edit.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/contact.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/contact.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/index.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/layouts/master.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/master.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/layouts/menu_bar.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/menu_bar.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/assets/css/custom-hung.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/css/custom-hung.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/login_register.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/login_register.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/products/product_detail.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/products/product_detail.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/products/product_list.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/products/product_list.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/session_checking.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/session_checking.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -174,7 +135,7 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/resources/views/products" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../T1908E_ecommerce-master/T1908E_ecommerce-master" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="nodejs_package_manager_path" value="npm" />
@@ -196,7 +157,7 @@
   </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="705e2e61-c95e-41e2-8267-fa637b97959c" name="Default Changelist" comment="" />
+      <changelist id="943ce679-ae9f-4984-8781-430340fe2a45" name="Default Changelist" comment="" />
       <created>1596687490493</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
@@ -213,6 +174,7 @@
       <workItem from="1596823133861" duration="951000" />
       <workItem from="1596874152745" duration="6387000" />
       <workItem from="1596890480910" duration="8632000" />
+      <workItem from="1596982951115" duration="1554000" />
     </task>
     <servers />
   </component>
@@ -227,10 +189,11 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="93" y="93" width="1350" height="638" key="DiffContextDialog/0.0.1536.824@0.0.1536.824" timestamp="1596885870898" />
-    <state x="549" y="167" key="FileChooserDialogImpl" timestamp="1596734613878">
-      <screen x="0" y="0" width="1536" height="824" />
+    <state x="572" y="174" key="FileChooserDialogImpl" timestamp="1596983738228">
+      <screen x="0" y="0" width="1600" height="860" />
     </state>
     <state x="549" y="167" key="FileChooserDialogImpl/0.0.1536.824@0.0.1536.824" timestamp="1596734613878" />
+    <state x="572" y="174" key="FileChooserDialogImpl/0.0.1600.860@0.0.1600.860" timestamp="1596983738228" />
     <state x="431" y="145" width="672" height="678" key="search.everywhere.popup" timestamp="1596798177739">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
