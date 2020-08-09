@@ -10,7 +10,6 @@
     <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
     <meta http-equiv="Content-Security-Policy" content="block-all-mixed-content">
     <meta name="csrf-token" content="{{ csrf_token() }}">
-    
 
 
     <title>@yield('title','Wanderlust') </title>
@@ -70,16 +69,15 @@
                 <h3 data-target="#collapse_2">Dịch vụ</h3>
                 <div class="collapse dont-collapse-sm links" id="collapse_2">
                     <ul>
-                        <li><a href="/service">Các câu hỏi thường gặp</a></li>
+                        <li><a href="/faq">Các câu hỏi thường gặp</a></li>
                         {{-- Frequently Asked Questions - FAQ --}}
-                        <li><a href="">Hướng dẫn đặt hàng</a></li>
-                        <li><a href="">Phương thức vận chuyển</a></li>
-                        <li><a href="">Phương thức thanh toán</a></li>
-                        <li><a href="">Chính sách</a></li>
+                        <li><a href="/ordering_guide">Hướng dẫn đặt hàng</a></li>
+                        <li><a href="/mode_of_transportation">Phương thức vận chuyển</a></li>
+                        <li><a href="/payment_methods">Phương thức thanh toán</a></li>
+                        <li><a href="/policy">Chính sách</a></li>
                         {{--                        <li><a href="">Chính sách giá cả</a></li>--}}
                         {{--                        <li><a href="">Chính sách đổi trả</a></li>--}}
                         {{--                        <li><a href="">Chính sách bảo mật</a></li>--}}
-
                         <div class="collapse dont-collapse-sm links" id="collapse_2">
                             <ul>
                                 <li><a href="/service">Trang dịch vụ</a></li>
