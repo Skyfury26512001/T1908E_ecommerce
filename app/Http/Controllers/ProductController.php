@@ -261,19 +261,15 @@ class ProductController extends Controller
         if ($request->has('sex')) {
             $product_search->where('sex', '=', $request->sex);
         }
-        if ($request->has('origins')) {
-            foreach ($request->origins as $origin) {
-                $product_search->orWhere('sex', '=', $origin);
-            }
+        if ($request->has('origin')) {
+            $product_search->where('origin_id', '=', $request->origin);
         }
-        if ($request->has('brands')) {
-            foreach ($request->brands as $brand) {
-                $product_search->orWhere('sex', '=', $brand);
-            }
+        if ($request->has('brand')) {
+            $product_search->where('brand_id', '=', $request->brand);
         }
 
         $product_search = $product_search->paginate(9)->appends(request()->query());
-
+//        dd($product_search);
         $brands = Brand::where('status', '=', '1')->get();
         $origins = Origin::where('status', '=', '1')->get();
 //        dd($brands);
@@ -288,7 +284,68 @@ class ProductController extends Controller
 
     public function productList(Request $request)
     {
-        return view('products.product_list');
+
+        $product = Product::where('status', '=', '1');
+
+        $product = $product->paginate(9)->appends(request()->query());
+//        dd($product_search);
+        $brands = Brand::where('status', '=', '1')->get();
+        $origins = Origin::where('status', '=', '1')->get();
+//        dd($brands);
+        $male_product_amount = count(Product::where('status', '=', '1')->where('sex', '=', 'Nam')->get());
+        $female_product_amount = count(Product::where('status', '=', '1')->where('sex', '=', 'Nữ')->get());
+        $unisex_product_amount = count(Product::where('status', '=', '1')->where('sex', '=', 'Phi giới tính')->get());
+
+        return view('products.product_list', compact('brands', 'origins', 'male_product_amount', 'female_product_amount', 'unisex_product_amount'))
+            ->with('products', $product);
+    }
+
+    public function male_product(Request $request)
+    {
+        $product_query = Product::where('status', '=', '1');
+
+//        dd($products);
+        if ($request->has('origin')) {
+            $product_query->where('origin_id', '=', $request->origin);
+        }
+        if ($request->has('brand')) {
+            $product_query->where('brand_id', '=', $request->brand);
+        }
+        $products = $product_query->where('sex', '=', 'Nam')->paginate(9)->appends(request()->query());
+        $male_product_amount = count(Product::where('status', '=', '1')->where('sex', '=', 'Nam')->get());
+        $brands = Brand::where('status', '=', '1')->get();
+        $origins = Origin::where('status', '=', '1')->get();
+        $brand_amount = [];
+        $origin_amount = array();
+        foreach ($brands as $brand) {
+            foreach ($brand->products as $brand_product) {
+                if ($brand_product->sex == "Nam") {
+                    if ($brand_amount[$brand->id][$brand_product->id] = null) {
+                        $brand_amount[$brand->id][$brand_product->id] = 0;
+                    }
+                    $brand_amount[$brand->id][$brand_product->id] += 1;
+                }
+            }
+        }
+//        dd($brand_amount);
+//        dd(count($brand_amount));
+        foreach ($origins as $origin) {
+            foreach ($origin->products as $origin_product) {
+                if ($origin_product->sex == "Nam") {
+                    if ($origin_amount[$origin->id][$origin_product->id] = null) {
+                        $origin_amount[$origin->id][$origin_product->id] = 0;
+                    }
+                    $origin_amount[$origin->id][$origin_product->id] += 1;
+                }
+            }
+        }
+
+//        dd($origin_amount);
+
+        return view('products.male_product_list', compact('brands', 'origins'))
+            ->with('products', $products)
+            ->with('brand_amount', $brand_amount)
+            ->with('origin_amount', $origin_amount);
     }
 
     public function update(Request $request, $id)
@@ -361,5 +418,106 @@ class ProductController extends Controller
         $product->update();
 //        dd($product);
         return redirect(route('admin_product_list'));
+    }
+
+    public function female_product(Request $request)
+    {
+        $product_query = Product::where('status', '=', '1');
+
+//        dd($products);
+        if ($request->has('origin')) {
+            $product_query->where('origin_id', '=', $request->origin);
+        }
+        if ($request->has('brand')) {
+            $product_query->where('brand_id', '=', $request->brand);
+        }
+        $products = $product_query->where('sex', '=', 'Nữ')->paginate(9)->appends(request()->query());
+        $female_product_amount = count(Product::where('status', '=', '1')->where('sex', '=', 'Nữ')->get());
+        $brands = Brand::where('status', '=', '1')->get();
+        $origins = Origin::where('status', '=', '1')->get();
+        $brand_amount = [];
+        $origin_amount = array();
+        foreach ($brands as $brand) {
+            foreach ($brand->products as $brand_product) {
+                if ($brand_product->sex == "Nữ") {
+                    if ($brand_amount[$brand->id][$brand_product->id] = null) {
+                        $brand_amount[$brand->id][$brand_product->id] = 0;
+                    }
+                    $brand_amount[$brand->id][$brand_product->id] += 1;
+                }
+            }
+        }
+//        dd($brand_amount);
+//        dd(count($brand_amount));
+        foreach ($origins as $origin) {
+            foreach ($origin->products as $origin_product) {
+                if ($origin_product->sex == "Nữ") {
+                    if ($origin_amount[$origin->id][$origin_product->id] = null) {
+                        $origin_amount[$origin->id][$origin_product->id] = 0;
+                    }
+                    $origin_amount[$origin->id][$origin_product->id] += 1;
+                }
+            }
+        }
+
+//        dd($origin_amount);
+
+        return view('products.female_product_list', compact('brands', 'origins'))
+            ->with('products', $products)
+            ->with('brand_amount', $brand_amount)
+            ->with('origin_amount', $origin_amount);
+    }
+
+    public function unisex_product(Request $request)
+    {
+        $product_query = Product::where('status', '=', '1');
+
+//        dd($products);
+        if ($request->has('origin')) {
+            $product_query->where('origin_id', '=', $request->origin);
+        }
+        if ($request->has('brand')) {
+            $product_query->where('brand_id', '=', $request->brand);
+        }
+        $products = $product_query->where('sex', '=', 'Phi giới tính')->paginate(9)->appends(request()->query());
+        $unisex_product_amount = count(Product::where('status', '=', '1')->where('sex', '=', 'Phi giới tính')->get());
+        $brands = Brand::where('status', '=', '1')->get();
+        $origins = Origin::where('status', '=', '1')->get();
+        $brand_amount = [];
+        $origin_amount = array();
+        foreach ($brands as $brand) {
+            foreach ($brand->products as $brand_product) {
+                if ($brand_product->sex == "Phi giới tính") {
+                    if ($brand_amount[$brand->id][$brand_product->id] = null) {
+                        $brand_amount[$brand->id][$brand_product->id] = 0;
+                    }
+                    $brand_amount[$brand->id][$brand_product->id] += 1;
+                }
+            }
+        }
+//        dd($brand_amount);
+//        dd(count($brand_amount));
+        foreach ($origins as $origin) {
+            foreach ($origin->products as $origin_product) {
+                if ($origin_product->sex == "Phi giới tính") {
+                    if ($origin_amount[$origin->id][$origin_product->id] = null) {
+                        $origin_amount[$origin->id][$origin_product->id] = 0;
+                    }
+                    $origin_amount[$origin->id][$origin_product->id] += 1;
+                }
+            }
+        }
+
+//        dd($origin_amount);
+
+        return view('products.unisex_product_list', compact('brands', 'origins'))
+            ->with('products', $products)
+            ->with('brand_amount', $brand_amount)
+            ->with('origin_amount', $origin_amount);
+    }
+
+    public function cart()
+    {
+        return view('cart');
     }
 }

@@ -51,7 +51,13 @@ Route::post('product/add_cart/item', 'ProductController@add_to_cart')->name('add
 
 Route::get('/cart/page', 'ProductController@cart')->name('cart');
 
-Route::get('/product_find/', 'ProductController@search')->name('product_search');
+Route::get('/product_find','ProductController@search')->name('product_search');
+
+Route::get('/male_product', 'ProductController@male_product')->name('male_product');
+
+Route::get('/female_product', 'ProductController@female_product')->name('female_product');
+
+Route::get('/unisex_product', 'ProductController@unisex_product')->name('unisex_product');
 
 Route::get('/user/purchase', function () {
     return view('purchase');

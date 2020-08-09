@@ -17,7 +17,7 @@
             <div class="row">
                 <aside class="col-lg-3" id="sidebar_fixed">
                     <div class="filter_col">
-                        <form action="{{route('male_product')}}" id="filter_form">
+                        <form action="{{route('unisex_product')}}" id="filter_form">
                             <div class="inner_bt"><a href="#" class="open_filters"><i class="ti-open"></i></a></div>
                             @if (isset($keyword))
                                 <input name="keyword" style="display: none" value="{{$keyword}}">
@@ -67,7 +67,7 @@
                             </div>
                             <div class="buttons">
                                 <button href="" type="submit" class="btn_1">Filter</button>
-                                <a href="{{route('male_product')}}" class="btn_1 gray" id="reset_filter">Reset</a>
+                                <a href="{{route('unisex_product')}}" class="btn_1 gray" id="reset_filter">Reset</a>
                             </div>
                         </form>
                     </div>
