@@ -10,11 +10,13 @@
     <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
     <meta http-equiv="Content-Security-Policy" content="block-all-mixed-content">
     <meta name="csrf-token" content="{{ csrf_token() }}">
+    
+
 
     <title>@yield('title','Wanderlust') </title>
 
-    <!-- Favicons-->
-    <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon">
+    <!-- FAVICONS -->
+    <link rel="shortcut icon" href="{{asset('assets/img/favicon.ico')}}" type="image/x-icon">
     <link rel="apple-touch-icon" type="image/x-icon"
           href={{ asset('assets/img/apple-touch-icon-57x57-precomposed.png') }}>
     <link rel="apple-touch-icon" type="image/x-icon" sizes="72x72"
@@ -24,21 +26,23 @@
     <link rel="apple-touch-icon" type="image/x-icon" sizes="144x144"
           href={{ asset('assets/img/apple-touch-icon-144x144-precomposed.png') }}>
 
+    <!-- FONT AWESOME -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
+          integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
     <!-- GOOGLE WEB FONT -->
     <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700,900&display=swap" rel="stylesheet">
 
     <!-- BASE CSS -->
     <link href={{ asset('assets/css/bootstrap.custom.min.css') }} rel="stylesheet">
-
     {{--	<link href={{ URL::asset('assets/css/bootstrap.custom.min.css') }} rel="stylesheet">--}}
     <link href={{ asset('assets/css/style.css') }} rel="stylesheet">
 
     <!-- SPECIFIC CSS -->
     @yield('specific_css')
+
 <!-- YOUR CUSTOM CSS -->
     {{--    <link href={{ asset('assets/css/custom.css') }} rel="stylesheet">--}}
     <link href={{ asset('assets/css/custom-hung.css') }} rel="stylesheet">
-
 </head>
 
 <body>
@@ -58,7 +62,7 @@
                     <ul>
                         <li><a href="/about_us">Giới thiệu về Wanderlust</a></li>
                         <li><a href="/blog">Diễn đàn chuyên gia nước hoa</a></li>
-                        <li><a href="account.html">Tài khoản cá nhân</a></li>
+                        <li><a href="/user/account">Tài khoản cá nhân</a></li>
                     </ul>
                 </div>
             </div>
@@ -66,14 +70,21 @@
                 <h3 data-target="#collapse_2">Dịch vụ</h3>
                 <div class="collapse dont-collapse-sm links" id="collapse_2">
                     <ul>
-                        <li><a href="/faq">Các câu hỏi thường gặp</a></li>
+                        <li><a href="/service">Các câu hỏi thường gặp</a></li>
                         {{-- Frequently Asked Questions - FAQ --}}
                         <li><a href="">Hướng dẫn đặt hàng</a></li>
                         <li><a href="">Phương thức vận chuyển</a></li>
                         <li><a href="">Phương thức thanh toán</a></li>
-                        <li><a href="">Chính sách giá cả</a></li>
-                        <li><a href="">Chính sách đổi trả</a></li>
-                        <li><a href="">Chính sách bảo mật</a></li>
+                        <li><a href="">Chính sách</a></li>
+                        {{--                        <li><a href="">Chính sách giá cả</a></li>--}}
+                        {{--                        <li><a href="">Chính sách đổi trả</a></li>--}}
+                        {{--                        <li><a href="">Chính sách bảo mật</a></li>--}}
+
+                        <div class="collapse dont-collapse-sm links" id="collapse_2">
+                            <ul>
+                                <li><a href="/service">Trang dịch vụ</a></li>
+                            </ul>
+                        </div>
                     </ul>
                 </div>
             </div>
@@ -87,7 +98,7 @@
 
                         <div class="collapse dont-collapse-sm links" id="collapse_2">
                             <ul>
-                                <li><a href="">Trang liên hệ</a></li>
+                                <li><a href="/contact">Trang liên hệ</a></li>
                             </ul>
                         </div>
                     </ul>

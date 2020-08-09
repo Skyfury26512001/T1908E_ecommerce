@@ -298,6 +298,14 @@
     border-radius: 2px;
 }
 
+.female {
+    background-color: pink !important;
+}
+
+.unisex {
+    background-color: gold !important;
+}
+
 .prod_info h6 p {
     margin-top: 5px;
 }

@@ -33,8 +33,9 @@
             var imgName = splittedImg[splittedImg.length - 1];
             console.log(splittedImg)
             imgName = imgName.split('.');
-            console.log(imgName[0]);
-            $('input[data-cloudinary-public-id="'+ splittedImg[splittedImg.length - 3] + splittedImg[splittedImg.length - 2] + imgName[0] + splittedImg[splittedImg.length - 2] + '"]').remove();
+            var name = 'input[data-cloudinary-public-id="'+ splittedImg[splittedImg.length - 3] +'/'+ splittedImg[splittedImg.length - 2] +'/'+ imgName[0] + '"]';
+            console.log(name);
+            $(name).remove();
         });
     </script>
 
@@ -162,6 +163,7 @@
                                         <select class="form-control" name="sex">
                                             <option value="Nam">Nam</option>
                                             <option value="Nữ">Nữ</option>
+                                            <option value="Phi giới tính">Phi giới tính</option>
                                         </select>
                                         @if ($errors->has('sex'))
                                             <label class="alert-warning">{{$errors->first('sex')}}</label>

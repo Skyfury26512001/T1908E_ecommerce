@@ -1,6 +1,6 @@
 @extends('layouts.master')
 @section('title')
-    Allaia
+    Wanderlust
 @endsection
 @section('specific_css')
     <link href={{ asset('assets/css/home_1.css') }} rel="stylesheet">
@@ -26,10 +26,10 @@
                                             <h2 class="owl-slide-animated owl-slide-title">Sauvage<br>the new parfume
                                             </h2>
                                             <p class="owl-slide-animated owl-slide-subtitle">
-                                                Số lượng có hạn
+                                                A powerfully fresh trail, wild and noble all at once.
                                             </p>
                                             <div class="owl-slide-animated owl-slide-cta"><a class="btn_1"
-                                                                                             href="listing-grid-1-full.html"
+                                                                                             href="/product/sauvage_p"
                                                                                              role="button">Mua ngay</a>
                                             </div>
                                         </div>
@@ -46,12 +46,13 @@
                                 <div class="row justify-content-center justify-content-md-start">
                                     <div class="col-lg-6 static">
                                         <div class="slide-text white">
-                                            <h2 class="owl-slide-animated owl-slide-title">Sauvage<br>eau de toilette</h2>
+                                            <h2 class="owl-slide-animated owl-slide-title">Sauvage<br>eau de toilette
+                                            </h2>
                                             <p class="owl-slide-animated owl-slide-subtitle">
-                                                Số lượng có hạn
+                                                Powerful & juicy freshness with a woody amber trail
                                             </p>
                                             <div class="owl-slide-animated owl-slide-cta"><a class="btn_1"
-                                                                                             href="listing-grid-1-full.html"
+                                                                                             href="/product/sauvage_edt"
                                                                                              role="button">Mua ngay</a>
                                             </div>
                                         </div>
@@ -72,10 +73,10 @@
                                             <h2 class="owl-slide-animated owl-slide-title">Sauvage<br>eau de parfum
                                             </h2>
                                             <p class="owl-slide-animated owl-slide-subtitle">
-                                                Lightweight cushioning and durable support with a Phylon midsole
+                                                spicy freshness with a woody trail envelopped in vanilla absolute
                                             </p>
                                             <div class="owl-slide-animated owl-slide-cta"><a class="btn_1"
-                                                                                             href="listing-grid-1-full.html"
+                                                                                             href="/product/sauvage_edp"
                                                                                              role="button">Mua ngay</a>
                                             </div>
                                         </div>
@@ -93,31 +94,37 @@
             <ul id="banners_grid" class="clearfix">
                 <li>
                     <a href="#0" class="img_container">
-                        <img src={{asset('assets/img/banners_cat_placeholder.jpg')}} data-src="assets/img/banner_1.jpg"
-                             alt="" class="lazy">
+                        <img
+                            src='https://res.cloudinary.com/vernom/image/upload/c_scale,w_700/v1596722168/perfume_project/female_ueuy87.png'
+                            data-src="https://res.cloudinary.com/vernom/image/upload/c_scale,w_700/v1596722168/perfume_project/female_ueuy87.png"
+                            alt="" class="lazy">
                         <div class="short_info opacity-mask" data-opacity-mask="rgba(0, 0, 0, 0.5)">
-                            <h3>Men's Collection</h3>
-                            <div><span class="btn_1">Mua ngay</span></div>
+                            <h3>BST Nữ</h3>
+                            <div><span class="btn_1">Xem ngay</span></div>
                         </div>
                     </a>
                 </li>
                 <li>
                     <a href="#0" class="img_container">
-                        <img src={{asset('assets/img/banners_cat_placeholder.jpg')}} data-src="assets/img/banner_2.jpg"
-                             alt="" class="lazy">
+                        <img
+                            src='https://res.cloudinary.com/vernom/image/upload/v1596722166/perfume_project/male_hy7gxe.jpg'
+                            data-src="https://res.cloudinary.com/vernom/image/upload/v1596722166/perfume_project/male_hy7gxe.jpg"
+                            alt="" class="lazy">
                         <div class="short_info opacity-mask" data-opacity-mask="rgba(0, 0, 0, 0.5)">
-                            <h3>Womens's Collection</h3>
-                            <div><span class="btn_1">Mua ngay</span></div>
+                            <h3>BST Nam</h3>
+                            <div><span class="btn_1">Xem ngay</span></div>
                         </div>
                     </a>
                 </li>
                 <li>
                     <a href="#0" class="img_container">
-                        <img src={{asset('assets/img/banners_cat_placeholder.jpg')}} data-src="assets/img/banner_3.jpg"
-                             alt="" class="lazy">
+                        <img
+                            src='https://res.cloudinary.com/vernom/image/upload/v1596722169/perfume_project/unisex_phbqbj.jpg'
+                            data-src="https://res.cloudinary.com/vernom/image/upload/v1596722169/perfume_project/unisex_phbqbj.jpg"
+                            alt="" class="lazy">
                         <div class="short_info opacity-mask" data-opacity-mask="rgba(0, 0, 0, 0.5)">
-                            <h3>Kids's Collection</h3>
-                            <div><span class="btn_1">Mua ngay</span></div>
+                            <h3>BST đa giới</h3>
+                            <div><span class="btn_1">Xem ngay</span></div>
                         </div>
                     </a>
                 </li>
@@ -126,9 +133,9 @@
 
             <div class="container margin_60_35">
                 <div class="main_title">
-                    <h2>Top Selling</h2>
-                    <span>Products</span>
-                    <p>Cum doctus civibus efficiantur in imperdiet deterruisset</p>
+                    <h2>Bán chạy nhất</h2>
+                    <span>Các sản phẩm</span>
+                    <p>Các thương hiệu nước hoa được feedback nhiều nhất tại Việt Nam</p>
                 </div>
                 <div class="row small-gutters">
                     <div class="col-6 col-md-4 col-xl-3">
@@ -250,25 +257,27 @@
                     <!-- /col -->
                     <div class="col-6 col-md-4 col-xl-3">
                         <div class="grid_item">
-                            <span class="ribbon new">New</span>
+                            <span class="ribbon off">-50%</span>
                             <figure>
                                 <a href="product-detail-1.html">
                                     <img class="img-fluid lazy"
-                                         src={{asset('assets/img/products/product_placeholder_square_medium.jpg')}} data-src="assets/img/products/shoes/4.jpg"
+                                         src={{asset('assets/img/products/product_placeholder_square_medium.jpg')}} data-src="assets/img/products/shoes/3.jpg"
                                          alt="">
                                     <img class="img-fluid lazy"
-                                         src={{asset('assets/img/products/product_placeholder_square_medium.jpg')}} data-src="assets/img/products/shoes/4_b.jpg"
+                                         src={{asset('assets/img/products/product_placeholder_square_medium.jpg')}} data-src="assets/img/products/shoes/3_b.jpg"
                                          alt="">
                                 </a>
+                                <div data-countdown="2019/05/21" class="countdown"></div>
                             </figure>
                             <div class="rating"><i class="icon-star voted"></i><i class="icon-star voted"></i><i
                                     class="icon-star voted"></i><i class="icon-star voted"></i><i class="icon-star"></i>
                             </div>
                             <a href="product-detail-1.html">
-                                <h3>Armor ACG React Terra</h3>
+                                <h3>Armor Air Wildwood ACG</h3>
                             </a>
                             <div class="price_box">
-                                <span class="new_price">$110.00</span>
+                                <span class="new_price">$75.00</span>
+                                <span class="old_price">$155.00</span>
                             </div>
                             <ul>
                                 <li><a href="#0" class="tooltip-1" data-toggle="tooltip" data-placement="left"
@@ -287,14 +296,14 @@
                     <!-- /col -->
                     <div class="col-6 col-md-4 col-xl-3">
                         <div class="grid_item">
-                            <span class="ribbon new">New</span>
+                            <span class="ribbon hot">Hot</span>
                             <figure>
                                 <a href="product-detail-1.html">
                                     <img class="img-fluid lazy"
-                                         src={{asset('assets/img/products/product_placeholder_square_medium.jpg')}} data-src="assets/img/products/shoes/5.jpg"
+                                         src={{asset('assets/img/products/product_placeholder_square_medium.jpg')}} data-src="assets/img/products/shoes/7.jpg"
                                          alt="">
                                     <img class="img-fluid lazy"
-                                         src={{asset('assets/img/products/product_placeholder_square_medium.jpg')}} data-src="assets/img/products/shoes/5_b.jpg"
+                                         src={{asset('assets/img/products/product_placeholder_square_medium.jpg')}} data-src="assets/img/products/shoes/7_b.jpg"
                                          alt="">
                                 </a>
                             </figure>
@@ -302,10 +311,10 @@
                                     class="icon-star voted"></i><i class="icon-star voted"></i><i class="icon-star"></i>
                             </div>
                             <a href="product-detail-1.html">
-                                <h3>Armor Air Zoom Alpha</h3>
+                                <h3>Armor Air Max 98</h3>
                             </a>
                             <div class="price_box">
-                                <span class="new_price">$140.00</span>
+                                <span class="new_price">$115.00</span>
                             </div>
                             <ul>
                                 <li><a href="#0" class="tooltip-1" data-toggle="tooltip" data-placement="left"
@@ -324,14 +333,14 @@
                     <!-- /col -->
                     <div class="col-6 col-md-4 col-xl-3">
                         <div class="grid_item">
-                            <span class="ribbon new">New</span>
+                            <span class="ribbon hot">Hot</span>
                             <figure>
                                 <a href="product-detail-1.html">
                                     <img class="img-fluid lazy"
-                                         src={{asset('assets/img/products/product_placeholder_square_medium.jpg')}} data-src="assets/img/products/shoes/6.jpg"
+                                         src={{asset('assets/img/products/product_placeholder_square_medium.jpg')}} data-src="assets/img/products/shoes/7.jpg"
                                          alt="">
                                     <img class="img-fluid lazy"
-                                         src={{asset('assets/img/products/product_placeholder_square_medium.jpg')}} data-src="assets/img/products/shoes/6_b.jpg"
+                                         src={{asset('assets/img/products/product_placeholder_square_medium.jpg')}} data-src="assets/img/products/shoes/7_b.jpg"
                                          alt="">
                                 </a>
                             </figure>
@@ -339,10 +348,10 @@
                                     class="icon-star voted"></i><i class="icon-star voted"></i><i class="icon-star"></i>
                             </div>
                             <a href="product-detail-1.html">
-                                <h3>Armor Air Alpha</h3>
+                                <h3>Armor Air Max 98</h3>
                             </a>
                             <div class="price_box">
-                                <span class="new_price">$130.00</span>
+                                <span class="new_price">$115.00</span>
                             </div>
                             <ul>
                                 <li><a href="#0" class="tooltip-1" data-toggle="tooltip" data-placement="left"
@@ -438,19 +447,20 @@
             </div>
             <!-- /container -->
 
-            <div class="featured lazy" data-bg="url(assets/img/featured_home.jpg)">
+            <div class="featured lazy"
+                 data-bg="url(https://res.cloudinary.com/vernom/image/upload/v1596722751/perfume_project/another_13_uxtbu1.jpg)">
                 <div class="opacity-mask d-flex align-items-center" data-opacity-mask="rgba(0, 0, 0, 0.5)">
                     <div class="container margin_60">
                         <div class="row justify-content-center justify-content-md-start">
                             <div class="col-lg-6 wow" data-wow-offset="150">
-                                <h3>Armor<br>Air Color 720</h3>
-                                <p>Lightweight cushioning and durable support with a Phylon midsole</p>
+                                <h3>Le Labo<br>Another 13</h3>
+                                <p>Đàn ông là không sợ nắng</p>
                                 <div class="feat_text_block">
                                     <div class="price_box">
-                                        <span class="new_price">$90.00</span>
-                                        <span class="old_price">$170.00</span>
+                                        <span class="new_price">6.000.000₫</span>
+                                        <span class="old_price">6.500.000₫</span>
                                     </div>
-                                    <a class="btn_1" href="listing-grid-1-full.html" role="button">Mua ngay</a>
+                                    <a class="btn_1" href="/product/another_13_edp" role="button">Mua ngay</a>
                                 </div>
                             </div>
                         </div>
@@ -461,9 +471,9 @@
 
             <div class="container margin_60_35">
                 <div class="main_title">
-                    <h2>Featured</h2>
-                    <span>Products</span>
-                    <p>Cum doctus civibus efficiantur in imperdiet deterruisset</p>
+                    <h2>Mới</h2>
+                    <span>Các sản phẩm</span>
+                    <p>Các thương hiệu nước hoa được feedback nhiều nhất tại Việt Nam</p>
                 </div>
                 <div class="owl-carousel owl-theme products_carousel">
                     <div class="item">
@@ -536,11 +546,11 @@
                     <!-- /item -->
                     <div class="item">
                         <div class="grid_item">
-                            <span class="ribbon hot">Hot</span>
+                            <span class="ribbon new">New</span>
                             <figure>
                                 <a href="product-detail-1.html">
                                     <img class="owl-lazy"
-                                         src={{asset('assets/img/products/product_placeholder_square_medium.jpg')}} data-src="assets/img/products/shoes/8.jpg"
+                                         src={{asset('assets/img/products/product_placeholder_square_medium.jpg')}} data-src="assets/img/products/shoes/5.jpg"
                                          alt="">
                                 </a>
                             </figure>
@@ -548,10 +558,10 @@
                                     class="icon-star voted"></i><i class="icon-star voted"></i><i class="icon-star"></i>
                             </div>
                             <a href="product-detail-1.html">
-                                <h3>Air Color 720</h3>
+                                <h3>Air Zoom Alpha</h3>
                             </a>
                             <div class="price_box">
-                                <span class="new_price">$120.00</span>
+                                <span class="new_price">$140.00</span>
                             </div>
                             <ul>
                                 <li><a href="#0" class="tooltip-1" data-toggle="tooltip" data-placement="left"
@@ -570,11 +580,11 @@
                     <!-- /item -->
                     <div class="item">
                         <div class="grid_item">
-                            <span class="ribbon off">-30%</span>
+                            <span class="ribbon new">New</span>
                             <figure>
                                 <a href="product-detail-1.html">
                                     <img class="owl-lazy"
-                                         src={{asset('assets/img/products/product_placeholder_square_medium.jpg')}} data-src="assets/img/products/shoes/2.jpg"
+                                         src={{asset('assets/img/products/product_placeholder_square_medium.jpg')}} data-src="assets/img/products/shoes/5.jpg"
                                          alt="">
                                 </a>
                             </figure>
@@ -582,46 +592,10 @@
                                     class="icon-star voted"></i><i class="icon-star voted"></i><i class="icon-star"></i>
                             </div>
                             <a href="product-detail-1.html">
-                                <h3>Okwahn II</h3>
+                                <h3>Air Zoom Alpha</h3>
                             </a>
                             <div class="price_box">
-                                <span class="new_price">$90.00</span>
-                                <span class="old_price">$170.00</span>
-                            </div>
-                            <ul>
-                                <li><a href="#0" class="tooltip-1" data-toggle="tooltip" data-placement="left"
-                                       title="Add to favorites"><i
-                                            class="ti-heart"></i><span>Add to favorites</span></a></li>
-                                <li><a href="#0" class="tooltip-1" data-toggle="tooltip" data-placement="left"
-                                       title="Add to compare"><i
-                                            class="ti-control-shuffle"></i><span>Add to compare</span></a></li>
-                                <li><a href="#0" class="tooltip-1" data-toggle="tooltip" data-placement="left"
-                                       title="Add to cart"><i class="ti-shopping-cart"></i><span>Add to cart</span></a>
-                                </li>
-                            </ul>
-                        </div>
-                        <!-- /grid_item -->
-                    </div>
-                    <!-- /item -->
-                    <div class="item">
-                        <div class="grid_item">
-                            <span class="ribbon off">-50%</span>
-                            <figure>
-                                <a href="product-detail-1.html">
-                                    <img class="owl-lazy"
-                                         src={{asset('assets/img/products/product_placeholder_square_medium.jpg')}} data-src="assets/img/products/shoes/3.jpg"
-                                         alt="">
-                                </a>
-                            </figure>
-                            <div class="rating"><i class="icon-star voted"></i><i class="icon-star voted"></i><i
-                                    class="icon-star voted"></i><i class="icon-star voted"></i><i class="icon-star"></i>
-                            </div>
-                            <a href="product-detail-1.html">
-                                <h3>Air Wildwood ACG</h3>
-                            </a>
-                            <div class="price_box">
-                                <span class="new_price">$75.00</span>
-                                <span class="old_price">$155.00</span>
+                                <span class="new_price">$140.00</span>
                             </div>
                             <ul>
                                 <li><a href="#0" class="tooltip-1" data-toggle="tooltip" data-placement="left"
@@ -683,26 +657,25 @@
 
             <div class="container margin_60_35">
                 <div class="main_title">
-                    <h2>Latest News</h2>
+                    <h2>Tin mới nhất</h2>
                     <span>Blog</span>
-                    <p>Cum doctus civibus efficiantur in imperdiet deterruisset</p>
+                    <p>Các bài blog về chủ đề nước hoa</p>
                 </div>
                 <div class="row">
                     <div class="col-lg-6">
                         <a class="box_news" href="blog.html">
                             <figure>
                                 <img
-                                    src={{asset('assets/img/blog-thumb-placeholder.jpg')}} data-src="assets/img/blog-thumb-1.jpg"
+                                    src='https://res.cloudinary.com/vernom/image/upload/c_scale,h_266,w_400/v1596800928/perfume_project/article/1_byoh6y.jpg'
                                     alt="" width="400" height="266" class="lazy">
-                                <figcaption><strong>28</strong>Dec</figcaption>
+                                <figcaption><strong>07</strong>Aug</figcaption>
                             </figure>
                             <ul>
-                                <li>by Mark Twain</li>
-                                <li>20.11.2017</li>
+                                <li>Hoàng Trần</li>
+                                <li>07.08.2020</li>
                             </ul>
-                            <h4>Pri oportere scribentur eu</h4>
-                            <p>Cu eum alia elit, usu in eius appareat, deleniti sapientem honestatis eos ex. In ius esse
-                                ullum vidisse....</p>
+                            <h4>Fucking Fabulous – khi tình yêu trở nên mù quáng</h4>
+                            <p>Thật đáng buồn cười khi con người ta liên tục cảm thấy hối hận vì....</p>
                         </a>
                     </div>
                     <!-- /box_news -->
@@ -710,17 +683,16 @@
                         <a class="box_news" href="blog.html">
                             <figure>
                                 <img
-                                    src={{asset('assets/img/blog-thumb-placeholder.jpg')}} data-src="assets/img/blog-thumb-2.jpg"
+                                    src='https://res.cloudinary.com/vernom/image/upload/c_scale,h_266,w_400/c_scale,h_266,w_400/v1596800928/perfume_project/article/2_us9yma.jpg'
                                     alt="" width="400" height="266" class="lazy">
-                                <figcaption><strong>28</strong>Dec</figcaption>
+                                <figcaption><strong>07</strong>Aug</figcaption>
                             </figure>
                             <ul>
-                                <li>By Jhon Doe</li>
-                                <li>20.11.2017</li>
+                                <li>Khánh Nam</li>
+                                <li>07.08.2020</li>
                             </ul>
-                            <h4>Duo eius postea suscipit ad</h4>
-                            <p>Cu eum alia elit, usu in eius appareat, deleniti sapientem honestatis eos ex. In ius esse
-                                ullum vidisse....</p>
+                            <h4>Nước hoa và thủ thuật giao tiếp</h4>
+                            <p>Ẩn sau những nốt hương nhè nhẹ, vấn vương là cả một thế giới tràn đầy bí ẩn....</p>
                         </a>
                     </div>
                     <!-- /box_news -->
@@ -728,17 +700,17 @@
                         <a class="box_news" href="blog.html">
                             <figure>
                                 <img
-                                    src={{asset('assets/img/blog-thumb-placeholder.jpg')}} data-src="assets/img/blog-thumb-3.jpg"
+                                    src='https://res.cloudinary.com/vernom/image/upload/c_scale,h_266,w_400/v1596800930/perfume_project/article/3_ffvjlv.jpg'
                                     alt="" width="400" height="266" class="lazy">
-                                <figcaption><strong>28</strong>Dec</figcaption>
+                                <figcaption><strong>07</strong>Aug</figcaption>
                             </figure>
                             <ul>
-                                <li>By Luca Robinson</li>
-                                <li>20.11.2017</li>
+                                <li>Đỗ Thái</li>
+                                <li>07.08.2020</li>
                             </ul>
-                            <h4>Elitr mandamus cu has</h4>
-                            <p>Cu eum alia elit, usu in eius appareat, deleniti sapientem honestatis eos ex. In ius esse
-                                ullum vidisse....</p>
+                            <h4>Bộ sưu tập Gucci Bloom, khi vẻ đẹp của hoa Huệ được tôn vinh</h4>
+                            <p>Tháng 8 năm 2017, Giám đốc sáng tạo Alessandro Michele với nét mặt rạng rỡ, hạnh
+                                phúc....</p>
                         </a>
                     </div>
                     <!-- /box_news -->
@@ -746,17 +718,16 @@
                         <a class="box_news" href="blog.html">
                             <figure>
                                 <img
-                                    src={{asset('assets/img/blog-thumb-placeholder.jpg')}} data-src="assets/img/blog-thumb-4.jpg"
+                                    src='https://res.cloudinary.com/vernom/image/upload/c_scale,h_266,w_400/v1596800929/perfume_project/article/4_yxxipn.jpg'
                                     alt="" width="400" height="266" class="lazy">
-                                <figcaption><strong>28</strong>Dec</figcaption>
+                                <figcaption><strong>06</strong>Aug</figcaption>
                             </figure>
                             <ul>
-                                <li>By Paula Rodrigez</li>
-                                <li>20.11.2017</li>
+                                <li>Bá Lâm</li>
+                                <li>06.08.2020</li>
                             </ul>
-                            <h4>Id est adhuc ignota delenit</h4>
-                            <p>Cu eum alia elit, usu in eius appareat, deleniti sapientem honestatis eos ex. In ius esse
-                                ullum vidisse....</p>
+                            <h4>Alaia – Mùi hương của ký ức, tình yêu và nỗi nhớ</h4>
+                            <p>Thật dễ để yêu ai đó khi họ đã trở thành một phần của ký ức, nhưng thật khó....</p>
                         </a>
                     </div>
                     <!-- /box_news -->

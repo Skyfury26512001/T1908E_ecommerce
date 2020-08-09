@@ -22,16 +22,14 @@ Route::get('/', function () {
 //    return view('products.product_detail');
 //});
 
-Route::get('/product_list', function () {
-    return view('products.product_list');
-});
+Route::get('/product_list', 'ProductController@productList')->name('product_list');
 
 Route::get('/service', function () {
     return view('service');
 });
 
 Route::get('/about_us', function () {
-    return view('about');
+    return view('about_us');
 });
 
 Route::get('/contact', function () {
@@ -40,20 +38,36 @@ Route::get('/contact', function () {
 
 Route::get('/user/account/profile', function () {
     $account = session()->get("current_account");
-    return view('account',compact('account'));
+    return view('account', compact('account'));
 })->name('profile');
-Route::put('/user/account/profile_update/{id}',function (\Illuminate\Http\Request $request , $id){
+
+Route::put('/user/account/profile_update/{id}', function (\Illuminate\Http\Request $request, $id) {
     dd($request);
 })->name('account_update');
 
-Route::get('/product/{id}', 'ProductController@index')->name('product_detail');
+Route::get('/product/{slug}', 'ProductController@index')->name('product_detail');
+
 Route::post('product/add_cart/item', 'ProductController@add_to_cart')->name('add_to_cart');
-Route::get('product/add_cart/1',function (){
-    dd(123);
-});
+
+Route::get('/cart/page','ProductController@cart')->name('cart');
+
+Route::get('/product_find/','ProductController@search')->name('product_search');
+
 Route::get('/user/purchase', function () {
     return view('purchase');
 });
+
+Route::get('/leave_review', function () {
+    return view('leave_review');
+});
+
+Route::get('/confirm_review', function () {
+    return view('confirm_review');
+});
+//mail
+Route::get('/contact', 'SendEmailController@index');
+
+Route::post('/contact/send', 'SendEmailController@send');
 
 //Route::get('/product', 'ProductController@index');
 
@@ -89,7 +103,7 @@ Route::group(['middleware' => ['admin_check'], 'prefix' => 'admin'], function ()
     Route::group(['prefix' => '/products'], function () {
         Route::get('/', 'ProductController@admin_index')->name('admin_product_list');
         Route::get('/create', 'ProductController@create')->name('admin_product_create');
-        Route::post('/store','ProductController@store')->name('admin_product_store');
+        Route::post('/store', 'ProductController@store')->name('admin_product_store');
         Route::get('/edit/{slug}', 'ProductController@edit')->name('admin_product_edit');
         Route::put('/update/{id}', 'ProductController@update')->name('admin_product_update');
         Route::put('/delete/{id}', 'ProductController@delete')->name('admin_product_delete');
@@ -98,7 +112,7 @@ Route::group(['middleware' => ['admin_check'], 'prefix' => 'admin'], function ()
     Route::group(['prefix' => '/accounts'], function () {
         Route::get('/', 'AccountController@admin_index')->name('admin_account_list');
         Route::get('/create', 'AccountController@create')->name('admin_account_create');
-        Route::post('/store','AccountController@store')->name('admin_account_store');
+        Route::post('/store', 'AccountController@store')->name('admin_account_store');
         Route::get('/edit/{slug}', 'AccountController@edit')->name('admin_account_edit');
         Route::put('/update/{id}', 'AccountController@update')->name('admin_account_update');
         Route::put('/delete/{id}', 'AccountController@delete')->name('admin_account_delete');
@@ -107,7 +121,7 @@ Route::group(['middleware' => ['admin_check'], 'prefix' => 'admin'], function ()
     Route::group(['prefix' => '/receipts'], function () {
         Route::get('/', 'ReceiptController@admin_index')->name('admin_receipt');
         Route::get('/create', 'ReceiptController@create')->name('admin_receipt_create');
-        Route::post('/store','ReceiptController@store')->name('admin_receipt_store');
+        Route::post('/store', 'ReceiptController@store')->name('admin_receipt_store');
         Route::get('/edit/{slug}', 'ReceiptController@edit')->name('admin_receipt_edit');
         Route::put('/update/{id}', 'ReceiptController@update')->name('admin_receipt_update');
         Route::put('/delete/{id}', 'ReceiptController@delete')->name('admin_receipt_delete');
@@ -119,7 +133,7 @@ Route::group(['middleware' => ['admin_check'], 'prefix' => 'admin'], function ()
 });
 
 // test : route
-Route::get('checking_page', function () {
+    Route::get('checking_page', function () {
     return view('session_checking');
 });
 Route::get('/test/{haha}', function () {

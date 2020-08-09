@@ -6,7 +6,8 @@ use Illuminate\Database\Eloquent\Model;
 
 class Product extends Model
 {
-    private static $cloudinary_link = 'https://res.cloudinary.com/vernom/image/upload/';
+    private static $cloudinary_link = 'https://res.cloudinary.com/vernom/image/upload/c_scale,h_400,w_400/';
+
     public function groups()
     {
         return $this->belongsToMany(Group::class, 'product_group', 'product_id', 'group_id');
@@ -49,7 +50,7 @@ class Product extends Model
     {
         $thumbnail[] = explode(',', $this->thumbnail);
         foreach ($thumbnail as $thumbnailValue) {
-            return self::$cloudinary_link.$thumbnailValue[0];
+            return self::$cloudinary_link . $thumbnailValue[0];
         }
     }
 
@@ -68,8 +69,10 @@ class Product extends Model
         }
         return $list_ids;
     }
-    public function getImageSize600x600Attribute(){
-        return 'https://res.cloudinary.com/dwarrion/image/upload/c_scale,h_600,w_600/'.$this->brand_thumbnail;
+
+    public function getImageSize600x600Attribute()
+    {
+        return 'https://res.cloudinary.com/dwarrion/image/upload/c_scale,h_600,w_600/' . $this->brand_thumbnail;
     }
 
 
