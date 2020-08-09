@@ -660,7 +660,7 @@
                 <br>
                 <br>
                 <div class="main_title">
-                    <p>Các sản phẩm vừa xem</p>
+                    <p>Các sản phẩm cùng thương hiệu</p>
                 </div>
 {{--                {{dd($eloquent_product_brand)}}--}}
                 <div class="owl-carousel owl-theme products_carousel">

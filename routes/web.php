@@ -1,5 +1,8 @@
 <?php
 
+use App\Brand;
+use App\Origin;
+use App\Product;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -15,7 +18,9 @@ use Illuminate\Support\Facades\Route;
 
 // user : route
 Route::get('/', function () {
-    return view('index');
+    $products = \App\Product::all()->take(8);
+    $brands = \App\Brand::all();
+    return view('index',compact('products','brands'));
 })->name('home');
 
 //Route::get('/product', function () {
@@ -50,6 +55,8 @@ Route::get('/product/{slug}', 'ProductController@index')->name('product_detail')
 Route::post('product/add_cart/item', 'ProductController@add_to_cart')->name('add_to_cart');
 
 Route::get('/cart/page','ProductController@cart')->name('cart');
+
+Route::get('/cart/page/{id}','ProductController@cart_remove')->name('cart_remove');
 
 Route::get('/product_find','ProductController@search')->name('product_search');
 
@@ -86,7 +93,12 @@ Route::post('/logoutaccount', 'AccountController@logOut')->name('logout');
 // admin : route
 Route::group(['middleware' => ['admin_check'], 'prefix' => 'admin'], function () {
     Route::get('/', function () {
-        return view('admin.index');
+        $male_product_amount   = count(Product::where('status', '=', '1')->where('sex', '=', 'Nam')->get());
+        $female_product_amount = count(Product::where('status', '=', '1')->where('sex', '=', 'Nữ')->get());
+        $unisex_product_amount = count(Product::where('status', '=', '1')->where('sex', '=', 'Phi giới tính')->get());
+        $brands = Brand::all();
+        $origins = Origin::all();
+        return view('admin.index',compact('male_product_amount','female_product_amount','unisex_product_amount','brands','origins'));
     })->name('admin');
     Route::group(['prefix' => '/brands'], function () {
         Route::get('/', 'BrandController@index')->name('admin_brand');

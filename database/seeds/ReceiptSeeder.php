@@ -31,7 +31,7 @@ class ReceiptSeeder extends Seeder
                 $product_list_item .= ',' . $faker->randomElement($products)->name;
             }
             $item = [
-                'codeName' => $faker->asciify('******'),
+                'customerId' => $faker->asciify('******'),
                 'product_list_item' => $product_list_item,
                 'total_price' => $faker->randomNumber(4) * 100,
                 'buyer_name' => $faker->name,

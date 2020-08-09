@@ -4,16 +4,16 @@
 @section('specific_js')
     <script src="{{asset('assets/admin/js/vendor.min.js')}}"></script>
 
-        <!-- third party js -->
-        <script src="{{asset('assets/admin/libs/datatables/jquery.dataTables.min.js')}}"></script>
-        <script src="{{asset('assets/admin/libs/datatables/dataTables.bootstrap4.min.js')}}"></script>
-        <script src="{{asset('assets/admin/libs/datatables/dataTables.responsive.min.js')}}"></script>
+    <!-- third party js -->
+    <script src="{{asset('assets/admin/libs/datatables/jquery.dataTables.min.js')}}"></script>
+    <script src="{{asset('assets/admin/libs/datatables/dataTables.bootstrap4.min.js')}}"></script>
+    <script src="{{asset('assets/admin/libs/datatables/dataTables.responsive.min.js')}}"></script>
 
-        <!-- Tickets js -->
-        <script src="{{asset('assets/admin/js/pages/tickets.init.js')}}"></script>
+    <!-- Tickets js -->
+    <script src="{{asset('assets/admin/js/pages/tickets.init.js')}}"></script>
 
-        <!-- App js -->
-        <script src="{{asset('assets/admin/js/app.min.js')}}"></script>
+    <!-- App js -->
+    <script src="{{asset('assets/admin/js/app.min.js')}}"></script>
 
     <script src="{{asset('assets/admin/libs/parsleyjs/parsley.min.js')}}"></script>
     <script>
@@ -91,89 +91,88 @@
         <div class="row">
             <div class="col-lg-12">
                 <div class="card-box">
+                    <div>
+                        <h4 class="header-title">Brands</h4>
+                        <p class="sub-header">
+                            <code>All accounts</code>
+                        </p>
+                    </div>
                     <div class="row">
-                        <div>
-                            <h4 class="header-title">Brands</h4>
-                            <p class="sub-header">
-                                <code>All accounts</code>
-                            </p>
-                        </div>
-                        <div class="offset-8 col-3">
-                            <form class="app-search" action="{{route('admin_account_list')}}">
-                                <div class="app-search-box">
-                                    <div class="input-group">
-                                        <input type="text" class="form-control" name="keyword" placeholder="Search...">
-                                        <div class="input-group-append">
-                                            <button class="btn" type="submit">
-                                                <i class="fe-search"></i>
-                                            </button>
+                        <div class="col-5">
+                            <div class="row">
+                                <div class="offset-8 col-3">
+                                    <form class="app-search" action="{{route('admin_account_list')}}">
+                                        <div class="app-search-box">
+                                            <div class="input-group">
+                                                <input type="text" class="form-control" name="keyword"
+                                                       placeholder="Search...">
+                                                <div class="input-group-append">
+                                                    <button class="btn" type="submit">
+                                                        <i class="fe-search"></i>
+                                                    </button>
+                                                </div>
+                                            </div>
                                         </div>
+                                    </form>
+                                </div>
+                            </div>
+                            <div class="">
+                                <table class="table table-hover mb-0">
+                                    <thead>
+                                    <tr>
+                                        <th></th>
+                                        <th class="sorting" tabindex="0" aria-controls="datatable" rowspan="1"
+                                            colspan="2" style="width: 24.8px;"
+                                            aria-label="ID: activate to sort column ascending">
+                                            Account Name
+                                        </th>
+                                        <th colspan="2" style="text-align: center">Action</th>
+                                    </tr>
+                                    </thead>
+                                    <tbody>
+                                    @csrf
+                                    {{--                            {{dd($accounts)}}--}}
+                                    @foreach($accounts as $account)
+                                        {{--                                {{dd($account)}}--}}
+                                        <tr>
+                                            <td colspan="1" style="vertical-align: middle;">
+                                                <div class="checkbox checkbox-primary">
+                                                    <input class="checkbox_list_origin" id="" type="checkbox"
+                                                           style="opacity: 1" name="origins[]" value="3">
+                                                </div>
+                                            </td>
+                                            <td>{{$account->fullName}}</td>
+                                            <td></td>
+                                            {{--                                    <td>{{count($account->products)}}</td>--}}
+                                            <td><a href="{{route('admin_account_edit',$account->id)}}"
+                                                   class="btn btn-primary"
+                                                   style="float:right">Edit</a></td>
+                                            <td>
+                                                <form action="{{route('admin_account_delete',$account->id)}}"
+                                                      method="POST">
+                                                    @csrf @method('PUT')
+                                                    <button class="btn btn-primary"> Delete</button>
+                                                </form>
+                                            </td>
+                                        </tr>
+                                    @endforeach
+                                    </tbody>
+                                </table>
+                            </div>
+                            <div style="margin-top: 1%">
+                                <div class="row">
+                                    <div class="col-5"> {{ $accounts->links() }}</div>
+                                    <div class="col-6">
+                                        <button class="btn btn-primary" style="float: right" id="delete_all"> Delete All
+                                        </button>
                                     </div>
                                 </div>
-                            </form>
-                        </div>
-                    </div>
-                    <div class="table-responsive">
-
-                        <table class="table table-hover mb-0">
-                            <thead>
-                            <tr>
-                                <th></th>
-                                <th class="sorting" tabindex="0" aria-controls="datatable" rowspan="1" colspan="1" style="width: 24.8px;" aria-label="ID: activate to sort column ascending">
-                                    Account Name
-                                </th>
-                                <th>Brand Thumbnail</th>
-                                <th>Products description</th>
-                                <th colspan="2" style="text-align: center">Action</th>
-                            </tr>
-                            </thead>
-                            <tbody>
-                            @csrf
-{{--                            {{dd($accounts)}}--}}
-                            @foreach($accounts as $account)
-{{--                                {{dd($account)}}--}}
-                                <tr>
-
-                                    <td colspan="1" style="vertical-align: middle;">
-                                        <div class="checkbox checkbox-primary">
-                                            <input class="checkbox_list_origin" id="" type="checkbox" style="opacity: 1" name="origins[]" value="3">
-                                        </div>
-                                    </td>
-                                    <td>{{$account->fullName}}</td>
-                                    <td width="10%"><img src="{{$account->imagesize600x600}}"style="width: 100%">
-                                    </td>
-                                    <td><div> {{$account->account_description}}</div></td>
-{{--                                    <td>{{count($account->products)}}</td>--}}
-                                    <td><a href="{{route('admin_account_edit',$account->id)}}" class="btn btn-primary"
-                                           style="float:right">Edit</a></td>
-                                    <td>
-                                        <form action="{{route('admin_account_delete',$account->id)}}" method="POST">
-                                            @csrf @method('PUT')
-                                            <button class="btn btn-primary"> Delete</button>
-                                        </form>
-                                    </td>
-                                </tr>
-                            @endforeach
-
-                            </tbody>
-
-                        </table>
-
-
-                    </div>
-                    <div style="margin-top: 1%">
-                        <div class="row">
-                            <div class="col-5"> {{ $accounts->links() }}</div>
-                            <div class="col-6">
-                                <button class="btn btn-primary" style="float: right" id="delete_all"> Delete All
-                                </button>
                             </div>
                         </div>
                     </div>
                 </div>
 
             </div>
-
         </div>
         <!-- end row -->
 

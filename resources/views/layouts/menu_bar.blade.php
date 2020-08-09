@@ -44,14 +44,6 @@
                                             {{--                                                <li><a href="listing-grid-4-sidebar-left.html">D</a></li>--}}
                                             {{--                                            </ul>--}}
                                         </li>
-                                        <li><span><a href="/brand">THƯƠNG HIỆU</a></span>
-                                            {{--                                            <ul>--}}
-                                            {{--                                                <li><a href="listing-row-1-sidebar-left.html">A</a></li>--}}
-                                            {{--                                                <li><a href="listing-row-2-sidebar-right.html">B</a></li>--}}
-                                            {{--                                                <li><a href="listing-row-4-sidebar-extended.html">C</a></li>--}}
-                                            {{--                                                <li><a href="listing-grid-1-full.html">D</a></li>--}}
-                                            {{--                                            </ul>--}}
-                                        </li>
                                     </ul>
                                 </div>
                             </li>
@@ -114,14 +106,14 @@
 
                             <!-- /dropdown-cart-->
                         </li>
-                        <li>
-                            <a href="#0" class="wishlist"><span>Wishlist</span></a>
-                        </li>
+{{--                        <li>--}}
+{{--                            <a href="#0" class="wishlist"><span>Wishlist</span></a>--}}
+{{--                        </li>--}}
                         <li>
                             <div class="dropdown dropdown-access">
                                 <a href="account.html" class="access_link"><span>Tài khoản</span></a>
                                 <div class="dropdown-menu">
-                                    {{--										 {{ Session::get('current_account')}}--}}
+                                    										 {{ Session::get('current_account')}}
                                     @if(Session::has('current_account'))
                                         <strong
                                             style="font-size: 20px">{{Session::get('current_account')->fullName}}</strong>
@@ -139,7 +131,7 @@
                                                 <a href="help.html"><i class="ti-help-alt"></i>Trợ giúp</a>
                                             </li>
                                             <li>
-                                                {{--													<a href="{{route('logout')}}"><i class="ti-share"></i>Quit</a>--}}
+                                                													<a href="{{route('logout')}}"><i class="ti-share"></i>Quit</a>
                                                 <a class="log-out-btn" href="#"
                                                    onclick="event.preventDefault();document.getElementById('logout-form').submit();"><i
                                                         class="fa fa-sign-out" aria-hidden="true"
@@ -158,19 +150,19 @@
                             </div>
                             <!-- /dropdown-access-->
                         </li>
-                        <li>
-                            <a href="javascript:void(0);" class="btn_search_mob"><span>Search</span></a>
-                        </li>
-                        <li>
-                            <a href="#menu" class="btn_cat_mob">
-                                <div class="hamburger hamburger--spin" id="hamburger">
-                                    <div class="hamburger-box">
-                                        <div class="hamburger-inner"></div>
-                                    </div>
-                                </div>
-                                Nước hoa
-                            </a>
-                        </li>
+{{--                        <li>--}}
+{{--                            <a href="javascript:void(0);" class="btn_search_mob"><span>Search</span></a>--}}
+{{--                        </li>--}}
+{{--                        <li>--}}
+{{--                            <a href="#menu" class="btn_cat_mob">--}}
+{{--                                <div class="hamburger hamburger--spin" id="hamburger">--}}
+{{--                                    <div class="hamburger-box">--}}
+{{--                                        <div class="hamburger-inner"></div>--}}
+{{--                                    </div>--}}
+{{--                                </div>--}}
+{{--                                Nước hoa--}}
+{{--                            </a>--}}
+{{--                        </li>--}}
                     </ul>
                 </div>
             </div>

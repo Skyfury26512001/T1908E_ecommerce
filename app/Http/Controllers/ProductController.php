@@ -519,4 +519,13 @@ class ProductController extends Controller
     public function cart(){
         return view('cart');
     }
+    public function cart_remove(Request $request){
+        $cart = Session::get('shoppingCart'); // Second argument is a default value
+        if((array_key_exists($request->id, $cart)) !== false) {
+            unset($cart[$request->id]);
+        }
+//        dd($cart);
+        Session::put('shoppingCart', $cart);
+        return redirect(route('cart'));
+    }
 }

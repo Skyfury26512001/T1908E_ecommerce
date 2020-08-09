@@ -3,11 +3,19 @@
   <component name="ChangeListManager">
     <list default="true" id="705e2e61-c95e-41e2-8267-fa637b97959c" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/AccountController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/AccountController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/ProductController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/ProductController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/ReceiptController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/ReceiptController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Product.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Product.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2020_08_05_155500_create_receipts_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2020_08_05_155500_create_receipts_table.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/seeds/ReceiptSeeder.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/seeds/ReceiptSeeder.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/admin/accounts/account_list.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/accounts/account_list.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/admin/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/index.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/admin/layouts/master.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/layouts/master.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/cart.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/cart.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/index.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/layouts/menu_bar.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/menu_bar.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/products/male_product_list.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/products/male_product_list.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/products/product_list.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/products/product_list.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/products/product_detail.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/products/product_detail.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -175,7 +183,8 @@
       <workItem from="1596822240262" duration="522000" />
       <workItem from="1596823133861" duration="951000" />
       <workItem from="1596874152745" duration="6387000" />
-      <workItem from="1596890480910" duration="14965000" />
+      <workItem from="1596890480910" duration="15710000" />
+      <workItem from="1596959731636" duration="20478000" />
     </task>
     <servers />
   </component>

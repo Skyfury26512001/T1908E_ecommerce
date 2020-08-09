@@ -54,6 +54,13 @@ class Product extends Model
         }
     }
 
+    public function getfirstThumbnail150Attribute()
+    {
+        $thumbnail[] = explode(',', $this->thumbnail);
+        foreach ($thumbnail as $thumbnailValue) {
+            return 'https://res.cloudinary.com/vernom/image/upload/c_scale,h_150,w_150/' . $thumbnailValue[0];
+        }
+    }
 
     public function getPhotoIdsAttribute()
     {
