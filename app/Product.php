@@ -81,11 +81,4 @@ class Product extends Model
     {
         return 'https://res.cloudinary.com/dwarrion/image/upload/c_scale,h_600,w_600/' . $this->brand_thumbnail;
     }
-
-
-
-    //https://res.cloudinary.com/vernom/image/upload/v1596216873/perfume_project/perfume/allure_homme_sport_eau_extreme_EDP_1_zrfwsf.jpg
-    //https://res.cloudinary.com/vernom/image/upload/v1596216873/perfume_project/perfume/allure_homme_sport_eau_extreme_EDP_2_rpp195.jpg
-    //https://res.cloudinary.com/vernom/image/upload/v1596216879/perfume_project/perfume/allure_homme_sport_eau_extreme_EDP_3_es3rd0.jpg
-
 }
