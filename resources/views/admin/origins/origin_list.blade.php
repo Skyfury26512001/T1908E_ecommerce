@@ -66,6 +66,11 @@
             })
         });
     </script>
+    <script>
+        $('#checkAll').click(function () {
+            $('.checkbox_list_origin').prop('checked',$(this).prop('checked'));
+        })
+    </script>
 @endsection
 @section('content')
     <!-- Start Content-->
@@ -118,7 +123,7 @@
                         <table class="table table-hover mb-0">
                             <thead>
                             <tr>
-                                <th colspan="1"></th>
+                                <th colspan="1"><input type="checkbox" id="checkAll"></th>
                                 <th colspan="2" class="sorting" tabindex="0" aria-controls="datatable" rowspan="1" colspan="1" style="width: 24.8px;" aria-label="ID: activate to sort column ascending">
                                     Tên xuất xứ
                                 </th>

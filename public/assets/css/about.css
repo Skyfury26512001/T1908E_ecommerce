@@ -119,11 +119,13 @@
 .carousel_centered {
   margin-top: 40px;
 }
+
 @media (max-width: 767px) {
   .carousel_centered {
     margin-bottom: 30px;
   }
 }
+
 .carousel_centered .item .title {
   position: absolute;
   bottom: 0;
@@ -132,9 +134,9 @@
   width: 100%;
   z-index: 9;
 }
+
 .carousel_centered .item .title h4 {
-  background-color: #083487;
-  background-color: #083487;
+  background-color: #3a87ad;
   display: inline-block;
   -webkit-border-radius: 3px 3px 0 0;
   -moz-border-radius: 3px 3px 0 0;

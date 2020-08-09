@@ -15,11 +15,13 @@ class CreateReceiptsTable extends Migration
     {
         Schema::create('receipts', function (Blueprint $table) {
             $table->id();
-            $table->string('product_list_item');
-            $table->double('total_price');
-            $table->string('buyer_name');
-            $table->string('buyer_address');
-            $table->string('buyer_phone');
+            $table->string('customerId');
+            $table->double('total_money');
+            $table->string('ship_name');
+            $table->text('name_address');
+            $table->string('phone');
+            $table->string('note');
+            $table->integer('status');
             $table->timestamps();
         });
     }

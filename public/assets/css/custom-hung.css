@@ -26,3 +26,12 @@ header.version_1 .menu ul li > span a:hover {
 .nice-select {
     padding-top: 0;
 }
+
+.top_panel.show{
+    top: 60px;
+}
+.alert-warning{
+    color: red;
+    font-size: 14px;
+    margin-top: 10px;
+}

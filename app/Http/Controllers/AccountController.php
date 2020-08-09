@@ -15,9 +15,9 @@ class AccountController extends Controller
         return view('login_register',compact('cities'));
     }
     public function admin_index(){
-        dd('123');
         $cities = City::all();
-        return view('login_register',compact('cities'));
+        $accounts = Account::paginate(5);
+        return view('admin.accounts.account_list',compact('cities','accounts'));
     }
 
     public function registerProgress(RegisterRequest $request){
@@ -81,8 +81,9 @@ class AccountController extends Controller
 //                dd($account_session->get('current_account'));
               return redirect('/admin');
             }
+            return redirect(route('login'))->withErrors([['email'=>'account not found'],['password'=>'Account not found']]);
         }else{
-            dd("your account't doesn't exist");
+            return redirect(route('login'))->withErrors([['email'=>'account not found'],['password'=>'Account not found']]);
         }
     }
 

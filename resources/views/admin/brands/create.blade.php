@@ -6,10 +6,11 @@
     <script type="text/javascript">
         var myWidget = cloudinary.createUploadWidget(
             {
-                cloudName: 'dwarrion',
-                uploadPreset: 'ins6mnhp',
+                cloudName: 'vernom',
+                uploadPreset: 'fn5rpymu',
                 multiple: false,
                 form: '#product_form',
+                folder: 'perfume_project/brand',
                 fieldName: 'thumbnail',
                 thumbnails: '.thumbnail'
             }, function (error, result) {
@@ -31,7 +32,7 @@
 
             imgName = imgName.split('.');
             console.log(imgName[0]);
-            $('input[data-cloudinary-public-id="' + imgName[0] + '"]').remove();
+            $('input[data-cloudinary-public-id="' + splittedImg[splittedImg.length - 3] +'/'+ splittedImg[splittedImg.length - 2] +'/'+ splittedImg[splittedImg.length - 1] + '"]').remove();
         });
     </script>
 

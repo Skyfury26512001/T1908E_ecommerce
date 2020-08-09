@@ -163,7 +163,6 @@
                                 style="width: 24.8px;" aria-label="ID: activate to sort column ascending">
                                 Tên sản phẩm
                             </th>
-                            <th>Ảnh sản phẩm</th>
                             <th>Năm ra mắt</th>
                             <th>Tên nhà phát minh</th>
                             <th>Tên xuất xứ</th>
@@ -184,7 +183,6 @@
                                     </div>
                                 </td>
                                 <td>{{$product->name}}</td>
-                                <td width="10%"><img src="{{$product->imagesize600x600}}" style="width: 100%">
                                 </td>
                                 <td>{{$product->released_year}}</td>
                                 @if ($product->inventor_name == '-')

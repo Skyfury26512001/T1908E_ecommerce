@@ -201,12 +201,12 @@
                 <div class="logo-box">
                     <a href="index.html" class="logo text-center">
                         <span class="logo-lg">
-                            <img src="/assets/admin/images/logo-light.png" alt="" height="25">
+                            <img src="{{asset('assets/img/logo.png')}}" alt="" height="25">
                             <!-- <span class="logo-lg-text-light">UBold</span> -->
                         </span>
                         <span class="logo-sm">
                             <!-- <span class="logo-sm-text-dark">U</span> -->
-                            <img src="/assets/admin/images/logo-sm.png" alt="" height="28">
+                            <img src="{{asset('assets/img/logo.png')}}" alt="" height="28">
                         </span>
                     </a>
                 </div>
@@ -264,8 +264,8 @@
 
         <!-- App js -->
         <script src={{asset('assets/admin/')."/js/app.min.js"}}></script>
-        @yield('specific_js')
-
+        <!-- Custom js -->
+        @yield('specify_js')
 
     </body>
 </html>

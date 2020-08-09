@@ -6,10 +6,11 @@
     <script type="text/javascript">
         var myWidget = cloudinary.createUploadWidget(
             {
-                cloudName: 'dwarrion',
-                uploadPreset: 'ins6mnhp',
+                cloudName: 'vernom',
+                uploadPreset: 'fn5rpymu',
                 multiple: true,
                 form: '#product_form',
+                folder: 'perfume_project/perfume',
                 fieldName: 'thumbnails[]',
                 thumbnails: '.thumbnails'
             }, function (error, result) {
@@ -30,10 +31,11 @@
         $('body').on('click', '.cloudinary-delete', function () {
             var splittedImg = $(this).parent().find('img').attr('src').split('/');
             var imgName = splittedImg[splittedImg.length - 1];
-
+            console.log(splittedImg)
             imgName = imgName.split('.');
-            console.log(imgName[0]);
-            $('input[data-cloudinary-public-id="' + imgName[0] + '"]').remove();
+            var name = 'input[data-cloudinary-public-id="'+ splittedImg[splittedImg.length - 3] +'/'+ splittedImg[splittedImg.length - 2] +'/'+ imgName[0] + '"]';
+            console.log(name);
+            $(name).remove();
         });
     </script>
 
@@ -161,6 +163,7 @@
                                         <select class="form-control" name="sex">
                                             <option value="Nam">Nam</option>
                                             <option value="Nữ">Nữ</option>
+                                            <option value="Phi giới tính">Phi giới tính</option>
                                         </select>
                                         @if ($errors->has('sex'))
                                             <label class="alert-warning">{{$errors->first('sex')}}</label>

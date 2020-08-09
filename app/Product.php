@@ -6,7 +6,8 @@ use Illuminate\Database\Eloquent\Model;
 
 class Product extends Model
 {
-    private static $cloudinary_link = 'https://res.cloudinary.com/dwarrion/image/upload/';
+    private static $cloudinary_link = 'https://res.cloudinary.com/vernom/image/upload/c_scale,h_400,w_400/';
+
     public function groups()
     {
         return $this->belongsToMany(Group::class, 'product_group', 'product_id', 'group_id');
@@ -30,25 +31,35 @@ class Product extends Model
         return $formatPrice;
     }
 
-    public function getThumbnailsAttribute()
+    public function getThumbnailArrayAttribute()
     {
-        $thumbnail[] = explode(',', $this->thumbnail);
-        foreach ($thumbnail as $thumbnailValue) {
-            return $thumbnailValue;
-        }
-    }
-    public function getThumbnailArrayAttribute(){
         if ($this->thumbnail == null || strlen($this->thumbnail) == 0) {
-            return array('https://thanhtra.com.vn/image/images/noimages.png');
+            return array('https://res.cloudinary.com/vernom/image/upload/v1596461891/perfume_project/noimages_aaqvrt.png');
         }
         $list_photos = array();
-        $single_thumb = explode(',',$this->thumbnail);
+        $single_thumb = explode(',', $this->thumbnail);
         foreach ($single_thumb as $single) {
             if (strlen($single) > 0) {
-                array_push($list_photos, self::$cloudinary_link . $single . '.png');
+                array_push($list_photos, self::$cloudinary_link . $single);
             }
         }
         return $list_photos;
+    }
+
+    public function getfirstThumbnailAttribute()
+    {
+        $thumbnail[] = explode(',', $this->thumbnail);
+        foreach ($thumbnail as $thumbnailValue) {
+            return self::$cloudinary_link . $thumbnailValue[0];
+        }
+    }
+
+    public function getfirstThumbnail150Attribute()
+    {
+        $thumbnail[] = explode(',', $this->thumbnail);
+        foreach ($thumbnail as $thumbnailValue) {
+            return 'https://res.cloudinary.com/vernom/image/upload/c_scale,h_150,w_150/' . $thumbnailValue[0];
+        }
     }
 
     public function getPhotoIdsAttribute()
@@ -65,10 +76,15 @@ class Product extends Model
         }
         return $list_ids;
     }
-    public function getImageSize600x600Attribute(){
-        return 'https://res.cloudinary.com/dwarrion/image/upload/c_scale,h_600,w_600/'.$this->brand_thumbnail;
+
+    public function getImageSize600x600Attribute()
+    {
+        return 'https://res.cloudinary.com/dwarrion/image/upload/c_scale,h_600,w_600/' . $this->brand_thumbnail;
     }
-    public function getProductImageAttribute(){
-        return 'https://res.cloudinary.com/vernom/image/upload/c_scale,h_600,w_600/v1596382937/perfume_project/perfume/'.$this->thumbnail ;
-    }
+
+
+    //https://res.cloudinary.com/vernom/image/upload/v1596216873/perfume_project/perfume/allure_homme_sport_eau_extreme_EDP_1_zrfwsf.jpg
+    //https://res.cloudinary.com/vernom/image/upload/v1596216873/perfume_project/perfume/allure_homme_sport_eau_extreme_EDP_2_rpp195.jpg
+    //https://res.cloudinary.com/vernom/image/upload/v1596216879/perfume_project/perfume/allure_homme_sport_eau_extreme_EDP_3_es3rd0.jpg
+
 }
