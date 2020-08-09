@@ -46,7 +46,7 @@
                                     $(".sub_chk:checked").each(function () {
                                         $(this).parents("tr").remove();
                                     });
-                                    alert("Brands Deleted Success");
+                                    alert("Accounts Deleted Success");
                                     window.location = '{{route('admin_account_list')}}';
                                 } else if (data['error']) {
                                     console.log(data['error']);

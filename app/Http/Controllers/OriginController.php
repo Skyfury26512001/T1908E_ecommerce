@@ -8,7 +8,7 @@ use phpDocumentor\Reflection\Types\Array_;
 
 class OriginController extends Controller
 {
-        public function index(Request $request){
+    public function index(Request $request){
         $numberItem = 5;
         $orderBy = "ASC";
         if ($request->has('numberItem')){
@@ -29,7 +29,6 @@ class OriginController extends Controller
 
         return view('admin.origins.origin_list',compact('origins'));
     }
-
     public function search(Request $request){
         dd($request);
     }
