@@ -110,9 +110,8 @@
                             </div>
 
                             <div class="wigdet-two-content media-body">
-                                <p class="m-0 text-uppercase font-weight-medium text-truncate" title="Statistics">Total
-                                    Revenue</p>
-                                <h3 class="font-weight-medium my-2">$ <span data-plugin="counterup">65,841</span></h3>
+                                <p class="m-0 text-uppercase font-weight-medium text-truncate" title="Statistics">Tổng thu nhập</p>
+                                <h3 class="font-weight-medium my-2">65.841.000 <span data-plugin="counterup"> đ</span></h3>
                                 <p class="m-0">Jan - Apr 2019</p>
                             </div>
                         </div>
@@ -128,9 +127,8 @@
                             </div>
 
                             <div class="wigdet-two-content media-body">
-                                <p class="m-0 text-uppercase font-weight-medium text-truncate" title="Statistics">Total
-                                    Unique Visitors</p>
-                                <h3 class="font-weight-medium my-2"><span data-plugin="counterup">26,521</span></h3>
+                                <p class="m-0 text-uppercase font-weight-medium text-truncate" title="Statistics">Tổng lượt truy cập</p>
+                                <h3 class="font-weight-medium my-2"><span data-plugin="counterup">15.521</span></h3>
                                 <p class="m-0">Jan - Apr 2019</p>
                             </div>
                         </div>
@@ -146,9 +144,8 @@
                             </div>
 
                             <div class="wigdet-two-content media-body">
-                                <p class="m-0 text-uppercase font-weight-medium text-truncate" title="Statistics">Number
-                                    of Transactions</p>
-                                <h3 class="font-weight-medium my-2"><span data-plugin="counterup">7,842</span></h3>
+                                <p class="m-0 text-uppercase font-weight-medium text-truncate" title="Statistics">Tổng số đơn mua hàng</p>
+                                <h3 class="font-weight-medium my-2"><span data-plugin="counterup">5,842</span></h3>
                                 <p class="m-0">Jan - Apr 2019</p>
                             </div>
                         </div>
@@ -165,8 +162,8 @@
 
                             <div class="wigdet-two-content media-body">
                                 <p class="m-0 text-uppercase font-weight-medium text-truncate" title="Statistics">
-                                    Conversation Rate</p>
-                                <h3 class="font-weight-medium my-2"><span data-plugin="counterup">2.07</span>%</h3>
+                                    Tỉ lệ lợi nhuận</p>
+                                <h3 class="font-weight-medium my-2"><span data-plugin="counterup">102.07</span>%</h3>
                                 <p class="m-0">Jan - Apr 2019</p>
                             </div>
                         </div>

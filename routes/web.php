@@ -84,7 +84,7 @@ Route::get('/blog', function () {
 
 Route::get('/faq', function () {
     return view('service.faq');
-});
+})->name('help');
 
 Route::get('/faq_2', function () {
     return view('service.faq_2');
