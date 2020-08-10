@@ -58,7 +58,7 @@
                     </a>
                     <ul class="nav-second-level" aria-expanded="false">
                         <li><a href="{{route('admin_account_list')}}">Danh sách</a></li>
-                        <li><a href="{{route('admin_account_create')}}">Thêm nguồn gốc</a></li>
+                        <li><a href="{{route('admin_account_create')}}">Thêm tài khoản</a></li>
                     </ul>
                 </li>
                 <li>
@@ -69,7 +69,7 @@
                     </a>
                     <ul class="nav-second-level" aria-expanded="false">
                         <li><a href="{{route('admin_receipt')}}">Danh sách</a></li>
-                        <li><a href="{{route('admin_receipt_create')}}">Thêm nguồn gốc</a></li>
+                        <li><a href="{{route('admin_receipt_create')}}">Thêm mới hóa đơn</a></li>
                     </ul>
                 </li>
 

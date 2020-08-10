@@ -97,7 +97,7 @@ class AccountController extends Controller
 
     public function edit($id){
         $account_cur = Session::get('current_account');
-        $account = Account::where('id','=',$id)->where('status','=','1')->where('id','!=',$account_cur->id)->first();
+        $account = Account::where('id','=',$id)->where('id','!=',$account_cur->id)->first();
         $cities = City::where('status','=','1')->get();
         return view('admin.accounts.edit',compact('account','cities'));
     }
@@ -118,7 +118,7 @@ class AccountController extends Controller
         $account->status = $request->status;
         dd($request);
         $account->save();
-        return redirect(route('admin_account'));
+        return redirect(route('admin_account_list'));
     }
     public function create(){
         $cities = City::all();
@@ -136,13 +136,13 @@ class AccountController extends Controller
 //        dd($request);
         $account->name = $request->name;
         $account->save();
-        return redirect(route('admin_account'));
+        return redirect(route('admin_account_list'));
     }
     public function delete($id){
         $account = Account::find($id);
         $account->status = 0;
         $account->save();
-        return redirect(route('admin_origin'));
+        return redirect(route('admin_account_list'));
     }
     public function delete_multi(Request $request){
         $ids_array = new Array_();
