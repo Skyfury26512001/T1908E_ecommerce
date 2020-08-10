@@ -81,4 +81,5 @@ class Product extends Model
     {
         return 'https://res.cloudinary.com/dwarrion/image/upload/c_scale,h_600,w_600/' . $this->brand_thumbnail;
     }
+
 }

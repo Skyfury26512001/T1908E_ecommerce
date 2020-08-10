@@ -126,6 +126,7 @@
                                             aria-label="ID: activate to sort column ascending">
                                             Account Name
                                         </th>
+                                        <th>Status</th>
                                         <th colspan="2" style="text-align: center">Action</th>
                                     </tr>
                                     </thead>
@@ -143,6 +144,14 @@
                                             </td>
                                             <td>{{$account->fullName}}</td>
                                             <td></td>
+                                            <td>@if ($account->status == 1)
+                                                    Active
+                                                @elseif ($account->status == 0)
+                                                    Deactive
+                                                @else
+                                                    Unknown
+                                            @endif</td>
+
                                             {{--                                    <td>{{count($account->products)}}</td>--}}
                                             <td><a href="{{route('admin_account_edit',$account->id)}}"
                                                    class="btn btn-primary"

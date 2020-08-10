@@ -160,7 +160,7 @@ Route::group(['middleware' => ['admin_check'], 'prefix' => 'admin'], function ()
         Route::get('/', 'AccountController@admin_index')->name('admin_account_list');
         Route::get('/create', 'AccountController@create')->name('admin_account_create');
         Route::post('/store', 'AccountController@store')->name('admin_account_store');
-        Route::get('/edit/{slug}', 'AccountController@edit')->name('admin_account_edit');
+        Route::get('/edit/{id}', 'AccountController@edit')->name('admin_account_edit');
         Route::put('/update/{id}', 'AccountController@update')->name('admin_account_update');
         Route::put('/delete/{id}', 'AccountController@delete')->name('admin_account_delete');
         Route::put('/deleteAll', 'AccountController@delete_multi')->name('admin_account_delete_multi');
