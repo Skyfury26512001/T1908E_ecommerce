@@ -82,9 +82,9 @@ class AccountController extends Controller
 //                dd($account_session->get('current_account'));
               return redirect('/admin');
             }
-            return redirect(route('login'))->withErrors([['email'=>'account not found'],['password'=>'Account not found']]);
+            return redirect(route('login'))->withErrors([['emailLogin'=>'account not found'],['passwordLogin'=>'Account not found']]);
         }else{
-            return redirect(route('login'))->withErrors([['email'=>'account not found'],['password'=>'Account not found']]);
+            return redirect(route('login'))->withErrors([['emailLogin'=>'account not found'],['passwordLogin'=>'Account not found']]);
         }
     }
 
