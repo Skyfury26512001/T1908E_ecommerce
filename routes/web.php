@@ -169,7 +169,7 @@ Route::group(['middleware' => ['admin_check'], 'prefix' => 'admin'], function ()
         Route::get('/', 'ReceiptController@admin_index')->name('admin_receipt');
         Route::get('/create', 'ReceiptController@create')->name('admin_receipt_create');
         Route::post('/store', 'ReceiptController@store')->name('admin_receipt_store');
-        Route::get('/edit/{slug}', 'ReceiptController@edit')->name('admin_receipt_edit');
+        Route::get('/edit/{id}', 'ReceiptController@edit')->name('admin_receipt_edit');
         Route::put('/update/{id}', 'ReceiptController@update')->name('admin_receipt_update');
         Route::put('/delete/{id}', 'ReceiptController@delete')->name('admin_receipt_delete');
         Route::put('/deleteAll', 'ReceiptController@delete_multi')->name('admin_receipt_delete_multi');
