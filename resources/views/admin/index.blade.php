@@ -8,7 +8,6 @@
         var chart = new Chart(ctx, {
             // The type of chart we want to create
             type: 'doughnut',
-
             // The data for our dataset
             data: {
                 labels: ["Nam", "Nữ", "Phi giới tính"],
@@ -20,7 +19,6 @@
                         data: [{{$male_product_amount}},{{$female_product_amount}},{{$unisex_product_amount}}],
                     }]
             },
-
             // Configuration options go here
             options: {}
         });
@@ -32,7 +30,6 @@
         var chart2 = new Chart(ctx, {
             // The type of chart we want to create
             type: 'doughnut',
-
             // The data for our dataset
             data: {
                 labels: [@foreach($brands as $brand) "{{$brand->brand_name}}",@endforeach],
@@ -44,7 +41,6 @@
                         data: [@foreach($brands as $brand) "{{count($brand->products)}}",@endforeach],
                     }]
             },
-
             // Configuration options go here
             options: {}
         });
@@ -56,7 +52,6 @@
         var chart3 = new Chart(ctx, {
             // The type of chart we want to create
             type: 'doughnut',
-
             // The data for our dataset
             data: {
                 labels: [@foreach($brands as $brand) "{{$brand->brand_name}}",@endforeach],
@@ -68,7 +63,6 @@
                         data: [@foreach($brands as $brand) "{{count($brand->products)}}",@endforeach],
                     }]
             },
-
             // Configuration options go here
             options: {}
         });
@@ -91,7 +85,7 @@
                             <ol class="breadcrumb m-0">
                                 <li class="breadcrumb-item"><a href="javascript: void(0);">Adminox</a></li>
                                 <li class="breadcrumb-item"><a href="javascript: void(0);">Dashboard</a></li>
-                                <li class="breadcrumb-item active">Dashboard 1</li>
+                                <li class="breadcrumb-item active">Dashboard</li>
                             </ol>
                         </div>
                         <h4 class="page-title">Dashboard</h4>
@@ -190,6 +184,12 @@
                         </div>
                     </div>
                 </div>
+            </div>
+            <!-- end row -->
+
+
+            <div class="row">
+
                 <div class="col-xl-6">
                     <div class="card-box">
                         <div class="card-box" style="min-height: 95%">
@@ -199,215 +199,9 @@
                     </div>
                 </div>
 
-                <div class="col-xl-4">
-                    <div class="card-box">
-                        <h4 class="header-title mb-4">Goal Completion</h4>
-
-                        <div class="text-center">
-                            <h5 class="font-weight-normal text-muted">You have to pay</h5>
-                            <h3 class="mb-3"><i class="mdi mdi-arrow-up-bold-hexagon-outline text-success"></i> 12548
-                                <small>USD</small></h3>
-                        </div>
-
-                        <div class="chart-container" dir="ltr">
-                            <div class="chart has-fixed-height"
-                                 style="height: 280px; -webkit-tap-highlight-color: transparent; user-select: none; position: relative;"
-                                 id="page_views_today" _echarts_instance_="ec_1596979226487">
-                                <div style="position: relative; overflow: hidden; width: 347px; height: 280px; padding: 0px; margin: 0px; border-width: 0px;">
-                                    <canvas data-zr-dom-id="zr_0" width="433" height="350"
-                                            style="position: absolute; left: 0px; top: 0px; width: 347px; height: 280px; user-select: none; -webkit-tap-highlight-color: rgba(0, 0, 0, 0); padding: 0px; margin: 0px; border-width: 0px;"></canvas>
-                                </div>
-                                <div></div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <!-- end row -->
-
-
-            <div class="row">
-                <div class="col-xl-6 col-lg-12">
-                    <div class="card-box">
-                        <h4 class="header-title">Recent Candidates</h4>
-                        <p class="sub-header">
-                            Your awesome text goes here.
-                        </p>
-
-                        <div class="table-responsive">
-                            <table class="table table-hover m-0 table-actions-bar">
-
-                                <thead>
-                                <tr>
-                                    <th>
-                                        <div class="btn-group dropdown">
-                                            <button type="button"
-                                                    class="btn btn-light btn-xs dropdown-toggle waves-effect waves-light"
-                                                    data-toggle="dropdown" aria-expanded="false"><i
-                                                        class="mdi mdi-chevron-down"></i></button>
-                                            <div class="dropdown-menu">
-                                                <a class="dropdown-item" href="#">Dropdown link</a>
-                                                <a class="dropdown-item" href="#">Dropdown link</a>
-                                            </div>
-                                        </div>
-                                    </th>
-                                    <th>Name</th>
-                                    <th>Location</th>
-                                    <th>Job Timing</th>
-                                    <th>Salary</th>
-                                    <th>Action</th>
-                                </tr>
-                                </thead>
-                                <tbody>
-                                <tr>
-                                    <td>
-                                        <img src="assets/images/users/avatar-2.jpg" alt="contact-img"
-                                             title="contact-img" class="rounded-circle avatar-sm">
-                                    </td>
-
-                                    <td>
-                                        <h5 class="m-0 font-weight-medium">Tomaslau</h5>
-                                    </td>
-
-                                    <td>
-                                        <i class="mdi mdi-map-marker text-primary"></i> New York
-                                    </td>
-
-                                    <td>
-                                        <i class="mdi mdi-clock-outline text-success"></i> Full Time
-                                    </td>
-
-                                    <td>
-                                        <i class="mdi mdi-currency-usd text-warning"></i> 3265
-                                    </td>
-
-                                    <td>
-                                        <a href="#" class="table-action-btn"><i class="mdi mdi-pencil"></i></a>
-                                        <a href="#" class="table-action-btn"><i class="mdi mdi-close"></i></a>
-                                    </td>
-                                </tr>
-
-                                <tr>
-                                    <td>
-                                        <img src="assets/images/users/avatar-3.jpg" alt="contact-img"
-                                             title="contact-img" class="rounded-circle avatar-sm">
-                                    </td>
-
-                                    <td>
-                                        <h5 class="m-0 font-weight-medium">Erwin E. Brown</h5>
-                                    </td>
-
-                                    <td>
-                                        <i class="mdi mdi-map-marker text-primary"></i> California
-                                    </td>
-
-                                    <td>
-                                        <i class="mdi mdi-clock-outline text-success"></i> Part Time
-                                    </td>
-
-                                    <td>
-                                        <i class="mdi mdi-currency-usd text-warning"></i> 1365
-                                    </td>
-
-                                    <td>
-                                        <a href="#" class="table-action-btn"><i class="mdi mdi-pencil"></i></a>
-                                        <a href="#" class="table-action-btn"><i class="mdi mdi-close"></i></a>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>
-                                        <img src="assets/images/users/avatar-4.jpg" alt="contact-img"
-                                             title="contact-img" class="rounded-circle avatar-sm">
-                                    </td>
-
-                                    <td>
-                                        <h5 class="m-0 font-weight-medium">Margeret V. Ligon</h5>
-                                    </td>
-
-                                    <td>
-                                        <i class="mdi mdi-map-marker text-primary"></i> New York
-                                    </td>
-
-                                    <td>
-                                        <i class="mdi mdi-clock-outline text-success"></i> Full Time
-                                    </td>
-
-                                    <td>
-                                        <i class="mdi mdi-currency-usd text-warning"></i> 115248
-                                    </td>
-
-                                    <td>
-                                        <a href="#" class="table-action-btn"><i class="mdi mdi-pencil"></i></a>
-                                        <a href="#" class="table-action-btn"><i class="mdi mdi-close"></i></a>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>
-                                        <img src="assets/images/users/avatar-5.jpg" alt="contact-img"
-                                             title="contact-img" class="rounded-circle avatar-sm">
-                                    </td>
-
-                                    <td>
-                                        <h5 class="m-0 font-weight-medium">Jose D. Delacruz</h5>
-                                    </td>
-
-                                    <td>
-                                        <i class="mdi mdi-map-marker text-primary"></i> New York
-                                    </td>
-
-                                    <td>
-                                        <i class="mdi mdi-clock-outline text-success"></i> Part Time
-                                    </td>
-
-                                    <td>
-                                        <i class="mdi mdi-currency-usd text-warning"></i> 2451
-                                    </td>
-
-                                    <td>
-                                        <a href="#" class="table-action-btn"><i class="mdi mdi-pencil"></i></a>
-                                        <a href="#" class="table-action-btn"><i class="mdi mdi-close"></i></a>
-                                    </td>
-                                </tr>
-
-                                <tr>
-                                    <td>
-                                        <img src="assets/images/users/avatar-8.jpg" alt="contact-img"
-                                             title="contact-img" class="rounded-circle avatar-sm">
-                                    </td>
-
-                                    <td>
-                                        <h5 class="m-0 font-weight-medium">Luke J. Sain</h5>
-                                    </td>
-
-                                    <td>
-                                        <i class="mdi mdi-map-marker text-primary"></i> Australia
-                                    </td>
-
-                                    <td>
-                                        <i class="mdi mdi-clock-outline text-success"></i> Part Time
-                                    </td>
-
-                                    <td>
-                                        <i class="mdi mdi-currency-usd text-warning"></i> 3265
-                                    </td>
-
-                                    <td>
-                                        <a href="#" class="table-action-btn"><i class="mdi mdi-pencil"></i></a>
-                                        <a href="#" class="table-action-btn"><i class="mdi mdi-close"></i></a>
-                                    </td>
-                                </tr>
-
-                                </tbody>
-                            </table>
-                        </div>
-                    </div>
-
-                </div>
-                <!-- end col -->
-
                 <div class="col-xl-3 col-lg-6">
                     <div class="card-box">
-                        <h4 class="header-title mb-4">Total Unique Visitors</h4>
+                        <h4 class="header-title mb-4">Tổng đăng nhập</h4>
 
                         <div class="widget-chart text-center" dir="ltr">
 
@@ -488,7 +282,7 @@
                                             <g class="c3-chart-arcs"
                                                transform="translate(122.5999984741211,122.9921875)">
                                                 <text class="c3-chart-arcs-title"
-                                                      style="text-anchor: middle; opacity: 1;">Candidates
+                                                      style="text-anchor: middle; opacity: 1;">
                                                 </text>
                                                 <g class="c3-chart-arc c3-target c3-target-Male">
                                                     <g class=" c3-shapes c3-shapes-Male c3-arcs c3-arcs-Male">
@@ -740,7 +534,7 @@
                                     <g transform="translate(0,259.984375)">
                                         <g class="c3-legend-item c3-legend-item-Male"
                                            style="visibility: visible; cursor: pointer;">
-                                            <text x="77.8656234741211" y="9" style="pointer-events: none;">Male</text>
+                                            <text x="77.8656234741211" y="9" style="pointer-events: none;">Nam</text>
                                             <rect class="c3-legend-item-event" x="63.865623474121094" y="-5"
                                                   width="55.5625" height="20.015625" style="fill-opacity: 0;"></rect>
                                             <line class="c3-legend-item-tile" x1="61.865623474121094" y1="4"
@@ -749,7 +543,7 @@
                                         </g>
                                         <g class="c3-legend-item c3-legend-item-Female"
                                            style="visibility: visible; cursor: pointer;">
-                                            <text x="133.4281234741211" y="9" style="pointer-events: none;">Female
+                                            <text x="133.4281234741211" y="9" style="pointer-events: none;">Nữ
                                             </text>
                                             <rect class="c3-legend-item-event" x="119.4281234741211" y="-5"
                                                   width="61.90625" height="20.015625" style="fill-opacity: 0;"></rect>
@@ -766,12 +560,12 @@
 
                             <div class="row text-center mt-4">
                                 <div class="col-6">
-                                    <h3 data-plugin="counterup">1,507</h3>
-                                    <p class="text-muted mb-0">Visitors Male</p>
+                                    <h3 data-plugin="counterup">150</h3>
+                                    <p class="text-muted mb-0">Nam giới</p>
                                 </div>
                                 <div class="col-6">
-                                    <h3 data-plugin="counterup">854</h3>
-                                    <p class="text-muted mb-1">Visitors Female</p>
+                                    <h3 data-plugin="counterup">250</h3>
+                                    <p class="text-muted mb-1">Nữ giới</p>
                                 </div>
                             </div>
                         </div>
@@ -781,7 +575,7 @@
 
                 <div class="col-xl-3 col-lg-6">
                     <div class="card-box">
-                        <h4 class="header-title mb-4">Number of Transactions</h4>
+                        <h4 class="header-title mb-4">Tổng số lần giao dịch</h4>
 
                         <div class="widget-chart text-center" dir="ltr">
 
@@ -1139,7 +933,7 @@
                                     <g transform="translate(0,259.984375)">
                                         <g class="c3-legend-item c3-legend-item-Done"
                                            style="visibility: visible; cursor: pointer;">
-                                            <text x="59.904685974121094" y="9" style="pointer-events: none;">Done</text>
+                                            <text x="59.904685974121094" y="9" style="pointer-events: none;">Thành công</text>
                                             <rect class="c3-legend-item-event" x="45.904685974121094" y="-5"
                                                   width="58.6875" height="20.015625" style="fill-opacity: 0;"></rect>
                                             <line class="c3-legend-item-tile" x1="43.904685974121094" y1="4"
@@ -1148,7 +942,7 @@
                                         </g>
                                         <g class="c3-legend-item c3-legend-item-Due"
                                            style="visibility: visible; cursor: pointer;">
-                                            <text x="118.5921859741211" y="9" style="pointer-events: none;">Due</text>
+                                            <text x="118.5921859741211" y="9" style="pointer-events: none;">Hàng chờ</text>
                                             <rect class="c3-legend-item-event" x="104.5921859741211" y="-5"
                                                   width="50.90625" height="20.015625" style="fill-opacity: 0;"></rect>
                                             <line class="c3-legend-item-tile" x1="102.5921859741211" y1="4"
@@ -1157,7 +951,7 @@
                                         </g>
                                         <g class="c3-legend-item c3-legend-item-Hold"
                                            style="visibility: visible; cursor: pointer;">
-                                            <text x="169.4984359741211" y="9" style="pointer-events: none;">Hold</text>
+                                            <text x="169.4984359741211" y="9" style="pointer-events: none;">Hủy</text>
                                             <rect class="c3-legend-item-event" x="155.4984359741211" y="-5"
                                                   width="43.796875" height="20.015625" style="fill-opacity: 0;"></rect>
                                             <line class="c3-legend-item-tile" x1="153.4984359741211" y1="4"
@@ -1173,12 +967,12 @@
 
                             <div class="row text-center mt-4">
                                 <div class="col-6">
-                                    <h3 data-plugin="counterup">2,854</h3>
-                                    <p class="text-muted mb-0">Payment Done</p>
+                                    <h3 data-plugin="counterup">5,842</h3>
+                                    <p class="text-muted mb-0">Giao dịch thành công</p>
                                 </div>
                                 <div class="col-6">
-                                    <h3 data-plugin="counterup">22</h3>
-                                    <p class="text-muted mb-1">Payment Due</p>
+                                    <h3 data-plugin="counterup">220</h3>
+                                    <p class="text-muted mb-1">Giao dịch đang chờ</p>
                                 </div>
                             </div>
                         </div>
@@ -1208,5 +1002,4 @@
     <!-- end Footer -->
     <!-- Right bar overlay-->
     <div class="rightbar-overlay"></div>
-
 @endsection
