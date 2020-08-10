@@ -83,7 +83,7 @@
                         <li>
 
                             <div class="dropdown dropdown-cart">
-                                <a href="cart.html"
+                                <a href="{{route('cart')}}"
                                    class="cart_bt">@if ($products_in_cart != null)
                                         <strong> {{count($product_cart)}}</strong>@endif</a>
                                 @if ($products_in_cart != null)

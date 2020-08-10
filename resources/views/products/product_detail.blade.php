@@ -773,7 +773,7 @@
                         </div>
                     </div>
                     <div class="col-md-5 btn_panel">
-                        <a href="cart.html" class="btn_1 outline">View cart</a> <a href="checkout.html" class="btn_1">Checkout</a>
+                        <a href="{{route('cart')}}" class="btn_1 outline">Xem giỏ hàng</a> <a href="#checkout" class="btn_1">Checkout</a>
                     </div>
                 </div>
             </div>

@@ -2,7 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="49a8b9d0-cc69-4406-8f9c-bd1b5ba2436c" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/resources/views/purchase.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/purchase.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/layouts/menu_bar.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/menu_bar.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/products/product_detail.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/products/product_detail.blade.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -149,7 +151,7 @@
       <workItem from="1597043141877" duration="3868000" />
       <workItem from="1597047481129" duration="337000" />
       <workItem from="1597053780585" duration="1676000" />
-      <workItem from="1597057761548" duration="2786000" />
+      <workItem from="1597057761548" duration="3669000" />
     </task>
     <servers />
   </component>
