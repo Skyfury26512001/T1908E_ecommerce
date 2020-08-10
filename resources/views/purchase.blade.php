@@ -125,9 +125,6 @@
                     </div>
                     <div class="purchase-list-page__empty-page-wrapper">
                         <div class="purchase-empty-order__container">
-                            @foreach()
-
-                            @endforeach
                         </div>
                     </div>
                 </div>
