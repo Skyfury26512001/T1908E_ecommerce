@@ -61,7 +61,6 @@
                     <ul>
                         <li><a href="/about_us">Giới thiệu về Wanderlust</a></li>
                         <li><a href="/blog">Diễn đàn chuyên gia nước hoa</a></li>
-                        <li><a href="/user/account">Tài khoản cá nhân</a></li>
                     </ul>
                 </div>
             </div>

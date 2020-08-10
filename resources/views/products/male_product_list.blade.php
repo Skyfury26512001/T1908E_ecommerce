@@ -6,9 +6,9 @@
     <script src="{{asset('assets/js/sticky_sidebar.min.js')}}"></script>
     <script src="{{asset('assets/js/specific_listing.min.js')}}"></script>
     <script>
-         $('#reset_filter').click(function(){
-                $('#filter_form').trigger("reset");
-          });
+        $('#reset_filter').click(function () {
+            $('#filter_form').trigger("reset");
+        });
     </script>
 @endsection
 @section('content')
@@ -23,19 +23,20 @@
                                 <input name="keyword" style="display: none" value="{{$keyword}}">
                             @endif
                             <div class="filter_type version_2">
-                                <h4><a href="#filter_2" data-toggle="collapse" class="closed">Origins</a></h4>
+                                <h4><a href="#filter_2" data-toggle="collapse" class="closed">Xuất xứ</a></h4>
 
                                 <div class="collapse" id="filter_2">
                                     <ul>
                                         @foreach($origins as $origin)
                                             <li style="display: flex">
                                                 <input type="radio" name="origin" id="origin{{$origin->id}}"
-                                                       value="{{$origin->id}}" @if ($origin->id == Request::get('origin')) checked @endif>
+                                                       value="{{$origin->id}}"
+                                                       @if ($origin->id == Request::get('origin')) checked @endif>
                                                 <label for="origin{{$origin->id}}" class="container_check"
                                                        style="width: 100%">{{$origin->name}}
                                                     <small>@if (isset($origin_amount[$origin->id]))
-                                                        {{count($origin_amount[$origin->id])}}@else 0
-                                                    @endif</small>
+                                                            {{count($origin_amount[$origin->id])}}@else 0
+                                                        @endif</small>
                                                 </label>
                                             </li>
                                         @endforeach
@@ -45,7 +46,7 @@
                             <!-- /filter_type -->
 
                             <div class="filter_type version_2">
-                                <h4><a href="#filter_3" data-toggle="collapse" class="closed">Brands</a></h4>
+                                <h4><a href="#filter_3" data-toggle="collapse" class="closed">Thương hiệu</a></h4>
 
                                 <div class="collapse" id="filter_3">
                                     <ul>
@@ -53,12 +54,13 @@
                                             {{--                                            {{dd($brand)}}--}}
                                             <li style="display: flex">
                                                 <input type="radio" name="brand" id="brand{{$brand->id}}"
-                                                       value="{{$brand->id}}" @if ($brand->id == Request::get('brand')) checked @endif>
+                                                       value="{{$brand->id}}"
+                                                       @if ($brand->id == Request::get('brand')) checked @endif>
                                                 <label for="brand{{$brand->id}}" class="container_check"
                                                        style="width: 100%">{{$brand->brand_name}}
                                                     <small>@if (isset($brand_amount[$brand->id]))
-                                                        {{count($brand_amount[$brand->id])}}@else 0
-                                                    @endif</small>
+                                                            {{count($brand_amount[$brand->id])}}@else 0
+                                                        @endif</small>
                                                 </label>
                                             </li>
                                         @endforeach
@@ -87,8 +89,8 @@
                             </div>
                         </div>
                         <img
-                                src="https://res.cloudinary.com/vernom/image/upload/c_scale,h_450,w_1200/v1596895362/perfume_project/product_list/top_banner_nqdcfl.jpg"
-                                class="img-fluid" alt="">
+                            src="https://res.cloudinary.com/vernom/image/upload/c_scale,h_450,w_1200/v1596895362/perfume_project/product_list/top_banner_nqdcfl.jpg"
+                            class="img-fluid" alt="">
                     </div>
                     <!-- /top_banner -->
                     <div id="stick_here"></div>

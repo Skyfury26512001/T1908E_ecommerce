@@ -23,7 +23,7 @@
                                 <input name="keyword" style="display: none" value="{{$keyword}}">
                             @endif
                             <div class="filter_type version_2">
-                                <h4><a href="#filter_2" data-toggle="collapse" class="closed">Origins</a></h4>
+                                <h4><a href="#filter_2" data-toggle="collapse" class="closed">Xuất xứ</a></h4>
 
                                 <div class="collapse" id="filter_2">
                                     <ul>
@@ -45,7 +45,7 @@
                             <!-- /filter_type -->
 
                             <div class="filter_type version_2">
-                                <h4><a href="#filter_3" data-toggle="collapse" class="closed">Brands</a></h4>
+                                <h4><a href="#filter_3" data-toggle="collapse" class="closed">Thương hiệu</a></h4>
 
                                 <div class="collapse" id="filter_3">
                                     <ul>

@@ -32,7 +32,6 @@ class ProductSeeder extends Seeder
                 'recommended_age' => 'Trên 25',
                 'released_year' => '2015',
                 'inventor_name' => 'Francois Demachy',
-//                'incense_group' => 'Hương thơm biển',
                 'incense_level' => 'Lâu - 7 giờ đến 12 giờ',
                 'aroma_level' => 'Gần - Toả hương trong vòng một cánh tay',
                 'recommended_time' => 'Ngày, Đêm, Xuân, Hạ, Thu',
@@ -59,7 +58,6 @@ Hương cuối: Gỗ tuyết tùng, Hương Labdanum, Hương Ambroxan<br>
                 'recommended_age' => 'Trên 25',
                 'released_year' => '2019',
                 'inventor_name' => 'Francois Demachy',
-//                'incense_group' => 'Hương thơm biển',
                 'incense_level' => 'Lâu - 7 giờ đến 12 giờ',
                 'aroma_level' => 'Xa - Toả hương trong vòng bán kính 2 mét',
                 'recommended_time' => 'Ngày, Đêm, Xuân, Thu, Đông',
@@ -86,7 +84,6 @@ Hương cuối: Đậu Tonka, Nhũ Hương, Hương Va ni (Vanille)<br>
                 'recommended_age' => 'Trên 25',
                 'released_year' => '2018',
                 'inventor_name' => 'Francois Demachy',
-//                'incense_group' => 'Hương dương xỉ Phương Đông',
                 'incense_level' => 'Lâu - 7 giờ đến 12 giờ',
                 'aroma_level' => 'Gần - Toả hương trong vòng một cánh tay',
                 'recommended_time' => 'Ngày, Đêm, Xuân, Hạ, Thu, Đông',
@@ -113,7 +110,6 @@ Hương cuối: Hương Ambroxan, Hương Va ni<br>
                 'recommended_age' => 'Trên 25',
                 'released_year' => '1996',
                 'inventor_name' => 'Alberto Morillas',
-//                'incense_group' => 'Hương thơm biển',
                 'incense_level' => 'Tạm ổn - 3 giờ đến 6 giờ',
                 'aroma_level' => 'Gần - Toả hương trong vòng một cánh tay',
                 'recommended_time' => 'Ngày, Đêm, Hạ',
@@ -140,7 +136,6 @@ Hương cuối: Hổ phách, Cây hoắc hương, Rêu sồi, Gỗ tuyết tùng
                 'recommended_age' => 'Trên 25',
                 'released_year' => '2009',
                 'inventor_name' => 'Jean-Claude Ellena',
-//                'incense_group' => 'Hương gỗ Síp',
                 'incense_level' => 'Lâu - 7 giờ đến 12 giờ',
                 'aroma_level' => 'Gần - Toả hương trong vòng một cánh tay',
                 'recommended_time' => 'Ngày, Đêm, Xuân, Hạ, Thu, Đông',
@@ -167,7 +162,6 @@ Hương cuối: Hương của gỗ, Rêu cây sồi, An tức hương<br>
                 'recommended_age' => 'Trên 25',
                 'released_year' => '2016',
                 'inventor_name' => '-',
-//                'incense_group' => 'Hương da thuộc',
                 'incense_level' => 'Lâu - 7 giờ đến 12 giờ',
                 'aroma_level' => 'Xa - Toả hương trong vòng bán kính 2 mét',
                 'recommended_time' => 'Ngày, Đêm, Thu, Đông',
@@ -193,7 +187,6 @@ Hương cuối: Da thuộc, Hương Va ni<br>
                 'recommended_age' => 'Trên 25',
                 'released_year' => '2012',
                 'inventor_name' => 'Jacques Polge',
-//                'incense_group' => 'Hương gỗ thơm',
                 'incense_level' => 'Lâu - 7 giờ đến 12 giờ',
                 'aroma_level' => 'Xa - Toả hương trong vòng bán kính 2 mét',
                 'recommended_time' => 'Ngày, Đêm, Xuân, Hạ, Thu',
@@ -214,13 +207,12 @@ Hương cuối: Xạ hương, Gỗ đàn hương, Gỗ tuyết tùng, Đậu ton
                 'slug' => 'gucci_by_gucci_pour_homme_edt',
                 'sex' => 'Nam',
                 'brand_id' => '7', //Gucci
-                'concentration' => 'Eau de Toillete',
+                'concentration' => 'Eau de Toilette',
                 'volume' => '90ml',
                 'origin_id' => '2', //France
                 'recommended_age' => 'Trên 25',
                 'released_year' => '2008',
                 'inventor_name' => 'Aurelien Guichard',
-//                'incense_group' => 'Hương gỗ Síp',
                 'incense_level' => 'Tạm ổn - 3 giờ đến 6 giờ',
                 'aroma_level' => 'Gần - Toả hương trong vòng một cánh tay',
                 'recommended_time' => 'Ngày, Đêm, Xuân, Thu, Đông',
@@ -247,7 +239,6 @@ Hương cuối: Cây hoắc hương, Trầm hương, Hổ phách, Hương nhựa
                 'recommended_age' => 'Trên 25',
                 'released_year' => '2010',
                 'inventor_name' => 'Aurelien Guichard',
-//                'incense_group' => 'Hương trái cây Síp',
                 'incense_level' => 'Lâu - 7 giờ đến 12 giờ',
                 'aroma_level' => 'Gần - Toả hương trong vòng một cánh tay',
                 'recommended_time' => 'Ngày, Đêm, Xuân, Hạ, Thu',
@@ -264,6 +255,30 @@ Hương cuối: Xạ hương, Rêu cây sồi, Hương Va ni (Vanille), Long di�
             ],
 
             [
+                'name' => 'ANOTHER 13',
+                'slug' => 'another_13_edp',
+                'sex' => 'Phi giới tính',
+                'brand_id' => '8', //Le Labo
+                'concentration' => 'Eau de Parfum',
+                'volume' => '100ml',
+                'origin_id' => '3', //American
+                'recommended_age' => 'Trên 25',
+                'released_year' => '2010',
+                'inventor_name' => 'Nathalie Lorson',
+                'incense_level' => 'Rất lâu - Trên 12 giờ',
+                'aroma_level' => 'Gần - Toả hương trong vòng một cánh tay',
+                'recommended_time' => 'Ngày, Đêm, Xuân, Hạ, Thu, Đông',
+                'style' => 'Sang trọng, Tinh tế, Nổi bật',
+                'price' => '6500000',
+                'description' => 'Hương chính: Hương Iso E Super, Hương Amyl Salicylate, Xạ hương, Long diên hương, Cây vông vang, Quả lê<br>
+<br>Nước hoa unisex Another 13 phù hợp với người trên 25 tuổi. Đây là dòng nước hoa Le Labo này có độ lưu hương rất lâu - trên 12 giờ, và độ tỏa hương thuộc dạng gần - toả hương trong vòng một cánh tay. Perfumista.vn khuyến cáo Another 13 phù hợp để sử dụng trong bất cứ thời gian nào. Đây là dòng nước hoa Le Labo thuộc nhóm Oriental Woody (Hương gỗ phương đông). Bên cạnh đó, Hương Iso E Super và Hương Amyl Salicylate là hai hương bạn có thể dễ dàng cảm nhận được nhất khi sử dụng nước hoa này.',
+                'thumbnail' => 'perfume_project/perfume/another_13_EDP_1_txhnte,perfume_project/perfume/another_13_EDP_2_j6yahr,perfume_project/perfume/another_13_EDP_3_vapqka,perfume_project/perfume/another_13_EDP_4_zcj6h1,perfume_project/perfume/another_13_EDP_5_pjyxwu,perfume_project/perfume/another_13_EDP_6_vw74fu',
+                'status' => '1',
+                'created_at' => Carbon::now(),
+                'updated_at' => Carbon::now(),
+            ],
+
+            [
                 'name' => 'SANTAL 33',
                 'slug' => 'santal_33_edp',
                 'sex' => 'Phi giới tính',
@@ -274,7 +289,6 @@ Hương cuối: Xạ hương, Rêu cây sồi, Hương Va ni (Vanille), Long di�
                 'recommended_age' => 'Trên 25',
                 'released_year' => '2011',
                 'inventor_name' => 'Frank Voelkl',
-//                'incense_group' => 'Hương gỗ thơm',
                 'incense_level' => 'Rất lâu - Trên 12 giờ',
                 'aroma_level' => 'Xa - Toả hương trong vòng bán kính 2 mét',
                 'recommended_time' => 'Ngày, Đêm, Xuân, Thu',
@@ -283,6 +297,32 @@ Hương cuối: Xạ hương, Rêu cây sồi, Hương Va ni (Vanille), Long di�
                 'description' => 'Hương chính: Gỗ đàn hương, Gỗ tuyết tùng Virginia, Bạch đậu khấu, Hoa tím, Giấy cói, Da thuộc, Hổ phách, Hoa diên vĩ<br>
 <br>Nước hoa Santal 33 của thương hiệu Le Labo là nước hoa thuộc dòng hương gỗ thơm dành cho cả nam lẫn nữ và đã được giới thiệu vào năm 2011. Người đã thiết kế nên mùi hương nước hoa này chính là Frank Voelkl. Lấy cảm hứng từ Santal 26, một trong những loại nền thơm mà ít người biết đến, một mùi hương thích hợp cho cả nam và nữ. Santal 33 nhắm đến việc truyền tải lại huyền thoại của những chàng cao bồi: Những vùng đất bao la, những cơn gió sa mạc nóng bức, những chiếc yên ngựa phơi nắng, và khói tỏa ra từ những bếp lửa về đêm.',
                 'thumbnail' => 'perfume_project/perfume/santal_33_EDP_1_uy7xtb,perfume_project/perfume/santal_33_EDP_2_mlw8qb,perfume_project/perfume/santal_33_EDP_3_l45uov,perfume_project/perfume/santal_33_EDP_4_cqzwjx,perfume_project/perfume/santal_33_EDP_5_x5vk9i,perfume_project/perfume/santal_33_EDP_6_pmxnwb',
+                'status' => '1',
+                'created_at' => Carbon::now(),
+                'updated_at' => Carbon::now(),
+            ],
+
+            [
+                'name' => 'VIRGIN ISLAND WATER',
+                'slug' => 'virgin_island_water_edp',
+                'sex' => 'Phi giới tính',
+                'brand_id' => '3', //Creed
+                'concentration' => 'Eau de Parfum',
+                'volume' => '100ml',
+                'origin_id' => '2', //France
+                'recommended_age' => 'Trên 25',
+                'released_year' => '2007',
+                'inventor_name' => 'Olivier Creed Sixth Generation',
+                'incense_level' => 'Lâu - 7 giờ đến 12 giờ',
+                'aroma_level' => 'Gần - Toả hương trong vòng một cánh tay',
+                'recommended_time' => 'Ngày, Đêm, Hạ',
+                'style' => 'Tươi mát , Sảng khoái , Hấp dẫn',
+                'price' => '5900000',
+                'description' => 'Hương Đầu: Quả chanh xanh, Quả dừa, Quả quýt hồng Sicili, Cam Bergamot trắng<br>
+Hương giữa: Gừng, Hoa nhài Ấn Độ, Hoa dâm bụt, Hoa ngọc lan tây<br>
+Hương cuối: Xạ hương, Đường, Rượu Rum trắng<br>
+<br>Virgin Island Water được lấy cảm hứng từ một chuyến đi thuyền gần đảo Ginger ở Caribbean. Đây là một hòn đảo đẹp có những bãi cát trắng và thiên nhiên hoang sơ. Quần đảo này đã tạo cảm hứng cho Olivier Creed Đệ Lục và con trai của ông là Erwin Creed Đệ Thất sáng tạo ra sản phẩm nước hoa Virgin Island Water (unisex) vào năm 2007. Mùi hương này nhằm ca ngợi mùi hương nhiệt đới tuyệt hảo và kỳ ảo được cơn gió của kênh đào Sir Francis Drake mang lại.',
+                'thumbnail' => 'perfume_project/perfume/virgin_island_water_edp_1_nkk0ph,perfume_project/perfume/virgin_island_water_edp_2_xbitxo,perfume_project/perfume/virgin_island_water_edp_3_ubvzu5,perfume_project/perfume/virgin_island_water_edp_4_o9o5iv,perfume_project/perfume/virgin_island_water_edp_5_vgfg0i,perfume_project/perfume/virgin_island_water_edp_6_zxq22m',
                 'status' => '1',
                 'created_at' => Carbon::now(),
                 'updated_at' => Carbon::now(),
@@ -299,7 +339,6 @@ Hương cuối: Xạ hương, Rêu cây sồi, Hương Va ni (Vanille), Long di�
                 'recommended_age' => 'Trên 25',
                 'released_year' => '1921',
                 'inventor_name' => 'Ernest Beaux',
-//                'incense_group' => 'Hương hoa cỏ An-Đê-Hít',
                 'incense_level' => 'Lâu - 7 giờ đến 12 giờ',
                 'aroma_level' => 'Gần - Toả hương trong vòng một cánh tay',
                 'recommended_time' => 'Ngày, Đêm, Thu, Đông',
@@ -326,7 +365,6 @@ Hương cuối: Cỏ hương bài, Xạ hương, Gỗ đàn hương, Cây hoắc
                 'recommended_age' => 'Trên 25',
                 'released_year' => '2006',
                 'inventor_name' => 'Francis Kurkdjian',
-//                'incense_group' => 'Hương hoa cỏ Gỗ - Xạ hương',
                 'incense_level' => 'Lâu - 7 giờ đến 12 giờ',
                 'aroma_level' => 'Gần - Toả hương trong vòng một cánh tay',
                 'recommended_time' => 'Ngày, Đêm, Xuân, Thu, Đông',
@@ -343,25 +381,180 @@ Hương cuối: Gỗ đàn hương, Cây hoắc hương<br>
             ],
 
             [
-                'name' => 'ANOTHER 13',
-                'slug' => 'another_13_edp',
-                'sex' => 'Phi giới tính',
-                'brand_id' => '8', //Le Labo
+                'name' => 'MISS DIOR BLOOMING BOUQUET',
+                'slug' => 'miss_dior_blooming_bouquet_edt',
+                'sex' => 'Nữ',
+                'brand_id' => '1', //Christian Dior
+                'concentration' => 'Eau de Toilette',
+                'volume' => '50ml',
+                'origin_id' => '2', //France
+                'recommended_age' => 'Trên 25',
+                'released_year' => '2014',
+                'inventor_name' => 'Francois Demachy',
+                'incense_level' => 'Rất kém - Dưới 1 giờ',
+                'aroma_level' => 'Rất gần - Thoang thoảng trên làn da',
+                'recommended_time' => 'Ngày, Đêm, Xuân, Hạ',
+                'style' => 'Nữ tính , Dịu dàng , Yêu đời',
+                'price' => '2000000',
+                'description' => 'Hương Đầu: Quả quýt hồng Sicili<br>
+Hương giữa: Hoa mẫu đơn hồng, Hoa hồng Đan Mạch, Quả mơ, Quả đào<br>
+Hương cuối: Xạ hương trắng<br>
+<br>Phiên bản mới của Dior Miss chính là Dior Blooming Bouquet được ra mắt vào đầu năm 2014; Nó mang trong mình hỗn hợp mùi hương hoa cỏ tươm tất và thanh lịch tựa như những ngày tuyệt đẹp đầu xuân. Chuyên gia nước hoa chế tạo ra loại nước hoa này là Francois Demachy. Tác giả của Miss Dior Blooming Bouquet đã tạo ra một loại nước hoa có hương thơm mang đến sự nổi bật tột cùng trong sự tinh tế tráng lệ.',
+                'thumbnail' => 'perfume_project/perfume/miss_dior_blooming_bouquet_edt_1_yejfdg,perfume_project/perfume/miss_dior_blooming_bouquet_edt_2_fwvf6u,perfume_project/perfume/miss_dior_blooming_bouquet_edt_3_sm4wtm,perfume_project/perfume/miss_dior_blooming_bouquet_edt_4_gynxsx,perfume_project/perfume/miss_dior_blooming_bouquet_edt_5_yltzpi,perfume_project/perfume/miss_dior_blooming_bouquet_edt_6_phksm1',
+                'status' => '1',
+                'created_at' => Carbon::now(),
+                'updated_at' => Carbon::now(),
+            ],
+
+            [
+                'name' => 'GUCCI BLOOM',
+                'slug' => 'gucci_bloom_edp',
+                'sex' => 'Nữ',
+                'brand_id' => '7', //Gucci
                 'concentration' => 'Eau de Parfum',
                 'volume' => '100ml',
-                'origin_id' => '3', //American
+                'origin_id' => '1', //Italy
                 'recommended_age' => 'Trên 25',
-                'released_year' => '2010',
-                'inventor_name' => 'Nathalie Lorson',
-//                'incense_group' => 'Hương gỗ phương đông',
-                'incense_level' => 'Rất lâu - Trên 12 giờ',
+                'released_year' => '2017',
+                'inventor_name' => 'Alberto Morillas',
+                'incense_level' => 'Lâu - 7 giờ đến 12 giờ',
+                'aroma_level' => 'Rất gần - Thoang thoảng trên làn da',
+                'recommended_time' => 'Ngày, Đêm, Xuân, Thu, Đông',
+                'style' => 'Quyến rũ, Sang trọng, Quý phái',
+                'price' => '2300000',
+                'description' => 'Hương chính: Hoa nhài Sambac, Hoa huệ trắng, Rễ cây diên vĩ<br>
+<br>Đây là dòng nước hoa Gucci thuộc nhóm Floral (Hương hoa cỏ). Gucci Bloom được cho ra mắt vào năm 2017. Alberto Morillas chính là nhà pha chế ra loại nước hoa này. Bên cạnh đó, Hoa huệ trắng và Rễ cây diên vĩ là hai hương bạn có thể dễ dàng cảm nhận được nhất khi sử dụng nước hoa này.',
+                'thumbnail' => 'perfume_project/perfume/gucci_bloom_1_webtpd,perfume_project/perfume/gucci_bloom_2_wus0qp,perfume_project/perfume/gucci_bloom_3_gnn1je,perfume_project/perfume/gucci_bloom_4_tut8ji,perfume_project/perfume/gucci_bloom_5_rz0c3o,perfume_project/perfume/gucci_bloom_6_dmpyg0',
+                'status' => '1',
+                'created_at' => Carbon::now(),
+                'updated_at' => Carbon::now(),
+            ],
+
+            [
+                'name' => 'MON PARIS COUTURE',
+                'slug' => 'mon_paris_couture_edp',
+                'sex' => 'Nữ',
+                'brand_id' => '10', //Ysl
+                'concentration' => 'Eau de Parfum',
+                'volume' => '90ml',
+                'origin_id' => '2', //France
+                'recommended_age' => 'Trên 25',
+                'released_year' => '2017',
+                'inventor_name' => 'Olivier Cresp, Harry Fremont and Dora Baghriche',
+                'incense_level' => 'Lâu - 7 giờ đến 12 giờ',
                 'aroma_level' => 'Gần - Toả hương trong vòng một cánh tay',
-                'recommended_time' => 'Ngày, Đêm, Xuân, Hạ, Thu, Đông',
-                'style' => 'Sang trọng, Tinh tế, Nổi bật',
-                'price' => '6500000',
-                'description' => 'Hương chính: Hương Iso E Super, Hương Amyl Salicylate, Xạ hương, Long diên hương, Cây vông vang, Quả lê<br>
-<br>Nước hoa unisex Another 13 phù hợp với người trên 25 tuổi.Đây là dòng nước hoa Le Labo này có độ lưu hương rất lâu - trên 12 giờ. và độ tỏa hương thuộc dạng gần - toả hương trong vòng một cánh tay. Perfumista.vn khuyến cáo Another 13 phù hợp để sử dụng trong bất cứ thời gian nào. Đây là dòng nước hoa Le Labo thuộc nhóm Oriental Woody (Hương gỗ phương đông). Bên cạnh đó, Hương Iso E Super và Hương Amyl Salicylate là hai hương bạn có thể dễ dàng cảm nhận được nhất khi sử dụng nước hoa này.',
-                'thumbnail' => 'perfume_project/perfume/another_13_EDP_1_txhnte,perfume_project/perfume/another_13_EDP_2_j6yahr,perfume_project/perfume/another_13_EDP_3_vapqka,perfume_project/perfume/another_13_EDP_4_zcj6h1,perfume_project/perfume/another_13_EDP_5_pjyxwu,perfume_project/perfume/another_13_EDP_6_vw74fu',
+                'recommended_time' => 'Ngày, Xuân, Hạ',
+                'style' => 'Quyến rũ, Thanh lịch, Sang trọng',
+                'price' => '2450000',
+                'description' => 'Hương Đầu: Cam Bergamot, Quả mâm xôi, Quả vải, Quả bưởi, Quả quýt hồng<br>
+Hương giữa: Hoa cà dược, Hoa mẫu đơn, Hoa hồng, Hoa cam<br>
+Hương cuối: Cây hoắc hương, Xạ hương trắng, Hương Ambroxan, Hương Cashmeran<br>
+<br>Nước hoa nữ Mon Paris Couture phù hợp với người trên 25 tuổi.Đây là dòng nước hoa Yves Saint Laurent này có độ lưu hương lâu - 7 giờ đến 12 giờ. và độ tỏa hương thuộc dạng gần - toả hương trong vòng một cánh tay. Perfumista.vn khuyến cáo Mon Paris Couture phù hợp để sử dụng trong ngày vào mùa xuân, hạ. Đây là dòng nước hoa Yves Saint Laurent thuộc nhóm Chypre Fruity (Hương trái cây SÍP). Bên cạnh đó, Quả bưởi và Quả mâm xôi là hai hương bạn có thể dễ dàng cảm nhận được nhất khi sử dụng nước hoa này.',
+                'thumbnail' => 'perfume_project/perfume/mon_paris_couture_edp_1_pahf0p,perfume_project/perfume/mon_paris_couture_edp_2_q1ltri,perfume_project/perfume/mon_paris_couture_edp_3_k85wyl,perfume_project/perfume/mon_paris_couture_edp_4_r2uc4r,perfume_project/perfume/mon_paris_couture_edp_5_wrakh2,perfume_project/perfume/mon_paris_couture_edp_6_lk1srj',
+                'status' => '1',
+                'created_at' => Carbon::now(),
+                'updated_at' => Carbon::now(),
+            ],
+
+            [
+                'name' => 'BLACK OPIUM FLORAL SHOCK',
+                'slug' => 'black_opium_floral_shock_edp',
+                'sex' => 'Nữ',
+                'brand_id' => '10', //Ysl
+                'concentration' => 'Eau de Parfum',
+                'volume' => '90ml',
+                'origin_id' => '2', //France
+                'recommended_age' => 'Trên 25',
+                'released_year' => '2017',
+                'inventor_name' => 'Olivier Cresp',
+                'incense_level' => 'Tạm ổn - 3 giờ đến 6 giờ',
+                'aroma_level' => 'Rất gần - Thoang thoảng trên làn da',
+                'recommended_time' => 'Ngày, Đêm, Xuân, Thu, Đông',
+                'style' => 'Tươi mới, Hiện đại, Cuốn hút',
+                'price' => '2350000',
+                'description' => 'Hương Đầu: Cam Bergamot, Quả chanh vàng, Quả lê, Hoa lan Nam Phi<br>
+Hương giữa: Hoa sơn chi, Hoa cam, Solar notes, Hoa trắng<br>
+Hương cuối: Amberwood, Xạ hương trắng, Cà phê<br>
+<br>Black Opium Floral Shock có độ lưu hương tạm ổn - 3 giờ đến 6 giờ và độ tỏa hương thuộc dạng rất gần - thoang thoảng trên làn da. Perfumista.vn khuyến cáo Black Opium Floral Shock phù hợp để sử dụng trong cả ngày lẫn đêm vào mùa xuân, thu, đông. Bên cạnh đó, Quả lê và Hoa sơn chi là hai hương bạn có thể dễ dàng cảm nhận được nhất khi sử dụng nước hoa này.',
+                'thumbnail' => 'perfume_project/perfume/black_opium_floral_shock_edp_1_ih8ijh,perfume_project/perfume/black_opium_floral_shock_edp_2_q9hmba,perfume_project/perfume/black_opium_floral_shock_edp_3_ceq46s,perfume_project/perfume/black_opium_floral_shock_edp_4_xhaxj,perfume_project/perfume/black_opium_floral_shock_edp_5_zxew5a,perfume_project/perfume/black_opium_floral_shock_edp_6_qdcc10',
+                'status' => '1',
+                'created_at' => Carbon::now(),
+                'updated_at' => Carbon::now(),
+            ],
+
+            [
+                'name' => 'VALENTINO DONNA',
+                'slug' => 'valentino_donna_edp',
+                'sex' => 'Nữ',
+                'brand_id' => '6', //Valentino
+                'concentration' => 'Eau de Parfum',
+                'volume' => '100ml',
+                'origin_id' => '4', //Spain
+                'recommended_age' => 'Trên 25',
+                'released_year' => '2015',
+                'inventor_name' => 'Sonia Constant',
+                'incense_level' => 'Tạm ổn - 3 giờ đến 6 giờ',
+                'aroma_level' => 'Gần - Toả hương trong vòng một cánh tay',
+                'recommended_time' => 'Ngày, Đêm, Xuân, Thu, Đông',
+                'style' => 'Sang trọng, Quyến rũ, Nổi bật',
+                'price' => '2250000',
+                'description' => 'Hương Đầu: Cam Bergamot<br>
+Hương giữa: Hoa hồng Bulgary, Hoa diên vĩ<br>
+Hương cuối: Cây hoắc hương, Da thuộc, Hương Va ni<br>
+<br>Nước hoa nữ Valentino Donna được cho ra mắt vào năm 2015. Đây là dòng nước hoa Valentino thuộc nhóm Oriental Floral (Hương hoa cỏ phương đông) hướng đến độ tuổi trên 25 tuổi. Antoine Maisondieu, Sonia Constant chính là nhà pha chế ra loại nước hoa này. Valentino Donna có độ lưu hương tạm ổn - 3 giờ đến 6 giờ và độ tỏa hương thuộc dạng gần - toả hương trong vòng một cánh tay. Perfumista.vn khuyến cáo Valentino Donna phù hợp để sử dụng trong cả ngày lẫn đêm vào mùa xuân, thu, đông. Bên cạnh đó, Hoa diên vĩ và Hoa hồng Bulgary là hai hương bạn có thể dễ dàng cảm nhận được nhất khi sử dụng nước hoa này.',
+                'thumbnail' => 'perfume_project/perfume/valentino_donna_edp_1_nybvqk,perfume_project/perfume/valentino_donna_edp_2_avmgir,perfume_project/perfume/valentino_donna_edp_3_kqhqlf,perfume_project/perfume/valentino_donna_edp_4_jdfm74,perfume_project/perfume/valentino_donna_edp_5_fpidq2,perfume_project/perfume/valentino_donna_edp_6_n75duh',
+                'status' => '1',
+                'created_at' => Carbon::now(),
+                'updated_at' => Carbon::now(),
+            ],
+
+            [
+                'name' => 'NARCISO RODRIGUEZ FOR HER',
+                'slug' => 'narciso_rodriguez_for_her_edt',
+                'sex' => 'Nữ',
+                'brand_id' => '9', //Narciso Rodriguez
+                'concentration' => 'Eau de Toilette',
+                'volume' => '50ml',
+                'origin_id' => '2', //France
+                'recommended_age' => 'Trên 25',
+                'released_year' => '2003',
+                'inventor_name' => 'Francis Kurkdjian',
+                'incense_level' => 'Lâu - 7 giờ đến 12 giờ',
+                'aroma_level' => 'Gần - Toả hương trong vòng một cánh tay',
+                'recommended_time' => 'Ngày, Đêm, Xuân, Thu, Đông',
+                'style' => 'Quyến rũ , Thanh lịch , Nữ tính',
+                'price' => '1500000',
+                'description' => 'Hương Đầu: Hoa mộc tê, Hoa cam Châu Phi, Cam Bergamot<br>
+Hương giữa: Xạ hương, Hổ phách<br>
+Hương cuối: Cỏ hương bài, Hương Va ni (Vanille), Cây hoắc hương<br>
+<br>Nhà thiết kế trẻ và hiện đại người Mỹ gốc Cuba Narciso Rodriguez khi cho ra mắt dòng nước hoa đầu tiên đã nhanh chóng tạo nên một cơn sốt tại thị trường Mỹ vào lúc bấy giờ. Và không ngừng ở đó, ông đã liên tục sáng tạo và tạo ra nhiều dòng nước hoa khác với hương nước hoa hiện đại và nhắm vào các mẫu người phụ nữ hiện đại, tự do. Và phiên bản nước hoa Narciso Rodriquez for her EDT đầu tiên đã được 2 nhà thiết kế Christine Nagel và Francis Kurkdjian cho ra đời năm 2003 dựa vào ý tưởng trên.',
+                'thumbnail' => 'perfume_project/perfume/narciso_rodriguez_for_her_edt_1_n4oqyc,perfume_project/perfume/narciso_rodriguez_for_her_edt_2_z2wcyc,perfume_project/perfume/narciso_rodriguez_for_her_edt_3_p1u5kc,perfume_project/perfume/narciso_rodriguez_for_her_edt_4_uxrwgq,perfume_project/perfume/narciso_rodriguez_for_her_edt_5_idn2ad,perfume_project/perfume/narciso_rodriguez_for_her_edt_6_ojhkkw',
+                'status' => '1',
+                'created_at' => Carbon::now(),
+                'updated_at' => Carbon::now(),
+            ],
+
+            [
+                'name' => "NARCISO RODRIGUEZ FOR HER L'ABSOLU",
+                'slug' => 'narciso_rodriguez_for_her_labsolu_edp',
+                'sex' => 'Nữ',
+                'brand_id' => '9', //Narciso Rodriguez
+                'concentration' => 'Eau de Parfume',
+                'volume' => '50ml',
+                'origin_id' => '2', //France
+                'recommended_age' => 'Trên 25',
+                'released_year' => '2015',
+                'inventor_name' => 'Aurelien Guichard',
+                'incense_level' => 'Lâu - 7 giờ đến 12 giờ',
+                'aroma_level' => 'Gần - Toả hương trong vòng một cánh tay',
+                'recommended_time' => 'Ngày, Đêm, Thu, Đông',
+                'style' => 'Quyến rũ, Sang trọng, Bí ẩn',
+                'price' => '1650000',
+                'description' => "Hương Đầu: Hoa huệ trắng, Hoa nhài<br>
+Hương giữa: Xạ hương<br>
+Hương cuối: Hổ phách, Cây hoắc hương, Gỗ đàn hương<br>
+<br >Nước hoa nữ Narciso Rodriguez For Her L'Absolu được cho ra mắt vào năm 2015. Đây là dòng nước hoa I Profumi Del Marmo thuộc nhóm Floral Woody Musk (Hương hoa cỏ Gỗ-Xạ hương) hướng đến độ tuổi trên 25 tuổi. Aurelien Guichard chính là nhà pha chế ra loại nước hoa này. Narciso Rodriguez For Her L'Absolu có độ lưu hương rất lâu - trên 12 giờ và độ tỏa hương thuộc dạng gần - toả hương trong vòng một cánh tay. Perfumista.vn khuyến cáo Narciso Rodriguez For Her L'Absolu phù hợp để sử dụng trong cả ngày lẫn đêm vào mùa thu, đông. Bên cạnh đó, Xạ hương và Hoa huệ trắng là hai hương bạn có thể dễ dàng cảm nhận được nhất khi sử dụng nước hoa này.",
+                'thumbnail' => 'perfume_project/perfume/narciso_rodriguez_for_her_labsolu_edp_1_hxjdqh,perfume_project/perfume/narciso_rodriguez_for_her_labsolu_edp_2_ajlc2,perfume_project/perfume/narciso_rodriguez_for_her_labsolu_edp_3_sikgq,perfume_project/perfume/narciso_rodriguez_for_her_labsolu_edp_4_zzpko,perfume_project/perfume/narciso_rodriguez_for_her_labsolu_edp_5_ijpbl,perfume_project/perfume/narciso_rodriguez_for_her_labsolu_edp_6_kbyra',
                 'status' => '1',
                 'created_at' => Carbon::now(),
                 'updated_at' => Carbon::now(),
