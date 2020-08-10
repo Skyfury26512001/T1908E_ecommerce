@@ -200,6 +200,9 @@
                                             <div class="form-group">
                                                 <input type="date" class="form-control" name="birthDate">
                                             </div>
+                                            @if ($errors->has('birthDate'))
+                                                    <label class="alert-warning">{{$errors->first('birthDate')}}</label>
+                                            @endif
                                         </div>
                                     </div>
                                     <div class="row no-gutters">
