@@ -104,6 +104,14 @@ class BrandSeeder extends Seeder
                 'slug' => 'narciso_rodriguez',
                 'created_at' => Carbon::now(),
                 'updated_at' => Carbon::now(),
+            ),array(
+                'brand_name' => 'Yves Saint Laurent',
+                'brand_thumbnail' => 'perfume_project/brand/yves_saint_laurent_obfexv.jpg',
+                'brand_description' => 'Yves Saint Laurent là nhà mốt của Pháp được thành lập bởi Yves Henri Donat Mathieu Saint Laurent, và thường được biết dưới tên viết tắt YSL. Sự nghiệp thời trang của laurent bắt đầu từ năm 17 tuổi, khi anh làm trợ lý cho Christian Dior. 4 năm sau khi Dior qua đời, Laurent được coi là người đứng đầu ngôi nhà của Dior khi mới 21 tuổi. Năm 1960, khi chiến tranh giành độc lập ở Algeria nổ ra, Laurent bị yêu cầu gia nhập quân đội và mất vị trí tại Dior. Tuyệt vọng vì mất vị trí thiết kế của mình dẫn đến việc ông phải nhập viện, sau một thời gian ngắn hồi phục, laurent bắt đầu công ty thời trang của riêng mình và tiếp tục trở thành một trong những nhà thiết kế thời trang có ảnh hưởng nhất trong thập niên 1960 và1970. Nước hoa đầu tiên của thương hiệu YSL là Y for Women, được ra mắt vào năm 1964, tiếp tục sự thành công về mảng nước hoa, YSL cho ra đời các dòng nước hoa Rive Gauche (1970), Opium (1977), Kourous (1981) và Paris (1983) và nhanh chóng trở thành những dòng nước hoa kinh điển.',
+                'status' => 1,
+                'slug' => 'yves_saint_laurent',
+                'created_at' => Carbon::now(),
+                'updated_at' => Carbon::now(),
             ),
         );
 
