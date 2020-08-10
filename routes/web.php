@@ -67,8 +67,9 @@ Route::get('/female_product', 'ProductController@female_product')->name('female_
 Route::get('/unisex_product', 'ProductController@unisex_product')->name('unisex_product');
 
 Route::get('/user/purchase', function () {
-    return view('purchase');
-});
+    $account = session()->get("current_account");
+    return view('purchase',compact($account));
+})->name('mypurchase');
 
 Route::get('/leave_review', function () {
     return view('leave_review');

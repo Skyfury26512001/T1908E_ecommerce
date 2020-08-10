@@ -124,7 +124,7 @@
                                                     hàng</a>
                                             </li>
                                             <li>
-                                                <a href="#account.html"><i class="ti-package"></i>Đơn hàng của tôi</a>
+                                                <a href="{{route('mypurchase')}}"><i class="ti-package"></i>Đơn hàng của tôi</a>
                                             </li>
                                             <li>
                                                 <a href="{{route('profile')}}"><i class="ti-user"></i>Hồ sơ của tôi</a>

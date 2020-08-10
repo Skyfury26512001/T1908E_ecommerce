@@ -12,7 +12,6 @@
 
     <div id="page">
         <!-- /header -->
-
         <main>
             <div id="carousel-home">
                 <div class="owl-carousel owl-theme">
