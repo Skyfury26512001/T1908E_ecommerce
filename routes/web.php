@@ -68,7 +68,7 @@ Route::get('/unisex_product', 'ProductController@unisex_product')->name('unisex_
 
 Route::get('/user/purchase', function () {
     $account = session()->get("current_account");
-    return view('purchase',compact($account));
+    return view('purchase',compact('account'));
 })->name('mypurchase');
 
 Route::get('/leave_review', function () {
