@@ -65,18 +65,18 @@
                                 {{--                                </div>--}}
                                 {{--                                <div class="divider"><span>Hoặc</span></div>--}}
                                 <div class="form-group">
-                                    <input type="email" class="form-control" name="email" id="email"
+                                    <input type="email" class="form-control" name="emailLogin" id="email"
                                            placeholder="Email *" style="margin-top: 32px">
                                 </div>
-                                @if ($errors->has('email'))
-                                    <label class="alert-warning">{{$errors->first('email')}}</label>
+                                @if ($errors->has('emailLogin'))
+                                    <label class="alert-warning">{{$errors->first('emailLogin')}}</label>
                                 @endif
                                 <div class="form-group">
-                                    <input type="password" class="form-control" name="password" id="password_in"
+                                    <input type="password" class="form-control" name="passwordLogin" id="password_in"
                                            value="" placeholder="Mật khẩu *">
                                 </div>
-                                @if ($errors->has('password'))
-                                    <label class="alert-warning">{{$errors->first('password')}}</label>
+                                @if ($errors->has('passwordLogin'))
+                                    <label class="alert-warning">{{$errors->first('passwordLogin')}}</label>
                                 @endif
                                 <div class="clearfix add_bottom_15">
                                     <div class="checkboxes float-left">

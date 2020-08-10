@@ -58,11 +58,11 @@ class AccountController extends Controller
 
     public function loginProgress(Request $request){
         $request->validate([
-            'email' => 'required',
-            'password' => 'required',
+            'emailLogin' => 'required',
+            'passwordLogin' => 'required',
         ]);
 //        dd($request);
-        $condition = ['email' => $request->email, 'status' => "1",];
+        $condition = ['email' => $request->emailLogin, 'status' => "1",];
 //        dd($condition);
         $account = Account::where($condition)->get()->first();
 //        dd($account->roles);
@@ -72,7 +72,7 @@ class AccountController extends Controller
             $salt = $account->salt;
 //            dd(md5($request->password.$salt));
 //            dd($passwordHash);
-            if ($passwordHash == md5($request->password.$salt)){
+            if ($passwordHash == md5($request->passwordLogin.$salt)){
                 session_start();
                 $account_session = $request->session();
                 $account['roles']= $account->roles;
