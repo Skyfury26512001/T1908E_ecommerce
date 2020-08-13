@@ -1,5 +1,8 @@
 <?php
 
+use App\Brand;
+use App\Origin;
+use App\Product;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -15,7 +18,9 @@ use Illuminate\Support\Facades\Route;
 
 // user : route
 Route::get('/', function () {
-    return view('index');
+    $products = \App\Product::all()->take(8);
+    $brands = \App\Brand::all();
+    return view('index',compact('products','brands'));
 })->name('home');
 
 //Route::get('/product', function () {
@@ -51,6 +56,8 @@ Route::post('product/add_cart/item', 'ProductController@add_to_cart')->name('add
 
 Route::get('/cart/page', 'ProductController@cart')->name('cart');
 
+Route::get('/cart/page/{id}','ProductController@cart_remove')->name('cart_remove');
+
 Route::get('/product_find','ProductController@search')->name('product_search');
 
 Route::get('/male_product', 'ProductController@male_product')->name('male_product');
@@ -60,8 +67,9 @@ Route::get('/female_product', 'ProductController@female_product')->name('female_
 Route::get('/unisex_product', 'ProductController@unisex_product')->name('unisex_product');
 
 Route::get('/user/purchase', function () {
-    return view('purchase');
-});
+    $account = session()->get("current_account");
+    return view('purchase',compact('account'));
+})->name('mypurchase');
 
 Route::get('/leave_review', function () {
     return view('leave_review');
@@ -77,7 +85,7 @@ Route::get('/blog', function () {
 
 Route::get('/faq', function () {
     return view('service.faq');
-});
+})->name('help');
 
 Route::get('/faq_2', function () {
     return view('service.faq_2');
@@ -115,7 +123,12 @@ Route::post('/logoutaccount', 'AccountController@logOut')->name('logout');
 // admin : route
 Route::group(['middleware' => ['admin_check'], 'prefix' => 'admin'], function () {
     Route::get('/', function () {
-        return view('admin.index');
+        $male_product_amount   = count(Product::where('status', '=', '1')->where('sex', '=', 'Nam')->get());
+        $female_product_amount = count(Product::where('status', '=', '1')->where('sex', '=', 'Nữ')->get());
+        $unisex_product_amount = count(Product::where('status', '=', '1')->where('sex', '=', 'Phi giới tính')->get());
+        $brands = Brand::all();
+        $origins = Origin::all();
+        return view('admin.index',compact('male_product_amount','female_product_amount','unisex_product_amount','brands','origins'));
     })->name('admin');
     Route::group(['prefix' => '/brands'], function () {
         Route::get('/', 'BrandController@index')->name('admin_brand');
@@ -157,7 +170,7 @@ Route::group(['middleware' => ['admin_check'], 'prefix' => 'admin'], function ()
         Route::get('/', 'ReceiptController@admin_index')->name('admin_receipt');
         Route::get('/create', 'ReceiptController@create')->name('admin_receipt_create');
         Route::post('/store', 'ReceiptController@store')->name('admin_receipt_store');
-        Route::get('/edit/{slug}', 'ReceiptController@edit')->name('admin_receipt_edit');
+        Route::get('/edit/{id}', 'ReceiptController@edit')->name('admin_receipt_edit');
         Route::put('/update/{id}', 'ReceiptController@update')->name('admin_receipt_update');
         Route::put('/delete/{id}', 'ReceiptController@delete')->name('admin_receipt_delete');
         Route::put('/deleteAll', 'ReceiptController@delete_multi')->name('admin_receipt_delete_multi');

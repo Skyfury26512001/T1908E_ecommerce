@@ -199,7 +199,7 @@
 
                 <!-- LOGO -->
                 <div class="logo-box">
-                    <a href="index.html" class="logo text-center">
+                    <a href="{{route('home')}}" class="logo text-center">
                         <span class="logo-lg">
                             <img src="{{asset('assets/img/logo.png')}}" alt="" height="25">
                             <!-- <span class="logo-lg-text-light">UBold</span> -->
@@ -264,8 +264,8 @@
 
         <!-- App js -->
         <script src={{asset('assets/admin/')."/js/app.min.js"}}></script>
-        @yield('specific_js')
-
+        <!-- Custom js -->
+        @yield('specify_js')
 
     </body>
 </html>

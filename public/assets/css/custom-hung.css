@@ -30,3 +30,8 @@ header.version_1 .menu ul li > span a:hover {
 .top_panel.show{
     top: 60px;
 }
+.alert-warning{
+    color: red;
+    font-size: 14px;
+    margin-top: 10px;
+}

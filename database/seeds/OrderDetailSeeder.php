@@ -1,11 +1,10 @@
 <?php
 
-use App\Receipt;
 use Carbon\Carbon;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\Schema;
 
-class ReceiptSeeder extends Seeder
+class OrderDetailSeeder extends Seeder
 {
     /**
      * Run the database seeds.
@@ -14,30 +13,27 @@ class ReceiptSeeder extends Seeder
      */
     public function run()
     {
-        $data_check = Receipt::all()->first();
+        $data_check = \App\OrderDetail::all()->first();
         if ($data_check != null) {
             Schema::disableForeignKeyConstraints();
-            Receipt::truncate();
+            \App\OrderDetail::truncate();
             Schema::enableForeignKeyConstraints();
         }
         $faker = \Faker\Factory::create();
-
+        $product = \App\Product::all();
         $receipts = array();
-        for ($i = 1; $i < 5; $i++) {
+        for ($i = 0; $i < 20; $i++) {
             $item = [
-                'customerId' => $faker->numberBetween(1, 2),
-                'total_money' => $faker->randomNumber(4) * 100,
-                'ship_name' => $faker->name,
-                'name_address' => $faker->address,
-                'phone' => $faker->phoneNumber,
-                'note' => $faker->realText(),
-                'status' => $faker->numberBetween(0, 2),
+                'productId' => $faker->randomElement($product)->id,
+                'volume' => $faker->randomElement(['10ml','50ml','90ml','100ml']),
+                'quantity' => $faker->numberBetween(1, 8),
+                'price' => $faker->randomNumber(3) * 100,
                 'created_at' => Carbon::now(),
                 'updated_at' => Carbon::now(),
             ];
             array_push($receipts, $item);
         }
 
-        Receipt::insert($receipts);
+        \App\OrderDetail::insert($receipts);
     }
 }

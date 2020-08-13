@@ -28,25 +28,22 @@
         $('body').on('click', '.cloudinary-delete', function () {
             var splittedImg = $(this).parent().find('img').attr('src').split('/');
             var imgName = splittedImg[splittedImg.length - 1];
-
             imgName = imgName.split('.');
-
             $(this).parent().remove();
             $('input[data-cloudinary-public-id="' + imgName[0] + '"]').remove();
-
             console.log("Remove image : " + imgName[0] + " successful");
         });
     </script>
 
     <script>
         ClassicEditor
-            .create( document.querySelector( '#editor' ) )
-            .then( editor => {
-                console.log( editor );
-            } )
-            .catch( error => {
-                console.error( error );
-            } );
+            .create(document.querySelector('#editor'))
+            .then(editor => {
+                console.log(editor);
+            })
+            .catch(error => {
+                console.error(error);
+            });
     </script>
 @endsection
 @section('content')
@@ -60,10 +57,10 @@
                         <ol class="breadcrumb m-0">
                             <li class="breadcrumb-item"><a href="javascript: void(0);">Adminox</a></li>
                             <li class="breadcrumb-item"><a href="javascript: void(0);">Forms</a></li>
-                            <li class="breadcrumb-item active">Form Validation</li>
+                            <li class="breadcrumb-item active">Quản lý tài khoản</li>
                         </ol>
                     </div>
-                    <h4 class="page-title">Form Validation</h4>
+                    <h4 class="page-title">Quản lý tài khoản</h4>
                 </div>
             </div>
         </div>
@@ -72,45 +69,89 @@
         <div class="row">
             <div class="col-lg-6">
                 <div class="card-box">
-                    <h4 class="header-title">Create Brand : </h4>
-                    <form action="{{route('admin_brand_store')}}" id="product_form" method="POST" class="parsley-examples" novalidate="">
+                    <h4 class="header-title">Edit Account : </h4>
+                    <form action="{{route('admin_account_update',$account->id)}}" id="product_form" method="POST"
+                          class="parsley-examples" novalidate="">
                         @csrf
+                        @method('PUT')
                         <div class="form-group">
-                            <label for="userName">Brand Name<span class="text-danger">*</span></label>
-                            <input type="text" name="name" parsley-trigger="change" required=""
-                                   value="{{$brand->brand_name}}" class="form-control" id="userName">
+                            <label for="userName">Fullname<span class="text-danger">*</span></label>
+                            <input type="text" name="fullName" parsley-trigger="change" required=""
+                                   value="{{$account->fullName}}" class="form-control" id="userName">
                             @if ($errors->has('name'))
                                 <label class="alert-warning">{{$errors->first('name')}}</label>
                             @endif
                         </div>
-
                         <div class="form-group">
-                            <label for="userName">Brand Thumbnail<span class="text-danger">*</span></label>
-                            <button type="button" id="upload_widget" class="btn btn-primary">Upload
-                                files
-                            </button>
-                            <div class="thumbnail">
-                                <ul class="cloudinary-thumbnails">
-                                    <li class="cloudinary-thumbnail active" data-cloudinary="">
-                                        <img src="{{$brand->imagesize600x600}}" style="width: 300px;height: 300px">
-                                        <a href="#" class="cloudinary-delete">x</a>
-                                    </li>
-                                </ul>
-                            </div>
-                            @if ($errors->has('thumbnail'))
-                                <label class="alert-warning">{{$errors->first('thumbnail')}}</label>
+                            <label for="userName">Email<span class="text-danger">*</span></label>
+                            <input type="text" name="email" parsley-trigger="change" required=""
+                                   value="{{$account->email}}" class="form-control" id="userName">
+                            @if ($errors->has('email'))
+                                <label class="alert-warning">{{$errors->first('email')}}</label>
                             @endif
                         </div>
-
                         <div class="form-group">
-                            <label for="userName">Brand description<span class="text-danger">*</span></label>
-                            <textarea id="editor" name="detail" class="form-control" value="{{$brand->brand_description}}">{{$brand->brand_description}}</textarea>
-                            @if ($errors->has('detail'))
-                                <label class="alert-warning">{{$errors->first('detail')}}</label>
+                            <label for="userName">Birthday<span class="text-danger">*</span></label>
+                            <input type="date" name="birthDate" parsley-trigger="change" required=""
+                                   value="{{$account->birthDate}}" class="form-control" id="userName">
+                            @if ($errors->has('birthDate'))
+                                <label class="alert-warning">{{$errors->first('birthDate')}}</label>
                             @endif
                         </div>
+                        <div class="form-group">
+                            <label for="userName">phoneNumber<span class="text-danger">*</span></label>
+                            <input type="number" name="phoneNumber" parsley-trigger="change" required=""
+                                   value="{{$account->phoneNumber}}" class="form-control" id="userName">
+                            @if ($errors->has('phoneNumber'))
+                                <label class="alert-warning">{{$errors->first('phoneNumber')}}</label>
+                            @endif
+                        </div>
+                        <div class="form-group">
+                            <label for="userName">Status<span class="text-danger">*</span></label>
+                            <select name="status">
+                                <option value="0" @if ($account->status == 0) selected @endif>Dective</option>
+                                <option value="1" @if ($account->status == 1) selected @endif>Active</option>
+                            </select>
+                            @if ($errors->has('status'))
+                                <label class="alert-warning">{{$errors->first('status')}}</label>
+                            @endif
+                        </div>
+                        <div class="form-group">
+                            <label for="userName">City<span class="text-danger">*</span></label>
+                            <select name="city">
 
-                         <div class="form-group text-right mb-0">
+                                @foreach ($cities as $city)
+                                    <option value="{{$city->id}}"
+                                            @if($account->city->id == $city->id) selected @endif >{{$city->name}}</option>
+                                @endforeach
+                            </select>
+                            @if ($errors->has('city'))
+                                <label class="alert-warning">{{$errors->first('city')}}</label>
+                            @endif
+                        </div>
+                        <div class="form-group">
+                            <label for="role">Role<span class="text-danger">*</span></label>
+                            @php
+                                        $admin = false;
+                                        $guest = true;
+                                foreach ($account->roles as $role)
+                                    {
+                                        if ($role->id == 2){
+                                        $admin = true;
+                                        $guest = false;
+                                        break;
+                                        }
+                                    }
+                            @endphp
+                            <select name="role">
+                                <option value="2" @if ($admin) selected @endif>Admin</option>
+                                <option value="1" @if ($guest) selected @endif>User</option>
+                            </select>
+                            @if ($errors->has('role'))
+                                <label class="alert-warning">{{$errors->first('role')}}</label>
+                            @endif
+                        </div>
+                        <div class="form-group text-right mb-0">
                             <button class="btn btn-primary waves-effect waves-light mr-1" type="submit">
                                 Submit
                             </button>
@@ -118,7 +159,7 @@
                                 Cancel
                             </button>
                         </div>
-                        <input type="hidden" name="thumbnail" data-cloudinary-public-id="{{$brand->brand_thumbnail}}" value="{{$brand->brand_thumbnail}}">
+
                     </form>
                 </div> <!-- end card-box -->
             </div>

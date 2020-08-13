@@ -13,7 +13,7 @@
                 <div class="all">
                     <div class="user-page-brief">
                         <div class="user-page-brief__right">
-                            <div class="user-page-brief__username">tlhoang1211</div>
+                            <div class="user-page-brief__username">{{$account->fullName}}</div>
                             <div><a class="user-page-brief__edit" href="/user/account/profile">
                                     <svg width="12" height="12" viewBox="0 0 12 12" xmlns="http://www.w3.org/2000/svg"
                                          style="margin-right: 4px;">
@@ -125,8 +125,6 @@
                     </div>
                     <div class="purchase-list-page__empty-page-wrapper">
                         <div class="purchase-empty-order__container">
-                            <div class="purchase-empty-order__icon"></div>
-                            <div class="purchase-empty-order__text"> Chưa có đơn hàng</div>
                         </div>
                     </div>
                 </div>

@@ -93,9 +93,9 @@
                 <div class="card-box">
                     <div class="row">
                         <div>
-                            <h4 class="header-title">Xuất xứ</h4>
+                            <h4 class="header-title">Hóa đơn</h4>
                             <p class="sub-header">
-                                <code>Toàn bộ xuất xứ</code>
+                                <code>Hóa đơn</code>
                             </p>
                         </div>
                         <div class="offset-8 col-3">
@@ -120,14 +120,14 @@
                             <tr>
                                 <th colspan="1"></th>
                                 <th colspan="2" class="sorting" tabindex="0" aria-controls="datatable" rowspan="1" colspan="1" style="width: 24.8px;" aria-label="ID: activate to sort column ascending">
-                                    Tên xuất xứ
+                                    Mã hóa đơn
                                 </th>
                                 <th colspan="2" style="text-align: center">Hành động</th>
                             </tr>
                             </thead>
                             <tbody>
                             @csrf
-{{--                            {{dd($receipts)}}--}}
+
                             @foreach($receipts as $receipt)
                                 <tr>
                                     <td colspan="1">
@@ -137,8 +137,8 @@
                                             <label for="{{$receipt->name}}"></label>
                                         </div>
                                     </td>
-                                    <td colspan="2">{{$receipt->codeName}}</td>
-                                    <td><a href="{{route('admin_receipt_edit',$receipt->codeName)}}" class="btn btn-primary"
+                                    <td colspan="2">{{$receipt->id}}</td>
+                                    <td><a href="{{route('admin_receipt_edit',$receipt->id)}}" class="btn btn-primary"
                                            style="float:right">Edit</a></td>
                                     <td>
                                         <form action="{{route('admin_receipt_delete',$receipt->id)}}" method="POST">
@@ -170,7 +170,90 @@
 
         </div>
         <!-- end row -->
+        <div class="row">
+            <div class="col-lg-8">
+                <div class="card-box">
+                    <div class="row">
+                        <div>
+                            <h4 class="header-title">Chi tiết hóa đơn</h4>
+                            <p class="sub-header">
+                                <code>Hóa đơn</code>
+                            </p>
+                        </div>
+                        <div class="offset-8 col-3">
+                            <form class="app-search" action="{{route('admin_receipt')}}">
+                                <div class="app-search-box">
+                                    <div class="input-group">
+                                        <input type="text" class="form-control" name="keyword" placeholder="Search...">
+                                        <div class="input-group-append">
+                                            <button class="btn" type="submit">
+                                                <i class="fe-search"></i>
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                    <div class="table-responsive">
 
+                        <table class="table table-hover mb-0">
+                            <thead>
+                            <tr>
+                                <th colspan="1"></th>
+                                <th>Id</th>
+                                <th colspan="2" class="sorting" tabindex="0" aria-controls="datatable" rowspan="1" colspan="1" style="width: 24.8px;" aria-label="ID: activate to sort column ascending">
+                                    Mã hóa đơn
+                                </th>
+
+                                <th colspan="2" style="text-align: center">Hành động</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            @csrf
+
+                            @foreach($orders as $order)
+                                <tr>
+                                    <td colspan="1">
+                                        <div class="checkbox checkbox-primary">
+                                            <input class="checkbox_list_order" id="{{$order->id}}" type="checkbox"
+                                                   name="orders[]" value="{{$order->id}}">
+                                            <label for="{{$order->name}}"></label>
+                                        </div>
+                                    </td>
+                                    <td colspan="1">{{$order->id}}</td>
+                                    <td colspan="2">{{$order->receipts[0]->id}}</td>
+                                    <td><a href="#{{route('admin_receipt_edit',$order->id)}}" class="btn btn-primary"
+                                           style="float:right">Edit</a></td>
+                                    <td>
+                                        <form action="#{{route('admin_receipt_delete',$order->id)}}" method="POST">
+                                            @csrf @method('PUT')
+                                            <button class="btn btn-primary"> Delete</button>
+                                        </form>
+                                    </td>
+                                </tr>
+                            @endforeach
+
+                            </tbody>
+
+                        </table>
+
+
+                    </div>
+                    <div style="margin-top: 1%">
+                        <div class="row">
+                            <div class="col-5"> {{ $orders->links() }}</div>
+                            <div class="col-6">
+                                <button class="btn btn-primary" style="float: right" id="delete_all"> Delete All
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
     </div> <!-- end container-fluid -->
 
 

@@ -114,11 +114,6 @@
                                     <div class="input-with-label__content">
                                         <div class="my-account__inline-container">
                                             <div class="my-account__input-text">{{$account->email}}</div>
-                                            <a
-                                                href=""
-                                                class="my-account__no-background-button my-account-profile__change-button">
-                                                Thay đổi
-                                            </a>
                                         </div>
                                     </div>
                                 </div>
@@ -130,11 +125,6 @@
                                     <div class="input-with-label__content">
                                         <div class="my-account__inline-container">
                                             <div class="my-account__input-text">{{$account->phoneNumber}}</div>
-                                            <a
-                                                class="my-account__no-background-button my-account-profile__change-button"
-                                                href="">
-                                                Thay đổi
-                                            </a>
                                         </div>
                                     </div>
                                 </div>
